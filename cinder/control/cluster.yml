@@ -75,14 +75,6 @@ parameters:
         ssl:
           enabled: ${_param:rabbitmq_ssl_enabled}
       cache:
-        engine: memcached
-        members:
-        - host: ${_param:cluster_node01_address}
-          port: 11211
-        - host: ${_param:cluster_node02_address}
-          port: 11211
-        - host: ${_param:cluster_node03_address}
-          port: 11211
         security:
           enabled: ${_param:cinder_memcache_security_enabled}
           strategy: ${_param:openstack_memcache_security_strategy}
