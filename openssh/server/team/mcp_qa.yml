@@ -17,6 +17,7 @@ classes:
 - system.openssh.server.team.members.vgusev
 - system.openssh.server.team.members.vnaumov
 - system.openssh.server.team.members.vryzhenkin
+- system.openssh.server.team.members.sturivnyi
 - system.openssh.server.team.members.ylobankov
 # Deprecated users
 - system.openssh.server.team.members.deprecated.ababich

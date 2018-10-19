@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        sturivnyi:
+          email: sturivnyi@mirantis.com
+          enabled: true
+          full_name: Serhii Turivnyi
+          home: /home/sturivnyi
+          name: sturivnyi
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        sturivnyi:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCpgvyWHyyNPhIPpUzUXyad8eORO5w1s9CDiSqOCSmWLGn8o+LA0Q7qtU845N5xsyL5Zm+9XDS2A85N6iPCVUrxIh6jm7OmC3FJ0doB1iP11KVv0u8U08zDut+ojOQK+WgqrhLf6bAQKnHctzANss2eCHfFtSYtskEDJc+fbnT1bZez/qvHW9LtpEBTWn4qn3GBYRgdTaWb3R/QAzQ/IMPOzVfKqFyBER8gK6vh0M7hB5/fP5Qe4G2HLpkNc8xj1nLqzYGmJdtckKjMEnlkItVkXNGxjcbnIshJCELhc3BWgH3lWs3UE5yzKyexYYs+37Q0ajasLoM8HIybK9nUrp2hwaQjoRSO+pMWLvJSYdVB2DyRDAUh7vtFazJG4VDHz542WFekwyh9pZ37SdnC5M93FXT87lK2fFS6UcxRyjHDKbgBOzDNXR2fdRA3fk6GWSv5VI5zSko2fVD8AlJRkd3DokFIb7GbwDuXrOMMkJVJ5C9B3FeGJ1hRDlVD2oS4osGtZV18E9b7xeIJZgaVRHYaFHRjAaCRdsCU6yeUTPI1Xj67yudAz/Jad4fR+/ToiV7bnTzZ4yuskpOuLF/bLf/N+DxgDDS46K0ODf6V/pgh3djBV5vIAqKulH9KXTa+k+5v3BHCHhqnOxM9EcGTmNY0mpmPzRPTekZ+lGCa79RRYw== sturivnyi@mirantis.com
+          user: ${linux:system:user:sturivnyi}
