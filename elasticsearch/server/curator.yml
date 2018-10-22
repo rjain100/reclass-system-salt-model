@@ -1,7 +1,8 @@
 parameters:
   _param:
-    elasticsearch_curator_indices_pattern: "^(log|notification)-.*$"
+    elasticsearch_curator_indices_pattern: "^(log|audit)-.*$"
     elasticsearch_curator_retention_period: 31
+    elasticsearch_curator_notifications_retention_period: 90
   linux:
     system:
       cron:
@@ -32,6 +33,22 @@ parameters:
               direction: older
               unit: days
               unit_count: ${_param:elasticsearch_curator_retention_period}
+          - action: delete_indices
+            description: >-
+                Delete indices older than ${_param:elasticsearch_curator_notifications_retention_period} days (based on index creation date).
+            options:
+              ignore_empty_list: True
+              continue_if_exception: False
+              disable_action: False
+            filters:
+            - filtertype: pattern
+              kind: regex
+              value: "^notification-.*$"
+            - filtertype: age
+              source: creation_date
+              direction: older
+              unit: days
+              unit_count: ${_param:elasticsearch_curator_notifications_retention_period}
           - action: delete_indices
             description: >-
                 Delete indices older than ${_param:elasticsearch_curator_retention_period} days (based on index creation date).
