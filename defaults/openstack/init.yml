@@ -18,3 +18,6 @@ parameters:
     # Glance
     glance_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     glance_memcache_secret_key: ''
+    # Heat
+    heat_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    heat_memcache_secret_key: ''
