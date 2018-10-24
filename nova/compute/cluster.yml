@@ -37,8 +37,6 @@ parameters:
       SG9MrLHCd5l60aCUQg0UA5ed7Hd6SA314k+HwxJno9/wJ+voBeacMg==
       -----END RSA PRIVATE KEY-----
     cluster_internal_protocol: 'http'
-    nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
-    nova_memcache_secret_key: ''
   openssh:
     client:
       enabled: True

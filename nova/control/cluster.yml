@@ -14,8 +14,6 @@ parameters:
     nova_disk_allocation_ratio: 1.0
     metadata_password: metadataPass
     cluster_internal_protocol: 'http'
-    nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
-    nova_memcache_secret_key: ''
   linux:
     system:
       package:
