@@ -21,3 +21,6 @@ parameters:
     # Heat
     heat_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     heat_memcache_secret_key: ''
+    # Aodh
+    aodh_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    aodh_memcache_secret_key: ''

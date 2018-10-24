@@ -44,3 +44,8 @@ parameters:
         cron:
           minute: 0
           hour: 2
+      cache:
+        security:
+          enabled: ${_param:aodh_memcache_security_enabled}
+          strategy: ${_param:openstack_memcache_security_strategy}
+          secret_key: ${_param:aodh_memcache_secret_key}
