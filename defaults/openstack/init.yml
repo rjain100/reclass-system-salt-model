@@ -15,3 +15,6 @@ parameters:
     # Nova
     nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     nova_memcache_secret_key: ''
+    # Glance
+    glance_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    glance_memcache_secret_key: ''
