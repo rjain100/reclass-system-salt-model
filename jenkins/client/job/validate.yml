@@ -203,7 +203,7 @@ parameters:
               description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
-              default: 'cvp-sanity-checks'
+              default: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:${_param:apt_mk_version}"
               description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
@@ -222,7 +222,7 @@ parameters:
               description: e.g. skipped_nodes=nal01.local.com,ntw01.local.com
             TESTS_SET:
               type: string
-              default: "cvp-sanity-checks/cvp_checks/tests/"
+              default: "cvp_checks/tests/"
               description: "Leave as is for full run or add a filename, e.g. _default_path_/test_mtu.py"
             PROXY:
               type: string
@@ -241,6 +241,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: cvp-func.groovy
           param:
@@ -304,6 +305,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: cvp-ha.groovy
           param:
@@ -372,6 +374,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
             script: cvp-perf.groovy
           param:
@@ -446,7 +449,7 @@ parameters:
             PROXY:
               type: string
               default: ""
-              description: "Proxy address to use to access the Internet. For offline mode, use \"offline\" value."
+              description: "Proxy address to use to access the Internet."
         cvp-spt:
           type: workflow-scm
           name: cvp-spt
@@ -470,7 +473,7 @@ parameters:
               description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
-              default: 'cvp-spt'
+              default: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-spt:${_param:apt_mk_version}"
               description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
@@ -486,10 +489,10 @@ parameters:
             TESTS_SETTINGS:
               type: string
               default: ""
-              description: "Additional environment variables to export"
+              description: "Additional environment variables to export, e.g. image_name, networks, HW_NODES"
             TESTS_SET:
               type: string
-              default: "cvp-spt/cvp_spt/tests/"
+              default: "cvp_spt/tests/"
               description: "Leave as is for full run or add a filename, e.g. _default_path_/test_glance.py"
             PROXY:
               type: string
