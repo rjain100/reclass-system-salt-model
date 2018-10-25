@@ -4,7 +4,7 @@
 parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
-    kubernetes_hyperkube_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes
+    kubernetes_hyperkube_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
   jenkins:
     client:
       job:
@@ -76,5 +76,5 @@ parameters:
               description: "Local kubernetes apiserver variable for conformance tests"
             ARTIFACTORY_URL:
               type: string
-              default: "docker-prod-local.docker.mirantis.com"
+              default: ${_param:mcp_docker_registry}
               description: "Artifactory URL where docker images located. Needed to correctly fetch conformance images."
