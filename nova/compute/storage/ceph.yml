@@ -15,3 +15,7 @@ parameters:
         rbd_user: ${_param:nova_storage_user}
         cinder_secret_uuid: ${_param:cinder_storage_secret_uuid}
         cinder_volumes_key: ${_param:cinder_storage_client_key}
+      image:
+        # Make nova instance image completely independent from
+        # parent glance image
+        use_cow: false
