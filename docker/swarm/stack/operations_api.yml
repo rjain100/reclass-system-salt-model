@@ -2,6 +2,7 @@ parameters:
   _param:
     docker_operations_api_replicas: 1
     docker_image_operations_api: mirantis/python-operations-api:latest
+    docker_image_operations_ui: mirantis/operations-ui:latest
     operations_api_sqlalchemy_database_uri: "cockroachdb://oapi@cockroach-ui:26257/oapi"
     operations_api_sqlalchemy_echo: "false"
     operations_api_flask_debug: "false"
@@ -55,6 +56,15 @@ parameters:
                 - cockroach-ui
               volumes:
                 - /srv/volumes/cockroachdb/cockroach-db-1:/cockroach/cockroach-data
+            operations-ui:
+              environment:
+                REACT_APP_OPERATIONS_API_URL: 'http://${_param:cluster_public_host}:${_param:haproxy_operations_api_bind_port}'
+                REACT_APP_KEYCLOAK_AUTH_URL: 'http://${_param:cluster_public_host}:${_param:haproxy_keycloak_proxy_exposed_port}/auth'
+                REACT_APP_KEYCLOAK_REALM: 'drivetrain-realm'
+                REACT_APP_KEYCLOAK_CLIENT_ID: 'operations-ui'
+              image: ${_param:docker_image_operations_ui}
+              ports:
+                - ${_param:haproxy_operations_ui_exposed_port}:${_param:haproxy_operations_ui_bind_port}
             cockroach-init:
               environment:
                 COCKROACH_HOST: cockroach-ui
