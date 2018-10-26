@@ -6,6 +6,7 @@ classes:
 parameters:
   _param:
     local_package_repos: false
+    logrotate_keep_rotate: 10
   linux:
     system:
       at:
@@ -24,3 +25,7 @@ parameters:
         en_US.UTF-8:
           enabled: true
           default: true
+  logrotate:
+    server:
+      global_conf:
+        keep_rotate: ${_param:logrotate_keep_rotate}
