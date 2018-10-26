@@ -1,3 +1,2 @@
-classes:
-  - system.jenkins.client.job.debian.packages.horizon.modules
-  - system.jenkins.client.job.debian.packages.horizon.themes
+# This file will be removed in Q3
+# jobs was moved into salt-models/infra repo
