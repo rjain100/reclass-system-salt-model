@@ -58,7 +58,9 @@ parameters:
             cockroach-init:
               environment:
                 COCKROACH_HOST: cockroach-ui
-              image: atengler/cockroach
+                DB_NAME: oapi
+                DB_USER: oapi
+              image: atengler/cockroach-init
               deploy:
                 restart_policy:
                   condition: on-failure
