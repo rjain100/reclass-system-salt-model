@@ -9,6 +9,9 @@ parameters:
     gerrit_ldap_group_base: ""
     gerrit_http_listen_url: http://*:8080/
     gerrit_extra_opts: ""
+    gerrit_db_publish_port: 13306
+    gerrit_publish_port: 18083
+    gerrit_ssh_publish_port: 29417
   docker:
     client:
       stack:
@@ -20,8 +23,8 @@ parameters:
                   condition: any
               image: ${_param:docker_image_gerrit}
               ports:
-                - 18083:8080
-                - 29417:29418
+                - ${_param:gerrit_publish_port}:8080
+                - ${_param:gerrit_ssh_publish_port}:29418
               volumes:
                 - /srv/volumes/gerrit:/var/gerrit/review_site
               depends_on:
@@ -62,6 +65,6 @@ parameters:
                   condition: any
               image: "${_param:docker_image_mysql}"
               ports:
-                - 13306:3306
+                - ${_param:gerrit_db_publish_port}:3306
               volumes:
                 - /srv/volumes/mysql:/var/lib/mysql
