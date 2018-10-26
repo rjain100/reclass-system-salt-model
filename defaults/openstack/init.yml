@@ -12,3 +12,6 @@ parameters:
     # Cinder
     cinder_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     cinder_memcache_secret_key: ''
+    # Nova
+    nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    nova_memcache_secret_key: ''

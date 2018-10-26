@@ -5,8 +5,6 @@ classes:
 parameters:
   _param:
     cluster_internal_protocol: 'http'
-    nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
-    nova_memcache_secret_key: ''
   linux:
     system:
       package:
