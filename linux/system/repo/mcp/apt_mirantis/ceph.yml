@@ -1,18 +1,32 @@
 classes:
 - system.linux.system.repo.keystorage.mirantis_com
 parameters:
-  _param:
-    linux_system_repo_mcp_ceph_version: ${_param:apt_mk_version}
-    linux_system_repo_mcp_ceph_codename: luminous
   linux:
     system:
       repo:
         mcp_ceph:
-          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ ${_param:linux_system_repo_mcp_ceph_version} ceph-${_param:linux_system_repo_mcp_ceph_codename}"
+          source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_ceph_url}/${_param:linux_system_codename} ${_param:linux_system_codename} main"
+          key: ${_param:linux_system_repo_mirror_mirantis_key}
           architectures: amd64
-          key: ${_param:linux_system_repo_apt_mirantis_key}
           clean_file: true
           pin:
-          - pin: 'release a=${_param:linux_system_repo_mcp_ceph_version}'
+          - pin: 'release o=Mirantis'
             priority: 1100
             package: '*'
+# Deprecated since 2018.11+
+#parameters:
+#  _param:
+#    linux_system_repo_mcp_ceph_version: ${_param:apt_mk_version}
+#    linux_system_repo_mcp_ceph_codename: luminous
+#  linux:
+#    system:
+#      repo:
+#        mcp_ceph:
+#          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ ${_param:linux_system_repo_mcp_ceph_version} ceph-${_param:linux_system_repo_mcp_ceph_codename}"
+#          architectures: amd64
+#          key: ${_param:linux_system_repo_apt_mirantis_key}
+#          clean_file: true
+#          pin:
+#          - pin: 'release a=${_param:linux_system_repo_mcp_ceph_version}'
+#            priority: 1100
+#            package: '*'
