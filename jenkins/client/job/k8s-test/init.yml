@@ -1,6 +1,2 @@
-classes:
-- system.jenkins.client.job.k8s-test.mcp-k8s-test-pipeline
-- system.jenkins.client.job.k8s-test.mcp-k8s-merge-pipeline
-- system.jenkins.client.job.k8s-test.mcp-k8s-generic-test-pipeline
-- system.jenkins.client.job.k8s-test.mcp-k8s-generic-merge-pipeline
-- system.jenkins.client.job.k8s-test.mcp-k8s-formula-test-pipeline
+# This file will be removed in Q3
+# jobs was moved into salt-models/infra repo
