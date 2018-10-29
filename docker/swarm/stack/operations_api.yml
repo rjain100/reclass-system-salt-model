@@ -1,15 +1,19 @@
 parameters:
   _param:
     docker_operations_api_replicas: 1
-    docker_image_operations_api: mirantis/python-operations-api:latest
-    docker_image_operations_ui: mirantis/operations-ui:latest
+    # FIXME: move cockroach image to defaults once it is uploaded to artifactory with proper tag
+    docker_image_cockroachdb: cockroachdb/cockroach:latest
     operations_api_sqlalchemy_database_uri: "cockroachdb://oapi@cockroach-ui:26257/oapi"
     operations_api_sqlalchemy_echo: "false"
     operations_api_flask_debug: "false"
     operations_api_bind_host: 0.0.0.0
     operations_api_bind_port: ${_param:haproxy_operations_api_bind_port}
-    docker_image_cockroachdb: cockroachdb/cockroach:latest
+    operations_api_jenkins_url: http://${_param:single_address}:18081
+    operations_api_jenkins_username: admin
+    operations_api_pipeline_name: deploy_trymcp
     operations_api_keycloak_url: "http://${_param:single_address}:${_param:haproxy_keycloak_exposed_port}"
+    operations_api_model_remote: localfs
+    operations_api_model_path: /code/operations_api/workflow_definition.yml
   docker:
     client:
       stack:
@@ -35,6 +39,12 @@ parameters:
                 OAPI_FLASK_SECRET_KEY: ${_param:operations_api_flask_secret_key}
                 OAPI_FLASK_SERVER_HOST: ${_param:operations_api_bind_host}
                 OAPI_FLASK_SERVER_PORT: ${_param:operations_api_bind_port}
+                OAPI_MODELFORM_JENKINS_URL: ${_param:operations_api_jenkins_url}
+                OAPI_MODELFORM_JENKINS_USERNAME: ${_param:operations_api_jenkins_username}
+                OAPI_MODELFORM_JENKINS_PASSWORD: ${_param:operations_api_jenkins_password}
+                OAPI_MODELFORM_PIPELINE_NAME: ${_param:operations_api_pipeline_name}
+                OAPI_MODELFORM_REMOTE: ${_param:operations_api_model_remote}
+                OAPI_MODELFORM_PATH: ${_param:operations_api_model_path}
               image: ${_param:docker_image_operations_api}
               deploy:
                 replicas: ${_param:docker_operations_api_replicas}
