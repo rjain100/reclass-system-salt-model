@@ -3,9 +3,6 @@ classes:
 - system.salt.minion.cert.mysql.clients.openstack.glance
 - system.salt.minion.cert.rabbitmq.clients.openstack.glance
 parameters:
-  _param:
-    glance_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
-    glance_memcache_secret_key: ''
   linux:
     system:
       cron:
