@@ -1,6 +1,5 @@
 classes:
 - system.neutron.control.single
-- system.galera.server.database.neutron
 parameters:
   neutron:
     server:
