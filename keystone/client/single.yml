@@ -2,6 +2,7 @@ classes:
 - system.keystone.client.os_client_config.admin_identity
 - system.keystone.client.service.cinder
 - system.keystone.client.service.cinder2
+- system.keystone.client.service.cinder3
 - system.keystone.client.service.glance
 - system.keystone.client.service.heat
 - system.keystone.client.service.heat-cfn
