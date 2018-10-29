@@ -1,8 +1,2 @@
-parameters:
-  jenkins:
-    client:
-      view:
-        Images:
-          enabled: true
-          type: ListView
-          include_regex: "build-image-.*"
+# This file will be removed in Q3
+# jobs was moved into salt-models/infra repo

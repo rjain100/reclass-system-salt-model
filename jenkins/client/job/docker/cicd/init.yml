@@ -1,3 +1,2 @@
-classes:
-  - system.jenkins.client.job.docker.cicd.rally
-  - system.jenkins.client.job.docker.cicd.tempest
+# This file will be removed in Q3
+# jobs was moved into salt-models/infra repo
