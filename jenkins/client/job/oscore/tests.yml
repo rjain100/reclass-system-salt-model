@@ -525,79 +525,6 @@ parameters:
                 type: string
                 description: Environment salt model
                 default: "{{model}}"
-        oscore-oscc-ci-template:
-          name: "{{job_prefix}}-oscc-ci"
-          template:
-            description: ${_param:job_description_oscore}
-            discard:
-              build:
-                keep_num: 30
-              artifact:
-                keep_num: 30
-            type: workflow-scm
-            concurrent: true
-            scm:
-              type: git
-              url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
-              credentials: "gerrit"
-              branch: 'master'
-              script: oscc-ci-pipeline.groovy
-            trigger:
-              timer:
-               spec: "H 01 * * *"
-            param:
-              # general
-              DEPLOY_JOB_NAME:
-                type: string
-                description: "Job name tp deploy envs are going to be tested"
-                default: "{{job_prefix}}-{{deployJobPrefix}}"
-              DISTRIBUTION:
-                type: string
-                default: "{{distribution}}"
-                description: "Distribution for the published repo"
-              COMPONENTS:
-                type: string
-                default: "{{components}}"
-                description: "Components for repo"
-              TMP_REPO_NODE_NAME:
-                type: string
-                default: "{{tmp_repo_node_name}}"
-                description: "Node name where temp repo will be published"
-              STACK_RECLASS_ADDRESS:
-                type: string
-                default: "{{stack_reclass_address}}"
-              SOURCE_REPO_NAME:
-                type: string
-                description: "Name of the repo where packages are stored"
-                default: "{{source_repo_name}}"
-              APTLY_API_URL:
-                type: string
-                description: URL for the aptly API
-                default: "${_param:jenkins_aptly_api_url}"
-              STACK_DELETE:
-                type: boolean
-                default: "{{stack_delete}}"
-                description: Do not enable it if you need to use the lab after
-              OPENSTACK_COMPONENTS_LIST:
-                type: string
-                description: "OpenStack related components list"
-                default: "{{openstack_components_list}}"
-              AUTO_PROMOTE:
-                type: boolean
-                default: "{{auto_promote}}"
-                description: Enable to autopromote repo
-              TEST_SCHEMAS:
-                type: string
-                default: "{{test_schemas}}"
-                description: "Defines structure to pass aio:cluster-name1:branch1,branch2|multinode:cluster-name2:branch1,branch2"
-              TESTRAIL:
-                type: boolean
-                default: "{{testrail}}"
-                description: Whether to upload results to testrail
-              TEST_MILESTONE:
-                type: string
-                description: Product milestone
-                default: "{{milestone}}"
         build-salt-formula-refspec-template:
           name: "{{job_prefix}}-build-salt-formula-refspec"
           template:
@@ -812,3 +739,137 @@ parameters:
               TEST_CLUSTER_NAMES:
                 type: string
                 default: "{{test_cluster_names}}"
+      job:
+        oscore-oscc-ci:
+          name: "oscore-oscc-ci"
+          discard:
+            build:
+              keep_num: 60
+            artifact:
+              keep_num: 60
+          type: workflow-scm
+          concurrent: true
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
+            credentials: "gerrit"
+            branch: 'master'
+            script: oscc-ci-pipeline.groovy
+          param:
+            # general
+            DISTRIBUTION:
+              type: string
+              default: "dev-os-salt-formulas"
+              description: "Distribution for the published repo"
+            COMPONENTS:
+              type: string
+              default: "salt"
+              description: "Components for repo"
+            TMP_REPO_NODE_NAME:
+              type: string
+              default: "${_param:jenkins_aptly_url}"
+              description: "Node name where temp repo will be published"
+            STACK_RECLASS_ADDRESS:
+              type: string
+              default: "https://gerrit.mcp.mirantis.net/salt-models/mcp-virtual-ai"
+            SOURCE_REPO_NAME:
+              type: string
+              description: "Name of the repo where packages are stored"
+              default: "ubuntu-xenial-salt"
+            APTLY_API_URL:
+              type: string
+              description: URL for the aptly API
+              default: "${_param:jenkins_aptly_api_url}"
+            AUTO_PROMOTE:
+              type: boolean
+              default: "true"
+              description: Enable to autopromote repo
+            STAGE_SCHEMA:
+              type: text
+              description: "Defines stages schema to test"
+              default: |-
+                stages:
+                  0:
+                    to_promote:
+                    - salt-formula-nova
+                    - salt-formula-cinder
+                    - salt-formula-glance
+                    - salt-formula-keystone
+                    - salt-formula-horizon
+                    - salt-formula-neutron
+                    - salt-formula-heat
+                    - salt-formula-oslo-templates
+                    - salt-formula-runtest
+                    - salt-formula-auditd
+                    - salt-formula-apache
+                    - salt-formula-memcached
+                    - salt-formula-galera
+                    - salt-formula-openscap
+                    - salt-formula-nginx
+                    - salt-formula-haproxy
+                    - salt-formula-salt
+                    - salt-formula-linux
+                    test_schemas:
+                      aio:
+                        virtual-mcp11-aio:
+                          stable/ocata:
+                            testrail: false
+                          stable/pike:
+                            run_security_check: true
+                        virtual-mcp11-aio-ssl:
+                          stable/pike: {}
+                      cookied:
+                        openstack-ovs-core-queens:
+                          run_smoke: true
+                          stack_install: core,openstack,ovs
+                        openstack-ovs-core-ssl-queens:
+                          run_smoke: true
+                          stack_install: core,openstack,ovs
+                  1:
+                    to_promote:
+                    - salt-formula-designate
+                    - salt-formula-manila
+                    - salt-formula-aodh
+                    - salt-formula-ceilometer
+                    - salt-formula-panko
+                    - salt-formula-gnocchi
+                    - salt-formula-bind
+                    - salt-formula-powerdns
+                    test_shemas:
+                      multinode:
+                        virtual-mcp-pike-ovs:
+                          master:
+                            run_smoke: true
+                            openstack_version: pike
+                            testrail: true
+                            heat_stack_environment: devcloud_fixed
+                        virtual-mcp-pike-dvr:
+                          master:
+                            run_smoke: true
+                            openstack_version: pike
+                            testrail: false
+                            heat_stack_environment: devcloud_fixed
+                            test_pattern: ''
+                      cookied:
+                        openstack-ovs-core-extra-ssl-queens:
+                          run_smoke: true
+                          stack_install: core,openstack,ovs
+                  2:
+                    to_promote:
+                    - salt-formula-barbican
+                    - salt-formula-dogtag
+                    test_schemas:
+                      aio:
+                        virtual-mcp11-aio-barbican:
+                          stable/pike: {}
+                      cookied:
+                        openstack-ovs-core-barbican-ssl-queens:
+                          run_smoke: true
+                          stack_install: core,openstack,ovs
+                  3:
+                    to_promote:
+                    - salt-formula-octavia
+                    test_schemas:
+                      aio:
+                        virtual-mcp11-aio-octavia:
+                          stable/pike: {}
