@@ -12,9 +12,9 @@ parameters:
             concurrent: true
             discard:
               build:
-                keep_num: 10
+                keep_days: 1
               artifact:
-                keep_num: 10
+                keep_days: 1
             display_name: "Generate reclass cluster {{cookiecutter_template}}"
             scm:
               type: git
