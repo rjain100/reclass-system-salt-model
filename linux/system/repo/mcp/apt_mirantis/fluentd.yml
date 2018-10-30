@@ -1,12 +1,11 @@
+classes:
+- system.linux.system.repo.keystorage.fluentd
 parameters:
-  _param:
-    linux_system_repo_mcp_fluentd_version: ${_param:apt_mk_version}
   linux:
     system:
       repo:
         mcp_fluentd:
-          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_fluentd_version}/td-agent/${_param:linux_system_codename} ${_param:linux_system_codename} contrib"
+          source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_fluentd_url}/${_param:linux_system_codename} ${_param:linux_system_codename} contrib"
+          key: ${_param:linux_system_repo_mcp_fluentd_key}
           architectures: amd64
-          key_id: 901F9177AB97ACBE
-          key_server: keyserver.ubuntu.com
           clean_file: true
