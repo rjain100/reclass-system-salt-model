@@ -838,7 +838,7 @@ parameters:
                     - salt-formula-gnocchi
                     - salt-formula-bind
                     - salt-formula-powerdns
-                    test_shemas:
+                    test_schemas:
                       multinode:
                         virtual-mcp-pike-ovs:
                           master:
