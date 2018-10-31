@@ -2,6 +2,7 @@ classes:
   - system.jenkins.client.job.deploy.lab
   - system.jenkins.client.job.deploy.update
   - system.jenkins.client.job.deploy.openstack
+  - system.jenkins.client.job.deploy.try_mcp
 parameters:
   jenkins:
     client:
