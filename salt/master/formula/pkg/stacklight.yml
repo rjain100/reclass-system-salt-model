@@ -16,9 +16,6 @@ parameters:
             grafana:
               source: pkg
               name: salt-formula-grafana
-            graphite:
-              source: pkg
-              name: salt-formula-graphite
             heka:
               source: pkg
               name: salt-formula-heka
@@ -31,9 +28,6 @@ parameters:
             kibana:
               source: pkg
               name: salt-formula-kibana
-            #nagios:
-            #  source: pkg
-            #  name: salt-formula-nagios
             postgresql:
               source: pkg
               name: salt-formula-postgresql
@@ -49,6 +43,3 @@ parameters:
             sensu:
               source: pkg
               name: salt-formula-sensu
-            nagios:
-              source: pkg
-              name: salt-formula-nagios

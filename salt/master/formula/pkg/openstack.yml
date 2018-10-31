@@ -13,9 +13,6 @@ parameters:
             barbican:
               source: pkg
               name: salt-formula-barbican
-            billometer:
-              source: pkg
-              name: salt-formula-billometer
             ceilometer:
               source: pkg
               name: salt-formula-ceilometer
@@ -100,6 +97,3 @@ parameters:
             statsd:
               source: pkg
               name: salt-formula-statsd
-            supervisor:
-              source: pkg
-              name: salt-formula-supervisor
