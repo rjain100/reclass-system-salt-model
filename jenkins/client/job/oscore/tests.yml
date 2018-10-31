@@ -755,6 +755,9 @@ parameters:
             credentials: "gerrit"
             branch: 'master'
             script: oscc-ci-pipeline.groovy
+          trigger:
+            timer:
+             spec: "H 01 * * *"
           param:
             # general
             DISTRIBUTION:
