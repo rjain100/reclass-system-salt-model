@@ -1,4 +1,2 @@
-classes:
-  - system.jenkins.client.job.opencontrail.git-mirrors.downstream
-  - system.jenkins.client.job.opencontrail.git-mirrors.upstream
-  - system.jenkins.client.job.opencontrail.git-mirrors.2way
+# This file will be removed in Q3
+# jobs was moved into salt-models/infra repo
