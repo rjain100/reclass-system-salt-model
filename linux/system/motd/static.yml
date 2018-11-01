@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    motd_company_name: COMPANY_NAME
   linux:
     system:
       motd: |
