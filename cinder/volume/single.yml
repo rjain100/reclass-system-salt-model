@@ -3,8 +3,6 @@ classes:
 - system.salt.minion.cert.mysql.clients.openstack.cinder
 - system.salt.minion.cert.rabbitmq.clients.openstack.cinder
 parameters:
-  _param:
-    cluster_internal_protocol: 'http'
   linux:
     system:
       package:

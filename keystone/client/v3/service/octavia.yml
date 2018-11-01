@@ -3,7 +3,6 @@ classes:
 
 parameters:
   _param:
-    cluster_public_protocol: https
     keystone_service_protocol: http
     octavia_service_protocol: http
   keystone:

@@ -1,6 +1,5 @@
 parameters:
   _param:
-    cluster_public_protocol: https
     sahara_internal_protocol: http
   keystone:
     client:

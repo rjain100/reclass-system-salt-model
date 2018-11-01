@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.ceilometer
 parameters:
   _param:
-    cluster_public_protocol: https
     ceilometer_service_protocol: http
     ceilometer_public_host: ${_param:cluster_public_host}
   keystone:

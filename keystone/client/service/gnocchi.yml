@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.gnocchi
 parameters:
   _param:
-    cluster_public_protocol: https
     gnocchi_service_protocol: http
     gnocchi_public_host: ${_param:cluster_public_host}
     gnocchi_public_port: 8041

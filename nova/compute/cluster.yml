@@ -36,7 +36,6 @@ parameters:
       7xDyBz85icFU0rceYQetwFH2p5tRL0GcUQhJmJFgIL0OXdCQvRNJrT3iS00N1aUo
       SG9MrLHCd5l60aCUQg0UA5ed7Hd6SA314k+HwxJno9/wJ+voBeacMg==
       -----END RSA PRIVATE KEY-----
-    cluster_internal_protocol: 'http'
   openssh:
     client:
       enabled: True

@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.contrail
 parameters:
   _param:
-    cluster_public_protocol: https
     contrail_service_protocol: http
   keystone:
     client:

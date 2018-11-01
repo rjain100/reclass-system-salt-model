@@ -1,6 +1,5 @@
 parameters:
   _param:
-    cluster_public_protocol: https
     radosgw_swift_cluster_port: 8081
     radosgw_service_protocol: http
   keystone:

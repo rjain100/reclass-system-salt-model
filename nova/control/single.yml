@@ -3,8 +3,6 @@ classes:
 - system.salt.minion.cert.rabbitmq.clients.openstack.nova
 - service.nova.control.single
 parameters:
-  _param:
-    cluster_internal_protocol: 'http'
   linux:
     system:
       package:

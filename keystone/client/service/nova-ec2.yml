@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    cluster_public_protocol: https
   keystone:
     client:
       server:

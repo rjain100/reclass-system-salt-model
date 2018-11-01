@@ -1,6 +1,5 @@
 parameters:
   _param:
-    cluster_public_protocol: https
     panko_service_protocol: http
     panko_public_host: ${_param:cluster_public_host}
   keystone:

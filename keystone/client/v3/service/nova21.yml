@@ -1,6 +1,5 @@
 parameters:
   _param:
-    cluster_public_protocol: https
     nova_service_protocol: http
   keystone:
     client:

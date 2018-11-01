@@ -3,8 +3,6 @@ classes:
 - system.salt.minion.cert.mysql.clients.openstack.manila
 - system.salt.minion.cert.rabbitmq.clients.openstack.manila
 parameters:
-  _param:
-    cluster_internal_protocol: 'http'
   manila:
     common:
       version: ${_param:openstack_version}

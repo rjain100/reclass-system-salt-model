@@ -1,6 +1,5 @@
 parameters:
   _param:
-    cluster_public_protocol: https
     keystone_service_protocol: http
     ironic_service_protocol: http
   keystone:

@@ -11,7 +11,6 @@ parameters:
     neutron_enable_vlan_aware_vms: False
     neutron_enable_bgp_vpn: False
     neutron_bgp_vpn_driver: bagpipe
-    cluster_internal_protocol: 'http'
   neutron:
     server:
       role: ${_param:openstack_node_role}

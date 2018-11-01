@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.manila
 parameters:
   _param:
-    cluster_public_protocol: https
     manila_service_protocol: http
   keystone:
     client:

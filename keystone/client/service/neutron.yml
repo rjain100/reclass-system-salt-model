@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.neutron
 parameters:
   _param:
-    cluster_public_protocol: https
     neutron_service_protocol: http
   keystone:
     client:

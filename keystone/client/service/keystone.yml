@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.keystone
 parameters:
   _param:
-    cluster_public_protocol: https
     keystone_service_protocol: http
     keystone_public_path: "/v2.0"
     keystone_internal_path: "/v2.0"

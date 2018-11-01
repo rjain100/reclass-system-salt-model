@@ -1,6 +1,5 @@
 parameters:
   _param:
-    cluster_public_protocol: https
     tacker_service_protocol: http
     tacker_public_host: ${_param:cluster_public_host}
   keystone:

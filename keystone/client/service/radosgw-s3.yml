@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.radosgw-s3
 parameters:
   _param:
-    cluster_public_protocol: https
     radosgw_s3_cluster_port: 8081
     radosgw_service_protocol: http
   keystone:

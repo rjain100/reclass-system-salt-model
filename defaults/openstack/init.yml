@@ -1,14 +1,19 @@
 parameters:
   _param:
+    # General
+    cluster_public_protocol: https
+    cluster_internal_protocol: http
     # SSL
     ceilometer_agent_ssl_enabled: False
     openstack_mysql_x509_enabled: False
     # for non-ssl use 5672 / for ssl 5671
     openstack_rabbitmq_port: 5672
     openstack_rabbitmq_x509_enabled: False
-    # Openstack memcache security
+    # Openstack memcache
     openstack_memcache_security_enabled: False
     openstack_memcache_security_strategy: 'ENCRYPT'
+    openstack_memcached_proto_tcp_enabled: True
+    openstack_memcached_proto_udp_enabled: False
     # Cinder
     cinder_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     cinder_memcache_secret_key: ''
@@ -38,9 +43,6 @@ parameters:
     # Ironic
     ironic_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     ironic_memcache_secret_key: ''
-    # Openstack memcached server protocols
-    openstack_memcached_proto_tcp_enabled: True
-    openstack_memcached_proto_udp_enabled: False
     # Apache mods defaults
     apache_mods_status_enabled: True
     apache_mods_status_status: 'disabled'

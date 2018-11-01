@@ -1,8 +1,6 @@
 classes:
 - service.nova.compute.ironic
 parameters:
-  _param:
-    cluster_internal_protocol: 'http'
   nova:
     compute:
       version: ${_param:nova_version}

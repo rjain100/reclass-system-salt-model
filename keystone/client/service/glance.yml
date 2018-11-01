@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.glance
 parameters:
   _param:
-    cluster_public_protocol: https
     glance_service_protocol: http
   keystone:
     client:

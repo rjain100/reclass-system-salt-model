@@ -13,7 +13,6 @@ parameters:
     nova_ram_allocation_ratio: 1.5
     nova_disk_allocation_ratio: 1.0
     metadata_password: metadataPass
-    cluster_internal_protocol: 'http'
   linux:
     system:
       package:

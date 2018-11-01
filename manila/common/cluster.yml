@@ -5,7 +5,6 @@ classes:
 parameters:
   _param:
     manila_cluster_vip_address: ${_param:cluster_vip_address}
-    cluster_internal_protocol: 'http'
   manila:
     common:
       version: ${_param:openstack_version}

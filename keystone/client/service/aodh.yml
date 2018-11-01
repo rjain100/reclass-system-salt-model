@@ -2,7 +2,6 @@ classes:
 - system.keystone.client.v3.service.aodh
 parameters:
   _param:
-    cluster_public_protocol: https
     aodh_service_protocol: http
     aodh_public_host: ${_param:cluster_public_host}
   keystone:

@@ -1,6 +1,5 @@
 parameters:
   _param:
-    cluster_public_protocol: https
     mcp_docker_registry: 'docker-dev-local.docker.mirantis.net'
     vnf_gerrit_credentials: "gerrit"
     vnf_openstack_api_url: "${_param:cluster_public_protocol}://${_param:cluster_public_host}:5000/v2.0"

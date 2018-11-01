@@ -2,8 +2,6 @@ classes:
 - service.octavia.api.cluster
 - system.haproxy.proxy.listen.openstack.octavia
 parameters:
-  _param:
-    cluster_internal_protocol: 'http'
   octavia:
     api:
       enabled: true
