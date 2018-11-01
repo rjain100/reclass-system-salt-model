@@ -29,3 +29,7 @@ parameters:
           port: 11211
         - host: ${_param:gnocchi_memcached_node03_address}
           port: 11211
+        security:
+          enabled: ${_param:gnocchi_memcache_security_enabled}
+          strategy: ${_param:openstack_memcache_security_strategy}
+          secret_key: ${_param:gnocchi_memcache_secret_key}
