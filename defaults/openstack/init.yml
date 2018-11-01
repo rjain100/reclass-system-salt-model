@@ -30,3 +30,6 @@ parameters:
     # Panko
     panko_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     panko_memcache_secret_key: ''
+    # Barbican
+    barbican_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    barbican_memcache_secret_key: ''
