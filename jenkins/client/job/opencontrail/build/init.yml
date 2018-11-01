@@ -1,4 +1,2 @@
-classes:
-  - system.jenkins.client.job.opencontrail.build.generic
-  - system.jenkins.client.job.opencontrail.build.test
-  - system.jenkins.client.job.opencontrail.build.dpdk-extra
+# This file will be removed in Q3
+# jobs was moved into salt-models/infra repo
