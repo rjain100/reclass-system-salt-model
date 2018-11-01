@@ -27,3 +27,6 @@ parameters:
     # Gnocchi
     gnocchi_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     gnocchi_memcache_secret_key: ''
+    # Panko
+    panko_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    panko_memcache_secret_key: ''
