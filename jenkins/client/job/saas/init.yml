@@ -1,3 +1,2 @@
-classes:
-  - system.jenkins.client.job.saas.test_saas_ui
-  - system.jenkins.client.job.saas.test_saas_core_auth
+# This file will be removed in Q3
+# jobs was moved into salt-models/infra repo
