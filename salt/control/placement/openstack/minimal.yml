@@ -14,7 +14,6 @@ parameters:
     openstack_message_queue_node03_hostname: msg03
     openstack_proxy_node01_hostname: prx01
     openstack_proxy_node02_hostname: prx02
-    salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     openstack_control_backend_image: ${_param:salt_control_xenial_image_backend}
     openstack_database_backend_image: ${_param:salt_control_xenial_image_backend}
     openstack_message_queue_backend_image: ${_param:salt_control_xenial_image_backend}

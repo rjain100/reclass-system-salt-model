@@ -12,7 +12,6 @@ parameters:
     stacklight_telemetry_node01_hostname: mtr01
     stacklight_telemetry_node02_hostname: mtr02
     stacklight_telemetry_node03_hostname: mtr03
-    salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     stacklight_log_backend_image: ${_param:salt_control_xenial_image_backend}
     stacklight_monitor_backend_image: ${_param:salt_control_xenial_image_backend}
     stacklight_telemetry_backend_image: ${_param:salt_control_xenial_image_backend}

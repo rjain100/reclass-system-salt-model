@@ -21,3 +21,6 @@ parameters:
     openstack_version: 'queens'
     # Docker artifact globals
     mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
+    # Other
+    salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
+    salt_control_trusty_image_backend: /var/lib/libvirt/images/backends/trusty.qcow2

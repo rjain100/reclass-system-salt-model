@@ -9,7 +9,6 @@ parameters:
     opencontrail_analytics_node01_hostname: nal01
     opencontrail_analytics_node02_hostname: nal02
     opencontrail_analytics_node03_hostname: nal03
-    salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     opencontrail_control_backend_image: ${_param:salt_control_xenial_image_backend}
     opencontrail_analytics_backend_image: ${_param:salt_control_xenial_image_backend}
   salt:

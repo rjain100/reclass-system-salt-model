@@ -6,7 +6,6 @@ parameters:
     openstack_gateway_node01_hostname: gtw01
     openstack_gateway_node02_hostname: gtw02
     openstack_gateway_node03_hostname: gtw03
-    salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     openstack_gateway_backend_image: ${_param:salt_control_xenial_image_backend}
   salt:
     control:

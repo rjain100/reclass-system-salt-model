@@ -6,7 +6,6 @@ parameters:
     cicd_control_node01_hostname: cid01
     cicd_control_node02_hostname: cid02
     cicd_control_node03_hostname: cid03
-    salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     cicd_control_backend_image: ${_param:salt_control_xenial_image_backend}
   salt:
     control:

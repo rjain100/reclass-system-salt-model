@@ -1,6 +1,5 @@
 parameters:
   _param:
-    salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     openstack_dns_backend_image: ${_param:salt_control_xenial_image_backend}
   salt:
     control:
