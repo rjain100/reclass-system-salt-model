@@ -18,8 +18,9 @@ parameters:
     linux_system_architecture: amd64
     linux_system_repo_url: "http://mirror.mirantis.com/${_param:apt_mk_version}/"
     # linux globals
-    motd_company_name: COMPANY_NAME
-    ssh_banner_company_name: COMPANY_NAME
+    banner_company_name: COMPANY_NAME
+    motd_company_name: "${_param:banner_company_name}"
+    ssh_banner_company_name: "${_param:banner_company_name}"
     # Openstack globals
     openstack_version: 'queens'
     # Docker artifact globals

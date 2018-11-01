@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    banner_company_name: COMPANY_NAME_HERE
   linux:
     system:
       banner:
