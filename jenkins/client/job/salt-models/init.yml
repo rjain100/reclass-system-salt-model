@@ -1,14 +1,2 @@
-classes:
-  - system.jenkins.client.job.salt-models.git-mirrors
-  - system.jenkins.client.job.salt-models.tests
-  - system.jenkins.client.job.salt-models.generate
-parameters:
-  _param:
-    salt_formulas_branches: master
-  jenkins:
-    client:
-      view:
-        "Salt models":
-          enabled: true
-          type: ListView
-          include_regex: ".*-salt-model-.*"
+# This file will be removed in Q3
+# jobs was moved into salt-models/infra repo
