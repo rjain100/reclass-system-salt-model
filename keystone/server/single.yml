@@ -4,6 +4,7 @@ classes:
 - system.keystone.server.fernet_rotation.single
 - system.salt.minion.cert.mysql.clients.openstack.keystone
 - system.salt.minion.cert.rabbitmq.clients.openstack.keystone
+- system.keystone.client.os_client_config.admin_identity
 parameters:
   _param:
     keystone_service_token: token
@@ -13,6 +14,7 @@ parameters:
     mysql_keystone_password: password
     keystone_tokens_expiration: 3600
     openstack_node_role: primary
+    keystone_service_protocol: ${_param:cluster_internal_protocol}
   linux:
     system:
       package:
