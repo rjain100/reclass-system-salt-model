@@ -224,6 +224,10 @@ parameters:
             unusedArtifactsCleanupEnabled: true
             unusedArtifactsCleanupPeriodHours: 720
 
+          fixes:
+            rclass: local
+            packageType: generic
+
           gcs-remote:
             rclass: remote
             packageType: generic
