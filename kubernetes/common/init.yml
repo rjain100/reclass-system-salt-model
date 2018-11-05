@@ -7,6 +7,7 @@ parameters:
     kubernetes_hyperkube_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_contrail_cni_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_contrail_network_controller_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes/contrail-integration
+    kubernetes_contrail_registry: ${_param:mcp_docker_registry}/opencontrail-${_param:linux_repo_contrail_component}
     kubernetes_netchecker_agent_repo: mirantis
     kubernetes_netchecker_server_repo: mirantis
     kubernetes_virtlet_repo: mirantis
@@ -59,6 +60,10 @@ parameters:
     kubernetes_corends_etcd_operator_image: ${_param:kubernetes_corends_etcd_operator_repo}/etcd-operator:v0.9.2
     kubernetes_containerd_source: ${_param:kubernetes_containerd_repo}/v1.12.0/crictl-v1.12.0-linux-amd64.tar.gz
     kubernetes_containerd_source_hash: md5=ff60b9ddfa5617f7ed14b3f3b6a60056
+    kubernetes_opencontrail_controller_image: ${_param:kubernetes_contrail_registry}/opencontrail-controller:${_param:apt_mk_version}
+    kubernetes_opencontrail_analyticsdb_image: ${_param:kubernetes_contrail_registry}/opencontrail-analyticsdb:${_param:apt_mk_version}
+    kubernetes_opencontrail_analytics_image: ${_param:kubernetes_contrail_registry}/opencontrail-analytics:${_param:apt_mk_version}
+    kubernetes_opencontrail_kube_manager_image: ${_param:kubernetes_contrail_registry}/opencontrail-kube-manager:${_param:apt_mk_version}
 
     kubelet_fail_on_swap: true
     kubernetes_dashboard_enabled: true
@@ -145,6 +150,15 @@ parameters:
         contrail_network_controller:
           enabled: ${_param:kubernetes_contrail_network_controller_enabled}
           image: ${_param:kubernetes_contrail_network_controller_image}
+        opencontrail:
+          controller:
+            image: ${_param:kubernetes_opencontrail_controller_image}
+          analyticsdb:
+            image: ${_param:kubernetes_opencontrail_analyticsdb_image}
+          analytics:
+            image: ${_param:kubernetes_opencontrail_analytics_image}
+          kube_manager:
+            image: ${_param:kubernetes_opencontrail_kube_manager_image}
         flannel:
           image: ${_param:kubernetes_flannel_image}
         telegraf:
