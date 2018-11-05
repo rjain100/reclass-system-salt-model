@@ -38,3 +38,4 @@ parameters:
     linux_system_repo_mcp_glusterfs_version_number: "3.8"
     linux_system_repo_mcp_saltstack_version_number: "${_param:salt_version}"
     linux_system_repo_mcp_ceph_codename: luminous
+    linux_repo_contrail_component: oc40
