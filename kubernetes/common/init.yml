@@ -1,10 +1,11 @@
 parameters:
   _param:
-    kubernetes_calico_calicoctl_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
     kubernetes_calico_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
-    kubernetes_calico_cni_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
     kubernetes_calico_kube_ctl_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
-    kubernetes_hyperkube_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
+    kubernetes_calico_calicoctl_repo: ${_param:mcp_binary_registry}/mirantis/projectcalico/calicoctl
+    kubernetes_calico_birdcl_repo: ${_param:mcp_binary_registry}/mirantis/projectcalico/bird
+    kubernetes_calico_cni_repo: ${_param:mcp_binary_registry}/mirantis/projectcalico/cni-plugin
+    kubernetes_hyperkube_repo: ${_param:mcp_binary_registry}/mirantis/kubernetes/hyperkube-binaries
     kubernetes_contrail_cni_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_contrail_network_controller_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes/contrail-integration
     kubernetes_netchecker_agent_repo: mirantis
@@ -12,25 +13,32 @@ parameters:
     kubernetes_virtlet_repo: mirantis
     kubernetes_kubedns_repo: gcr.io/google_containers
     kubernetes_externaldns_repo: ${_param:mcp_docker_registry}/mirantis/external-dns
-    kubernetes_genie_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/cni-genie
+    kubernetes_genie_repo: ${_param:mcp_binary_registry}/mirantis/kubernetes/cni-genie
     kubernetes_flannel_repo: quay.io/coreos
     kubernetes_metallb_repo: ${_param:mcp_docker_registry}/mirantis/metallb
-    kubernetes_sriov_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/sriov-cni
-    kubernetes_cniplugins_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/containernetworking-plugins
+    kubernetes_sriov_repo: ${_param:mcp_binary_registry}/mirantis/kubernetes/sriov-cni
+    kubernetes_cniplugins_repo: ${_param:mcp_binary_registry}/mirantis/kubernetes/containernetworking-plugins
     kubernetes_dashboard_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_coredns_repo: ${_param:mcp_docker_registry}/mirantis/coredns
     kubernetes_ingressnginx_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes-ingress-nginx
     kubernetes_corends_etcd_operator_repo: quay.io/coreos
     kubernetes_containerd_repo: https://github.com/kubernetes-sigs/cri-tools/releases/download
 
-    # component docker images
+    # component images/binaries
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
-    kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v3.1.3
     kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v3.1.3
-    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v3.1.3
     kubernetes_calico_kube_controllers_image: ${_param:kubernetes_calico_kube_ctl_repo}/kube-controllers:v3.1.3
-    kubernetes_hyperkube_image: ${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.11.3-2
-    kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.11.3-2
+    kubernetes_calico_calicoctl_source: ${_param:kubernetes_calico_calicoctl_repo}/calicoctl-v3.1.3
+    kubernetes_calico_calicoctl_source_hash: md5=4fa504cd4c545fe2a5d6106f5379c307
+    kubernetes_calico_birdcl_source: ${_param:kubernetes_calico_birdcl_repo}/birdcl-v0.3.2-17-20180926111644
+    kubernetes_calico_birdcl_source_hash: md5=256a70c67892eb79b74a8fb4e1d22b9b
+    kubernetes_calico_cni_source: ${_param:kubernetes_calico_cni_repo}/calico-v3.1.3-15-20181105142706
+    kubernetes_calico_cni_source_hash: md5=2f79e8f3ecb4c7d2e357333a01f781d1
+    kubernetes_calico_cni_ipam_source: ${_param:kubernetes_calico_cni_repo}/calico-ipam-v3.1.3-15-20181105142706
+    kubernetes_calico_cni_ipam_source_hash: md5=f70bea0c60724f56ddb9447fd8862bac
+    kubernetes_hyperkube_source: ${_param:kubernetes_hyperkube_repo}/hyperkube_v1.11.3-2_1536938897511
+    kubernetes_hyperkube_source_hash: md5=159910d99c3ccf77d1e0f7b346edaf40
+    kubernetes_pause_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/pause-amd64:v1.11.3-2
     kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
     kubernetes_contrail_network_controller_image: ${_param:kubernetes_contrail_network_controller_repo}/contrail-network-controller:v1.2.0
     kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.4.1
@@ -59,6 +67,10 @@ parameters:
     kubernetes_corends_etcd_operator_image: ${_param:kubernetes_corends_etcd_operator_repo}/etcd-operator:v0.9.2
     kubernetes_containerd_source: ${_param:kubernetes_containerd_repo}/v1.12.0/crictl-v1.12.0-linux-amd64.tar.gz
     kubernetes_containerd_source_hash: md5=ff60b9ddfa5617f7ed14b3f3b6a60056
+    # images for formula compatibility
+    kubernetes_hyperkube_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/hyperkube-amd64:v1.11.3-2
+    kubernetes_calico_cni_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/cni:v3.1.3
+    kubernetes_calico_calicoctl_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/ctl:v3.1.3
 
     kubelet_fail_on_swap: true
     kubernetes_dashboard_enabled: true
@@ -116,6 +128,8 @@ parameters:
           hash: ${_param:kubernetes_containerd_source_hash}
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
+        source: ${_param:kubernetes_hyperkube_source}
+        source_hash: ${_param:kubernetes_hyperkube_source_hash}
         pause_image: ${_param:kubernetes_pause_image}
       cni:
         plugins:
@@ -196,9 +210,18 @@ parameters:
         calico:
           enabled: ${_param:kubernetes_calico_enabled}
           image: ${_param:kubernetes_calico_image}
+          kube_controllers_image: ${_param:kubernetes_calico_kube_controllers_image}
+          calicoctl_source: ${_param:kubernetes_calico_calicoctl_source}
+          calicoctl_source_hash: ${_param:kubernetes_calico_calicoctl_source_hash}
+          birdcl_source: ${_param:kubernetes_calico_birdcl_source}
+          birdcl_source_hash: ${_param:kubernetes_calico_birdcl_source_hash}
+          cni_source: ${_param:kubernetes_calico_cni_source}
+          cni_source_hash: ${_param:kubernetes_calico_cni_source_hash}
+          cni_ipam_source: ${_param:kubernetes_calico_cni_ipam_source}
+          cni_ipam_source_hash: ${_param:kubernetes_calico_cni_ipam_source_hash}
+          # compatibility
           calicoctl_image: ${_param:kubernetes_calico_calicoctl_image}
           cni_image: ${_param:kubernetes_calico_cni_image}
-          kube_controllers_image: ${_param:kubernetes_calico_kube_controllers_image}
         opencontrail:
           enabled: ${_param:kubernetes_opencontrail_enabled}
           cni_image: ${_param:kubernetes_contrail_cni_image}
