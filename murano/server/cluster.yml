@@ -40,7 +40,7 @@ parameters:
         virtual_host: '/openstack'
       murano_agent_queue:
         engine: rabbitmq
-        host: ${_param:openstack_proxy_address}
+        host: ${_param:cluster_public_host}
         port: 5673
         user: openstack
         password: ${_param:rabbitmq_murano_agent_password}
