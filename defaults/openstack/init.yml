@@ -36,3 +36,6 @@ parameters:
     # Openstack memcached server protocols
     openstack_memcached_proto_tcp_enabled: True
     openstack_memcached_proto_udp_enabled: False
+    # Apache mods defaults
+    apache_mods_status_enabled: True
+    apache_mods_status_status: 'disabled'
