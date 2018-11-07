@@ -5,6 +5,7 @@ parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     kubernetes_hyperkube_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
+    kubernetes_calico_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
   jenkins:
     client:
       job:
@@ -78,3 +79,27 @@ parameters:
               type: string
               default: ${_param:mcp_docker_registry}
               description: "Artifactory URL where docker images located. Needed to correctly fetch conformance images."
+            UPGRADE_CALICO_V2_TO_V3:
+              type: boolean
+              default: 'false'
+              description: "Perform Calico upgrade from v2.x to v3.x. It is not needed for minor version upgrade (e.g., from v3.1 to v3.2)."
+            CALICO_UPGRADE_VERSION:
+              type: string
+              default: 'v1.0.5'
+              description: "Version of 'calico-upgrade' utility to be used."
+            KUBERNETES_CALICO_IMAGE:
+              type: string
+              default: "${_param:kubernetes_calico_repo}/node:v3.1.3"
+              description: "Versioned calico/node image. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_CALICOCTL_IMAGE:
+              type: string
+              default: "${_param:kubernetes_calico_repo}/ctl:v3.1.3"
+              description: "Versioned calico/ctl image. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_CNI_IMAGE:
+              type: string
+              default: "${_param:kubernetes_calico_repo}/cni:v3.1.3"
+              description: "Versioned calico/cni image. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_KUBE_CONTROLLERS_IMAGE:
+              type: string
+              default: "${_param:kubernetes_calico_repo}/kube-controllers:v3.1.3"
+              description: "Versioned calico/kube-controllers image. Should be null if update rolling via reclass-system level"
