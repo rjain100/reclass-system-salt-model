@@ -36,7 +36,7 @@ parameters:
                 xpack.monitoring.enabled: "false"
                 bootstrap.memory_lock: "false"
                 discovery.zen.minimum_master_nodes: 2
-                discovery.zen.ping.unicast.hosts: ${_param:stacklight_monitor_address}
+                discovery.zen.ping.unicast.hosts: ${_param:stacklight_log_address}
               labels:
                 com.mirantis.monitoring: "elasticsearch"
               image: ${_param:docker_image_elasticsearch}
