@@ -14,6 +14,7 @@ parameters:
       plugin: {}
       session:
         engine: "cache"
+      images_upload_mode: ${_param:horizon_images_upload_mode}
   apache:
     server:
       modules:

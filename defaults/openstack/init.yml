@@ -39,3 +39,6 @@ parameters:
     # Apache mods defaults
     apache_mods_status_enabled: True
     apache_mods_status_status: 'disabled'
+    # Horizon
+    # 'direct' mode will require cors on glance side to be enabled.
+    horizon_images_upload_mode: 'legacy'
