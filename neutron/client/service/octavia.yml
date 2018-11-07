@@ -1,8 +1,6 @@
 classes:
 - service.neutron.client
 parameters:
-  _param:
-    octavia_hm_bind_ip: '192.168.0.12'
   neutron:
     client:
       server:
@@ -14,10 +12,10 @@ parameters:
               admin_state_up: True
               subnet:
                 lb-mgmt-subnet:
-                  cidr: 192.168.0.0/24
+                  cidr: ${_param:octavia_lb_mgmt_cidr}
                   allocation_pools:
-                    - start: 192.168.0.2
-                      end: 192.168.0.200
+                    - start: ${_param:octavia_lb_mgmt_allocation_pool_start}
+                      end: ${_param:octavia_lb_mgmt_allocation_pool_end}
               port:
                 octavia-health-manager-listen-port:
                   fixed_ips:
