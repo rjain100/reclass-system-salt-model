@@ -36,6 +36,8 @@ parameters:
       role: ${_param:opencontrail_node_role}
       discovery:
         host: ${_param:opencontrail_control_address}
+      identity:
+        host: ${_param:openstack_control_address}
     database:
       discovery:
         host: ${_param:opencontrail_control_address}
