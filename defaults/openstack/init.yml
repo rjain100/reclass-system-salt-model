@@ -33,6 +33,9 @@ parameters:
     # Barbican
     barbican_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     barbican_memcache_secret_key: ''
+    # Ironic
+    ironic_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    ironic_memcache_secret_key: ''
     # Openstack memcached server protocols
     openstack_memcached_proto_tcp_enabled: True
     openstack_memcached_proto_udp_enabled: False
