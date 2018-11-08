@@ -8,6 +8,12 @@ parameters:
     octavia_service_protocol: http
   keystone:
     client:
+      server:
+        octavia_identity:
+          admin:
+            api_version: ''
+            user_domain_name: 'Default'
+            project_domain_name: 'Default'
       resources:
         v3:
           roles:
