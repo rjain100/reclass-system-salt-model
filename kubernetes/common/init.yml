@@ -44,8 +44,8 @@ parameters:
     kubernetes_sidecar_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-sidecar-amd64:1.14.5
     kubernetes_dns_autoscaler_image: ${_param:kubernetes_kubedns_repo}/cluster-proportional-autoscaler-amd64:1.0.0
     kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.6-2
-    kubernetes_genie_source: ${_param:kubernetes_genie_repo}/genie_v1.0-165-gbe0268b
-    kubernetes_genie_source_hash: md5=20da66e80eaa453461cf269bf793f2aa
+    kubernetes_genie_source: ${_param:kubernetes_genie_repo}/genie_v1.0-191-g9902422
+    kubernetes_genie_source_hash: md5=1f0b0434e9ba2bc3b6c7945b3dce4294
     kubernetes_flannel_image: ${_param:kubernetes_flannel_repo}/flannel:v0.10.0-amd64
     kubernetes_metallb_controller_image: ${_param:kubernetes_metallb_repo}/controller:v0.7.3-2
     kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.7.3-2
