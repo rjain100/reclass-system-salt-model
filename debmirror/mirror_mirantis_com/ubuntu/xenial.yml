@@ -11,7 +11,7 @@ parameters:
           method: "rsync"
           arch: [ 'amd64' ]
           mirror_host: "mirror.mirantis.com"
-          mirror_root: ":mirror/${_param:apt_mk_version}/ubuntu/"
+          mirror_root: ":mirror/${_param:mcp_version}/ubuntu/"
           target_dir: "${_param:debmirror_mirrors_base_target_dir}/ubuntu/"
           log_file: "/var/log/debmirror/mirror_mirantis_com_ubuntu_xenial.log"
           dist: [ xenial , xenial-security, xenial-updates ]

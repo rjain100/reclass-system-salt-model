@@ -15,9 +15,12 @@ classes:
 - system.defaults.gerrit
 parameters:
   _param:
-    apt_mk_version: stable
+    mcp_version: stable
+    # Temporary link to mcp_version.
+    # 'apt_mk_version' will be removed in q4
+    apt_mk_version: ${_param:mcp_version}
     linux_system_architecture: amd64
-    linux_system_repo_url: "http://mirror.mirantis.com/${_param:apt_mk_version}/"
+    linux_system_repo_url: "http://mirror.mirantis.com/${_param:mcp_version}/"
     # linux globals
     banner_company_name: COMPANY_NAME
     motd_company_name: "${_param:banner_company_name}"

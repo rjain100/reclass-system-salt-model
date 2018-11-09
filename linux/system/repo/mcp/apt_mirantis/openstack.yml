@@ -16,7 +16,7 @@ parameters:
 # DEPRECATED since 2018.10+ release.
 #parameters:
 #  _param:
-#    linux_system_repo_mk_openstack_version: ${_param:apt_mk_version}
+#    linux_system_repo_mk_openstack_version: ${_param:mcp_version}
 #  linux:
 #    system:
 #      repo:
