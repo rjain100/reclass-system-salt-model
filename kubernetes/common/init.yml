@@ -6,8 +6,6 @@ parameters:
     kubernetes_calico_birdcl_repo: ${_param:mcp_binary_registry}/mirantis/projectcalico/bird
     kubernetes_calico_cni_repo: ${_param:mcp_binary_registry}/mirantis/projectcalico/cni-plugin
     kubernetes_hyperkube_repo: ${_param:mcp_binary_registry}/mirantis/kubernetes/hyperkube-binaries
-    kubernetes_contrail_cni_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
-    kubernetes_contrail_network_controller_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes/contrail-integration
     kubernetes_contrail_registry: ${_param:mcp_docker_registry}/opencontrail-${_param:linux_repo_contrail_component}
     kubernetes_netchecker_agent_repo: mirantis
     kubernetes_netchecker_server_repo: mirantis
@@ -40,8 +38,6 @@ parameters:
     kubernetes_hyperkube_source: ${_param:kubernetes_hyperkube_repo}/hyperkube_v1.11.3-2_1536938897511
     kubernetes_hyperkube_source_hash: md5=159910d99c3ccf77d1e0f7b346edaf40
     kubernetes_pause_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/pause-amd64:v1.11.3-2
-    kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
-    kubernetes_contrail_network_controller_image: ${_param:kubernetes_contrail_network_controller_repo}/contrail-network-controller:v1.2.0
     kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.4.1
     kubernetes_criproxy_version: v0.12.0
     kubernetes_criproxy_checksum: md5=371cacd3d8568eb88425498b48a649dd
@@ -90,7 +86,6 @@ parameters:
     kubernetes_genie_enabled: false
     kubernetes_calico_enabled: false
     kubernetes_opencontrail_enabled: false
-    kubernetes_contrail_network_controller_enabled: false
     kubernetes_metallb_enabled: false
     kubernetes_sriov_enabled: false
     kubernetes_telegraf_enabled: false
@@ -167,9 +162,6 @@ parameters:
           image: ${_param:kubernetes_coredns_image}
           etcd:
             operator_image: ${_param:kubernetes_corends_etcd_operator_image}
-        contrail_network_controller:
-          enabled: ${_param:kubernetes_contrail_network_controller_enabled}
-          image: ${_param:kubernetes_contrail_network_controller_image}
         opencontrail:
           controller:
             image: ${_param:kubernetes_opencontrail_controller_image}
@@ -244,7 +236,6 @@ parameters:
           cni_image: ${_param:kubernetes_calico_cni_image}
         opencontrail:
           enabled: ${_param:kubernetes_opencontrail_enabled}
-          cni_image: ${_param:kubernetes_contrail_cni_image}
         sriov:
           enabled: ${_param:kubernetes_sriov_enabled}
           source: ${_param:kubernetes_sriov_source}

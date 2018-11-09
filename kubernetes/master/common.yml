@@ -29,7 +29,6 @@ parameters:
           cni_image: ${_param:kubernetes_calico_cni_image}
         opencontrail:
           enabled: ${_param:kubernetes_opencontrail_enabled}
-          cni_image: ${_param:kubernetes_contrail_cni_image}
         sriov:
           enabled: ${_param:kubernetes_sriov_enabled}
           source: ${_param:kubernetes_sriov_source}
