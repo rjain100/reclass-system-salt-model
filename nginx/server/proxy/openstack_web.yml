@@ -25,9 +25,9 @@ parameters:
             buffer:
               ${_param:nginx_proxy_openstack_web_buffer_size}
           host:
-            name: ${_param:nginx_proxy_openstack_web_host}
-            port: 443
-            protocol: https
+            name: ${_param:horizon_public_host}
+            port: ${_param:horizon_public_port}
+            protocol: ${_param:horizon_public_protocol}
           ssl: ${_param:nginx_proxy_ssl}
         nginx_ssl_redirect_openstack_web:
           enabled: true

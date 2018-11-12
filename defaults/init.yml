@@ -30,3 +30,5 @@ parameters:
     # Other
     salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     salt_control_trusty_image_backend: /var/lib/libvirt/images/backends/trusty.qcow2
+    # Make sure this global variable is defined everywhere, where used it is already set on cluster level
+    cluster_public_host: '127.0.0.1'

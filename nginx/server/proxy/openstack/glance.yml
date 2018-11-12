@@ -20,6 +20,8 @@ parameters:
             port: 9292
             protocol: ${_param:nginx_proxy_openstack_glance_protocol}
             size:  ${_param:nginx_proxy_openstack_glance_image_size}
+            # Prevent nginx from caching request body
+            request_buffer: false
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 9292
