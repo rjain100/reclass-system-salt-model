@@ -36,6 +36,8 @@ parameters:
           cert_file: ${_param:mysql_glance_client_ssl_cert_file}
         ssl:
           enabled: ${_param:galera_ssl_enabled}
+      cors:
+        allowed_origin: ${_param:glance_cors_allowed_origin}
       registry:
         host: ${_param:cluster_vip_address}
         port: 9191
