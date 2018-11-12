@@ -12,6 +12,7 @@ classes:
 - system.defaults.rabbitmq
 - system.defaults.debmirror
 - system.defaults.docker_images
+- system.defaults.gerrit
 parameters:
   _param:
     apt_mk_version: stable
