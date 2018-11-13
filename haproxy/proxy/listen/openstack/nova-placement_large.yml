@@ -5,17 +5,18 @@ parameters:
     proxy:
       listen:
         # Nova placement API returns 401 when doing GET to root URL, while
-        # other serivces normally returns 200 and API versions data.
+        # other services normally returns 200 and API versions data.
         nova_placement_api:
           mode: http
           service_name: nova_placement
           options:
             - httpclose
             - httplog
+            - httpchk GET /
           health-check:
             http:
               options:
-              - expect status 401
+              - expect rstatus (401|200)
           binds:
           - address: ${_param:cluster_vip_address}
             port: 8778
