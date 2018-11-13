@@ -21,3 +21,14 @@ parameters:
     # model-generator
     docker_image_operations_api: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-api:${_param:mcp_version}"
     docker_image_operations_ui: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-ui:${_param:mcp_version}"
+    # stacklight
+    docker_image_alerta: "${_param:mcp_docker_registry}/mirantis/external/alerta-web:${_param:mcp_version}"
+    docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:${_param:mcp_version}"
+    docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:${_param:mcp_version}"
+    docker_image_prometheus: "${_param:mcp_docker_registry}/openstack-docker/prometheus:${_param:mcp_version}"
+    docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/gainsight:${_param:mcp_version}"
+    docker_image_prometheus_relay: "${_param:mcp_docker_registry}/openstack-docker/prometheus_relay:${_param:mcp_version}"
+    docker_image_pushgateway: "${_param:mcp_docker_registry}/openstack-docker/pushgateway:${_param:mcp_version}"
+    docker_image_remote_agent: "${_param:mcp_docker_registry}/openstack-docker/telegraf:${_param:mcp_version}"
+    docker_image_remote_collector: "${_param:mcp_docker_registry}/openstack-docker/heka:${_param:mcp_version}"
+    docker_image_remote_storage_adapter: "${_param:mcp_docker_registry}/openstack-docker/remote_storage_adapter:${_param:mcp_version}"
