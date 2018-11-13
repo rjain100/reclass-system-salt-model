@@ -24,7 +24,6 @@ parameters:
     kubernetes_containerd_repo: https://github.com/kubernetes-sigs/cri-tools/releases/download
 
     # component images/binaries
-    kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
     kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v3.1.3
     kubernetes_calico_kube_controllers_image: ${_param:kubernetes_calico_kube_ctl_repo}/kube-controllers:v3.1.3
     kubernetes_calico_calicoctl_source: ${_param:kubernetes_calico_calicoctl_repo}/calicoctl-v3.1.3
@@ -68,6 +67,7 @@ parameters:
     kubernetes_hyperkube_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/hyperkube-amd64:v1.11.3-2
     kubernetes_calico_cni_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/cni:v3.1.3
     kubernetes_calico_calicoctl_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/ctl:v3.1.3
+    kubernetes_containerd_package: containerd.io=1.2.0-1
 
     kubernetes_opencontrail_controller_image: ${_param:kubernetes_contrail_registry}/opencontrail-controller:${_param:mcp_version}
     kubernetes_opencontrail_analyticsdb_image: ${_param:kubernetes_contrail_registry}/opencontrail-analyticsdb:${_param:mcp_version}
@@ -90,7 +90,7 @@ parameters:
     kubernetes_sriov_enabled: false
     kubernetes_telegraf_enabled: false
     kubernetes_ingressnginx_enabled: false
-    kubernetes_containerd_enabled: false
+    kubernetes_containerd_enabled: true
 
     kubernetes_ingressnginx_controller_replicas: 1
 
@@ -116,19 +116,12 @@ parameters:
       kernel:
         sysctl:
           net.ipv4.ip_forward: 1
-  docker:
-    host:
-      pkgs:
-        - ${_param:kubernetes_docker_package}
-        - python-docker
-      options:
-        bip: 172.31.255.1/24
-        storage-driver: overlay2
 
   kubernetes:
     common:
       containerd:
         enabled: ${_param:kubernetes_containerd_enabled}
+        package: ${_param:kubernetes_containerd_package}
         crictl:
           source: ${_param:kubernetes_containerd_source}
           hash: ${_param:kubernetes_containerd_source_hash}

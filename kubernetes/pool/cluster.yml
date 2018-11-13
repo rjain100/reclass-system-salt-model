@@ -1,6 +1,5 @@
 classes:
 - service.kubernetes.pool.cluster
-- service.docker.host
 - system.kubernetes.common
 parameters:
   kubernetes:
@@ -12,9 +11,3 @@ parameters:
             enabled: true
           policy:
             enabled: false
-  docker:
-    host:
-      options:
-        iptables: false
-        log-opts:
-          labels: "io.kubernetes.pod.name"
