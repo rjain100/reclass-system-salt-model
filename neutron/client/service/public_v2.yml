@@ -10,7 +10,7 @@ parameters:
               public:
                 shared: False
                 router_external: True
-                default: True
+                is_default: True
                 provider_network_type: flat
                 provider_physical_network: physnet1
                 subnet:

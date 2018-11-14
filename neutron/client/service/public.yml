@@ -11,7 +11,7 @@ parameters:
               tenant: admin
               shared: False
               router_external: True
-              default: True
+              is_default: True
               admin_state_up: True
               provider_network_type: flat
               provider_physical_network: physnet1
