@@ -17,11 +17,14 @@ parameters:
               keep_num: 10
           display_name: "Deploy - upgrade MCP Drivetrain"
           scm:
-            type: git
+            remote_name: origin
+            refspec: "$MK_PIPELINES_REFSPEC"
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
-            branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
             script: upgrade-mcp-release.groovy
+            type: git
+            credentials: "gerrit"
+            branch: FETCH_HEAD
+            wipe_workspace: True
           param:
             SALT_MASTER_URL:
               type: string
@@ -29,13 +32,18 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
+            MK_PIPELINES_REFSPEC:
+              type: string
+              default: ""
+              description: "Version of mk-pipelines git repo to be used. Must be same as TARGET_MCP_VERSION"
             TARGET_MCP_VERSION:
               type: string
               default: ""
+              description: "Target version of mcp, aka mcp_version"
             UPDATE_CLUSTER_MODEL:
               type: boolean
               default: 'true'
-              description: "Replace `mcp_version` parameter in cluster level Reclass model."
+              description: "Replace `mcp_version` parameter to TARGET_MCP_VERSION in cluster level Reclass model?"
             UPGRADE_SALTSTACK:
               type: boolean
               default: 'true'
@@ -52,3 +60,4 @@ parameters:
               type: string
               default: '12'
               description: "Sets pipeline timeout in hours. Defaults to '12' if left empty."
+
