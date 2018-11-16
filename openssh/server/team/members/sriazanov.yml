@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        sriazanov:
+          email: sriazanov@mirantis.com
+          enabled: true
+          full_name: Stanislav Riazanov
+          home: /home/sriazanov
+          name: sriazanov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        sriazanov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvy04JwBMD7XuPyBHrDPq/UO5ARuLRfLLO1ydruOC+HAcDQ0uDlefapFmiZ054SsL6HZlvgp0XTQc+PdT2a5cM4CouPg0wXM9rGD/GyyRtZ9FTiTryHgFWh8ko3i87smWGrVIhnzgOCxWhs6qbIYD6NxE6kVwMnNiP4Lbp8LA/mHXtHQBQ+5ECs2lFym2hYUopTPUSic0KdGYOc4llySWFKTkrojO0VbJ0KomC54qpcC7Ipc8hrH2KU2yt7OtVDbRNme8VKN1pgixs7iIla66YLS5fEHkZBgEK1/U7Vfat2aXhoU9xd1uUas0KCVujQTm4J1MuGv136LopORjQGXQJ
+          user: ${linux:system:user:sriazanov}
