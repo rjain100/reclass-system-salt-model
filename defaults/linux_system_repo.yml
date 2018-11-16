@@ -2,11 +2,11 @@ parameters:
   _param:
     # Global
     linux_repo_refresh_db: true
-    linux_system_repo_url: http://mirror.mirantis.com/${_param:apt_mk_version}/
+    linux_system_repo_url: http://mirror.mirantis.com/${_param:mcp_version}/
     # Global-updates
-    linux_system_repo_update_url: http://mirror.mirantis.com/update/${_param:apt_mk_version}/
+    linux_system_repo_update_url: http://mirror.mirantis.com/update/${_param:mcp_version}/
     # Global-hotfix
-    linux_system_repo_hotfix_url: http://mirror.mirantis.com/hotfix/${_param:apt_mk_version}/
+    linux_system_repo_hotfix_url: http://mirror.mirantis.com/hotfix/${_param:mcp_version}/
     # Per repos
     linux_system_repo_mcp_aptly_url: ${_param:linux_system_repo_url}/aptly/
     linux_system_repo_mcp_cassandra_url: ${_param:linux_system_repo_url}/cassandra/

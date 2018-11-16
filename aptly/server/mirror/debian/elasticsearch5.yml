@@ -20,8 +20,8 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - trusty/${_param:apt_mk_version}
-              - xenial/${_param:apt_mk_version}
+              - trusty/${_param:mcp_version}
+              - xenial/${_param:mcp_version}
         kibana-5x:
           source: ${_param:aptly_mirror_elasticsearch-5x_source}
           distribution: ${_param:aptly_mirror_elasticsearch-5x_distribution}
@@ -31,8 +31,8 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - trusty/${_param:apt_mk_version}
-              - xenial/${_param:apt_mk_version}
+              - trusty/${_param:mcp_version}
+              - xenial/${_param:mcp_version}
         elasticsearch-curator-5x:
           source: ${_param:aptly_mirror_elasticsearch-curator-5x_source}
           distribution: ${_param:aptly_mirror_elasticsearch-curator-5x_distribution}
@@ -42,5 +42,5 @@ parameters:
           publisher:
             component: elastic
             distributions:
-              - trusty/${_param:apt_mk_version}
-              - xenial/${_param:apt_mk_version}
+              - trusty/${_param:mcp_version}
+              - xenial/${_param:mcp_version}

@@ -17,5 +17,5 @@ parameters:
           publisher:
             component: sensu
             distributions:
-              - ubuntu-trusty/${_param:apt_mk_version}
-              - ubuntu-xenial/${_param:apt_mk_version}
+              - ubuntu-trusty/${_param:mcp_version}
+              - ubuntu-xenial/${_param:mcp_version}

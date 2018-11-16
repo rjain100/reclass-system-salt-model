@@ -1,6 +1,6 @@
 parameters:
   _param:
-    maas_region_boot_sources_maas_ephemeral_v3_bs_url: http://mirror.mirantis.com/${_param:apt_mk_version}/maas-ephemeral-v3/
+    maas_region_boot_sources_maas_ephemeral_v3_bs_url: http://mirror.mirantis.com/${_param:mcp_version}/maas-ephemeral-v3/
   maas:
     region:
       boot_sources_delete_all_others: true

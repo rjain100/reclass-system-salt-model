@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_cassandra_source: http://mirror.mirantis.com/${_param:apt_mk_version}/cassandra/xenial/
+    mirror_mirantis_openstack_xenial_cassandra_source: http://mirror.mirantis.com/${_param:mcp_version}/cassandra/xenial/
     mirror_mirantis_openstack_xenial_cassandra_distribution: 21x
     mirror_mirantis_openstack_xenial_cassandra_components: main
     mirror_mirantis_openstack_xenial_cassandra_gpgkeys:
@@ -20,4 +20,4 @@ parameters:
           publisher:
             component: 21x
             distributions:
-              - ubuntu-xenial/cassandra/${_param:apt_mk_version}
+              - ubuntu-xenial/cassandra/${_param:mcp_version}

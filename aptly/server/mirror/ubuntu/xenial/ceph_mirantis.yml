@@ -17,4 +17,4 @@ parameters:
           publisher:
             component: ceph-mirantis
             distributions:
-              - ubuntu-xenial/${_param:apt_mk_version}
+              - ubuntu-xenial/${_param:mcp_version}

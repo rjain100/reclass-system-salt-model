@@ -73,10 +73,10 @@ parameters:
     kubernetes_calico_cni_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/cni:v3.1.3
     kubernetes_calico_calicoctl_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/ctl:v3.1.3
 
-    kubernetes_opencontrail_controller_image: ${_param:kubernetes_contrail_registry}/opencontrail-controller:${_param:apt_mk_version}
-    kubernetes_opencontrail_analyticsdb_image: ${_param:kubernetes_contrail_registry}/opencontrail-analyticsdb:${_param:apt_mk_version}
-    kubernetes_opencontrail_analytics_image: ${_param:kubernetes_contrail_registry}/opencontrail-analytics:${_param:apt_mk_version}
-    kubernetes_opencontrail_kube_manager_image: ${_param:kubernetes_contrail_registry}/opencontrail-kube-manager:${_param:apt_mk_version}
+    kubernetes_opencontrail_controller_image: ${_param:kubernetes_contrail_registry}/opencontrail-controller:${_param:mcp_version}
+    kubernetes_opencontrail_analyticsdb_image: ${_param:kubernetes_contrail_registry}/opencontrail-analyticsdb:${_param:mcp_version}
+    kubernetes_opencontrail_analytics_image: ${_param:kubernetes_contrail_registry}/opencontrail-analytics:${_param:mcp_version}
+    kubernetes_opencontrail_kube_manager_image: ${_param:kubernetes_contrail_registry}/opencontrail-kube-manager:${_param:mcp_version}
 
     kubelet_fail_on_swap: true
     kubernetes_dashboard_enabled: true
