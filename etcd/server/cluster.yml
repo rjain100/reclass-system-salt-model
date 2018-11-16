@@ -4,10 +4,19 @@ classes:
 - service.etcd.linux
 parameters:
   _param:
-    docker_image_etcd: quay.io/coreos/etcd:v3.3.8
+    docker_image_etcd: quay.io/coreos/etcd:v3.3.10
+    kubernetes_etcd_repo: https://github.com/etcd-io/etcd/releases/download
+    kubernetes_etcd_source: ${_param:kubernetes_etcd_repo}/v3.3.10/etcd-v3.3.10-linux-amd64.tar.gz
+    kubernetes_etcd_source_hash: md5=dbbe0d021ba497bf9d9cc9963d0c7a4b
   etcd:
     server:
       enabled: true
       image: ${_param:docker_image_etcd}
+      source:
+        engine: archive
+      etcd_source: ${_param:kubernetes_etcd_source}
+      etcd_source_hash: ${_param:kubernetes_etcd_source_hash}
       bind:
         host: ${_param:cluster_local_address}
+      ssl:
+        enabled: true
