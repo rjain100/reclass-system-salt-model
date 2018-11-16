@@ -5,6 +5,8 @@ parameters:
     # General
     cluster_public_protocol: https
     cluster_internal_protocol: http
+    openstack_service_hostname: os-ctl-vip
+    openstack_service_host: ${_param:openstack_service_hostname}.${linux:system:domain}
     # SSL
     ceilometer_agent_ssl_enabled: False
     openstack_mysql_x509_enabled: False

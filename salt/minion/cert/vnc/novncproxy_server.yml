@@ -20,6 +20,7 @@ parameters:
             DNS:${linux:system:name},
             DNS:${_param:cluster_vip_address},
             DNS:${linux:network:fqdn}
+            DNS:${_param:openstack_service_host}
           key_usage: "digitalSignature,nonRepudiation,keyEncipherment"
           key_file: ${_param:novncproxy_server_ssl_key_file}
           cert_file: ${_param:novncproxy_server_ssl_cert_file}
