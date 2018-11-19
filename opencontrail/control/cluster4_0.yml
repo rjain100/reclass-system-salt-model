@@ -9,6 +9,10 @@ parameters:
     opencontrail_kafka_config_dir: '/usr/share/kafka/config'
     opencontrail_kafka_log_cleanup_mtime: '+7'
     opencontrail_kafka_log_dir: '/usr/share/kafka/logs'
+    opencontrail_host_analyticsdb_log_dir: '/var/log/analyticsdb'
+    opencontrail_host_configdb_log_dir: '/var/log/configdb'
+    opencontrail_cassandra_log_dir: '/var/log/cassandra'
+    opencontrail_zookeeper_log_dir: '/var/log/zookeeper'
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
     opencontrail_image_tag: latest
@@ -66,6 +70,8 @@ parameters:
         - host: ${_param:cluster_node02_address}
         - host: ${_param:cluster_node03_address}
     database:
+      analyticsdb_log_dir: ${_param:opencontrail_host_analyticsdb_log_dir}
+      configdb_log_dir: ${_param:opencontrail_host_configdb_log_dir}
       config_only: true
       discovery:
         host: None
@@ -155,6 +161,8 @@ parameters:
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
                 - /var/log/contrail:/var/log/contrail
                 - /var/log/journal/contrail-controller:/var/log/journal
+                - ${_param:opencontrail_host_configdb_log_dir}/cassandra:${_param:opencontrail_cassandra_log_dir}
+                - ${_param:opencontrail_host_configdb_log_dir}/zookeeper:${_param:opencontrail_zookeeper_log_dir}
               network_mode: "host"
               privileged: true
               restart: always
@@ -192,6 +200,8 @@ parameters:
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
                 - /var/log/contrail:/var/log/contrail
                 - /var/log/journal/contrail-analyticsdb:/var/log/journal
+                - ${_param:opencontrail_host_analyticsdb_log_dir}/cassandra:${_param:opencontrail_cassandra_log_dir}
+                - ${_param:opencontrail_host_analyticsdb_log_dir}/zookeeper:${_param:opencontrail_zookeeper_log_dir}
               network_mode: "host"
               privileged: true
               restart: always

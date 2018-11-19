@@ -8,6 +8,9 @@ parameters:
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
     opencontrail_image_tag: latest
+    opencontrail_host_configdb_log_dir: '/var/log/configdb'
+    opencontrail_cassandra_log_dir: '/var/log/cassandra'
+    opencontrail_zookeeper_log_dir: '/var/log/zookeeper'
     opencontrail_message_queue_node01_address: ${_param:openstack_message_queue_node01_address}
     opencontrail_message_queue_node02_address: ${_param:openstack_message_queue_node02_address}
     opencontrail_message_queue_node03_address: ${_param:openstack_message_queue_node03_address}
@@ -83,6 +86,7 @@ parameters:
         host: ${_param:openstack_control_address}
     database:
       config_only: true
+      configdb_log_dir: ${_param:opencontrail_host_configdb_log_dir}
       analytics:
         members:
         - host: ${_param:opencontrail_analytics_node01_address}
@@ -115,6 +119,8 @@ parameters:
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
                 - /var/log/contrail:/var/log/contrail
                 - /var/log/journal/contrail-controller:/var/log/journal
+                - ${_param:opencontrail_host_configdb_log_dir}/cassandra:${_param:opencontrail_cassandra_log_dir}
+                - ${_param:opencontrail_host_configdb_log_dir}/zookeeper:${_param:opencontrail_zookeeper_log_dir}
               network_mode: "host"
               privileged: true
               restart: always
