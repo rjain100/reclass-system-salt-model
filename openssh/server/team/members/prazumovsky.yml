@@ -15,5 +15,5 @@ parameters:
         prazumovsky:
           enabled: true
           public_keys:
-          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBySoU/ncTbwN25gxgaubgnB8+xF6mQpiz/tC+MDLitiEw/QHloz6ME5slTJseW2Uvk4jFZz5FNZ9k9/1j+pOtafV8GMHIUOhvX3RUZEiq7wXmcH1T1P4z74Y5anouc82crAWW3d0hQUEAEOx0G3ZGTDmkQTl16mgJvmejvXIN1ESTdEA9tctUogJoSdVu7OGcjGwkqWM9x4CTT7vvD51whHvFswaf6GIWZC3ia1xVTAMJ8W6Xppi5muTW+Uhr4wZm06zZCVHXN+5uYMxwufSoyXc5zwQ+DBPsGENdFvjdNQltlIf9fU3GHuH3d9wAhiPM5CetPcWcj6j2PwwMbx+R prazumovsky@Peters-MacBook-Pro.local
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9+aNOBVCv+g3wLijMgQPKQPAQaZ9UoHiR5WH7cdrC/WtbXMRemufx5TogwuNXJzsD6TG5Egq5gaWqiFHwGeLPwtM8Gce1ke6RxfVAby9H9JPB3QmIAtXw0B1grm8dxK98ST26M1pwrxmukf8Zik1jKLnef4LKG2Aj3RWzSPLz2FHqUKiAI0tx2o1hS46LPMbM81prnnzRvD+V85J0VW9YZ5kjGbQEdACWiyH2Jscp+b/86/CoQs9L81kHvJSONiV8K4EgNasKZiyfWbXD3Y/jmDtwvqBnXZb4Dk0tU6CnjoZZM5naqu4CrIRx+NocHEk1o/L6NC3qUUJngaYZVD53 prazumovsky@MacBook-Pro-prazumovsky.local
           user: ${linux:system:user:prazumovsky}
