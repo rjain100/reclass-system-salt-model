@@ -26,6 +26,8 @@ parameters:
       glance:
         host: ${_param:openstack_control_address}
         protocol: ${_param:cluster_internal_protocol}
+      barbican:
+        enabled: ${_param:barbican_integration_enabled}
       message_queue:
         port: ${_param:openstack_rabbitmq_port}
         members:

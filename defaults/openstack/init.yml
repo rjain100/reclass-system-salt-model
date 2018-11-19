@@ -1,5 +1,7 @@
 parameters:
   _param:
+    # Enable barbican integration in other services nova,glance,cinder
+    barbican_integration_enabled: False
     # SSL
     ceilometer_agent_ssl_enabled: False
     openstack_mysql_x509_enabled: False

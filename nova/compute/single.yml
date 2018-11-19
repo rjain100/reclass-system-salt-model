@@ -70,6 +70,8 @@ parameters:
         tenant: service
         protocol: ${_param:cluster_internal_protocol}
         region: ${_param:openstack_region}
+      barbican:
+        enabled: ${_param:barbican_integration_enabled}
       message_queue:
         engine: rabbitmq
         host: ${_param:control_address}
