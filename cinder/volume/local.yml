@@ -17,6 +17,8 @@ parameters:
           enabled: ${_param:galera_ssl_enabled}
       glance:
         host: ${_param:single_address}
+      barbican:
+        enabled: ${_param:barbican_integration_enabled}
       message_queue:
         port: ${_param:openstack_rabbitmq_port}
         host: ${_param:single_address}
