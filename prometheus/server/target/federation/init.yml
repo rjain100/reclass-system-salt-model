@@ -3,10 +3,6 @@ parameters:
     server:
       target:
         static:
-          prometheus:
-            endpoint:
-             - address: 127.0.0.1
-               port: ${prometheus:server:bind:port}
           prometheus_federation:
             honor_labels: true
             metrics_path: '/federate'
