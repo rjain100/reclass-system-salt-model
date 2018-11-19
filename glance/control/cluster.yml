@@ -54,6 +54,8 @@ parameters:
         region: ${_param:openstack_region}
         tenant: service
         protocol: ${_param:cluster_internal_protocol}
+      barbican:
+        enabled: ${_param:barbican_integration_enabled}
       message_queue:
         engine: rabbitmq
         port: ${_param:openstack_rabbitmq_port}

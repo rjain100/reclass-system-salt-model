@@ -55,6 +55,8 @@ parameters:
         host: ${_param:cluster_vip_address}
         port: 9292
         protocol: ${_param:cluster_internal_protocol}
+      barbican:
+        enabled: ${_param:barbican_integration_enabled}
       message_queue:
         port: ${_param:openstack_rabbitmq_port}
         engine: rabbitmq

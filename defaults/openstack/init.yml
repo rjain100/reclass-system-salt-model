@@ -1,5 +1,7 @@
 parameters:
   _param:
+    # Enable barbican integration in other services nova,glance,cinder
+    barbican_integration_enabled: False
     # General
     cluster_public_protocol: https
     cluster_internal_protocol: http
