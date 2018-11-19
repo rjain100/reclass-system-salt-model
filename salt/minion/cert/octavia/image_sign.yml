@@ -1,0 +1,17 @@
+classes:
+- system.salt.minion.cert.octavia
+parameters:
+  _param:
+    octavia_image_cert_key: /etc/octavia/certs/image.key
+    octavia_image_cert_file: /etc/octavia/certs/image.crt
+  salt:
+    minion:
+      cert:
+        octavia:
+          host: ${_param:octavia_ca_host}
+          authority: octavia_ca
+          common_name: octavia
+          signing_policy: cert_server
+          key_usage: "digitalSignature,nonRepudiation,keyEncipherment"
+          key_file:  ${_param:octavia_image_cert_key}
+          cert_file: ${_param:octavia_image_cert_file}

@@ -1,0 +1,5 @@
+barbican:
+  client:
+    resources:
+      v1:
+        enabled: true
