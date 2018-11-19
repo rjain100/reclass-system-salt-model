@@ -18,4 +18,5 @@ parameters:
           rgw_dns_name : ${_param:cluster_domain}
           rgw_print_continue: True
           rgw_content_length_compat: true
+          rgw_swift_enforce_content_length: true
           user: www-data
