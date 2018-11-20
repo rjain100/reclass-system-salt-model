@@ -10,8 +10,12 @@ parameters:
       enabled: true
       role: master
       region:
-        host: ${_param:single_address}
-        port: 5242
+        host: ${_param:single_address}:5242
+      curtin_vars:
+        amd64:
+          xenial:
+            extra_pkgs: [ "linux-headers-virtual-hwe-16.04", "linux-image-extra-virtual-hwe-16.04" ]
+            kernel_package: 'linux-image-virtual-hwe-16.04'
     region:
       salt_master_ip: ${_param:infra_config_deploy_address}
       theme: mirantis
