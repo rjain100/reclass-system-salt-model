@@ -1,0 +1,3 @@
+parameters:
+  _param:
+    keepalived_openstack_web_vrrp_script_check_pidof_args: "nginx"

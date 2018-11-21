@@ -11,7 +11,7 @@ parameters:
     cluster:
       vrrp_scripts:
         check_pidof:
-          args: "nginx"
+          args: ${_param:keepalived_openstack_web_vrrp_script_check_pidof_args}
           interval: 10
           rise: 1
           fall: 1
