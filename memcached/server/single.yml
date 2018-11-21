@@ -4,6 +4,7 @@ parameters:
   memcached:
     server:
       bind:
+        address: ${_param:openstack_memcached_server_bind_address}
         proto:
           tcp:
             enabled: ${_param:openstack_memcached_proto_tcp_enabled}
