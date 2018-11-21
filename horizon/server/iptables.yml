@@ -6,24 +6,13 @@ parameters:
           chains:
             OUTPUT:
               ruleset:
-                10:
+                100:
+                  action: NAME_RESOLUTION
+                1000:
                   rule: -m owner --uid-owner horizon
                   action: HORIZON_ACCESS_RULES
             HORIZON_ACCESS_RULES:
               ruleset:
-                10:
-                  rule: -o lo
-                  action: ACCEPT
-# Slots 11-99 are reserved for the traffic that can be accepted based on its
-# destination, e.g targeted to / via public interface "outside"
-#
-# Slots 100-999 are reserved for the traffic that should be filtered
-# depending on its target port - this is all traffic that goes through internal
-# interfaces. At least you should override 'rule' for slot 100 to specify
-# internal interface on which the traffic should be filtered.
-#
-# These rules should be added / altered somewhere else where it is known what
-# interfaces are public / private.
                 100:
                   # Allow publicURL endpoint(s)
                   rule: -p tcp --dst ${_param:cluster_public_host}
@@ -32,10 +21,37 @@ parameters:
                   # Allow internalURL endpoint(s)
                   rule: -p tcp --dst ${_param:openstack_control_address}
                   action: HORIZON_OPENSTACK_ENDPOINTS
-                120:
+                200:
+                  # Allow memcached on localhost
+                  rule: -o lo
                   action: HORIZON_MEMCACHED_ENDPOINTS
-                1000:
+                201:
+                  # Allow memchached on other hosts
+                  # This rule should be altered (not here) if required to allow
+                  # only specific hosts.
+                  action: HORIZON_MEMCACHED_ENDPOINTS
+                500:
+                  # Disable any other local traffic
+                  rule: -o lo
                   action: REJECT
+                501:
+                  # 501-503 disable private networks
+                  rule: --dst 10.0.0.0/16
+                  action: REJECT
+                502:
+                  rule: --dst 172.16.0.0/12
+                  action: REJECT
+                503:
+                  rule: --dst 192.168.0.0/16
+                  action: REJECT
+                504:
+                  # Disable APIPA
+                  rule: --dst 169.254.0.0/16
+                  action: REJECT
+                1000:
+                  # Accept any other traffic
+                  # It should be external traffic only
+                  action: ACCEPT
             HORIZON_OPENSTACK_ENDPOINTS:
               ruleset:
                 10:
@@ -66,6 +82,13 @@ parameters:
               ruleset:
                 10:
                   rule: -p tcp --dport 11211
+                  action: ACCEPT
+                1000:
+                  action: RETURN
+            NAME_RESOLUTION:
+              ruleset:
+                10:
+                  rule: -p udp --dport 53
                   action: ACCEPT
                 1000:
                   action: RETURN
