@@ -1,0 +1,71 @@
+parameters:
+  iptables:
+    tables:
+      v4:
+        filter:
+          chains:
+            OUTPUT:
+              ruleset:
+                10:
+                  rule: -m owner --uid-owner horizon
+                  action: HORIZON_ACCESS_RULES
+            HORIZON_ACCESS_RULES:
+              ruleset:
+                10:
+                  rule: -o lo
+                  action: ACCEPT
+# Slots 11-99 are reserved for the traffic that can be accepted based on its
+# destination, e.g targeted to / via public interface "outside"
+#
+# Slots 100-999 are reserved for the traffic that should be filtered
+# depending on its target port - this is all traffic that goes through internal
+# interfaces. At least you should override 'rule' for slot 100 to specify
+# internal interface on which the traffic should be filtered.
+#
+# These rules should be added / altered somewhere else where it is known what
+# interfaces are public / private.
+                100:
+                  # Allow publicURL endpoint(s)
+                  rule: -p tcp --dst ${_param:cluster_public_host}
+                  action: HORIZON_OPENSTACK_ENDPOINTS
+                101:
+                  # Allow internalURL endpoint(s)
+                  rule: -p tcp --dst ${_param:openstack_control_address}
+                  action: HORIZON_OPENSTACK_ENDPOINTS
+                120:
+                  action: HORIZON_MEMCACHED_ENDPOINTS
+                1000:
+                  action: REJECT
+            HORIZON_OPENSTACK_ENDPOINTS:
+              ruleset:
+                10:
+                  # Identity service (keystone) public endpoint
+                  rule: -p tcp --dport 5000
+                  action: ACCEPT
+                20:
+                  # Orchestration (heat) endpoint
+                  rule: -p tcp --dport 8004
+                  action: ACCEPT
+                30:
+                  # Compute (nova) endpoint
+                  rule: -p tcp --dport 8774
+                  action: ACCEPT
+                40:
+                  # Block Storage (cinder) endpoint
+                  rule: -p tcp --dport 8776
+                  action: ACCEPT
+                50:
+                  # Image service (glance) endpoint
+                  rule: -p tcp --dport 9292
+                  action: ACCEPT
+                60:
+                  # Networking (neutron) endpoint
+                  rule: -p tcp --dport 9696
+                  action: ACCEPT
+            HORIZON_MEMCACHED_ENDPOINTS:
+              ruleset:
+                10:
+                  rule: -p tcp --dport 11211
+                  action: ACCEPT
+                1000:
+                  action: RETURN
