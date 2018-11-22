@@ -17,7 +17,9 @@ parameters:
     docker_image_gerrit: "${_param:mcp_docker_registry}/mirantis/cicd/gerrit:${_param:mcp_version}"
     # mysql:5.6
     docker_image_mysql: "${_param:mcp_docker_registry}/mirantis/cicd/mysql:${_param:mcp_version}"
-    docker_image_jenkins_slave: ${_param:mcp_docker_registry}/mirantis/cicd/jnlp-slave:${_param:mcp_version}
+    # jenkins:2.121.3
+    docker_image_jenkins: "${_param:mcp_docker_registry}/mirantis/cicd/jenkins:${_param:mcp_version}"
+    docker_image_jenkins_slave: "${_param:mcp_docker_registry}/mirantis/cicd/jnlp-slave:${_param:mcp_version}"
     # model-generator
     docker_image_operations_api: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-api:${_param:mcp_version}"
     docker_image_operations_ui: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-ui:${_param:mcp_version}"
