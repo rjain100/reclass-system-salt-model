@@ -13,6 +13,7 @@ classes:
 - system.defaults.debmirror
 - system.defaults.docker_images
 - system.defaults.gerrit
+- system.defaults.keepalived
 parameters:
   _param:
     mcp_version: stable
