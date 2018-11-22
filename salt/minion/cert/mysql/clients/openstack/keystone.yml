@@ -1,6 +1,5 @@
 parameters:
   _param:
-    salt_minion_ca_host: cfg01.${_param:cluster_domain}
     salt_minion_ca_authority: salt_master_ca
     mysql_keystone_client_ssl_key_file: /etc/keystone/ssl/mysql/client-key.pem
     mysql_keystone_client_ssl_cert_file: /etc/keystone/ssl/mysql/client-cert.pem

@@ -3,7 +3,6 @@ parameters:
     qemu_vnc_server_ssl_key_file: /etc/pki/libvirt-vnc/server-key.pem
     qemu_vnc_server_ssl_cert_file: /etc/pki/libvirt-vnc/server-cert.pem
     qemu_vnc_ssl_ca_file: /etc/pki/libvirt-vnc/ca-cert.pem
-    salt_minion_ca_host: cfg01.${_param:cluster_domain}
     qemu_vnc_ca_authority: qemu_vnc_ca
   salt:
     minion:

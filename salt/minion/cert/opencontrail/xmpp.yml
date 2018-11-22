@@ -1,7 +1,6 @@
 parameters:
   _param:
     salt_minion_ca_authority: salt_master_ca
-    salt_minion_ca_host: cfg01.${_param:cluster_domain}
   salt:
     minion:
       cert:
