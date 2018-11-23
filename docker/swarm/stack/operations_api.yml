@@ -1,8 +1,6 @@
 parameters:
   _param:
     docker_operations_api_replicas: 1
-    # FIXME: move cockroach image to defaults once it is uploaded to artifactory with proper tag
-    docker_image_cockroachdb: cockroachdb/cockroach:latest
     operations_api_sqlalchemy_database_uri: "cockroachdb://oapi@cockroach-ui:26257/oapi"
     operations_api_sqlalchemy_echo: "false"
     operations_api_flask_debug: "false"
