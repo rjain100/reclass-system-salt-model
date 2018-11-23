@@ -36,3 +36,6 @@ parameters:
     docker_image_remote_storage_adapter: "${_param:mcp_docker_registry}/openstack-docker/remote_storage_adapter:${_param:mcp_version}"
     ##
     docker_image_cockroachdb: "${_param:mcp_docker_registry}/mirantis/external/cockroach:v2.1.1"
+    # keycloak
+    docker_image_keycloak_server: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:4.5.0.Final"
+    docker_image_keycloak_proxy: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:3.4.2.Final"

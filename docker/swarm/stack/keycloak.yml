@@ -2,8 +2,6 @@ parameters:
   _param:
     docker_keycloak_server_replicas: 1
     docker_keycloak_proxy_replicas: 1
-    docker_image_keycloak_server: jboss/keycloak:4.5.0.Final
-    docker_image_keycloak_proxy: jboss/keycloak-proxy:3.4.2.Final
     keycloak_bind_port: ${_param:haproxy_keycloak_bind_port}
     keycloak_proxy_bind_port: ${_param:haproxy_keycloak_proxy_bind_port}
     # Initial admin support
