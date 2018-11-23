@@ -14,7 +14,6 @@ parameters:
     gainsight_config_directory: '/srv/gainsight'
     gainsight_crontab_directory: '/etc/cron.d'
     gainsight_config_path: "${_param:gainsight_config_directory}/config.ini"
-    docker_image_prometheus_gainsight: '${_param:mcp_docker_registry}/openstack-docker/gainsight:nightly'
   docker:
     client:
       stack:
