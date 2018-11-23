@@ -116,6 +116,11 @@ parameters:
     kubernetes_telegraf_agent_quiet: false
     kubernetes_telegraf_agent_omit_hostname: false
 
+  linux:
+    system:
+      kernel:
+        sysctl:
+          net.ipv4.ip_forward: 1
   docker:
     host:
       pkgs:
