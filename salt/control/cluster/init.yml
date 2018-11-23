@@ -1,6 +1,7 @@
 parameters:
   _param:
     salt_control_cluster_rng_backend: "/dev/random"
+    salt_control_cluster_vcp_lvm_device: '/dev/vda3'
   salt:
     control:
       cluster:
@@ -13,3 +14,15 @@ parameters:
               salt_minion:
                 conf:
                   master: ${_param:infra_config_deploy_address}
+              # This part is needed to grow disk for LVM based VCP
+              # NOTE: device name here is dependent on Disk model we connecting
+              # to particular VCP. By default it is virtio.
+              growpart:
+                mode: auto
+                devices:
+                - '/'
+                - ${_param:salt_control_cluster_vcp_lvm_device}
+                ignore_growroot_disabled: false
+              runcmd:
+                - 'if lvs vg0; then pvresize ${_param:salt_control_cluster_vcp_lvm_device}; fi'
+                - 'if lvs vg0; then /usr/bin/growlvm.py --image-layout-file /usr/share/growlvm/image-layout.yml; fi'
