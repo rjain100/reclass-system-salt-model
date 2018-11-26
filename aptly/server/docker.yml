@@ -8,8 +8,6 @@ parameters:
     aptly_gpg_private_key: none
     aptly_server_mirror_sources: false
     aptly_server_mirror_ubuntu_sources: ${_param:aptly_server_mirror_sources}
-    docker_image_aptly:
-      base: mirantis/aptly
   aptly:
     server:
       enabled: true

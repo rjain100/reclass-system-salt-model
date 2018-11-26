@@ -6,4 +6,4 @@ parameters:
       enabled: true
       source:
         engine: docker
-        image: mirantis/aptly-publisher
+        image: ${_param:docker_image_aptly:publisher}

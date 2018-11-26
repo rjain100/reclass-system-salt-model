@@ -39,3 +39,9 @@ parameters:
     # keycloak
     docker_image_keycloak_server: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:4.5.0.Final"
     docker_image_keycloak_proxy: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:3.4.2.Final"
+    # aptly
+    docker_image_aptly:
+      base: "${_param:mcp_docker_registry}/mirantis/cicd/aptly:${_param:mcp_version}"
+      api: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-api:${_param:mcp_version}"
+      public: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-public:${_param:mcp_version}"
+      publisher: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-publisher:${_param:mcp_version}"
