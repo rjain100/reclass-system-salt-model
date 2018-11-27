@@ -16,7 +16,8 @@ parameters:
               deploy:
                 restart_policy:
                   condition: any
-              image: ${_param:docker_image_aptly:api}
+              image: ${_param:docker_image_aptly:base}
+              command: 'aptly api serve -no-lock'
               ports:
                 - 18084:8080
               volumes:
