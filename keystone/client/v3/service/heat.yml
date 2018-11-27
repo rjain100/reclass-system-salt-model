@@ -5,6 +5,9 @@ parameters:
     client:
       resources:
         v3:
+          domains:
+            heat_user_domain:
+              description: 'Contains users and projects created by heat'
           roles:
             heat_stack_user:
               name: heat_stack_user
@@ -20,6 +23,14 @@ parameters:
                 service_admin:
                   name: admin
                   project_id: service
+            heat_domain_admin:
+              password: ${_param:heat_domain_admin_password}
+              email: ${_param:admin_email}
+              roles:
+                heat_stack_admin:
+                  name: admin
+                  role_domain_id: heat_user_domain
+                  domain_id: heat_user_domain
           services:
             heat:
               type: orchestration
