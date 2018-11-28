@@ -1,0 +1,19 @@
+classes:
+- service.octavia.manager.cluster
+
+parameters:
+  octavia:
+    manager:
+      enabled: true
+      version: ${_param:octavia_version}
+      ssh:
+        private_key: ${_param:octavia_private_key}
+        user: octavia
+        group: octavia
+      database:
+        host: ${_param:openstack_database_address}
+      identity:
+        region: ${_param:openstack_region}
+        protocol: ${_param:cluster_internal_protocol}
+      message_queue:
+        host: ${_param:openstack_message_queue_address}

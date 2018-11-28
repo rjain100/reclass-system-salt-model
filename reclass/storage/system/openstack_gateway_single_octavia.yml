@@ -5,3 +5,6 @@ parameters:
         openstack_gateway_node01:
           classes:
           - cluster.${_param:cluster_name}.openstack.octavia_manager
+          params:
+            octavia_hm_bind_ip: ${_param:octavia_health_manager_node01_address}
+
