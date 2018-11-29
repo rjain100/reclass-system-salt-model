@@ -12,3 +12,4 @@ parameters:
           ram: ${_param:salt_control_size_ram_cicd_control}
           disk_profile: ${_param:salt_control_size_disk_profile_cicd_control}
           net_profile: ${_param:salt_control_size_net_profile_cicd_control}
+          image_layout: ${_param:salt_control_size_image_layout_cicd_control}

@@ -1,6 +1,13 @@
 parameters:
   _param:
     infra_proxy_backend_image: ${_param:salt_control_trusty_image_backend}
+    salt_control_cluster_node_cloud_init_infra_proxy:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:infra.proxy:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       size:
@@ -9,6 +16,7 @@ parameters:
           ram: 65536
           disk_profile: small
           net_profile: default
+          image_layout: ${_param:salt_control_size_image_layout_infra_proxy}
       cluster:
         internal:
           domain: ${_param:cluster_domain}
@@ -20,9 +28,11 @@ parameters:
               image: ${_param:salt_control_trusty_image}
               backend: ${_param:infra_proxy_backend_image}
               size: infra.proxy
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_proxy}
             prx02:
               name: ${_param:openstack_proxy_node01_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_trusty_image}
               backend: ${_param:infra_proxy_backend_image}
               size: infra.proxy
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_proxy}

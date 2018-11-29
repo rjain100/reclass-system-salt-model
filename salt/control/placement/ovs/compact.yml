@@ -7,6 +7,13 @@ parameters:
     openstack_gateway_node02_hostname: gtw02
     openstack_gateway_node03_hostname: gtw03
     openstack_gateway_backend_image: ${_param:salt_control_xenial_image_backend}
+    salt_control_cluster_node_cloud_init_openstack_gateway:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:openstack.gateway:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       cluster:
@@ -18,15 +25,18 @@ parameters:
               backend: ${_param:openstack_gateway_backend_image}
               provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
               size: openstack.gateway
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_gateway}
             gtw02:
               name: ${_param:openstack_gateway_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_gateway_backend_image}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               size: openstack.gateway
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_gateway}
             gtw03:
               name: ${_param:openstack_gateway_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_gateway_backend_image}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               size: openstack.gateway
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_gateway}

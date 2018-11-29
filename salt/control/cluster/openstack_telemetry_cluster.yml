@@ -1,6 +1,13 @@
 parameters:
   _param:
     openstack_telemetry_backend_image: ${_param:salt_control_trusty_image_backend}
+    salt_control_cluster_node_cloud_init_openstack_share:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:openstack.share:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       size:
@@ -9,6 +16,7 @@ parameters:
           ram: 8192
           disk_profile: large
           net_profile: default
+          image_layout: ${_param:salt_control_size_image_layout_openstack_telemetry}
       cluster:
         internal:
           domain: ${_param:cluster_domain}
@@ -20,15 +28,18 @@ parameters:
               image: ${_param:salt_control_trusty_image}
               backend: ${_param:openstack_telemetry_backend_image}
               size: openstack.telemetry
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_telemetry}
             mdb02:
               name: ${_param:openstack_telemetry_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_trusty_image}
               backend: ${_param:openstack_telemetry_backend_image}
               size: openstack.telemetry
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_telemetry}
             mdb03:
               name: ${_param:openstack_telemetry_node03_hostname}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_trusty_image}
               backend: ${_param:openstack_telemetry_backend_image}
               size: openstack.telemetry
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_telemetry}

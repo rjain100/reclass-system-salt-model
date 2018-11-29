@@ -20,13 +20,16 @@ parameters:
           ram: ${_param:salt_control_size_ram_stacklight_log}
           disk_profile: ${_param:salt_control_size_disk_profile_stacklight_log}
           net_profile: ${_param:salt_control_size_net_profile_stacklight_log}
+          image_layout: ${_param:salt_control_size_image_layout_stacklight_log}
         stacklight.server:
           cpu: ${_param:salt_control_size_cpu_stacklight_server}
           ram: ${_param:salt_control_size_ram_stacklight_server}
           disk_profile: ${_param:salt_control_size_disk_profile_stacklight_server}
           net_profile: ${_param:salt_control_size_net_profile_stacklight_server}
+          image_layout: ${_param:salt_control_size_image_layout_stacklight_server}
         stacklight.telemetry:
           cpu: ${_param:salt_control_size_cpu_stacklight_telemetry}
           ram: ${_param:salt_control_size_ram_stacklight_telemetry}
           disk_profile: ${_param:salt_control_size_disk_profile_stacklight_telemetry}
           net_profile: ${_param:salt_control_size_net_profile_stacklight_telemetry}
+          image_layout: ${_param:salt_control_size_image_layout_stacklight_telemetry}

@@ -1,6 +1,13 @@
 parameters:
   _param:
     ceph_rgw_backend_image: ${_param:salt_control_xenial_image_backend}
+    salt_control_cluster_node_cloud_init_ceph_rgw:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:ceph.rgw:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       size:
@@ -9,6 +16,7 @@ parameters:
           ram: 32768
           disk_profile: small
           net_profile: default
+          image_layout: ${_param:salt_control_size_image_layout_ceph_rgw}
       cluster:
         internal:
           domain: ${_param:cluster_domain}
@@ -20,15 +28,18 @@ parameters:
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:ceph_rgw_backend_image}
               size: ceph.rgw
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_ceph_rgw}
             rgw02:
               name: ${_param:ceph_rgw_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:ceph_rgw_backend_image}
               size: ceph.rgw
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_ceph_rgw}
             rgw03:
               name: ${_param:ceph_rgw_node03_hostname}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:ceph_rgw_backend_image}
               size: ceph.rgw
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_ceph_rgw}
