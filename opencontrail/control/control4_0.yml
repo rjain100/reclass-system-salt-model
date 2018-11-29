@@ -1,8 +1,8 @@
 classes:
 - service.docker.host
-- service.keepalived.cluster.single
 - service.opencontrail.control.control
 - system.haproxy.proxy.listen.opencontrail.control4_0
+- system.keepalived.cluster.instance.opencontrail_vip
 parameters:
   _param:
     opencontrail_version: 4.0
