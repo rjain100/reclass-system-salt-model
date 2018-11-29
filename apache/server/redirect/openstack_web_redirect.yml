@@ -15,4 +15,4 @@ parameters:
             port: 80
           redirect_mode: rewrite
           target_url: 'https://%{SERVER_NAME}'
-          listen_address: '0.0.0.0'
+          listen_address: ${_param:apache_horizon_listen_address}
