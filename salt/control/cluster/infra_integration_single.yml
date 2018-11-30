@@ -1,6 +1,13 @@
 parameters:
   _param:
     infra_integration_backend_image: ${_param:salt_control_xenial_image_backend}
+    salt_control_cluster_node_cloud_init_infra_integration:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:infra.intergration:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       size:
@@ -9,6 +16,7 @@ parameters:
           ram: 8192
           disk_profile: small
           net_profile: default
+          image_layout: ${_param:salt_control_size_image_layout_infra_integration}
       cluster:
         internal:
           domain: ${_param:cluster_domain}
@@ -20,3 +28,4 @@ parameters:
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:infra_integration_backend_image}
               size: infra.integration
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_integration}

@@ -1,6 +1,13 @@
 parameters:
   _param:
     openstack_billing_backend_image: ${_param:salt_control_trusty_image_backend}
+    salt_control_cluster_node_cloud_init_openstack_billing:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:openstack.billing:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       size:
@@ -9,6 +16,7 @@ parameters:
           ram: 8192
           disk_profile: large
           net_profile: default
+          image_layout: ${_param:salt_control_size_image_layout_openstack_billing}
       cluster:
         internal:
           domain: ${_param:cluster_domain}
@@ -18,4 +26,5 @@ parameters:
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               image: ${_param:salt_control_trusty_image}
               backend: ${_param:openstack_billing_backend_image}
-              size: openstack.control
+              size: openstack.billing
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_billing}

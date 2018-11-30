@@ -1,6 +1,13 @@
 parameters:
   _param:
     openstack_proxy_backend_image: ${_param:salt_control_trusty_image_backend}
+    salt_control_cluster_node_cloud_init_openstack_proxy:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:openstack.proxy:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       size:
@@ -9,6 +16,7 @@ parameters:
           ram: 65536
           disk_profile: small
           net_profile: default
+          image_layout: ${_param:salt_control_size_image_layout_openstack_proxy}
       cluster:
         internal:
           domain: ${_param:cluster_domain}
@@ -20,3 +28,4 @@ parameters:
               image: ${_param:salt_control_trusty_image}
               backend: ${_param:openstack_proxy_backend_image}
               size: openstack.proxy
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_proxy}

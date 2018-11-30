@@ -12,3 +12,4 @@ parameters:
           ram: ${_param:salt_control_size_ram_openstack_gateway}
           disk_profile: ${_param:salt_control_size_disk_profile_openstack_gateway}
           net_profile: ${_param:salt_control_size_net_profile_openstack_gateway}
+          image_layout: ${_param:salt_control_size_image_layout_openstack_gateway}

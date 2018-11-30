@@ -16,8 +16,10 @@ parameters:
           ram: ${_param:salt_control_size_ram_opencontrail_control}
           disk_profile: ${_param:salt_control_size_disk_profile_opencontrail_control}
           net_profile: ${_param:salt_control_size_net_profile_opencontrail_control}
+          image_layout: ${_param:salt_control_size_image_layout_opencontrail_control}
         opencontrail.analytics:
           cpu: ${_param:salt_control_size_cpu_opencontrail_analytics}
           ram: ${_param:salt_control_size_ram_opencontrail_analytics}
           disk_profile: ${_param:salt_control_size_disk_profile_opencontrail_analytics}
           net_profile: ${_param:salt_control_size_net_profile_opencontrail_analytics}
+          image_layout: ${_param:salt_control_size_image_layout_opencontrail_analytics}

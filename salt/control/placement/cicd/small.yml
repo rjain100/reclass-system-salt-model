@@ -7,6 +7,13 @@ parameters:
     cicd_control_node02_hostname: cid02
     cicd_control_node03_hostname: cid03
     cicd_control_backend_image: ${_param:salt_control_xenial_image_backend}
+    salt_control_cluster_node_cloud_init_cicd_control:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:cicd.control:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       cluster:
@@ -18,15 +25,18 @@ parameters:
               backend: ${_param:cicd_control_backend_image}
               provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
               size: cicd.control
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_cicd_control}
             cid02:
               name: ${_param:cicd_control_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:cicd_control_backend_image}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               size: cicd.control
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_cicd_control}
             cid03:
               name: ${_param:cicd_control_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:cicd_control_backend_image}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               size: cicd.control
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_cicd_control}
