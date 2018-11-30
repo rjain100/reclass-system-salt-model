@@ -1,5 +1,6 @@
 classes:
 - service.gnocchi.common.single
+- system.gnocchi.upgrade
 - system.salt.minion.cert.mysql.clients.openstack.gnocchi
 parameters:
   gnocchi:

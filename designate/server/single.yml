@@ -1,5 +1,6 @@
 classes:
 - service.designate.server.single
+- system.designate.upgrade
 - system.salt.minion.cert.mysql.clients.openstack.designate
 - system.salt.minion.cert.rabbitmq.clients.openstack.designate
 parameters:

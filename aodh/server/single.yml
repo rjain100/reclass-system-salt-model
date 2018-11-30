@@ -1,5 +1,6 @@
 classes:
 - service.aodh.server.single
+- system.aodh.upgrade
 - system.salt.minion.cert.mysql.clients.openstack.aodh
 - system.salt.minion.cert.rabbitmq.clients.openstack.aodh
 parameters:

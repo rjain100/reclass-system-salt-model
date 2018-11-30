@@ -1,5 +1,6 @@
 classes:
 - service.manila.common.cluster
+- system.manila.upgrade
 - system.salt.minion.cert.mysql.clients.openstack.manila
 - system.salt.minion.cert.rabbitmq.clients.openstack.manila
 parameters:
@@ -7,7 +8,7 @@ parameters:
     manila_cluster_vip_address: ${_param:cluster_vip_address}
   manila:
     common:
-      version: ${_param:openstack_version}
+      version: ${_param:manila_version}
       message_queue:
         engine: rabbitmq
         port: ${_param:openstack_rabbitmq_port}

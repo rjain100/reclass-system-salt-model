@@ -1,5 +1,6 @@
 classes:
 - service.glance.control.single
+- system.glance.upgrade
 - system.salt.minion.cert.mysql.clients.openstack.glance
 - system.salt.minion.cert.rabbitmq.clients.openstack.glance
 parameters:

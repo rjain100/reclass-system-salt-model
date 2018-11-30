@@ -1,6 +1,7 @@
 classes:
 - service.keepalived.cluster.single
 - service.horizon.server.cluster
+- system.horizon.upgrade
 - system.horizon.server.iptables
 - service.haproxy.proxy.single
 - system.apache.server.single

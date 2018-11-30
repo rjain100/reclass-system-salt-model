@@ -1,3 +1,5 @@
+classes:
+- system.heat.upgrade
 parameters:
   _param:
     heat_data_revision: master

@@ -2,6 +2,7 @@ classes:
 - service.keepalived.cluster.single
 - service.haproxy.proxy.single
 - service.neutron.control.cluster
+- system.neutron.upgrade
 - system.haproxy.proxy.listen.openstack.neutron
 - system.salt.minion.cert.mysql.clients.openstack.neutron
 - system.salt.minion.cert.rabbitmq.clients.openstack.neutron

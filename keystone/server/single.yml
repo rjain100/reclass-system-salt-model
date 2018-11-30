@@ -1,5 +1,6 @@
 classes:
 - service.keystone.server.single
+- system.keystone.upgrade
 - system.linux.system.users.keystone
 - system.keystone.server.fernet_rotation.single
 - system.salt.minion.cert.mysql.clients.openstack.keystone

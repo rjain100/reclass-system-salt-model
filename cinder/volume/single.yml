@@ -1,5 +1,6 @@
 classes:
 - service.cinder.volume.single
+- system.cinder.upgrade
 - system.salt.minion.cert.mysql.clients.openstack.cinder
 - system.salt.minion.cert.rabbitmq.clients.openstack.cinder
 parameters:

@@ -1,6 +1,7 @@
 # This class intended to be used since Openstack Pike release
 classes:
 - service.ceilometer.server.cluster.common
+- system.ceilometer.upgrade
 - system.keepalived.cluster.instance.openstack_telemetry_vip
 - system.salt.minion.cert.rabbitmq.clients.openstack.ceilometer
 parameters:
