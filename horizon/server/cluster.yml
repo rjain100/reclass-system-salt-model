@@ -18,6 +18,12 @@ parameters:
       session:
         engine: "cache"
       images_upload_mode: ${_param:horizon_images_upload_mode}
+      django_settings:
+        # File larger than  FILE_UPLOAD_MAX_MEMORY_SIZE (by default 2.5Mb)
+        # will be stored in directory specified by this option.
+        FILE_UPLOAD_TEMP_DIR:
+          enabled: true
+          value: "'/var/tmp/'"
   apache:
     server:
       modules:
