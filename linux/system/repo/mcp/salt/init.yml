@@ -1,3 +1,4 @@
+# DEPRECATED since 2018.12+ release.
 parameters:
   _param:
     linux_system_repo_mcp_salt_version: ${_param:mcp_version}
