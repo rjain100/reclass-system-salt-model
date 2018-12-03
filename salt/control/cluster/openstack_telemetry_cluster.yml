@@ -1,7 +1,7 @@
 parameters:
   _param:
     openstack_telemetry_backend_image: ${_param:salt_control_trusty_image_backend}
-    salt_control_cluster_node_cloud_init_openstack_share:
+    salt_control_cluster_node_cloud_init_openstack_telemetry:
       user_data:
         write_files:
         - content: |
