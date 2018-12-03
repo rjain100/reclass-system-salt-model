@@ -25,10 +25,11 @@ parameters:
                   enabled: true
                 grafana3_dashboard.py:
                   enabled: true
-            graphite:
-              source: git
-              address: '${_param:salt_master_environment_repository}/salt-formula-graphite.git'
-              revision: ${_param:salt_master_environment_revision}
+# Deprecated since 2018.12
+#            graphite:
+#              source: git
+#              address: '${_param:salt_master_environment_repository}/salt-formula-graphite.git'
+#              revision: ${_param:salt_master_environment_revision}
             heka:
               module:
                 heka_alarming.py:

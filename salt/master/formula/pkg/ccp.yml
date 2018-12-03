@@ -1,9 +1,10 @@
-parameters:
-  salt:
-    master:
-      environment:
-        prd:
-          formula:
-            ccp:
-              source: pkg
-              name: salt-formula-ccp
+# Deprecated since 2018.12
+#parameters:
+#  salt:
+#    master:
+#      environment:
+#        prd:
+#          formula:
+#            ccp:
+#              source: pkg
+#              name: salt-formula-ccp

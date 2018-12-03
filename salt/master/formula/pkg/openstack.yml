@@ -61,9 +61,13 @@ parameters:
             mysql:
               source: pkg
               name: salt-formula-mysql
-            murano:
-              source: pkg
-              name: salt-formula-murano
+# Deprecated since 2018.12
+#            sahara:
+#              source: pkg
+#              name: salt-formula-sahara
+#            murano:
+#              source: pkg
+#              name: salt-formula-murano
             neutron:
               source: pkg
               name: salt-formula-neutron
@@ -91,9 +95,10 @@ parameters:
             rabbitmq:
               source: pkg
               name: salt-formula-rabbitmq
-            sahara:
-              source: pkg
-              name: salt-formula-sahara
+# Deprecated since 2018.12
+#            sahara:
+#              source: pkg
+#              name: salt-formula-sahara
             statsd:
               source: pkg
               name: salt-formula-statsd
