@@ -3,6 +3,7 @@ classes:
 - system.horizon.server.iptables
 - system.apache.server.single
 - system.memcached.server.single
+- system.apache.server.site.horizon
 parameters:
   _param:
     horizon_site_branding: "OpenStack Dashboard"
