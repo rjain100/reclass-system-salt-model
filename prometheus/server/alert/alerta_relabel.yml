@@ -1,8 +1,13 @@
 parameters:
+  _param:
+    alerta_environment_label: ${_param:cluster_domain}
   prometheus:
     server:
       config:
         alert_relabel_configs:
+          - replacement: "${_param:alerta_environment_label}"
+            source_labels: "environment"
+            target_label: "environment"
           - replacement: "aggregated"
             source_labels: "instance"
             target_label: "instance"
