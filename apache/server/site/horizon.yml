@@ -3,7 +3,7 @@ parameters:
     apache_ssl:
       enabled: false
     apache_horizon_ssl: ${_param:apache_ssl}
-    apache_horizon_api_address: ${_param:single_address}
+    apache_horizon_api_address: ${_param:horizon_server_bind_address}
     apache_horizon_api_host: ${linux:network:fqdn}
   apache:
     server:
