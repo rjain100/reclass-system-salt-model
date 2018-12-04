@@ -61,3 +61,7 @@ parameters:
               type: string
               default: "None"
               description: "The tailoring id"
+            XCCDF_CPE:
+              type: string
+              default: ''
+              description: "CPE dictionary or language for applicability checks. (Example: /usr/share/openscap/cpe/openscap-cpe-dict.xml)"
