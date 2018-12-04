@@ -11,7 +11,7 @@ parameters:
     server:
       branding: ${_param:horizon_site_branding}
       bind:
-        address: 0.0.0.0
+        address: ${_param:horizon_server_bind_address}
         port: 8078
       plugin: {}
       session:

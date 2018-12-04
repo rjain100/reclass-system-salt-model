@@ -59,6 +59,7 @@ parameters:
     horizon_public_host: ${_param:cluster_public_host}
     horizon_public_port: 443
     horizon_public_protocol: https
+    horizon_server_bind_address: ${_param:single_address}
     # HAproxy
     haproxy_openstack_web_bind_port: ${_param:horizon_public_port}
     #
