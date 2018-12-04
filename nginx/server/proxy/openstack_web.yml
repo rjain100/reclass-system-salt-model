@@ -14,7 +14,7 @@ parameters:
           type: nginx_proxy
           name: openstack_web
           proxy:
-            host: localhost
+            host: ${_param:horizon_server_bind_address}
             # TODO: port must be configurable, as some deployments might have HAproxy over prx nodes
             port: 8078
             size: 10000m
