@@ -13,6 +13,8 @@ parameters:
             port: 6080
             protocol: http
             websocket: true
+            # Prevent nginx from caching request body
+            request_buffer: false
           host:
             name: ${_param:cluster_public_host}
             port: 6080

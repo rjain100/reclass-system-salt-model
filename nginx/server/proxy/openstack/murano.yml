@@ -13,6 +13,8 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 8082
             protocol: http
+            # Prevent nginx from caching request body
+            request_buffer: false
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8082

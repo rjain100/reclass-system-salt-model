@@ -11,6 +11,8 @@ parameters:
             host: ${_param:opencontrail_control_address}
             port: 8143
             protocol: https
+            # Prevent nginx from caching request body
+            request_buffer: false
           host:
             name: ${_param:cluster_public_host}
             port: 8143

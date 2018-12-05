@@ -17,6 +17,8 @@ parameters:
             host: ${_param:nginx_proxy_openstack_keystone_host}
             port: 35357
             protocol: ${_param:nginx_proxy_openstack_keystone_protocol}
+            # Prevent nginx from caching request body
+            request_buffer: false
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 35357
