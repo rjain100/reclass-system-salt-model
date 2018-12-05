@@ -16,6 +16,8 @@ parameters:
             port: 9494
             protocol: http
             size: 30000m
+            # Prevent nginx from caching request body
+            request_buffer: false
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 9494

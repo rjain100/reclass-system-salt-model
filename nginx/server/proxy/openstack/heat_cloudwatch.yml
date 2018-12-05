@@ -16,6 +16,8 @@ parameters:
             host: ${_param:nginx_proxy_openstack_heat_host}
             port: 8003
             protocol: ${_param:nginx_proxy_openstack_heat_protocol}
+            # Prevent nginx from caching request body
+            request_buffer: false
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8003

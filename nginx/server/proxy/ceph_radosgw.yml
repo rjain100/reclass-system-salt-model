@@ -16,6 +16,8 @@ parameters:
             host: ${_param:nginx_proxy_radosgw_service_host}
             port: ${_param:nginx_proxy_radosgw_service_port}
             protocol: http
+            # Prevent nginx from caching request body
+            request_buffer: false
           host:
             name: ${_param:nginx_proxy_radosgw_host}
             port: ${_param:nginx_proxy_radosgw_port}
