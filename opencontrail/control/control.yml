@@ -1,7 +1,7 @@
 classes:
-- service.keepalived.cluster.single
 - service.opencontrail.control.control
 - system.haproxy.proxy.listen.opencontrail.control
+- system.keepalived.cluster.instance.opencontrail_vip
 parameters:
   _param:
     multi_tenancy: true
