@@ -1,7 +1,7 @@
 parameters:
   _param:
     haproxy_mongodb_bind_host: ${_param:haproxy_bind_address}
-    haproxy_mongodb_bind_port: 27017
+    haproxy_mongodb_bind_port: 27018
     haproxy_mongodb_exposed_port: 37017
     haproxy_mongodb_ssl:
       enabled: false
