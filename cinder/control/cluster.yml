@@ -1,5 +1,6 @@
 classes:
 - service.cinder.control.cluster_control
+- system.cinder.upgrade
 - service.haproxy.proxy.single
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.cinder

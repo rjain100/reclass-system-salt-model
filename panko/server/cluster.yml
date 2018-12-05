@@ -1,5 +1,6 @@
 classes:
 - service.panko.server.cluster
+- system.panko.upgrade
 - service.haproxy.proxy.single
 - system.apache.server.site.panko
 - system.haproxy.proxy.listen.openstack.panko

@@ -2,6 +2,7 @@ applications:
 - nova
 classes:
 - service.nova.compute.kvm
+- system.nova.upgrade
 - system.salt.minion.cert.rabbitmq.clients.openstack.nova
 parameters:
   _param:

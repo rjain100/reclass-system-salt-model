@@ -1,6 +1,7 @@
 # This class is deprecated since Openstack Pike
 classes:
 - service.ceilometer.server.cluster
+- system.ceilometer.upgrade
 - service.haproxy.proxy.single
 - system.haproxy.proxy.listen.openstack.ceilometer
 - system.keepalived.cluster.instance.openstack_telemetry_vip

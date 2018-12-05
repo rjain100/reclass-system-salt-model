@@ -1,5 +1,6 @@
 classes:
 - service.horizon.server.single
+- system.horizon.upgrade
 - system.horizon.server.iptables
 - system.apache.server.single
 - system.memcached.server.single

@@ -1,5 +1,6 @@
 classes:
 - service.ceilometer.server.single.common
+- system.ceilometer.upgrade
 - system.salt.minion.cert.rabbitmq.clients.openstack.ceilometer
 parameters:
   ceilometer:

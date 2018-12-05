@@ -1,5 +1,6 @@
 classes:
 - service.nova.compute.ironic
+- system.nova.upgrade
 parameters:
   nova:
     compute:

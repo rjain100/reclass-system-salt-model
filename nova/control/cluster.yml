@@ -1,6 +1,7 @@
 classes:
 - service.haproxy.proxy.single
 - service.nova.control.cluster
+- system.nova.upgrade
 - service.keepalived.cluster.single
 - system.haproxy.proxy.listen.openstack.nova
 - system.haproxy.proxy.listen.openstack.novnc

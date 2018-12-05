@@ -2,6 +2,7 @@ classes:
 - system.salt.minion.cert.mysql.clients.openstack.nova
 - system.salt.minion.cert.rabbitmq.clients.openstack.nova
 - service.nova.control.single
+- system.nova.upgrade
 parameters:
   linux:
     system:

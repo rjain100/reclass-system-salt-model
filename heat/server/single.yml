@@ -1,5 +1,6 @@
 classes:
 - service.heat.server.single
+- system.heat.upgrade
 - system.salt.minion.cert.mysql.clients.openstack.heat
 - system.salt.minion.cert.rabbitmq.clients.openstack.heat
 parameters:

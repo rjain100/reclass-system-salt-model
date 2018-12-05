@@ -1,5 +1,6 @@
 classes:
 - service.neutron.compute.single
+- system.neutron.upgrade
 - system.salt.minion.cert.rabbitmq.clients.openstack.neutron
 parameters:
   _param:

@@ -19,35 +19,82 @@ parameters:
     openstack_memcache_security_strategy: 'ENCRYPT'
     openstack_memcached_proto_tcp_enabled: True
     openstack_memcached_proto_udp_enabled: False
+    openstack_old_version: ocata
+    openstack_version: ocata
+    openstack_upgrade_enabled: False
     # Cinder
     cinder_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     cinder_memcache_secret_key: ''
+    cinder_old_version: ${_param:openstack_old_version}
+    cinder_version: ${_param:openstack_version}
+    cinder_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Nova
     nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     nova_memcache_secret_key: ''
+    nova_old_version: ${_param:openstack_old_version}
+    nova_version: ${_param:openstack_version}
+    nova_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Glance
     glance_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     glance_memcache_secret_key: ''
+    glance_old_version: ${_param:openstack_old_version}
+    glance_version: ${_param:openstack_version}
+    glance_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Allow CORS from horizon, needed for direct upload
     glance_cors_allowed_origin: '${_param:horizon_public_protocol}://${_param:horizon_public_host}'
     # Heat
     heat_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     heat_memcache_secret_key: ''
+    heat_old_version: ${_param:openstack_old_version}
+    heat_version: ${_param:openstack_version}
+    heat_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Aodh
     aodh_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     aodh_memcache_secret_key: ''
+    aodh_old_version: ${_param:openstack_old_version}
+    aodh_version: ${_param:openstack_version}
+    aodh_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    # Ceilometer
+    ceilometer_old_version: ${_param:openstack_old_version}
+    ceilometer_version: ${_param:openstack_version}
+    ceilometer_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Gnocchi
     gnocchi_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     gnocchi_memcache_secret_key: ''
+    gnocchi_old_version: 4.0
+    gnocchi_version: 4.0
+    gnocchi_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Panko
     panko_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     panko_memcache_secret_key: ''
+    panko_old_version: ${_param:openstack_old_version}
+    panko_version: ${_param:openstack_version}
+    panko_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Barbican
     barbican_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     barbican_memcache_secret_key: ''
+    barbican_old_version: ${_param:openstack_old_version}
+    barbican_version: ${_param:openstack_version}
+    barbican_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    # Designate
+    designate_old_version: ${_param:openstack_old_version}
+    designate_version: ${_param:openstack_version}
+    designate_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Ironic
     ironic_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     ironic_memcache_secret_key: ''
+    # Keystone
+    keystone_old_version: ${_param:openstack_old_version}
+    keystone_version: ${_param:openstack_version}
+    keystone_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    # Manila
+    manila_old_version: ${_param:openstack_old_version}
+    manila_version: ${_param:openstack_version}
+    manila_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    # Neutron
+    neutron_old_version: ${_param:openstack_old_version}
+    neutron_version: ${_param:openstack_version}
+    neutron_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Apache mods defaults
     apache_mods_status_enabled: True
     apache_mods_status_status: 'disabled'
@@ -60,6 +107,9 @@ parameters:
     horizon_public_port: 443
     horizon_public_protocol: https
     horizon_server_bind_address: ${_param:single_address}
+    horizon_old_version: ${_param:openstack_old_version}
+    horizon_version: ${_param:openstack_version}
+    horizon_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # HAproxy
     haproxy_openstack_web_bind_port: ${_param:horizon_public_port}
     #
