@@ -29,6 +29,7 @@ parameters:
     docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:${_param:mcp_version}"
     docker_image_prometheus: "${_param:mcp_docker_registry}/openstack-docker/prometheus:${_param:mcp_version}"
     docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/gainsight:${_param:mcp_version}"
+    docker_image_prometheus_gainsight_elasticsearch: "${_param:mcp_docker_registry}/openstack-docker/gainsight_elasticsearch:${_param:mcp_version}"
     docker_image_prometheus_relay: "${_param:mcp_docker_registry}/openstack-docker/prometheus_relay:${_param:mcp_version}"
     docker_image_pushgateway: "${_param:mcp_docker_registry}/openstack-docker/pushgateway:${_param:mcp_version}"
     docker_image_remote_agent: "${_param:mcp_docker_registry}/openstack-docker/telegraf:${_param:mcp_version}"
