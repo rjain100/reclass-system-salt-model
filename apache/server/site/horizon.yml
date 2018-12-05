@@ -7,6 +7,8 @@ parameters:
     apache_horizon_api_host: ${linux:network:fqdn}
   apache:
     server:
+      bind:
+        listen_default_ports: false
       enabled: true
       default_mpm: event
       modules:
