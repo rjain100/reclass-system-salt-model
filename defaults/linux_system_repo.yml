@@ -14,7 +14,7 @@ parameters:
     linux_system_repo_mcp_docker_legacy_url: ${_param:linux_system_repo_url}/docker-1.x/
     linux_system_repo_mcp_docker_url: ${_param:linux_system_repo_url}/docker/
     linux_system_repo_mcp_elasticsearch_curator_url: ${_param:linux_system_repo_url}/elasticsearch-curator-5/
-    linux_system_repo_mcp_elasticsearch_url: ${_param:linux_system_repo_url}/elasticsearch-5.x/
+    linux_system_repo_mcp_elasticsearch_url: ${_param:linux_system_repo_url}/elasticsearch-${_param:elasticsearch_version}.x/
     linux_system_repo_mcp_extra_url: ${_param:linux_system_repo_url}/extra/
     linux_system_repo_mcp_glusterfs_url: ${_param:linux_system_repo_url}/glusterfs-${_param:linux_system_repo_mcp_glusterfs_version_number}/
     linux_system_repo_mcp_influxdb_url: ${_param:linux_system_repo_url}/influxdb

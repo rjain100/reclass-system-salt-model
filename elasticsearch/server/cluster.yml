@@ -6,7 +6,6 @@ parameters:
     java_environment_version: "8"
     java_environment_platform: openjdk
     elasticsearch_cluster_name: elasticsearch
-    elasticsearch_version: 5
   linux:
     system:
       sysctl:
