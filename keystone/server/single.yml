@@ -33,13 +33,14 @@ parameters:
       admin_password: ${_param:keystone_admin_password}
       admin_email: ${_param:admin_email}
       role: ${_param:openstack_node_role}
+      admin_region: ${_param:openstack_region}
+      region: ${_param:openstack_region}
       bind:
         address: ${_param:single_address}
         private_address: ${_param:single_address}
         private_port: 35357
         public_address: ${_param:single_address}
         public_port: 5000
-      region: ${_param:openstack_region}
       database:
         engine: mysql
         host: ${_param:single_address}
