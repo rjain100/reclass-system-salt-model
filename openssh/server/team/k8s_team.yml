@@ -6,6 +6,7 @@ classes:
 - system.openssh.server.team.members.ishvedunov
 - system.openssh.server.team.members.jnowak
 - system.openssh.server.team.members.loles
+- system.openssh.server.team.members.vryzhenkin
 # Deprecated users
 - system.openssh.server.team.members.deprecated.dshulyak
 - system.openssh.server.team.members.deprecated.mattymo
