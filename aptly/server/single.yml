@@ -8,6 +8,12 @@ parameters:
     aptly_server_secure: true
     aptly_server_mirror_sources: false
     aptly_server_mirror_ubuntu_sources: ${_param:aptly_server_mirror_sources}
+  linux:
+    system:
+      cron:
+        user:
+          aptly:
+            enabled: true
   nginx:
     server:
       site:
