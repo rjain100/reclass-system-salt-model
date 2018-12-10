@@ -4,6 +4,7 @@ parameters:
   _param:
     sf_notifier_workers: 4
     sf_notifier_buffer_size: 32768
+    sf_notifier_alert_id_hash_func: sha256
   docker:
     client:
       stack:
@@ -34,6 +35,7 @@ parameters:
                 SF_NOTIFIER_WORKERS: ${_param:sf_notifier_workers}
                 SF_NOTIFIER_BUFFER_SIZE: ${_param:sf_notifier_buffer_size}
                 SF_NOTIFIER_APP_PORT: ${prometheus:sf_notifier:uwsgi:bind_port}
+                SF_NOTIFIER_ALERT_ID_HASH_FUNC: ${_param:sf_notifier_alert_id_hash_func}
                 SFDC_AUTH_URL: "${_param:sf_notifier_sfdc_auth_url}"
                 SFDC_USERNAME: "${_param:sf_notifier_sfdc_username}"
                 SFDC_PASSWORD: "${_param:sf_notifier_sfdc_password}"
