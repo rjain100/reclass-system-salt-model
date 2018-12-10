@@ -1,3 +1,4 @@
+# DEPRECATED since 2018.12+ release.
 parameters:
   _param:
     linux_repo_contrail_component: oc311
