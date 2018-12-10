@@ -15,6 +15,7 @@ classes:
 - system.defaults.gerrit
 - system.defaults.keepalived
 - system.defaults.salt
+- system.defaults.stacklight
 parameters:
   _param:
     mcp_version: stable
