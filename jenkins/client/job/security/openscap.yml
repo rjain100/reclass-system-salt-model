@@ -63,5 +63,5 @@ parameters:
               description: "The tailoring id"
             XCCDF_CPE:
               type: string
-              default: ''
+              default: '/usr/share/mirantis-scap-content/mirantis/cpe/openscap-cpe-dict.xml'
               description: "CPE dictionary or language for applicability checks. (Example: /usr/share/openscap/cpe/openscap-cpe-dict.xml)"
