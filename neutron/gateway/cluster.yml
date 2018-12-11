@@ -18,7 +18,7 @@ parameters:
       vlan_aware_vms: ${_param:neutron_enable_vlan_aware_vms}
       agent_mode: ${_param:neutron_gateway_agent_mode}
       backend:
-        tenant_network_types: ${_param:neutron_tenant_network_types}"
+        tenant_network_types: "${_param:neutron_tenant_network_types}"
       message_queue:
         port: ${_param:openstack_rabbitmq_port}
         members:
