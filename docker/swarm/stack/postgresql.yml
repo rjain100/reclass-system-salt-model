@@ -2,7 +2,8 @@ parameters:
   _param:
     docker_postgresql_replicas: 1
     postgresql_bind_host: postgresql-db
-    postgresql_bind_port: ${_param:haproxy_postgresql_bind_port}
+    postgresql_bind_port: 5432
+    postgresql_exposed_port: 5432
     postgresql_ssl:
       enabled: false
     postgresql_admin_user: postgres
@@ -14,6 +15,7 @@ parameters:
           environment:
             POSTGRES_USER: ${_param:postgresql_admin_user}
             POSTGRES_PASSWORD: ${_param:postgresql_admin_user_password}
+            PGDATA: /var/lib/postgresql/data/pgdata
           service:
             postgresql-db:
               image: ${_param:docker_image_postgresql}
@@ -24,8 +26,4 @@ parameters:
               volumes:
                 - /srv/volumes/postgresql/data:/var/lib/postgresql/data
               ports:
-                - ${_param:haproxy_postgresql_exposed_port}:${_param:haproxy_postgresql_bind_port}
-          network:
-            default:
-              external:
-                name: oss_backend
+                - ${_param:postgresql_exposed_port}:${_param:postgresql_bind_port}
