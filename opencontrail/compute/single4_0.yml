@@ -13,7 +13,7 @@ parameters:
         host: ${_param:control_address}
         port: 35357
         token: ${_param:keystone_service_token}
-        password: ${_param:keystone_admin_password}
+        password: ${_param:opencontrail_admin_password}
       network:
         engine: neutron
         host: ${_param:control_address}

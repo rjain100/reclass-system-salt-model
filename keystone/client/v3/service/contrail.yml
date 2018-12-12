@@ -3,8 +3,28 @@ parameters:
     contrail_service_protocol: http
   keystone:
     client:
+      server:
+        contrail_identity:
+          admin:
+            user: contrail
+            password: ${_param:opencontrail_admin_password}
+            project: admin
+            host: ${_param:keystone_service_host}
+            port: 5000
+            region_name: ${_param:openstack_region}
+            use_keystoneauth: true
+            protocol: ${_param:keystone_service_protocol}
       resources:
         v3:
+          users:
+            contrail:
+              password: ${_param:opencontrail_admin_password}
+              email: ${_param:admin_email}
+              is_admin: true
+              roles:
+                admin:
+                  name: admin
+                  project_id: admin
           services:
             opencontrail:
               type: contrail
