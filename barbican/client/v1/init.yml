@@ -1,5 +1,6 @@
-barbican:
-  client:
-    resources:
-      v1:
-        enabled: true
+parameters:
+  barbican:
+    client:
+      resources:
+        v1:
+          enabled: true
