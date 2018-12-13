@@ -15,6 +15,7 @@ parameters:
     opencontrail_message_queue_node02_address: ${_param:openstack_message_queue_node02_address}
     opencontrail_message_queue_node03_address: ${_param:openstack_message_queue_node03_address}
     opencontrail_message_queue_address: ${_param:openstack_message_queue_address}
+    opencontrail_message_queue_password: guest
     opencontrail_analytics_image: ${_param:mcp_docker_registry}/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-analytics:${_param:opencontrail_image_tag}
     opencontrail_analyticsdb_image: ${_param:mcp_docker_registry}/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-analyticsdb:${_param:opencontrail_image_tag}
     opencontrail_analytics_container_name: opencontrail_analytics_1
@@ -52,6 +53,7 @@ parameters:
         - host: ${_param:opencontrail_analytics_node03_address}
       message_queue:
         host: ${_param:opencontrail_message_queue_address}
+        password: ${_param:opencontrail_message_queue_password}
         members:
         - host: ${_param:opencontrail_message_queue_node01_address}
         - host: ${_param:opencontrail_message_queue_node02_address}
