@@ -27,11 +27,11 @@ parameters:
           param:
             KUBERNETES_HYPERKUBE_IMAGE:
               type: string
-              default: "${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.11.3-2"
+              default: "${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.12.3-2"
               description: "Versioned image to update control plane from. Should be null if update rolling via reclass-system level"
             KUBERNETES_PAUSE_IMAGE:
               type: string
-              default: "${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.11.3-2"
+              default: "${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.12.3-2"
               description: "Versioned pause image to use in deployments. Should be null if update rolling via reclass-system level"
             SALT_MASTER_URL:
               type: string
