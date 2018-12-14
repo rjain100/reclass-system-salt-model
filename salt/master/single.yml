@@ -18,3 +18,7 @@ parameters:
       peer:
         '.*':
           - x509.sign_remote_certificate
+      ext_pillars:
+        100_gpg_pillar_renderer:
+          module: gpg
+          params: {}
