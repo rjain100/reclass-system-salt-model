@@ -25,16 +25,16 @@ parameters:
     kubernetes_openstack_provider_repo: ${_param:mcp_binary_registry}/mirantis/kubernetes/cloud-provider-openstack
 
     # component images/binaries
-    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v3.1.3
-    kubernetes_calico_kube_controllers_image: ${_param:kubernetes_calico_kube_ctl_repo}/kube-controllers:v3.1.3
-    kubernetes_calico_calicoctl_source: ${_param:kubernetes_calico_calicoctl_repo}/calicoctl-v3.1.3
-    kubernetes_calico_calicoctl_source_hash: md5=4fa504cd4c545fe2a5d6106f5379c307
-    kubernetes_calico_birdcl_source: ${_param:kubernetes_calico_birdcl_repo}/birdcl-v0.3.2-17-20180926111644
-    kubernetes_calico_birdcl_source_hash: md5=256a70c67892eb79b74a8fb4e1d22b9b
-    kubernetes_calico_cni_source: ${_param:kubernetes_calico_cni_repo}/calico-v3.1.3-15-20181105142706
-    kubernetes_calico_cni_source_hash: md5=2f79e8f3ecb4c7d2e357333a01f781d1
-    kubernetes_calico_cni_ipam_source: ${_param:kubernetes_calico_cni_repo}/calico-ipam-v3.1.3-15-20181105142706
-    kubernetes_calico_cni_ipam_source_hash: md5=f70bea0c60724f56ddb9447fd8862bac
+    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v3.3.2
+    kubernetes_calico_kube_controllers_image: ${_param:kubernetes_calico_kube_ctl_repo}/kube-controllers:v3.3.2
+    kubernetes_calico_calicoctl_source: ${_param:kubernetes_calico_calicoctl_repo}/calicoctl-v3.3.2
+    kubernetes_calico_calicoctl_source_hash: md5=bb38517fdd6b8bb7c130ae7550a9d335
+    kubernetes_calico_birdcl_source: ${_param:kubernetes_calico_birdcl_repo}/birdcl-v0.3.3
+    kubernetes_calico_birdcl_source_hash: md5=0327442efd2592ddce449b66c5d0fc9d
+    kubernetes_calico_cni_source: ${_param:kubernetes_calico_cni_repo}/calico-v3.3.2
+    kubernetes_calico_cni_source_hash: md5=2544bc1865c1451cac7a61264c25a2cb
+    kubernetes_calico_cni_ipam_source: ${_param:kubernetes_calico_cni_repo}/calico-ipam-v3.3.2
+    kubernetes_calico_cni_ipam_source_hash: md5=b22623eeea3b29ba8ec071d859ac7055
     kubernetes_hyperkube_source: ${_param:kubernetes_hyperkube_repo}/hyperkube_v1.12.3-2_1544133573591
     kubernetes_hyperkube_source_hash: md5=fc23eaf3ba63d9ed9d141f465f584012
     kubernetes_pause_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/pause-amd64:v1.12.3-2
@@ -66,8 +66,8 @@ parameters:
     kubernetes_containerd_source_hash: md5=ff60b9ddfa5617f7ed14b3f3b6a60056
     # images for formula compatibility
     kubernetes_hyperkube_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/hyperkube-amd64:v1.12.3-2
-    kubernetes_calico_cni_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/cni:v3.1.3
-    kubernetes_calico_calicoctl_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/ctl:v3.1.3
+    kubernetes_calico_cni_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/cni:v3.3.2
+    kubernetes_calico_calicoctl_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/ctl:v3.3.2
     kubernetes_containerd_package: containerd.io=1.2.0-1
 
     kubernetes_opencontrail_controller_image: ${_param:kubernetes_contrail_registry}/opencontrail-controller:${_param:mcp_version}
