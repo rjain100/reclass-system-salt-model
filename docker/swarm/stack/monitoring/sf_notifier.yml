@@ -41,4 +41,4 @@ parameters:
                 SFDC_PASSWORD: "${_param:sf_notifier_sfdc_password}"
                 SFDC_ORGANIZATION_ID: "${_param:sf_notifier_sfdc_organization_id}"
                 SFDC_ENVIRONMENT_ID: "${_param:sf_notifier_sfdc_environment_id}"
-                SFDC_SANDBOX_ENABLED: ${_param:sf_notifier_sfdc_sandbox_enabled}
+                SFDC_SANDBOX_ENABLED: "${_param:sf_notifier_sfdc_sandbox_enabled}"
