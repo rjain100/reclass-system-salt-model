@@ -26,12 +26,6 @@ parameters:
             branch: FETCH_HEAD
             wipe_workspace: True
           param:
-            SALT_MASTER_URL:
-              type: string
-              default: "${_param:jenkins_salt_api_url}"
-            SALT_MASTER_CREDENTIALS:
-              type: string
-              default: "salt"
             MK_PIPELINES_REFSPEC:
               type: string
               default: ""
@@ -40,24 +34,28 @@ parameters:
               type: string
               default: ""
               description: "Target version of mcp, aka mcp_version"
-            UPDATE_CLUSTER_MODEL:
-              type: boolean
-              default: 'true'
-              description: "Replace `mcp_version` parameter to TARGET_MCP_VERSION in cluster level Reclass model?"
-            UPGRADE_SALTSTACK:
-              type: boolean
-              default: 'true'
-              description: "Upgrade SaltStack packages."
-            UPDATE_PIPELINES:
-              type: boolean
-              default: 'true'
-              description: "Mirror pipelines from upstream/local mirror to Gerrit."
-            UPDATE_LOCAL_REPOS:
-              type: boolean
-              default: 'false'
-              description: "Use only when local repositories are present."
+            GIT_REFSPEC:
+              type: string
+              default: ""
+              description: "Version of git repos to be used, should be release/TARGET_MCP_VERSION"
+            DRIVE_TRAIN_PARAMS:
+              type: text
+              description: "Yaml based DriveTrain releated params"
+              default: |
+                ---
+                SALT_MASTER_URL: "${_param:jenkins_salt_api_url}"
+                SALT_MASTER_CREDENTIALS: "salt"
+                # Replace `mcp_version` parameter to TARGET_MCP_VERSION in cluster level Reclass model?
+                UPDATE_CLUSTER_MODEL: true
+                # Upgrade SaltStack packages
+                UPGRADE_SALTSTACK: true
+                # Mirror pipelines from upstream/local mirror to Gerrit
+                UPDATE_PIPELINES: true
+                # se only when local repositories are present
+                UPDATE_LOCAL_REPOS: false
+                # Next parameters added only for test purposes and not enabled by default
+                # RECLASS_SYSTEM_BRANCH: ''
             PIPELINE_TIMEOUT:
               type: string
               default: '12'
               description: "Sets pipeline timeout in hours. Defaults to '12' if left empty."
-
