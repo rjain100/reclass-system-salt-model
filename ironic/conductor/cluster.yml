@@ -34,3 +34,5 @@ parameters:
           enabled: ${_param:ironic_memcache_security_enabled}
           strategy: ${_param:openstack_memcache_security_strategy}
           secret_key: ${_param:ironic_memcache_secret_key}
+      identity:
+        region: ${_param:openstack_region}
