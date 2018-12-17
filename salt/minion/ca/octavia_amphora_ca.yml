@@ -1,0 +1,10 @@
+classes:
+- system.salt.minion.ca.octavia_ca
+
+parameters:
+  salt:
+    minion:
+      ca:
+        octavia_ca:
+          ca_file: /srv/salt/env/${_param:salt_master_base_environment}/_certs/octavia/ca_01.pem
+          ca_key_file: /srv/salt/env/${_param:salt_master_base_environment}/_certs/octavia/ca.key

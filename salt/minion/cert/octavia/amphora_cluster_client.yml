@@ -1,0 +1,10 @@
+classes:
+- system.salt.minion.cert.octavia
+parameters:
+  salt:
+    minion:
+      cert:
+        octavia_amp_client:
+          key_file: /srv/salt/env/${_param:salt_master_base_environment}/_certs/octavia/client.key
+          cert_file: /srv/salt/env/${_param:salt_master_base_environment}/_certs/octavia/client.pem
+          all_file: /srv/salt/env/${_param:salt_master_base_environment}/_certs/octavia/client_all.pem
