@@ -49,3 +49,12 @@ parameters:
           common_name: system:kube-controller-manager
           signing_policy: cert_client
           alternative_names: IP:${_param:kubernetes_control_address},IP:${_param:kubernetes_internal_api_address}
+        k8s_aggregator_proxy:
+          host: ${_param:salt_minion_ca_host}
+          authority: ${_param:salt_minion_ca_authority}
+          key_file: /etc/kubernetes/ssl/kube-aggregator-proxy-client.key
+          cert_file: /etc/kubernetes/ssl/kube-aggregator-proxy-client.crt
+          ca_file: /etc/kubernetes/ssl/ca-kubernetes.crt
+          common_name: system:kube-controller-manager
+          signing_policy: cert_client
+          alternative_names: IP:${_param:kubernetes_control_address},IP:${_param:kubernetes_internal_api_address}
