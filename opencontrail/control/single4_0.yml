@@ -16,6 +16,7 @@ parameters:
     opencontrail_controller_container_name: opencontrail_controller_1
     opencontrail_analytics_container_name: opencontrail_analytics_1
     opencontrail_analyticsdb_container_name: opencontrail_analyticsdb_1
+    opencontrail_message_queue_password: guest
 # Temprorary fix for MOS9 packages to pin old version of kafka
   linux:
     system:
@@ -94,6 +95,7 @@ parameters:
         members:
         - host: ${_param:single_address}
       message_queue:
+        password: ${_param:opencontrail_message_queue_password}
         members:
         - host: ${_param:openstack_control_address}
       identity:
@@ -105,6 +107,7 @@ parameters:
         members:
         - host: ${_param:single_address}
       message_queue:
+        password: ${_param:opencontrail_message_queue_password}
         members:
         - host: ${_param:openstack_control_address}
       database:
@@ -143,6 +146,7 @@ parameters:
         - host: ${_param:single_address}
       message_queue:
         host: ${_param:openstack_control_address}
+        password: ${_param:opencontrail_message_queue_password}
         members:
         - host: ${_param:openstack_control_address}
       config:
