@@ -18,11 +18,3 @@ parameters:
           require_change_id: true
           require_agreement: false
           merge_content: true
-        mk/decapod-pipelines:
-          enabled: true
-          description: Decapod jenkins pipelines
-          upstream: ${_param:gerrit_decapod_pipelines_repo}
-          access: ${gerrit:client:default_access}
-          require_change_id: true
-          require_agreement: false
-          merge_content: true
