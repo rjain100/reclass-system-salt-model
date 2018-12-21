@@ -101,6 +101,21 @@ parameters:
     apache_mods_status_host_address: '127.0.0.1'
     apache_mods_status_host_port: 80
     apache_horizon_listen_address: '0.0.0.0'
+    # Apache proxies for openstack aren't used as HA proxies, they are
+    # simply ssl terminators in case of setup of ssl on internal endpoints
+    # for services which don't support running under apache and wsgi.
+    # So retry parameter is set 0, to eliminate maintenance mode for backend
+    # which is 60 seconds  by default.
+    apache_proxy_openstack_api_retry: 0
+    apache_proxy_openstack_cinder_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_designate_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_glance_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_heat_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_ironic_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_nova_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_neutron_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_aodh_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_placement_retry: ${_param:apache_proxy_openstack_api_retry}
     # Horizon
     # 'direct' mode will require cors on glance side to be enabled.
     horizon_images_upload_mode: 'direct'

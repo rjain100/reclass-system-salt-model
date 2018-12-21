@@ -18,6 +18,7 @@ parameters:
             host: ${_param:apache_proxy_openstack_neutron_host}
             port: 9696
             protocol: http
+            retry: ${_param:apache_proxy_openstack_neutron_retry}
           host:
             name: ${_param:apache_proxy_openstack_api_host}
             port: 9696

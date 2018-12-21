@@ -22,6 +22,7 @@ parameters:
             host: ${_param:apache_proxy_openstack_designate_host}
             port: 9001
             protocol: http
+            retry: ${_param:apache_proxy_openstack_designate_retry}
           host:
             name: ${_param:apache_proxy_openstack_api_host}
             port: 9001
