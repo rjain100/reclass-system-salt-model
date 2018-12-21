@@ -48,3 +48,5 @@ parameters:
           enabled: ${_param:glance_memcache_security_enabled}
           strategy: ${_param:openstack_memcache_security_strategy}
           secret_key: ${_param:glance_memcache_secret_key}
+      cors:
+        allowed_origin: ${_param:glance_cors_allowed_origin}
