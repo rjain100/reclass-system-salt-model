@@ -5,4 +5,4 @@ parameters:
     system:
       kernel:
         sysctl:
-          fs.aio-max-nr: 131072
+          fs.aio-max-nr: 1048576
