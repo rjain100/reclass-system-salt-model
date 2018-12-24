@@ -127,6 +127,10 @@ parameters:
     horizon_old_version: ${_param:openstack_old_version}
     horizon_version: ${_param:openstack_version}
     horizon_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    # Octavia
+    octavia_health_manager_node01_address: 192.168.10.10
+    octavia_health_manager_node02_address: 192.168.10.11
+    octavia_health_manager_node03_address: 192.168.10.12
     # HAproxy
     haproxy_openstack_web_bind_port: ${_param:horizon_public_port}
     #
