@@ -7,6 +7,13 @@ parameters:
     client:
       server:
         identity:
+          project:
+            admin:
+              user:
+                contrail:
+                  is_admin: true
+                  password: ${_param:opencontrail_admin_password}
+                  email: ${_param:admin_email}
           service:
             opencontrail:
               type: contrail
