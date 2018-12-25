@@ -1,5 +1,3 @@
-classes:
-- system.docker.client.images.jenkins_slave
 parameters:
   _param:
     jenkins_master_host: ${_param:control_vip_address}

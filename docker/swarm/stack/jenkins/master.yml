@@ -1,6 +1,5 @@
 classes:
 - system.docker
-- system.docker.client.images.jenkins_master
 parameters:
   _param:
     jenkins_master_extra_opts: ""
