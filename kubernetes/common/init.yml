@@ -39,7 +39,7 @@ parameters:
     kubernetes_hyperkube_source: ${_param:kubernetes_hyperkube_repo}/hyperkube_v1.12.3-2_1544133573591
     kubernetes_hyperkube_source_hash: md5=fc23eaf3ba63d9ed9d141f465f584012
     kubernetes_pause_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/pause-amd64:v1.12.3-2
-    kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.4.1
+    kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.4.4
     kubernetes_criproxy_version: v0.12.0
     kubernetes_criproxy_checksum: md5=371cacd3d8568eb88425498b48a649dd
     kubernetes_netchecker_agent_image: ${_param:kubernetes_netchecker_agent_repo}/k8s-netchecker-agent:v1.2.2
