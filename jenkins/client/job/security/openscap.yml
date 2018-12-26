@@ -31,6 +31,9 @@ parameters:
               type: string
               default: "http://oscore-bandit.vm.mirantis.net:8090/api"
               description: "The WORP api base url. Mandatory if UPLOAD_TO_DASHBOARD is true"
+            CLOUD_NAME:
+              type: string
+              description: "Custom name to set for the cloud in the Worp API. If not specified, cluster name from Salt minions is used."
             SALT_MASTER_URL:
               type: string
               default: ""
