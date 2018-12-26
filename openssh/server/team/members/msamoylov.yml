@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        msamoylov:
+          email: msamoylov@mirantis.com
+          enabled: true
+          full_name: Mikhail Samoylov
+          home: /home/msamoylov
+          name: msamoylov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        msamoylov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvWBvRN2uYS0eolhaXRbsp8w5QM0B4ebpuTK3cT60ZLnxr99HrzBqwH6KjGkt9/V0xdUo6wuSjh+r6xuCUae7owC6T8fnUYuVt6Fyd9Wh33tjMIfj+EZBZLrmQW3X0OqwY1x3/YIzzfLlrtF9JwHvGcbt9nv7h+2jAh0iPB8p+1ITrzkJ9UZK6LSmeB1w6HVqJDqLZuz/R6pyRciSbIc5uTVXy8RJAp4Tsak6SDXJcZMm8WQT5g2ZHVRriVmca/Iy++xNuPIqL3TwX9y3KHksQY2E3yiOURn3b5hovVXHuTuRLMZo4yuT4nKSRylsRnPX0HH9cdgI6/DIRL+52HLAv msamoylov@msamoylov
+          user: ${linux:system:user:msamoylov}
