@@ -29,7 +29,7 @@ parameters:
                 - oval
             DASHBOARD_API_URL:
               type: string
-              default: "http://oscore-bandit.vm.mirantis.net:8090/#/"
+              default: "http://oscore-bandit.vm.mirantis.net:8090/api"
               description: "The WORP api base url. Mandatory if UPLOAD_TO_DASHBOARD is true"
             SALT_MASTER_URL:
               type: string
