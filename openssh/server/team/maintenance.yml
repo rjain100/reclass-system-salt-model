@@ -5,6 +5,7 @@ classes:
 - system.openssh.server.team.members.vkhlyunev
 - system.openssh.server.team.members.dtsapikov
 - system.openssh.server.team.members.rlubianyi
+- system.openssh.server.team.members.msamoylov
 parameters:
   _param:
     linux_system_user_sudo: true
