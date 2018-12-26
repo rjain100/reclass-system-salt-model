@@ -1,7 +1,6 @@
 parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
-    cvp_sanity_default_repo: "https://github.com/Mirantis/cvp-sanity-checks"
   jenkins:
     client:
       view:
@@ -214,7 +213,7 @@ parameters:
               default: "salt"
             TESTS_REPO:
               type: string
-              default: "${_param:cvp_sanity_default_repo}"
+              default: ""
               description: Url for cvp-sanity-checks
             TESTS_SETTINGS:
               type: string
@@ -222,7 +221,7 @@ parameters:
               description: e.g. skipped_nodes=nal01.local.com,ntw01.local.com
             TESTS_SET:
               type: string
-              default: "cvp_checks/tests/"
+              default: "cvp-sanity/cvp_checks/tests"
               description: "Leave as is for full run or add a filename, e.g. _default_path_/test_mtu.py"
             PROXY:
               type: string
@@ -484,7 +483,7 @@ parameters:
               default: "salt"
             TESTS_REPO:
               type: string
-              default: "https://github.com/Mirantis/cvp-spt"
+              default: ""
               description: Url for cvp-spt repository
             TESTS_SETTINGS:
               type: string
@@ -492,7 +491,7 @@ parameters:
               description: "Additional environment variables to export, e.g. image_name, networks, HW_NODES"
             TESTS_SET:
               type: string
-              default: "cvp_spt/tests/"
+              default: "cvp-spt/cvp_spt/tests"
               description: "Leave as is for full run or add a filename, e.g. _default_path_/test_glance.py"
             PROXY:
               type: string
