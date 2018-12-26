@@ -1,6 +1,9 @@
 parameters:
   ironic:
     conductor:
+      enabled_storage_interfaces:
+        - noop
+        - cinder
       cinder:
         auth_strategy: keystone
         auth_type: password
