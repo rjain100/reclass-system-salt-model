@@ -42,3 +42,5 @@ parameters:
     # Make sure this global variable is defined everywhere, where used it is already set on cluster level
     cluster_public_host: '127.0.0.1'
     single_address: '127.0.0.1'
+    # Stub parameter, to render target local_registry_mirror_image_list
+    local_docker_client_registry_target_registry: "apt:5000"
