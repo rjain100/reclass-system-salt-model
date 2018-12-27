@@ -151,6 +151,7 @@ parameters:
               container_name: ${_param:opencontrail_controller_container_name}
               volumes:
                 - /etc/contrail:/etc/contrail
+                - /etc/redis/redis_webui.conf:/etc/redis/redis.conf
                 - /var/lib/configdb:/var/lib/cassandra
                 - /var/lib/config_zookeeper_data:/var/lib/zookeeper
                 - /var/lib/zookeeper/myid:/var/lib/zookeeper/myid
