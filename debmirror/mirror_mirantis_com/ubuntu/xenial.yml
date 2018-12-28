@@ -16,6 +16,7 @@ parameters:
           log_file: "/var/log/debmirror/mirror_mirantis_com_ubuntu_xenial.log"
           dist: [ xenial , xenial-security, xenial-updates ]
           section: [ main , restricted, universe ]
+          cache_dir: "${_param:debmirror_mirrors_base_target_dir}/../.cache/ubuntu"
           # Don't exclude main/x11 - its required for many pkgs.
           exclude_deb_section:
           - Xfce
@@ -132,8 +133,10 @@ parameters:
             306: '--exclude="main/l/linux.*/linux-.*4\.10\.0-(([0-3][0-9])|(4[0-1]))"'
             # Hwe 4.13: Old - if minor in 0-39, < 44
             307: '--exclude="main/l/linux.*/linux-.*4\.13\.0-(([0-3][0-9])|(4[0-4]))"'
-            # Hwe 4.15: Old - if minor in 0-19, < 34
-            308: '--exclude="main/l/linux.*/linux-.*4\.15\.0-(([0-1][0-9])|([0-3][0-3]))"'
+            # Hwe 4.15.0: Old - if minor in 0-39, < 43
+            308: --exclude='main/l/linux.*/linux-.*4\.15\.0-(([0-3][0-9])|(4[0-2]))'
+            # Old 4.4.0
+            309: --exclude='main/l/linux.*/linux-.*4\.4\.0-'
             # List of packages, that should be fetched from fresh ppa or other mirror
             # So,removing them from upstream mirror.
             500: "--exclude='/main/m/maas/'"
