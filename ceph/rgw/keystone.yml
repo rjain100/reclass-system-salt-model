@@ -18,3 +18,4 @@ parameters:
         tenant: ${_param:ceph_radosgw_keystone_project}
         project: ${_param:ceph_radosgw_keystone_project}
         domain: ${_param:ceph_radosgw_keystone_domain}
+        protocol: ${_param:cluster_internal_protocol}
