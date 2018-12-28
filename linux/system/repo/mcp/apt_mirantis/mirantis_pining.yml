@@ -8,9 +8,10 @@ parameters:
       apt:
         preferences:
           enabled: true
-          100:
-            enabled: true
-            name: 'Mirantis origin'
-            pin: 'release o=Mirantis'
-            priority: 1100
-            package: '*'
+          rules:
+            100:
+              enabled: true
+              name: 'Mirantis origin'
+              pin: 'release o=Mirantis'
+              priority: 1100
+              package: '*'
