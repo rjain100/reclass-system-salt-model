@@ -17,5 +17,5 @@ parameters:
           dist: [ stable ]
           section: [ main ]
           filter:
-            # drop all versions below 5.6.11
-            001: --exclude='(_|-)5\.([0-5]\.|6\.([0-9]|10)(-|\.))'
+            # drop all versions below 5.6.12
+            001: --exclude='(_|-)5\.([0-5]\.|6\.([0-9]|10|11)(-|\.))'

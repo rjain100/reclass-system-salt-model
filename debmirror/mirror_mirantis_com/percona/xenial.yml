@@ -16,7 +16,7 @@ parameters:
           dist: [ xenial ]
           section: [ main ]
           filter:
-            001: "--exclude='(-dbg_|-dbg-)'"
+            001: --exclude='(-|_)dbg(_|-)'
             002: "--exclude='/percona-server-5.(5|6)'"
             003: "--exclude='/percona-server-mongodb'"
             004: "--exclude='/(percona-xtradb-cluster|percona-server-5|percona-xtradb-cluster)'"
