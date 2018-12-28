@@ -58,7 +58,7 @@ parameters:
     kubernetes_sriov_source_hash: md5=cd9ea01e80d260218260314447c23b30
     kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/containernetworking-plugins_v0.7.2-151-g1d23302.tar.gz
     kubernetes_cniplugins_source_hash: md5=bb42444166a89ef6832529e9e39d000d
-    kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.10.0-4
+    kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.10.1-2
     kubernetes_telegraf_image: ${_param:mcp_docker_registry}/openstack-docker/telegraf:2018.8.0
     kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.2.6-4
     kubernetes_ingressnginx_controller_image: ${_param:kubernetes_ingressnginx_repo}/nginx-ingress-controller-amd64:nginx-0.21.0-3
