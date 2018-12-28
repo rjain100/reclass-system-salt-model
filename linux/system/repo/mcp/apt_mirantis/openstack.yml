@@ -9,10 +9,6 @@ parameters:
           key: ${_param:linux_system_repo_mirror_mirantis_key}
           architectures: ${_param:linux_system_architecture}
           clean_file: true
-          pin:
-          - pin: 'release o=Mirantis'
-            priority: 1100
-            package: '*'
 # DEPRECATED since 2018.10+ release.
 #parameters:
 #  _param:
