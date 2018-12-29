@@ -65,7 +65,7 @@ parameters:
         name: openldap:1.1.8
       - registry: ${_param:mcp_docker_registry}/mirantis/external/library
         target_registry: ${_param:local_docker_client_registry_target_registry}/mirantis/external/library
-        name: postgresql:9.6.10
+        name: postgres:9.6.10
       - registry: ${_param:mcp_docker_registry}/mirantis/cicd
         target_registry: ${_param:local_docker_client_registry_target_registry}/mirantis/cicd
         name: phpldapadmin:${_param:apt_mk_version}
