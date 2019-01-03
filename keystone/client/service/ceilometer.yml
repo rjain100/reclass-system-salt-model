@@ -4,6 +4,7 @@ parameters:
   _param:
     ceilometer_service_protocol: http
     ceilometer_public_host: ${_param:cluster_public_host}
+    ceilometer_endpoint_status: present
   keystone:
     client:
       server:
@@ -33,3 +34,4 @@ parameters:
                 admin_address: ${_param:ceilometer_service_host}
                 admin_port: 8777
                 admin_path: '/'
+                status: ${_param:ceilometer_endpoint_status}

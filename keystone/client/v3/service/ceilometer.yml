@@ -20,14 +20,17 @@ parameters:
               description: OpenStack Telemetry Service
               endpoints:
                 ceilometer_public:
+                  status: ${_param:ceilometer_endpoint_status}
                   interface: 'public'
                   url: ${_param:cluster_public_protocol}://${_param:ceilometer_public_host}:8777/
                   region: ${_param:openstack_region}
                 ceilometer_internal:
+                  status: ${_param:ceilometer_endpoint_status}
                   interface: 'internal'
                   url: ${_param:ceilometer_service_protocol}://${_param:ceilometer_service_host}:8777/
                   region: ${_param:openstack_region}
                 ceilometer_admin:
+                  status: ${_param:ceilometer_endpoint_status}
                   interface: 'admin'
                   url: ${_param:ceilometer_service_protocol}://${_param:ceilometer_service_host}:8777/
                   region: ${_param:openstack_region}
