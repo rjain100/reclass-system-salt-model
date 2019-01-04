@@ -5,7 +5,7 @@ parameters:
     # 2.6.2 version, from 12/18/2108, differ from latest 2.6.2 upstream - update next cycle
     docker_image_registry:   "${_param:mcp_docker_registry}/mirantis/external/registry:${_param:mcp_version}"
     docker_image_visualizer: "${_param:mcp_docker_registry}/mirantis/external/visualizer:${_param:mcp_version}"
-    docker_image_openldap: "${_param:mcp_docker_registry}/mirantis/external/osixia/openldap:1.1.8"
+    docker_image_openldap: "${_param:mcp_docker_registry}/mirantis/external/osixia/openldap:1.2.2"
     docker_image_postgresql: "${_param:mcp_docker_registry}/mirantis/external/library/postgres:9.6.10"
     # 3.4.13, from Feb 15, differ from 3.4.13 upstream verison, from March 14 - update next cycle
     docker_image_mongodb: "${_param:mcp_docker_registry}/mirantis/external/library/mongo:${_param:mcp_version}"
