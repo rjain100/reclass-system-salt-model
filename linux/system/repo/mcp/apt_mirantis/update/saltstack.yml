@@ -1,0 +1,11 @@
+classes:
+- system.linux.system.repo.keystorage.saltstack
+parameters:
+  linux:
+    system:
+      repo:
+        mcp_saltstack_update:
+          source: "deb [arch=amd64] ${_param:linux_system_repo_update_mcp_saltstack_url}/${_param:linux_system_codename}/ ${_param:linux_system_codename} main"
+          key: ${_param:linux_system_repo_mcp_saltstack_key}
+          architectures: ${_param:linux_system_architecture}
+          clean_file: true

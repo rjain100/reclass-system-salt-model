@@ -4,8 +4,8 @@ parameters:
   linux:
     system:
       repo:
-        mcp_salt_update:
-          source: "deb [arch=amd64] ${_param:linux_system_repo_update_mcp_salt_url}/${_param:linux_system_codename} ${_param:linux_system_codename} main"
+        mcp_extra_update:
+          source: "deb ${_param:linux_system_repo_update_mcp_extra_url}/${_param:linux_system_codename} ${_param:linux_system_codename} main"
           key: ${_param:linux_system_repo_mirror_mirantis_key}
           architectures: ${_param:linux_system_architecture}
           clean_file: true
