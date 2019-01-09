@@ -1,3 +1,5 @@
+classes:
+- system.docker.client.images.ldap
 parameters:
   docker:
     client:
