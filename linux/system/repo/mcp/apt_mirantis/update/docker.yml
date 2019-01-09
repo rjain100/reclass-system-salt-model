@@ -1,0 +1,11 @@
+classes:
+- system.linux.system.repo.keystorage.docker
+parameters:
+  linux:
+    system:
+      repo:
+        mcp_docker_update:
+          source: "deb [arch=amd64] ${_param:linux_system_repo_update_mcp_docker_url}/${_param:linux_system_codename}/ ${_param:linux_system_codename} stable"
+          key: ${_param:linux_system_repo_mcp_docker_key}
+          architectures: ${_param:linux_system_architecture}
+          clean_file: true
