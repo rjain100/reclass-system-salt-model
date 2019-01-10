@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        opetrenko:
+          email: opetrenko@mirantis.com
+          enabled: true
+          full_name: Oleksiy Petrenko
+          home: /home/opetrenko
+          name: opetrenko
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        opetrenko:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO7LGp/bGlviiROt4ZgyOPuQQdcE5D1d5v8BgNUud2C0ORXu2k5OFUqW4nfSL1J4GRS215TiOgONXnofuXYirmjmfoCMqvHyXb+62Us9DyAluWsbT8eC1C1D4th0FEYeP2/EvDGEkxdNKXBKobTVYr82744hNVToiEbsBBriSUCS8TAz8+aUvnr239YtbsNVD1CJ0YlL49wx9IRKiq+87+WFtPK3/9TK/HGsl2MA5MkBu40+aWdXXlRw6pxTJA+DqmwrdtWXBYvqfAMgOB+JwOqcKObWRnegsVp4+Erd/dlwWXu83umLTqQAEK8pkd+5ur3xiDsfaDEUTS09S85hpv opetrenko@opetrenko-pc
+          user: ${linux:system:user:opetrenko}
