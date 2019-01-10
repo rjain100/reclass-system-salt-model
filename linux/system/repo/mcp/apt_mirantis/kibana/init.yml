@@ -1,2 +1,4 @@
+# Deprecated since 2018.11
+# Will be removed in 2019.q2
 classes:
 - system.linux.system.repo.mcp.apt_mirantis.kibana.5x
