@@ -1,0 +1,11 @@
+classes:
+- system.linux.system.repo.keystorage.percona
+parameters:
+  linux:
+    system:
+      repo:
+        mcp_percona_hotfix:
+          source: "deb ${_param:linux_system_repo_hotfix_mcp_percona_url}/${_param:linux_system_codename}/ ${_param:linux_system_codename} main"
+          key: ${_param:linux_system_repo_mcp_percona_key}
+          architectures: amd64
+          clean_file: true
