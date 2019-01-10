@@ -9,12 +9,21 @@ parameters:
     linux_system_repo_hotfix_url: http://mirror.mirantis.com/hotfix/${_param:mcp_version}/
     # Per repos
     linux_system_repo_mcp_cassandra_url: ${_param:linux_system_repo_url}/cassandra/
-    linux_system_repo_mcp_elasticsearch_curator_url: ${_param:linux_system_repo_url}/elasticsearch-curator-5/
-    linux_system_repo_mcp_elasticsearch_url: ${_param:linux_system_repo_url}/elasticsearch-${_param:elasticsearch_version}.x/
     linux_system_repo_mcp_glusterfs_url: ${_param:linux_system_repo_url}/glusterfs-${_param:linux_system_repo_mcp_glusterfs_version_number}/
     linux_system_repo_mcp_influxdb_url: ${_param:linux_system_repo_url}/influxdb/
     linux_system_repo_mcp_maas_url: ${_param:linux_system_repo_url}/maas/
+    #
+    linux_system_repo_mcp_elasticsearch_curator_url: ${_param:linux_system_repo_url}/elasticsearch-curator-5/
+    linux_system_repo_mcp_update_elasticsearch_curator_url: ${_param:linux_system_repo_update_url}/elasticsearch-curator-5/
+    linux_system_repo_mcp_hotfix_elasticsearch_curator_url: ${_param:linux_system_repo_hotfix_url}/elasticsearch-curator-5/
+    #
+    linux_system_repo_mcp_elasticsearch_url: ${_param:linux_system_repo_url}/elasticsearch-${_param:elasticsearch_version}.x/
+    linux_system_repo_mcp_update_elasticsearch_url: ${_param:linux_system_repo_update_url}/elasticsearch-${_param:elasticsearch_version}.x/
+    linux_system_repo_mcp_hotfix_elasticsearch_url: ${_param:linux_system_repo_hotfix_url}/elasticsearch-${_param:elasticsearch_version}.x/
+    #
     linux_system_repo_mcp_fluentd_url: ${_param:linux_system_repo_url}/td-agent/
+    linux_system_repo_mcp_update_fluentd_url: ${_param:linux_system_repo_update_url}/td-agent/
+    linux_system_repo_mcp_hotfix_fluentd_url: ${_param:linux_system_repo_hotfix_url}/td-agent/
     #
     linux_system_repo_mcp_docker_url: ${_param:linux_system_repo_url}/docker/
     linux_system_repo_update_mcp_docker_url: ${_param:linux_system_repo_update_url}/docker/
