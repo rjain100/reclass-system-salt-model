@@ -69,7 +69,7 @@ parameters:
     kubernetes_hyperkube_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/hyperkube-amd64:v1.12.3-2
     kubernetes_calico_cni_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/cni:v3.3.2
     kubernetes_calico_calicoctl_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/ctl:v3.3.2
-    kubernetes_containerd_package: containerd.io=1.2.0-1
+    kubernetes_containerd_package: containerd.io=1.2.1-1~u16.04+mcp
     kubernetes_metrics_server_image: ${_param:kubernetes_metrics_server_repo}/metrics-server-amd64:v0.3.1
 
     kubernetes_opencontrail_controller_image: ${_param:kubernetes_contrail_registry}/opencontrail-controller:${_param:mcp_version}
