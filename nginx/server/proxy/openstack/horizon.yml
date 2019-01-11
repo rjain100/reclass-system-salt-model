@@ -2,7 +2,7 @@ parameters:
   _param:
     nginx_proxy_openstack_api_host: ${_param:cluster_public_host}
     nginx_proxy_openstack_api_address: 0.0.0.0
-    nginx_proxy_openstack_horizon_host: ${_param:openstack_proxy_address}
+    nginx_proxy_openstack_horizon_host: ${_param:cluster_public_host}
   nginx:
     server:
       enabled: true
