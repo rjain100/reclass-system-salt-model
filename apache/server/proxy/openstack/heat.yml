@@ -40,7 +40,7 @@ parameters:
             address: ${_param:apache_proxy_openstack_api_address}
           ssl: ${_param:apache_proxy_ssl}
         apache_proxy_openstack_api_heat_cloudwatch:
-          enabled: true
+          enabled: ${_param:openstack_heat_cloudwatch_api_enabled}
           type: proxy
           name: openstack_api_heat_cloudwatch
           check: false

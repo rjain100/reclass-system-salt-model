@@ -9,7 +9,7 @@ parameters:
       enabled: true
       site:
         nginx_proxy_openstack_api_heat_cloudwatch:
-          enabled: true
+          enabled: ${_param:openstack_heat_cloudwatch_api_enabled}
           type: nginx_proxy
           name: openstack_api_heat_cloudwatch
           proxy:

@@ -9,6 +9,7 @@ parameters:
         heat_cloudwatch_api:
           type: openstack-service
           service_name: heat
+          enabled: ${_param:openstack_heat_cloudwatch_api_enabled}
           binds:
           - address: ${_param:cluster_vip_address}
             port: 8003
