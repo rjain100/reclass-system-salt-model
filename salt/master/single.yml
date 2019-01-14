@@ -12,7 +12,7 @@ parameters:
   salt:
     master:
       accept_policy: auto_accept
-      worker_threads: 40
+      worker_threads: ${_param:salt_master_worker_threads}
       max_open_files: 15000
       command_timeout: 10
       peer:

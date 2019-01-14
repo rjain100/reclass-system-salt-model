@@ -38,6 +38,7 @@ parameters:
     # Other
     salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     salt_control_trusty_image_backend: /var/lib/libvirt/images/backends/trusty.qcow2
+    salt_master_worker_threads: 40
     salt_minion_ca_host: cfg01.${_param:cluster_domain}
     # Make sure this global variable is defined everywhere, where used it is already set on cluster level
     cluster_public_host: '127.0.0.1'
