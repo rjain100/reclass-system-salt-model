@@ -8,6 +8,8 @@ parameters:
     client:
       server:
         identity:
+          roles:
+          - ResellerAdmin
           project:
             service:
               user:
@@ -15,6 +17,11 @@ parameters:
                   is_admin: true
                   password: ${_param:keystone_swift_password}
                   email: ${_param:admin_email}
+            admin:
+              user:
+                admin:
+                  roles:
+                  - ResellerAdmin
           service:
             radosgw-swift:
               type: object-store

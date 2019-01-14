@@ -6,6 +6,10 @@ parameters:
     client:
       resources:
         v3:
+          roles:
+            reseller_admin:
+              name: ResellerAdmin
+              enabled: true
           users:
             swift:
               password: ${_param:keystone_swift_password}
@@ -14,6 +18,11 @@ parameters:
                 service_admin:
                   name: admin
                   project_id: service
+            admin:
+              roles:
+                reseller_admin:
+                  name: ResellerAdmin
+                  project_id: admin
           services:
             radosgw-swift:
               type: object-store
