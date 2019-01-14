@@ -29,6 +29,7 @@ parameters:
     salt_control_size_image_layout_opencontrail_control: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_openstack_barbican: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_openstack_baremetal: ${_param:salt_control_size_image_layout_default}
+    salt_control_size_image_layout_openstack_benchmark: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_openstack_billing: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_openstack_control: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_openstack_database: ${_param:salt_control_size_image_layout_default}
