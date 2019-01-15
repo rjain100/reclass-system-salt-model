@@ -1,0 +1,9 @@
+parameters:
+  linux:
+    network:
+      host:
+        openstack_share_control_vip:
+          address: ${_param:openstack_share_address}
+          names:
+          - ${_param:openstack_share_service_hostname}
+          - ${_param:openstack_share_service_host}
