@@ -1,2 +1,5 @@
 classes:
+- system.linux.system.repo.mcp.apt_mirantis.update.extra
+- system.linux.system.repo.mcp.apt_mirantis.update.percona
+- system.linux.system.repo.mcp.apt_mirantis.update.saltstack
 - system.linux.system.repo.mcp.apt_mirantis.update.ubuntu
