@@ -7,7 +7,7 @@ parameters:
         mirror_mirantis_com_ubuntu_xenial:
           force: ${_param:mirror_mirantis_com_ubuntu_xenial_force}
           lock_target: True
-          extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
+          extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none'] #, '--dry-run' ]
           method: "rsync"
           arch: [ 'amd64' ]
           mirror_host: "mirror.mirantis.com"
@@ -79,8 +79,7 @@ parameters:
             5: "--exclude='/*-wallpapers*'"
             6: "--exclude='/language-pack-(?!en)'"
             7: "--exclude='thunderbird*'"
-            8: "--exclude='libreoffice*'"
-            9: "--exclude='openoffice*'"
+            8: --exclude='(libreoffice*|bgoffice|openoffice*)'
             10: "--exclude='live-image-*-desktop*'"
             11: "--exclude='lubuntu-*'"
             12: "--exclude='kubuntu-*'"
@@ -91,7 +90,7 @@ parameters:
             17: "--exclude='gnome*'"
             18: "--exclude='/unity*'"
             20: "--exclude='openjdk-*-(dbg|demo|source).*'"
-            22: "--exclude='(kde|ubuntu|xfce4|sabily).*artwork*'"
+            22: "--exclude='(kde|ubuntu|xfce4|sabily|sugar).*artwork*'"
             23: "--exclude='ubuntu-touch*'"
             24: "--exclude='remmina*'"
             25: "--exclude='/libbluetooth*'"
@@ -109,7 +108,7 @@ parameters:
             86: "--exclude='/main/(m/mozc/|n/nut/|o/oxide-qt/|o/orbit2/|q/(qtbase-opensource-src|qtdeclarative-opensource-src)/|t/telepathy-glib|w/webkit2gtk|w/webrtc-audio-processing)'"
             87: "--exclude='universe/(s/syncevolution|r/r-bioc-)'"
             88: "--exclude='universe/t/texlive-lang/texlive-lang-(?!.*english)'"
-            89: "--exclude='/universe/k/(kde)'"
+            89: --exclude='/universe/(libk/libkde|k/kde)'
             90: "--exclude='/universe/p/(psi-plus|puppet-module|plasma|pcl/)'"
             91: "--exclude='golang-github-*'"
             92: "--exclude='/(llvm-toolchain|address-book|amule|openclipart|rhythmbox|gimp|sonic-visualiser|games|bsdgame|gazebo|arduino|webkitgtk|widelands|wxwidget|warzone|wings3d).*'"
@@ -120,9 +119,10 @@ parameters:
             97: "--exclude='/universe/.*(metastudent).*'"
             # Drop all dbg pkgs
             98: --exclude='(-|_)dbg(_|-)'
+            99: --exclude='mythbuntu|network-manager-applet|debian-junior|game-music-emu|fp-units-castle-game-engine|zope\.'
             # List of unused linux kernels and unsupported arch
-            300: "--exclude='/.*(arm64|powerpc|s390x|armel|armhf|sparc64|mips64|ppc64el|mipsn32)(?!.*amd64)'"
-            301: "--exclude='(main|universe)/l/linux-*-(.*azure|.*aws|gke|gcp|.*azure-edge|.*oem/|.*euclid/)'"
+            300: --exclude='.*-(alpha|arm64|powerpc|s390x|armel|armhf|arm-|aarch64-|sparc64|mips64|mips|ppc64el|mipsn32|hppa|m68k|sh4|mipsel|ppc64|m68hc1)'
+            301: --exclude='(main|universe)/l/linux-*-(.*azure|.*aws|gke|gcp|.*azure-edge|.*oem/|.*euclid/)'
             302: "--exclude='/*universe.*(-armel-|-arm-)(?!.*amd64)'"
             303: "--exclude='/main/l/linux(.*)/linux-source-*'"
             # Old minor version of kernel|tools|extra|cloud and related.
@@ -182,3 +182,5 @@ parameters:
             805: '--include="/main(.*)llvm-toolchain-(?![1-5])"' # pki-ca: < 389-ds-base < dogtag
             806: "--include='/main(.*)man-db'" # include man tool
             807: "--include='/main(.*)zfs-doc'" # Some extra fs dep's for MAAS provision stage.PROD-21531
+            808: --include='linux-libc(-|_|).*amd64.deb' # Extra dep. for galera formula. PROD-26487
+
