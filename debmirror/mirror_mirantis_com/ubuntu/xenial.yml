@@ -7,7 +7,7 @@ parameters:
         mirror_mirantis_com_ubuntu_xenial:
           force: ${_param:mirror_mirantis_com_ubuntu_xenial_force}
           lock_target: True
-          extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none'] #, '--dry-run' ]
+          extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
           method: "rsync"
           arch: [ 'amd64' ]
           mirror_host: "mirror.mirantis.com"
@@ -71,6 +71,16 @@ parameters:
           - universe/translations
           - universe/video
           - universe/x11
+          - zope
+          - main/zope
+          - restricted/zope
+          - universe/zope
+          - 'tex$'
+          - 'main/tex$'
+          - 'restricted/tex$'
+          - 'universe/tex$'
+          - 'text$'
+          - 'universe/text$'
           # Updating filter, please always start from section, aka main|universe|multiverse
           filter:
             1: "--exclude='android*'"
@@ -81,14 +91,9 @@ parameters:
             7: "--exclude='thunderbird*'"
             8: --exclude='(libreoffice*|bgoffice|openoffice*)'
             10: "--exclude='live-image-*-desktop*'"
-            11: "--exclude='lubuntu-*'"
-            12: "--exclude='kubuntu-*'"
-            13: "--exclude='cinnamon-*'"
-            14: "--exclude='mate-*'"
-            15: "--exclude='desktop-*'"
+            11: --exclude='(desktop|mate|cinnamon|xubuntu|kubuntu|lubuntu)-*'
             16: "--exclude='flashplugin*'"
-            17: "--exclude='gnome*'"
-            18: "--exclude='/unity*'"
+            17: --exclude='(unity|gnome).*'
             20: "--exclude='openjdk-*-(dbg|demo|source).*'"
             22: "--exclude='(kde|ubuntu|xfce4|sabily|sugar).*artwork*'"
             23: "--exclude='ubuntu-touch*'"
@@ -98,32 +103,31 @@ parameters:
             27: "--exclude='/banshee*'"
             27: "--exclude='/*(.xorg)*joystick'"
             28: "--exclude='/xserver-xorg-video(.*vivid|.*wily|.*utopic)'"
-            30: "--exclude='/*universe.*bluez.*'"
-            32: "--exclude='/main/a/a11y-profile-manager/'"
-            33: "--exclude='/universe/.*(alsa|ubuntuone|telepathy|debian-multimedia|kodi|mediaplayer|nagios|getfem|gammaray|geotranz)'"
-            34: "--exclude='/universe/.*(pyqt|usb-creator|gcc-mingw-w64|gcc-snapshot)'"
-            35: "--exclude='/universe/q/qt'"
-            36: "--exclude='/universe/.*(brasero|mediascanner2|mediatomb|mediawiki|qtmultimedia|pidgin|skype|eclipse|esys-particle|fusion|0/0ad|e/emboss|e/empathy|g/globus)'"
-            84: "--exclude='/multiverse/(v/virtualbox|w/wine|playonlinux)'"
+            30: --exclude='universe.*bluez.*'
+            32: --exclude='main/(a/a11y-profile-manager|e/emacs24|i/ispell|br\.ispell)'
+            33: --exclude='/universe/.*(alsa|ubuntuone|telepathy|debian-multimedia|kodi|mediaplayer|nagios|getfem|gammaray|geotranz|brasero)'
+            34: --exclude='(usb-creator|gcc-snapshot|gcc-mozilla|gccgo|gcc-.*-cross.*|gcc-avr|gcc-3\.3|gcc-4\.[7-8])'
+            35: --exclude='(.*/q/qt|pyqt)'
+            36: --exclude='/universe/.*(mediascanner2|mediatomb|mediawiki|pidgin|eclipse|esys-particle|fusion|e/emboss|e/empathy|g/globus|ecere-sdk|ferret|gap-)'
+            84: --exclude='restricted/b/bcmwl'
             86: "--exclude='/main/(m/mozc/|n/nut/|o/oxide-qt/|o/orbit2/|q/(qtbase-opensource-src|qtdeclarative-opensource-src)/|t/telepathy-glib|w/webkit2gtk|w/webrtc-audio-processing)'"
-            87: "--exclude='universe/(s/syncevolution|r/r-bioc-)'"
-            88: "--exclude='universe/t/texlive-lang/texlive-lang-(?!.*english)'"
-            89: --exclude='/universe/(libk/libkde|k/kde)'
+            87: --exclude='universe/(s/syncevolution|r/r-bioc-|.*(libbiblio|libbusiness|biococoa))'
+            89: --exclude='universe/(libk/libkde|k/kde|r/rustc|r/root-system|e/emacs|x/xemacs21)'
             90: "--exclude='/universe/p/(psi-plus|puppet-module|plasma|pcl/)'"
-            91: "--exclude='golang-github-*'"
+            91: --exclude='/golang-.*'
             92: "--exclude='/(llvm-toolchain|address-book|amule|openclipart|rhythmbox|gimp|sonic-visualiser|games|bsdgame|gazebo|arduino|webkitgtk|widelands|wxwidget|warzone|wings3d).*'"
             93: "--exclude='/(asterisk|abiword|webbrowser-app|imagemagick|.*clamav|wireshar|vlc|.*transmission|tryton-modules|trilinos|tomboy|wine1|wine-dev|compiz|mythtv|ubuntustudio).*'"
             94: "--exclude='/universe/o/(openstack-debian-images).*'"
-            95: "--exclude='/gcc-.*-cross.*'"
             96: "--exclude='/(nvidia).*'"
-            97: "--exclude='/universe/.*(metastudent).*'"
+            97: --exclude='(gambas3|opengl|screensaver|taoframework)'
             # Drop all dbg pkgs
             98: --exclude='(-|_)dbg(_|-)'
-            99: --exclude='mythbuntu|network-manager-applet|debian-junior|game-music-emu|fp-units-castle-game-engine|zope\.'
+            99: --exclude='mythbuntu|network-manager-applet|debian-junior|game-music-emu|fp-units-castle-game-engine|asio|unidic-mecab|zope\.'
+            100: --exclude='kineticstools|juju-(deployer|mongo|core)|felix-latin|fonts-(yozvox-yozfont|nanum|roboto|baekmuk|arphic-.*|takao|noto-cjk|ipamj-mincho)|insighttoolkit|axiom'
+            101: --exclude='openjdk-(8|9)(?!.*jre-headless.*)'
             # List of unused linux kernels and unsupported arch
-            300: --exclude='.*-(alpha|arm64|powerpc|s390x|armel|armhf|arm-|aarch64-|sparc64|mips64|mips|ppc64el|mipsn32|hppa|m68k|sh4|mipsel|ppc64|m68hc1)'
+            300: --exclude='.*-(alpha|arm64|powerpc|s390x|armel|armhf|arm-|aarch64-|sparc64|mips64|mips|ppc64el|mipsn32|hppa|m68k|sh4|mipsel|ppc64|m68hc1|mingw-w64)'
             301: --exclude='(main|universe)/l/linux-*-(.*azure|.*aws|gke|gcp|.*azure-edge|.*oem/|.*euclid/)'
-            302: "--exclude='/*universe.*(-armel-|-arm-)(?!.*amd64)'"
             303: "--exclude='/main/l/linux(.*)/linux-source-*'"
             # Old minor version of kernel|tools|extra|cloud and related.
             # Generic: Old - if minor less then < 136, but not 4numeric
@@ -140,8 +144,8 @@ parameters:
             309: --exclude='main/l/linux.*/linux-.*4\.4\.0-'
             # List of packages, that should be fetched from fresh ppa or other mirror
             # So,removing them from upstream mirror.
-            500: "--exclude='/main/m/maas/'"
-            501: "--exclude='/universe/g/glusterfs/'"
+            500: --exclude='main/m/maas/'
+            501: --exclude='universe/g/glusterfs/'
             502: "--exclude='/universe/d/(docker-|docker.io)/'"
             503: "--exclude='/(main|universe)/c/ceph'"
             504: "--exclude='/universe/a/aptly'"
@@ -182,5 +186,5 @@ parameters:
             805: '--include="/main(.*)llvm-toolchain-(?![1-5])"' # pki-ca: < 389-ds-base < dogtag
             806: "--include='/main(.*)man-db'" # include man tool
             807: "--include='/main(.*)zfs-doc'" # Some extra fs dep's for MAAS provision stage.PROD-21531
-            808: --include='linux-libc(-|_|).*amd64.deb' # Extra dep. for galera formula. PROD-26487
-
+            808: --include='main/.*(linux-libc(-|_|)|libgcc1_).*amd64.deb'
+            809: --include='main/(x/xml-core|s/sgml-base|libxml|.*xmlsec1|.*python(3|)-zope.interface)'

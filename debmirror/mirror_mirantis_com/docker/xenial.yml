@@ -16,8 +16,7 @@ parameters:
           dist: [ xenial ]
           section: [ stable ]
           filter:
-            # Include only latest Docker packages >= 18.06 && >= 17.12
-            001: "--exclude='docker-ce'"
-            002: "--include='docker-ce_18.((0[6-9])|([1-9][0-9]))'"
-            003: "--include='docker-ce_17.((1[2-9])|([2-9][0-9]))'"
-            003: "--include='docker-ce_((19)|([2-9][0-9]))'"
+            # conteinerD - forked at 'extra' repo.
+            001: --exclude='(docker-ce_17|containerd\.io)'
+            # Drop docker-ce <= 18.09
+            002: --exclude='(docker-ce(-|_)18.0[0-8])'
