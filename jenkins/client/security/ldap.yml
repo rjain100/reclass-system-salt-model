@@ -1,7 +1,6 @@
 parameters:
   _param:
     jenkins_security_ldap_manager_dn: ''
-    jenkins_security_ldap_manager_password: ''
     jenkins_security_ldap_user_search_filter: 'uid={0}'
     jenkins_security_ldap_user_search_base: ''
     jenkins_security_ldap_group_search_base: ''

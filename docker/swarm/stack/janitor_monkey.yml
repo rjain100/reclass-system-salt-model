@@ -2,7 +2,7 @@ parameters:
   _param:
     docker_janitor_monkey_replicas: 1
     docker_mongodb_admin_username: admin
-    docker_mongodb_admin_password: password
+#    docker_mongodb_admin_password: password
     docker_image_janitor_monkey: ${_param:mcp_docker_registry}/mirantis/oss/janitor-monkey
     janitor_monkey_bind_host: cleanup-service-api
     janitor_monkey_bind_port: 8080
@@ -17,7 +17,7 @@ parameters:
     janitor_monkey_base_url: http://${_param:janitor_monkey_mongodb_host}:${_param:janitor_monkey_mongodb_port}
     janitor_monkey_mongodb_db: mcp_cloud
     janitor_monkey_mongodb_username: janitor
-    janitor_monkey_mongodb_password: password
+#    janitor_monkey_mongodb_password: password
     janitor_monkey_elasticsearch: ${_param:elasticsearch_bind_host}:${_param:elasticsearch_binary_bind_port}
     janitor_monkey_cloudfire_region: RegionOne
     janitor_monkey_cis_clustername: ${_param:elasticsearch_cluster_name}
@@ -30,7 +30,7 @@ parameters:
       project_name: admin
       auth_url: http://yourcloud.com:5000/v3/auth/tokens
       username: admin
-      password: password
+#      password: password
       endpoint_type: public
       ssl_verify: False
       source_credentials_dir: /srv/volumes/rundeck/storage

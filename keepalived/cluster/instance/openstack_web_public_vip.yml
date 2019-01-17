@@ -5,7 +5,6 @@ classes:
 parameters:
   _param:
     keepalived_openstack_web_public_vip_address: ${_param:cluster_vip_address}
-    keepalived_openstack_web_public_vip_password: password
     keepalived_openstack_web_public_vip_interface: eth1
   keepalived:
     cluster:

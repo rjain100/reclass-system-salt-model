@@ -20,6 +20,7 @@ classes:
 - system.defaults.gerrit
 - system.defaults.keepalived
 - system.defaults.salt
+- system.defaults.secrets
 - system.defaults.stacklight
 - system.defaults.xtrabackup
 - system.defaults.backup

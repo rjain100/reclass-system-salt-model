@@ -1,12 +1,10 @@
 parameters:
   _param:
     opencontrail_identity_user: admin
-    opencontrail_identity_password: contrail123
     opencontrail_identity_tenant: admin
     opencontrail_public_ip_range: 172.17.47.128/25
     opencontrail_public_ip_network: default-domain:default-project:Public
     opencontrail_private_ip_range: 10.150.0.0/16
-    opencontrail_message_queue_password: guest
   kubernetes:
     pool:
       network:

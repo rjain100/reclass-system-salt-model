@@ -4,7 +4,6 @@ parameters:
   _param:
     grafana_port: 3000
     grafana_user: admin
-    grafana_password: admin
   grafana:
     server:
       enabled: true

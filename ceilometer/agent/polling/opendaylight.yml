@@ -7,7 +7,7 @@ parameters:
         driver: opendaylight.v2
         auth: basic
         user: admin
-        password: admin
+#        password: admin
         scheme: http
         interval: 900
   ceilometer:

@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    galera_clustercheck_password: clustercheck
   galera:
     clustercheck:
       enabled: True

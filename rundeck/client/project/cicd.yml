@@ -8,7 +8,7 @@ parameters:
       auth_url: http://yourcloud.com:5000/v3/auth/tokens
       endpoint_type: publicURL
       username: admin
-      password: password
+#      password: password
       cert: plain-certificate
       ssl_cert_file: cert.pem
       project_name: admin

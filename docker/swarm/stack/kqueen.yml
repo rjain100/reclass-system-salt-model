@@ -10,7 +10,6 @@ parameters:
     kqueen_api_prometheus_whitelist: '172.16.10.0/24' ##REcheck with network
     kqueen_api_ldap_uri: 'ldap://ldap'
     kqueen_api_ldap_dn: 'cn=admin,dc=example,dc=org'
-    kqueen_api_ldap_password: 'password'
     kqueen_api_auth_modules: 'local'
     docker_kqueen_ui_replicas: 1
     kqueen_ui_bind_port: ${_param:haproxy_kqueen_ui_bind_port}
@@ -26,7 +25,6 @@ parameters:
       kqueen_ui_secret_key: 'pasteyoursecret'
       kqueen_api_bootstrap_admin: True
       kqueen_api_admin_username: admin
-      kqueen_api_admin_password: default
       kqueen_api_admin_organization: MirantisCloudPlatform
       kqueen_api_admin_namespace: mcp
   docker:

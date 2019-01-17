@@ -10,7 +10,7 @@ parameters:
     server:
       database:
         engine: none
-        password: none
+#        password: none
       publisher:
         default:
           enabled: false

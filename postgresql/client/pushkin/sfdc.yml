@@ -4,7 +4,6 @@ parameters:
   _param:
     sfdc_db_host: ${_param:haproxy_postgresql_bind_host}
     sfdc_db_user: sfdc
-    sfdc_db_user_password: sfdc
     sfdc_login_id: 14
     sfdc_application_id: 4
   postgresql:

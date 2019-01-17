@@ -4,7 +4,6 @@ parameters:
   _param:
     pushkin_db_host: ${_param:haproxy_postgresql_bind_host}
     pushkin_db_user: pushkin
-    pushkin_db_user_password: pushkin
   postgresql:
     client:
       server:

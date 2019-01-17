@@ -9,10 +9,8 @@ classes:
 parameters:
   _param:
     keystone_service_token: token
-    keystone_admin_password: password
     mysql_admin_user: root
-    mysql_admin_password: password
-    mysql_keystone_password: password
+    keystone_tokens_expiration: 3600
     openstack_node_role: primary
     keystone_service_protocol: ${_param:cluster_internal_protocol}
   linux:

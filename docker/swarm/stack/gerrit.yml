@@ -4,7 +4,6 @@ parameters:
   _param:
     gerrit_ldap_server: ""
     gerrit_ldap_bind_user: ""
-    gerrit_ldap_bind_password: ""
     gerrit_ldap_account_base: ""
     gerrit_ldap_group_base: ""
     gerrit_http_listen_url: http://*:8080/

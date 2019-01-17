@@ -4,7 +4,6 @@ parameters:
   _param:
     rundeck_db_host: ${_param:haproxy_postgresql_bind_host}
     rundeck_db_user: rundeck
-    rundeck_db_user_password: password
   postgresql:
     client:
       server:

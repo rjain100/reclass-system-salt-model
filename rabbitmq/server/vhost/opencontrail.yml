@@ -5,7 +5,7 @@ parameters:
         '/':
           enabled: true
           user: guest
-          password: guest
+          password: ${_param:rabbitmq_guest_password}
           policies:
           - name: HA
             pattern: '^(?!amq\.).*'
