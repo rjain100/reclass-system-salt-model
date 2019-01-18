@@ -22,3 +22,6 @@ parameters:
             pattern: '^metering.sample$'
             definition: '{"ha-mode": "all", "message-ttl": ${_param:rabbitmq_ceilometer_ttl}}'
             priority: 10
+          - name: default-policy
+            pattern: '^(?!amq\.).*'
+            definition: '{"message-ttl": 120000}'
