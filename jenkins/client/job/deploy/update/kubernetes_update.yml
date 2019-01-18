@@ -25,28 +25,28 @@ parameters:
             credentials: "gerrit"
             script: k8s-upgrade-pipeline.groovy
           param:
-            KUBERNETES_HYPERKUBE_IMAGE:
+            KUBERNETES_HYPERKUBE_SOURCE:
               type: string
-              default: "${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.12.3-2"
-              description: "Versioned image to update control plane from. Should be null if update rolling via reclass-system level"
+              default: ""
+              description: "Versioned hyperkube binary to update control plane from. Should be null if update rolling via reclass-system level"
+            KUBERNETES_HYPERKUBE_SOURCE_HASH:
+              type: string
+              default: ""
+              description: "Hyperkube binary md5 hash. Should be null if update rolling via reclass-system level"
             KUBERNETES_PAUSE_IMAGE:
               type: string
-              default: "${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.12.3-2"
+              default: ""
               description: "Versioned pause image to use in deployments. Should be null if update rolling via reclass-system level"
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
             SALT_MASTER_CREDENTIALS:
               type: string
-              default: "salt-qa-credentials"
+              default: "salt"
             SIMPLE_UPGRADE:
               type: boolean
               default: 'false'
               description: "Choose between simple upgrade or upgrade with draining nodes"
-            UPGRADE_DOCKER:
-              type: boolean
-              default: 'false'
-              description: "Upgrade docker or not"
             PER_NODE:
               type: boolean
               default: 'true'
@@ -89,17 +89,41 @@ parameters:
               description: "Version of 'calico-upgrade' utility to be used."
             KUBERNETES_CALICO_IMAGE:
               type: string
-              default: "${_param:kubernetes_calico_repo}/node:v3.1.3"
+              default: ""
               description: "Versioned calico/node image. Should be null if update rolling via reclass-system level"
-            KUBERNETES_CALICO_CALICOCTL_IMAGE:
+            KUBERNETES_CALICO_CALICOCTL_SOURCE:
               type: string
-              default: "${_param:kubernetes_calico_repo}/ctl:v3.1.3"
-              description: "Versioned calico/ctl image. Should be null if update rolling via reclass-system level"
-            KUBERNETES_CALICO_CNI_IMAGE:
+              default: ""
+              description: "Versioned calico/ctl binary. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_CALICOCTL_SOURCE_HASH:
               type: string
-              default: "${_param:kubernetes_calico_repo}/cni:v3.1.3"
-              description: "Versioned calico/cni image. Should be null if update rolling via reclass-system level"
+              default: ""
+              description: "Calico/ctl binary md5 hash. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_CNI_SOURCE:
+              type: string
+              default: ""
+              description: "Versioned calico/cni binary. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_CNI_SOURCE_HASH:
+              type: string
+              default: ""
+              description: "Calico/cni binary hash. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_BIRDCL_SOURCE:
+              type: string
+              default: ""
+              description: "Versioned calico/bird binary. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_BIRDCL_SOURCE_HASH:
+              type: string
+              default: ""
+              description: "Calico/bird binary hash. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_CNI_IPAM_SOURCE:
+              type: string
+              default: ""
+              description: "Versioned calico/ipam binary. Should be null if update rolling via reclass-system level"
+            KUBERNETES_CALICO_CNI_IPAM_SOURCE_HASH:
+              type: string
+              default: ""
+              description: "Calico/ipam binary hash. Should be null if update rolling via reclass-system level"
             KUBERNETES_CALICO_KUBE_CONTROLLERS_IMAGE:
               type: string
-              default: "${_param:kubernetes_calico_repo}/kube-controllers:v3.1.3"
+              default: ""
               description: "Versioned calico/kube-controllers image. Should be null if update rolling via reclass-system level"
