@@ -1,0 +1,14 @@
+parameters:
+  _param:
+    # List of files, to be placed into offline image, during separate image build process
+    # By default, will be avaible http_server
+    # WARNING: file path and names - must be exactly same as in any other place in reclass-system!
+    local_http_files_list:
+      file:
+        ubuntu-16-04-x64.qcow2:
+          name: /srv/http/images.mirantis.com/ubuntu-16-04-x64-mcp${_param:mcp_version}.qcow2
+          source: ${_param:mcp_static_images_url}/ubuntu-16-04-x64-mcp${_param:mcp_version}.qcow2
+          hash: ${_param:mcp_static_images_url}/ubuntu-16-04-x64-mcp${_param:mcp_version}.qcow2.md5
+        ubuntu-16-04-x64.qcow2.md5:
+          name: /srv/http/images.mirantis.com/ubuntu-16-04-x64-mcp${_param:mcp_version}.qcow2.md5
+          source: ${_param:mcp_static_images_url}/ubuntu-16-04-x64-mcp${_param:mcp_version}.qcow2.md5
