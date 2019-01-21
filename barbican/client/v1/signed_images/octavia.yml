@@ -4,9 +4,6 @@ classes:
 parameters:
   _param:
     octavia_image_cert_key: '/etc/octavia/certs/image.key'
-    amphora_image_name:  "amphora-x64-haproxy"
-
-
   barbican:
     client:
       signed_images:
