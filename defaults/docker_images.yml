@@ -62,7 +62,7 @@ parameters:
         name: compose:1.17.1
       - registry: ${_param:mcp_docker_registry}/mirantis/external/osixia
         target_registry: ${_param:local_docker_client_registry_target_registry}/mirantis/external/osixia
-        name: openldap:1.1.8
+        name: openldap:1.2.2
       - registry: ${_param:mcp_docker_registry}/mirantis/external/library
         target_registry: ${_param:local_docker_client_registry_target_registry}/mirantis/external/library
         name: postgres:9.6.10
