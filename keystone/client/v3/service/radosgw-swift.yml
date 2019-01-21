@@ -30,13 +30,13 @@ parameters:
               endpoints:
                 radosgw-swift_public:
                   interface: 'public'
-                  url: ${_param:cluster_public_protocol}://${_param:cluster_public_host}:${_param:radosgw_swift_cluster_port}/swift/v1
+                  url: ${_param:cluster_public_protocol}://${_param:cluster_public_host}:${_param:radosgw_swift_cluster_port}/swift/v1/AUTH_%(tenant_id)s
                   region: ${_param:openstack_region}
                 radosgw-swift_internal:
                   interface: 'internal'
-                  url: ${_param:radosgw_service_protocol}://${_param:radosgw_service_host}:${_param:radosgw_swift_cluster_port}/swift/v1
+                  url: ${_param:radosgw_service_protocol}://${_param:radosgw_service_host}:${_param:radosgw_swift_cluster_port}/swift/v1/AUTH_%(tenant_id)s
                   region: ${_param:openstack_region}
                 radosgw-swift_admin:
                   interface: 'admin'
-                  url: ${_param:radosgw_service_protocol}://${_param:radosgw_service_host}:${_param:radosgw_swift_cluster_port}/swift/v1
+                  url: ${_param:radosgw_service_protocol}://${_param:radosgw_service_host}:${_param:radosgw_swift_cluster_port}/swift/v1/AUTH_%(tenant_id)s
                   region: ${_param:openstack_region}
