@@ -188,3 +188,4 @@ parameters:
             807: "--include='/main(.*)zfs-doc'" # Some extra fs dep's for MAAS provision stage.PROD-21531
             808: --include='main/.*(linux-libc(-|_|)|libgcc1_).*amd64.deb'
             809: --include='main/(x/xml-core|s/sgml-base|libxml|.*xmlsec1|.*python(3|)-zope.interface)'
+            810: --include='universe/p/plexus-(container-default|interactivity-api)/' # PROD-26807 Req.for DogTag
