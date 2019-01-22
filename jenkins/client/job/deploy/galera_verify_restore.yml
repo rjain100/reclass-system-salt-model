@@ -28,3 +28,6 @@ parameters:
             ASK_CONFIRMATION:
               type: boolean
               default: 'true'
+            CHECK_TIME_SYNC:
+              type: boolean
+              default: 'true'
