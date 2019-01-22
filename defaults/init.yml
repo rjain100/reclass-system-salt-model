@@ -8,6 +8,7 @@
 classes:
 - system.defaults.linux_system_repo
 - system.defaults.linux_system_file
+- system.defaults.git
 - system.defaults.openstack
 - system.defaults.galera
 - system.defaults.rabbitmq
@@ -24,7 +25,6 @@ parameters:
     # 'apt_mk_version' will be removed in q4
     apt_mk_version: ${_param:mcp_version}
     linux_system_architecture: amd64
-    linux_system_repo_url: "http://mirror.mirantis.com/${_param:mcp_version}/"
     # linux globals
     banner_company_name: COMPANY_NAME
     motd_company_name: "${_param:banner_company_name}"
@@ -43,7 +43,5 @@ parameters:
     # Make sure this global variable is defined everywhere, where used it is already set on cluster level
     cluster_public_host: '127.0.0.1'
     single_address: '127.0.0.1'
-    # Stub parameter, to render target local_registry_mirror_image_list
-    local_docker_client_registry_target_registry: "apt:5000"
     # Cloudwatch api removed from Queens
     openstack_heat_cloudwatch_api_enabled: True
