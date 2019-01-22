@@ -24,6 +24,7 @@ parameters:
     kubernetes_containerd_repo: https://github.com/kubernetes-sigs/cri-tools/releases/download
     kubernetes_openstack_provider_repo: ${_param:mcp_binary_registry}/mirantis/kubernetes/cloud-provider-openstack
     kubernetes_metrics_server_repo: k8s.gcr.io
+    kubernetes_helm_tiller_repo: gcr.io/kubernetes-helm
 
     # component images/binaries
     kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v3.3.2
@@ -71,6 +72,7 @@ parameters:
     kubernetes_calico_calicoctl_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/ctl:v3.3.2
     kubernetes_containerd_package: containerd.io=1.2.1-1~u16.04+mcp
     kubernetes_metrics_server_image: ${_param:kubernetes_metrics_server_repo}/metrics-server-amd64:v0.3.1
+    kubernetes_helm_tiller_image: ${_param:kubernetes_helm_tiller_repo}/tiller:v2.12.2
 
     kubernetes_opencontrail_controller_image: ${_param:kubernetes_contrail_registry}/opencontrail-controller:${_param:mcp_version}
     kubernetes_opencontrail_analyticsdb_image: ${_param:kubernetes_contrail_registry}/opencontrail-analyticsdb:${_param:mcp_version}
@@ -95,6 +97,7 @@ parameters:
     kubernetes_ingressnginx_enabled: false
     kubernetes_containerd_enabled: true
     kubernetes_metrics_server_enabled: false
+    kubernetes_helm_tiller_enabled: false
 
     kubernetes_ingressnginx_controller_replicas: 1
 
@@ -242,6 +245,9 @@ parameters:
         metrics-server:
           enabled: ${_param:kubernetes_metrics_server_enabled}
           controller_image: ${_param:kubernetes_metrics_server_image}
+        helm:
+          enabled: ${_param:kubernetes_helm_tiller_enabled}
+          tiller_image: ${_param:kubernetes_helm_tiller_image}
     pool:
       enabled: false
       kubelet:
