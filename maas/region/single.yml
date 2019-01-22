@@ -53,6 +53,10 @@ parameters:
         name: maasdb
         password: ${_param:maas_db_password}
         username: maas
+      ntp:
+        server_1:
+          enabled: true
+          host: pool.ntp.org
       maas_config:
         main_archive: ${_param:maas_region_main_archive}
         commissioning_distro_series: xenial
