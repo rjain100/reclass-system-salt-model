@@ -45,6 +45,10 @@ parameters:
     linux_system_repo_update_mcp_extra_url: ${_param:linux_system_repo_update_url}/extra/
     linux_system_repo_hotfix_mcp_extra_url: ${_param:linux_system_repo_hotfix_url}/extra/
     #
+    linux_system_repo_mcp_kubernetes_extra_url: ${_param:linux_system_repo_url}/kubernetes-extra
+    linux_system_repo_update_mcp_kubernetes_extra_url: ${_param:linux_system_repo_update_url}/kubernetes-extra
+    linux_system_repo_hotfix_mcp_kubernetes_extra_url: ${_param:linux_system_repo_hotfix_url}/kubernetes-extra
+    #
     linux_system_repo_mcp_salt_url: ${_param:linux_system_repo_url}/salt-formulas/
     linux_system_repo_update_mcp_salt_url: ${_param:linux_system_repo_update_url}/salt-formulas/
     linux_system_repo_hotfix_mcp_salt_url: ${_param:linux_system_repo_hotfix_url}/salt-formulas/
