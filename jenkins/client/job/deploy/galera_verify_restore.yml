@@ -32,3 +32,10 @@ parameters:
             VERIFICATION_RETRIES:
               type: string
               default: 5
+            RESTORE_TYPE:
+              type: choice
+              choices:
+                - 'BACKUP_AND_RESTORE'
+                - 'ONLY_RESTORE'
+                - 'RESTART_CLUSTER'
+              description: "Choose required behavior. See documentation for more information."
