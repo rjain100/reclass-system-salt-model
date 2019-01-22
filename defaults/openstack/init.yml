@@ -25,7 +25,7 @@ parameters:
     openstack_memcache_security_strategy: 'ENCRYPT'
     openstack_memcached_proto_tcp_enabled: True
     openstack_memcached_proto_udp_enabled: False
-    openstack_version: ocata
+    openstack_version: queens
     openstack_old_version: ${_param:openstack_version}
     openstack_upgrade_enabled: False
     # Cinder
