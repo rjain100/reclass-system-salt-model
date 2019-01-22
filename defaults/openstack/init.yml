@@ -140,7 +140,7 @@ parameters:
     octavia_health_manager_node03_address: 192.168.10.12
     #
     amphora_image_name: amphora-x64-haproxy
-    amphora_image_url: "https://artifactory.mirantis.com/binary-prod-local/mirantis/openstack/octavia/images/${_param:openstack_version}/amphora-x64-haproxy.qcow2"
+    amphora_image_url: "${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}${_param:openstack_version}/amphora-x64-haproxy.qcow2"
     # HAproxy
     haproxy_openstack_web_bind_port: ${_param:horizon_public_port}
     #
