@@ -9,6 +9,7 @@ classes:
 - system.defaults.linux_system_repo
 - system.defaults.linux_system_file
 - system.defaults.git
+- system.defaults.maas
 - system.defaults.openstack
 - system.defaults.galera
 - system.defaults.rabbitmq
