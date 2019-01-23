@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        apodrepnyi:
+          email: apodrepnyi@mirantis.com
+          enabled: true
+          full_name: Oleksandr Pidrepnyi
+          home: /home/apodrepnyi
+          name: apodrepnyi
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        apodrepnyi:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3g6qfwlvFu9lMYZ+5TjmNzIKtxkl4A9C+pD9eDBOlmtaDkiGxkJpXYJ06sTY7taE6+pWFkaFGrp750R0fQyrHMDN2t0r56azoN/o2OLG10OiFLyvhXR3uwcOWT0OTH5Iil+glO/Iq3zgoVxBrZLK30xhkp8xZv6ZaY27ahBNoWQI4TJ6jlIhvQu4BKlFqEpBVUDx5+mSDkZxBRXx5ZQnTwoG4VDW84R+HRTZmzqAdyC6spCFEBzw7kjzKr9w02uAe2dm0kh79YU5O8yCXoEoL++9a3VA24pNWmc+m0cRgw0QcFRB8mrVerA27LZC8k3bThw+eQbBT22XMujQ+JJq7aB2nqdAD02Yt21A2xbBlQR7FvjaWy4Nbgaw2tKGl3HZGsyPsmaAwHEAV/ZajG9fx7rajsA/GYr+Ya+z4W4e9x1Q/XwKTAslZBJeO2nJMmrJ2IbmC/qBI/pZ8muF48/wvgZgJgLhbZ4/ngfYyqm9U6ENiou5oEf3WjUx16BbgOX6qF0MAyKtA8kbSJFtC8+K8/L4C5G2LT69Pjs99+lbtwHo93j88phb9Ruw/4Ld2qVjHJ3d/r8yMU7C5BeNtmpgGskqRoOmcSNfK3sPCqc+XrA9kcleBWM+tyT+3Tjl3uNlUES0KlG313Z5SgK7ngDf8Uq4OJDkNQgowImunVLZ/Tw== apodrepnyi@mirantis.com
+          user: ${linux:system:user:apodrepnyi}
