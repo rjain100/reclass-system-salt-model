@@ -1,0 +1,106 @@
+parameters:
+  _param:
+    infra_kvm04_hostname: kvm04
+    infra_kvm05_hostname: kvm05
+    infra_kvm06_hostname: kvm06
+    stacklight_log_node01_hostname: log01
+    stacklight_log_node02_hostname: log02
+    stacklight_log_node03_hostname: log03
+    stacklight_monitor_node01_hostname: mon01
+    stacklight_monitor_node02_hostname: mon02
+    stacklight_monitor_node03_hostname: mon03
+    stacklight_telemetry_node01_hostname: mtr01
+    stacklight_telemetry_node02_hostname: mtr02
+    stacklight_telemetry_node03_hostname: mtr03
+    stacklight_log_backend_image: ${_param:salt_control_xenial_image_backend}
+    stacklight_monitor_backend_image: ${_param:salt_control_xenial_image_backend}
+    stacklight_telemetry_backend_image: ${_param:salt_control_xenial_image_backend}
+    salt_control_cluster_node_cloud_init_stacklight_log:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:stacklight.log:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
+    salt_control_cluster_node_cloud_init_stacklight_server:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:stacklight.server:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
+    salt_control_cluster_node_cloud_init_stacklight_telemetry:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:stacklight.telemetry:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
+  salt:
+    control:
+      cluster:
+        internal:
+          node:
+            mtr01:
+              name: ${_param:stacklight_telemetry_node01_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_telemetry_backend_image}
+              provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
+              size: stacklight.telemetry
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_telemetry}
+            mtr02:
+              name: ${_param:stacklight_telemetry_node02_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_telemetry_backend_image}
+              provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
+              size: stacklight.telemetry
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_telemetry}
+            mtr03:
+              name: ${_param:stacklight_telemetry_node03_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_telemetry_backend_image}
+              provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
+              size: stacklight.telemetry
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_telemetry}
+            log01:
+              name: ${_param:stacklight_log_node01_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_log_backend_image}
+              provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
+              size: stacklight.log
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_log}
+            log02:
+              name: ${_param:stacklight_log_node02_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_log_backend_image}
+              provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
+              size: stacklight.log
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_log}
+            log03:
+              name: ${_param:stacklight_log_node03_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_log_backend_image}
+              provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
+              size: stacklight.log
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_log}
+            mon01:
+              name: ${_param:stacklight_monitor_node01_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_monitor_backend_image}
+              provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
+              size: stacklight.server
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_server}
+            mon02:
+              name: ${_param:stacklight_monitor_node02_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_monitor_backend_image}
+              provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
+              size: stacklight.server
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_server}
+            mon03:
+              name: ${_param:stacklight_monitor_node03_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:stacklight_monitor_backend_image}
+              provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
+              size: stacklight.server
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_server}
