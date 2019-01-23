@@ -13,16 +13,16 @@ parameters:
           name: /srv/http/images.mirantis.com/ubuntu-16-04-x64-mcp${_param:mcp_version}.qcow2.md5
           source: ${_param:mcp_static_images_url}/ubuntu-16-04-x64-mcp${_param:mcp_version}.qcow2.md5
         amphora-x64-haproxy-pike.qcow2:
-          source: ${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}/pike/amphora-x64-haproxy.qcow2
           name: /srv/http/docker-prod-local.artifactory.mirantis.com/mirantis/openstack/octavia/images/${_param:mcp_version}/pike/amphora-x64-haproxy.qcow2
-          hash: /srv/http/docker-prod-local.artifactory.mirantis.com/mirantis/openstack/octavia/images/${_param:mcp_version}/pike/amphora-x64-haproxy.qcow2.md5
+          source: ${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}/pike/amphora-x64-haproxy.qcow2
+          hash: ${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}/pike/amphora-x64-haproxy.qcow2.md5
         amphora-x64-haproxy-pike.qcow2.md5:
           source: ${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}/pike/amphora-x64-haproxy.qcow2.md5
           name: /srv/http/docker-prod-local.artifactory.mirantis.com/mirantis/openstack/octavia/images/${_param:mcp_version}/pike/amphora-x64-haproxy.qcow2.md5
         amphora-x64-haproxy-queens.qcow2:
           source: ${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}/queens/amphora-x64-haproxy.qcow2
           name: /srv/http/docker-prod-local.artifactory.mirantis.com/mirantis/openstack/octavia/images/${_param:mcp_version}/queens/amphora-x64-haproxy.qcow2
-          hash: /srv/http/docker-prod-local.artifactory.mirantis.com/mirantis/openstack/octavia/images/${_param:mcp_version}/queens/amphora-x64-haproxy.qcow2.md5
+          hash: ${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}/queens/amphora-x64-haproxy.qcow2.md5
         amphora-x64-haproxy-queens.qcow2.md5:
           source: ${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}/queens/amphora-x64-haproxy.qcow2.md5
           name: /srv/http/docker-prod-local.artifactory.mirantis.com/mirantis/openstack/octavia/images/${_param:mcp_version}/queens/amphora-x64-haproxy.qcow2.md5
