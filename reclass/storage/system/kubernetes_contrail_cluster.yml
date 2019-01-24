@@ -22,6 +22,7 @@ parameters:
             deploy_address: ${_param:kubernetes_control_node01_deploy_address}
             keepalived_vip_priority: 103
             opencontrail_database_id: 1
+            opencontrail_node_role: primary
             rabbitmq_cluster_role: master
         kubernetes_control_node02:
           name: ${_param:kubernetes_control_node02_hostname}
@@ -35,6 +36,7 @@ parameters:
             deploy_address: ${_param:kubernetes_control_node02_deploy_address}
             keepalived_vip_priority: 102
             opencontrail_database_id: 2
+            opencontrail_node_role: secondary
             rabbitmq_cluster_role: slave
         kubernetes_control_node03:
           name: ${_param:kubernetes_control_node03_hostname}
@@ -48,4 +50,5 @@ parameters:
             deploy_address: ${_param:kubernetes_control_node03_deploy_address}
             keepalived_vip_priority: 101
             opencontrail_database_id: 3
+            opencontrail_node_role: secondary
             rabbitmq_cluster_role: slave
