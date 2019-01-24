@@ -196,10 +196,6 @@ parameters:
             credentials: "gerrit"
             script: cvp-runner.groovy
           param:
-            DEBUG_MODE:
-              type: boolean
-              default: 'false'
-              description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
               default: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:${_param:mcp_version}"
@@ -211,22 +207,10 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: ""
-              description: Url for cvp-sanity-checks
-            TESTS_SETTINGS:
-              type: string
-              default: ""
-              description: e.g. skipped_nodes=nal01.local.com,ntw01.local.com
-            TESTS_SET:
-              type: string
-              default: "cvp-sanity/cvp_checks/tests"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_mtu.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet. For offline mode, use \"offline\" value."
+            EXTRA_PARAMS:
+              type: text
+              default: "---"
+              description: YAML context with additional parameters
         cvp-func:
           type: workflow-scm
           name: cvp-func
@@ -466,13 +450,9 @@ parameters:
             credentials: "gerrit"
             script: cvp-runner.groovy
           param:
-            DEBUG_MODE:
-              type: boolean
-              default: 'false'
-              description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
-              default: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-spt:${_param:mcp_version}"
+              default: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:${_param:mcp_version}"
               description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
@@ -481,19 +461,7 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: ""
-              description: Url for cvp-spt repository
-            TESTS_SETTINGS:
-              type: string
-              default: ""
-              description: "Additional environment variables to export, e.g. image_name, networks, HW_NODES"
-            TESTS_SET:
-              type: string
-              default: "cvp-spt/cvp_spt/tests"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_glance.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet. For offline mode, use \"offline\" value."
+            EXTRA_PARAMS:
+              type: text
+              default: "---"
+              description: YAML context with additional parameters
