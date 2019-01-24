@@ -56,10 +56,10 @@ parameters:
          # CI/CD
         - registry: ${_param:mcp_docker_registry}/mirantis/external
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external
-          name: registry:${_param:apt_mk_version}
+          name: registry:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/external
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external
-          name: visualizer:${_param:apt_mk_version}
+          name: visualizer:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/external/docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external/docker
           name: compose:1.17.1
@@ -71,75 +71,81 @@ parameters:
           name: postgres:9.6.10
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: phpldapadmin:${_param:apt_mk_version}
+          name: phpldapadmin:${_param:mcp_version}
 
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly:${_param:apt_mk_version}
+          name: aptly:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly-public:${_param:apt_mk_version}
+          name: aptly-public:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly-publisher:${_param:apt_mk_version}
+          name: aptly-publisher:${_param:mcp_version}
 
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: jnlp-slave:${_param:apt_mk_version}
+          name: jnlp-slave:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: jenkins:${_param:apt_mk_version}
+          name: jenkins:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: gerrit:${_param:apt_mk_version}
+          name: gerrit:${_param:mcp_version}
           # stacklight
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: alertmanager:${_param:apt_mk_version}
+          name: alertmanager:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/external
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external
-          name: alerta-web:${_param:apt_mk_version}
+          name: alerta-web:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: pushgateway:${_param:apt_mk_version}
+          name: pushgateway:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: prometheus:${_param:apt_mk_version}
+          name: prometheus:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: gainsight:${_param:apt_mk_version}
+          name: gainsight:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: telegraf:${_param:apt_mk_version}
+          name: telegraf:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: remote_storage_adapter:${_param:apt_mk_version}
+          name: remote_storage_adapter:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: prometheus_relay:${_param:apt_mk_version}
+          name: prometheus_relay:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: grafana:${_param:apt_mk_version}
+          name: grafana:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: heka:${_param:apt_mk_version}
+          name: heka:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/external
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external
-          name: elasticsearch:${_param:apt_mk_version}
+          name: elasticsearch:${_param:mcp_version}
+        - registry: ${_param:mcp_docker_registry}/openstack-docker
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
+          name: sf_notifier:${_param:mcp_version}
+        - registry: ${_param:mcp_docker_registry}/openstack-docker
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
+          name: gainsight_elasticsearch:${_param:mcp_version}
         # QA\CVP tool-set's
         - registry: ${_param:mcp_docker_registry}/mirantis/oss
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/oss
-          name: qa-tools:${_param:apt_mk_version}
+          name: qa-tools:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/cvp
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cvp
-          name: cvp-rally:${_param:apt_mk_version}
+          name: cvp-rally:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/cvp
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cvp
-          name: cvp-spt:${_param:apt_mk_version}
+          name: cvp-spt:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/cvp
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cvp
-          name: cvp-sanity-checks:${_param:apt_mk_version}
+          name: cvp-sanity-checks:${_param:mcp_version}
           #
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: mysql:${_param:apt_mk_version}
+          name: mysql:${_param:mcp_version}
