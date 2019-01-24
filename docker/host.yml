@@ -6,6 +6,7 @@ parameters:
   docker:
     host:
       pkgs:
+        - containerd.io
         - docker-ce
         - python-docker
       experimental: true
