@@ -17,5 +17,7 @@ parameters:
             commands:
             - /usr/bin/docker
       package:
+        containerd.io:
+          version: latest
         docker-ce:
           version: latest
