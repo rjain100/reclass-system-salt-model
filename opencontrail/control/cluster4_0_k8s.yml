@@ -43,6 +43,7 @@ parameters:
       network:
         host: ${_param:openstack_control_address}
     collector:
+      role: ${_param:opencontrail_node_role}
       config_only: true
       discovery:
         host: None
@@ -98,6 +99,7 @@ parameters:
         region: ${_param:openstack_region}
         host: ${_param:openstack_control_address}
     control:
+      role: ${_param:opencontrail_node_role}
       config_only: true
       identity:
         host: ${_param:openstack_control_address}
