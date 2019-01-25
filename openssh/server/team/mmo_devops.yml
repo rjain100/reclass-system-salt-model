@@ -2,14 +2,14 @@
 classes:
 # DevOps/SRE Team
 - system.openssh.server.team.members.deprecated.cade
-- system.openssh.server.team.members.jmosher
+- system.openssh.server.team.members.deprecated.pmathews
+- system.openssh.server.team.members.deprecated.pmichalec
 - system.openssh.server.team.members.deprecated.ecantwell
-- system.openssh.server.team.members.lmercl
 - system.openssh.server.team.members.deprecated.mwilson
 - system.openssh.server.team.members.deprecated.osmola
+- system.openssh.server.team.members.jmosher
+- system.openssh.server.team.members.lmercl
 - system.openssh.server.team.members.pcizinsky
-- system.openssh.server.team.members.deprecated.pmathews
-- system.openssh.server.team.members.pmichalec
 # Missing- team members still in flux
 # - system.openssh.server.team.members.bpiotrowski
 parameters:

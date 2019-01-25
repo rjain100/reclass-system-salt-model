@@ -1,8 +1,8 @@
 classes:
 - system.openssh.server.team.members.deprecated.samstoelinga
+- system.openssh.server.team.members.deprecated.pmichalec
 - system.openssh.server.team.members.sachintripathi
 - system.openssh.server.team.members.ryanday
-- system.openssh.server.team.members.pmichalec
 - system.openssh.server.team.members.brucemathews
 - system.openssh.server.team.members.andreidanin
 

@@ -1,6 +1,6 @@
 classes:
 - system.openssh.server.team.members.deprecated.akomarek
-- system.openssh.server.team.members.atengler
+- system.openssh.server.team.members.deprecated.atengler
 - system.openssh.server.team.members.deprecated.fpytloun
 - system.openssh.server.team.members.deprecated.jbroulik
 - system.openssh.server.team.members.jcach

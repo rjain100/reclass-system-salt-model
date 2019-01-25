@@ -3,16 +3,14 @@ parameters:
     system:
       user:
         eezhova:
+          email: disabled
           enabled: false
-          name: eezhova
-          sudo: ${_param:linux_system_user_sudo}
           full_name: disabled
           home: /home/eezhova
-          email: disabled
+          name: eezhova
   openssh:
     server:
       user:
         eezhova:
           enabled: false
-          public_keys:
           user: ${linux:system:user:eezhova}

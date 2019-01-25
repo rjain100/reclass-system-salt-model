@@ -1,7 +1,7 @@
 classes:
 - system.linux.system.sudo
 - system.openssh.server.team.members.mniedbala
-- system.openssh.server.team.members.pmichalec
+- system.openssh.server.team.members.deprecated.michalec
 - system.openssh.server.team.members.pcizinsky
 - system.openssh.server.team.members.lmercl
 - system.openssh.server.team.members.pruzicka
