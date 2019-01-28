@@ -123,6 +123,7 @@ parameters:
     apache_proxy_openstack_neutron_retry: ${_param:apache_proxy_openstack_api_retry}
     apache_proxy_openstack_aodh_retry: ${_param:apache_proxy_openstack_api_retry}
     apache_proxy_openstack_placement_retry: ${_param:apache_proxy_openstack_api_retry}
+    apache_proxy_openstack_octavia_retry: ${_param:apache_proxy_openstack_api_retry}
     # Horizon
     # 'direct' mode will require cors on glance side to be enabled.
     horizon_images_upload_mode: 'direct'
