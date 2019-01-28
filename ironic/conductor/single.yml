@@ -37,3 +37,6 @@ parameters:
           secret_key: ${_param:ironic_memcache_secret_key}
       identity:
         region: ${_param:openstack_region}
+      automated_clean: true
+      erase_devices_priority: 0
+      erase_devices_metadata_priority: 1
