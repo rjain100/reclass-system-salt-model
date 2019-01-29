@@ -1,8 +1,8 @@
 parameters:
   _param:
-    salt_control_size_cpu_openstack_gateway: 4
-    salt_control_size_ram_openstack_gateway: 16384
-    salt_control_size_disk_profile_openstack_gateway: small
+    salt_control_size_cpu_openstack_gateway: 1
+    salt_control_size_ram_openstack_gateway: 2048
+    salt_control_size_disk_profile_openstack_gateway: minimal_xsmall
     salt_control_size_net_profile_openstack_gateway: default
   salt:
     control:

@@ -1,44 +1,44 @@
 parameters:
   _param:
-    salt_control_size_cpu_openstack_control: 8
-    salt_control_size_ram_openstack_control: 12288
-    salt_control_size_disk_profile_openstack_control: small
+    salt_control_size_cpu_openstack_control: 6
+    salt_control_size_ram_openstack_control: 16384
+    salt_control_size_disk_profile_openstack_control: minimal_xsmall
     salt_control_size_net_profile_openstack_control: default
-    salt_control_size_cpu_openstack_database: 6
-    salt_control_size_ram_openstack_database: 8192
-    salt_control_size_disk_profile_openstack_database: medium
+    salt_control_size_cpu_openstack_database: 1
+    salt_control_size_ram_openstack_database: 6144
+    salt_control_size_disk_profile_openstack_database: minimal_xxsmall
     salt_control_size_net_profile_openstack_database: default
-    salt_control_size_cpu_openstack_message_queue: 6
-    salt_control_size_ram_openstack_message_queue: 8192
-    salt_control_size_disk_profile_openstack_message_queue: small
+    salt_control_size_cpu_openstack_message_queue: 1
+    salt_control_size_ram_openstack_message_queue: 2048
+    salt_control_size_disk_profile_openstack_message_queue: xxxsmall
     salt_control_size_net_profile_openstack_message_queue: default
-    salt_control_size_cpu_openstack_proxy: 4
-    salt_control_size_ram_openstack_proxy: 6144
-    salt_control_size_disk_profile_openstack_proxy: small
+    salt_control_size_cpu_openstack_proxy: 1
+    salt_control_size_ram_openstack_proxy: 2048
+    salt_control_size_disk_profile_openstack_proxy: xxxsmall
     salt_control_size_net_profile_openstack_proxy: default
     salt_control_size_cpu_openstack_upgrade: 8
     salt_control_size_ram_openstack_upgrade: 16384
-    salt_control_size_disk_profile_openstack_upgrade: medium
+    salt_control_size_disk_profile_openstack_upgrade: minimal_xsmall
     salt_control_size_net_profile_openstack_upgrade: default
     salt_control_size_cpu_openstack_share: 1
     salt_control_size_ram_openstack_share: 2048
-    salt_control_size_disk_profile_openstack_share: large
+    salt_control_size_disk_profile_openstack_share: minimal_xsmall
     salt_control_size_net_profile_openstack_share: default
-    salt_control_size_cpu_openstack_dns: 2
-    salt_control_size_ram_openstack_dns: 4096
-    salt_control_size_disk_profile_openstack_dns: small
+    salt_control_size_cpu_openstack_dns: 1
+    salt_control_size_ram_openstack_dns: 2048
+    salt_control_size_disk_profile_openstack_dns: xxxsmall
     salt_control_size_net_profile_openstack_dns: default
-    salt_control_size_cpu_openstack_telemetry: 4
-    salt_control_size_ram_openstack_telemetry: 6144
-    salt_control_size_disk_profile_openstack_telemetry: small
+    salt_control_size_cpu_openstack_telemetry: 2
+    salt_control_size_ram_openstack_telemetry: 4096
+    salt_control_size_disk_profile_openstack_telemetry: minimal_medium
     salt_control_size_net_profile_openstack_telemetry: default
     salt_control_size_cpu_openstack_barbican: 4
-    salt_control_size_ram_openstack_barbican: 6144
-    salt_control_size_disk_profile_openstack_barbican: small
+    salt_control_size_ram_openstack_barbican: 8192
+    salt_control_size_disk_profile_openstack_barbican: xxxsmall
     salt_control_size_net_profile_openstack_barbican: default
-    salt_control_size_cpu_openstack_baremetal: 4
-    salt_control_size_ram_openstack_baremetal: 4096
-    salt_control_size_disk_profile_openstack_baremetal: small
+    salt_control_size_cpu_openstack_baremetal: 8
+    salt_control_size_ram_openstack_baremetal: 8192
+    salt_control_size_disk_profile_openstack_baremetal: xxxsmall
     salt_control_size_net_profile_openstack_baremetal: default
   salt:
     control:

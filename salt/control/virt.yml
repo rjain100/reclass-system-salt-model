@@ -21,12 +21,24 @@ parameters:
       xxxsmall:
         - system:
             size: 8000
+      minimal_xxsmall:
+        - system:
+            size: 10000
       xxsmall:
         - system:
             size: 15000
+      minimal_xsmall:
+        - system:
+            size: 20000
       xsmall:
         - system:
             size: 30000
+      minimal_small:
+        - system:
+            size: 35000
+      minimal_medium:
+        - system:
+            size: 40000
       small:
         - system:
             size: 50000

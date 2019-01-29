@@ -1,12 +1,12 @@
 parameters:
   _param:
-    salt_control_size_cpu_opencontrail_control: 8
-    salt_control_size_ram_opencontrail_control: 12288
-    salt_control_size_disk_profile_opencontrail_control: small
+    salt_control_size_cpu_opencontrail_control: 2
+    salt_control_size_ram_opencontrail_control: 4096
+    salt_control_size_disk_profile_opencontrail_control: minimal_xsmall
     salt_control_size_net_profile_opencontrail_control: default
-    salt_control_size_cpu_opencontrail_analytics: 12
+    salt_control_size_cpu_opencontrail_analytics: 4
     salt_control_size_ram_opencontrail_analytics: 8192
-    salt_control_size_disk_profile_opencontrail_analytics: medium
+    salt_control_size_disk_profile_opencontrail_analytics: large
     salt_control_size_net_profile_opencontrail_analytics: default
   salt:
     control:
