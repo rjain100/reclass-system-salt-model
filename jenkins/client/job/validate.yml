@@ -497,3 +497,76 @@ parameters:
               type: string
               default: ""
               description: "Proxy address to use to access the Internet. For offline mode, use \"offline\" value."
+        cvp-shaker:
+          type: workflow-scm
+          name: cvp-shaker
+          display_name: "CVP - Shaker network tests"
+          discard:
+            build:
+              keep_num: 20
+            artifact:
+              keep_num: 20
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: cvp-shaker.groovy
+          param:
+            IMAGE:
+              type: string
+              default: "${_param:docker_image_cvp_shaker_checks}"
+              description: Docker image to use for running Shaker.
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+              description: Full Salt API address [e.g. https://10.10.10.2:6969].
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+              description: Credentials to the Salt API.
+            SHAKER_PARAMS:
+              type: text
+              default:  |
+                ---
+                  SHAKER_SERVER_ENDPOINT: '10.13.0.15:5999'
+                  SHAKER_SCENARIOS: 'scenarios/essential'
+                  SKIP_LIST: ''
+                  image_builder:
+                  #  - SHAKER_FLAVOR_DISK=4
+                  #  - SHAKER_FLAVOR_RAM=512
+                  #  - SHAKER_FLAVOR_VCPUS=1
+                  #  - SHAKER_IMAGE_BUILDER_MODE='dib'
+                  shaker:
+                  #  - SHAKER_AGENT_JOIN_TIMEOUT=300
+                  #  - SHAKER_AGENT_LOSS_TIMEOUT=120
+                  #  - SCENARIO_AVAILABILITY_ZONE='nova,internal'
+                  #  - SCENARIO_COMPUTE_NODES=2
+                  #  - SHAKER_EXTERNAL_NET='public'
+              description: |
+                  YAML context with parameters for running Shaker tests, where
+                  "SHAKER_SERVER_ENDPOINT" - Address for Shaker server connections (host:port). Should be accessible
+                  from tenant's VM network (usually equals to public address of cicd node)
+                  "SHAKER_SCENARIOS" - Path to shaker scenarios in the cvp-shaker docker image
+                  (can be directory or specific file). Main categories are
+                    scenarios/essential/l2
+                    scenarios/essential/l3
+                    scenarios/additional/cross_az
+                    scenarios/additional/external
+                    scenarios/additional/qos
+                  "SKIP_LIST" - Comma-separated list of Shaker scenarios to skip, directories or files inside scenarios/
+                  of cvp-shaker, e.g. "dense_l2.yaml,full_l2.yaml,l3"
+                  "image_builder" - shaker-image-builder env variables
+                    SHAKER_FLAVOR_DISK=4
+                    SHAKER_FLAVOR_RAM=512
+                    SHAKER_FLAVOR_VCPUS=1
+                    SHAKER_IMAGE_BUILDER_MODE='dib'
+                  "shaker" - main shaker runner env variables
+                    SHAKER_AGENT_JOIN_TIMEOUT=300
+                    SHAKER_AGENT_LOSS_TIMEOUT=120
+                    SCENARIO_AVAILABILITY_ZONE='nova,internal'
+                    SCENARIO_COMPUTE_NODES=2
+                    SHAKER_EXTERNAL_NET='public'
+                  For the more detailed description of the last two categories please refer to the shaker documentation
+                  https://pyshaker.readthedocs.io/en/latest/tools.html
