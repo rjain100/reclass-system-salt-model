@@ -7,6 +7,13 @@ classes:
 - system.openssh.server.team.members.jnowak
 - system.openssh.server.team.members.loles
 - system.openssh.server.team.members.vryzhenkin
+- system.openssh.server.team.members.vnaumov
+- system.openssh.server.team.members.apavlov
+- system.openssh.server.team.members.slukjanov
+- system.openssh.server.team.members.sreshetnyak
+- system.openssh.server.team.members.ytaraday
+- system.openssh.server.team.members.ekhomyakova
+- system.openssh.server.team.members.sskripnick
 # Deprecated users
 - system.openssh.server.team.members.deprecated.dshulyak
 - system.openssh.server.team.members.deprecated.mattymo

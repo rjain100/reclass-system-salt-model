@@ -1,6 +1,5 @@
 classes:
 - system.openssh.server.team.members.mivanov
-- system.openssh.server.team.members.sskripnick
 # Deprecated users
 - system.openssh.server.team.members.deprecated.ikharin
 - system.openssh.server.team.members.deprecated.jkirnosova
