@@ -29,8 +29,6 @@ parameters:
               image: ${_param:docker_image_sf_notifier}
               ports:
                 - 15018:5000
-              volumes:
-                - ${prometheus:sf_notifier:dir:logs}:/var/log/sf-notifier
               environment:
                 SF_NOTIFIER_WORKERS: ${_param:sf_notifier_workers}
                 SF_NOTIFIER_BUFFER_SIZE: ${_param:sf_notifier_buffer_size}
