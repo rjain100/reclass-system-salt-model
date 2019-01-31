@@ -142,6 +142,7 @@ parameters:
     keystone_ironic_username: ironic
     ironic_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     ironic_memcache_secret_key: ''
+    ironic_console_enabled: true
     # Keystone
     mysql_keystone_username: keystone
     keystone_old_version: ${_param:openstack_old_version}

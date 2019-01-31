@@ -40,3 +40,9 @@ parameters:
       automated_clean: true
       erase_devices_priority: 0
       erase_devices_metadata_priority: 1
+      console:
+        enabled: ${_param:ironic_console_enabled}
+      enabled_console_interfaces:
+        - ipmitool-shellinabox
+        - ipmitool-socat
+        - no-console
