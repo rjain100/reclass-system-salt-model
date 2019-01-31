@@ -1,2 +1,15 @@
-# This file will be removed in Q3
-# jobs was moved into salt-models/infra repo
+classes:
+  - system.jenkins.client.job.git-mirrors.downstream
+parameters:
+  _param:
+    gerrit_pipeline_library_repo: https://github.com/Mirantis/pipeline-library
+    gerrit_mk_pipelines_repo: https://github.com/Mirantis/mk-pipelines
+    jenkins_git_mirror_downstream_jobs:
+      - name: pipeline-library
+        downstream: mcp-ci/pipeline-library
+        upstream: "${_param:gerrit_pipeline_library_repo}"
+        branches: "master,release/2018.8.1,release/2018.11.0,release/2019.2.0"
+      - name: mk-pipelines
+        downstream: mk/mk-pipelines
+        upstream: "${_param:gerrit_mk_pipelines_repo}"
+        branches: "master,release/2018.8.1,release/2018.11.0,release/2019.2.0"
