@@ -37,5 +37,5 @@ parameters:
         ssl:
           enabled: ${_param:galera_ssl_enabled}
       role: ${_param:openstack_node_role}
-    identity:
-      protocol: ${_param:cluster_internal_protocol}
+      identity:
+        protocol: ${_param:cluster_internal_protocol}

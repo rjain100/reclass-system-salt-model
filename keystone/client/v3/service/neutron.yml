@@ -22,7 +22,7 @@ parameters:
                   interface: 'public'
                   url: ${_param:cluster_public_protocol}://${_param:cluster_public_host}:9696/
                   region: ${_param:openstack_region}
-                neutron_interna;:
+                neutron_internal:
                   interface: 'internal'
                   url: ${_param:neutron_service_protocol}://${_param:neutron_service_host}:9696/
                   region: ${_param:openstack_region}
