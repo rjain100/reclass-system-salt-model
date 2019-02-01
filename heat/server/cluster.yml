@@ -18,7 +18,6 @@ parameters:
       stack_domain_admin:
         name: heat_domain_admin
         password: ${_param:heat_domain_admin_password}
-        domain: heat
       enabled: true
       region: ${_param:openstack_region}
       version: ${_param:heat_version}

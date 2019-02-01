@@ -17,7 +17,6 @@ parameters:
       stack_domain_admin:
         name: heat_domain_admin
         password: ${_param:heat_domain_admin_password}
-        domain: heat
       metadata:
         protocol: ${_param:cluster_public_protocol}
       waitcondition:
