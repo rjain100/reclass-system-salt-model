@@ -25,6 +25,7 @@ parameters:
     kubernetes_openstack_provider_repo: ${_param:mcp_binary_registry}/mirantis/kubernetes/cloud-provider-openstack
     kubernetes_metrics_server_repo: k8s.gcr.io
     kubernetes_helm_tiller_repo: gcr.io/kubernetes-helm
+    kubernetes_helm_client_repo: https://storage.googleapis.com/kubernetes-helm
 
     # component images/binaries
     kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v3.3.2
@@ -73,6 +74,8 @@ parameters:
     kubernetes_containerd_package: containerd.io=1.2.1-1~u16.04+mcp
     kubernetes_metrics_server_image: ${_param:kubernetes_metrics_server_repo}/metrics-server-amd64:v0.3.1
     kubernetes_helm_tiller_image: ${_param:kubernetes_helm_tiller_repo}/tiller:v2.12.2
+    kubernetes_helm_client_source: ${_param:kubernetes_helm_client_repo}/helm-v2.12.2-linux-amd64.tar.gz
+    kubernetes_helm_client_hash: sha256=edad6d5e594408b996b8d758a04948f89dab15fa6c6ea6daee3709f8c099df6d
 
     kubernetes_opencontrail_controller_image: ${_param:kubernetes_contrail_registry}/opencontrail-controller:${_param:mcp_version}
     kubernetes_opencontrail_analyticsdb_image: ${_param:kubernetes_contrail_registry}/opencontrail-analyticsdb:${_param:mcp_version}
@@ -248,6 +251,9 @@ parameters:
         helm:
           enabled: ${_param:kubernetes_helm_tiller_enabled}
           tiller_image: ${_param:kubernetes_helm_tiller_image}
+          client:
+            source: ${_param:kubernetes_helm_client_source}
+            hash: ${_param:kubernetes_helm_client_hash}
     pool:
       enabled: false
       kubelet:
