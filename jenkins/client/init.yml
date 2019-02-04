@@ -11,12 +11,8 @@ parameters:
     jenkins_master_port: 8081
     jenkins_aptly_storages: "local"
     jenkins_pipelines_branch: "master"
-    jenkins_offline_deployment: "false"
   jenkins:
     client:
-      globalenvprop:
-        OFFLINE_DEPLOYMENT:
-          value: ${_param:jenkins_offline_deployment}
       master:
         host: ${_param:jenkins_master_host}
         port: ${_param:jenkins_master_port}
