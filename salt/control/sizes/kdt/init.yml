@@ -1,0 +1,15 @@
+parameters:
+  _param:
+    salt_control_size_cpu_kdt: 8
+    salt_control_size_ram_kdt: 32768
+    salt_control_size_disk_profile_kdt: large
+    salt_control_size_net_profile_kdt: default
+  salt:
+    control:
+      size:
+        kdt:
+          cpu: ${_param:salt_control_size_cpu_kdt}
+          ram: ${_param:salt_control_size_ram_kdt}
+          disk_profile: ${_param:salt_control_size_disk_profile_kdt}
+          net_profile: ${_param:salt_control_size_net_profile_kdt}
+          image_layout: ${_param:salt_control_size_image_layout_kdt}

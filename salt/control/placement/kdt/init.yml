@@ -1,0 +1,36 @@
+parameters:
+  _param:
+    kdt_backend_image: ${_param:salt_control_xenial_image_backend}
+    salt_control_cluster_node_cloud_init_kdt:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:kdt:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
+  salt:
+    control:
+      cluster:
+        internal:
+          node:
+            kdt01:
+              name: ${_param:kdt_node01_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:kdt_backend_image}
+              provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
+              size: kdt
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_kdt}
+            kdt02:
+              name: ${_param:kdt_node02_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:kdt_backend_image}
+              provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
+              size: kdt
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_kdt}
+            kdt03:
+              name: ${_param:kdt_node03_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:kdt_backend_image}
+              provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
+              size: kdt
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_kdt}

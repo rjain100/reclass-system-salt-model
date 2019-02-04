@@ -16,6 +16,7 @@ parameters:
     salt_control_size_image_layout_ceph_mon: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_ceph_rgw: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_cicd_control: ${_param:salt_control_size_image_layout_default}
+    salt_control_size_image_layout_kdt: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_infra_idm: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_infra_integration: ${_param:salt_control_size_image_layout_default}
     salt_control_size_image_layout_infra_maas: ${_param:salt_control_size_image_layout_default}
@@ -47,4 +48,3 @@ parameters:
 
     salt_control_trusty_image: ${_param:mcp_static_images_url}/ubuntu-14-04-x64-mcp${_param:mcp_version}.qcow2
     salt_control_xenial_image: ${_param:mcp_static_images_url}/ubuntu-16-04-x64-mcp${_param:mcp_version}.qcow2
-
