@@ -31,3 +31,6 @@ parameters:
             CHECK_TIME_SYNC:
               type: boolean
               default: 'true'
+            VERIFICATION_RETRIES:
+              type: string
+              default: 5
