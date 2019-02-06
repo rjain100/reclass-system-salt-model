@@ -25,6 +25,7 @@ parameters:
         protocol: ${_param:cluster_internal_protocol}
       message_queue:
         host: ${_param:openstack_message_queue_address}
+        port: ${_param:openstack_rabbitmq_port}
         x509:
           enabled: ${_param:openstack_rabbitmq_x509_enabled}
           ca_file: ${_param:rabbitmq_octavia_ssl_ca_file}
