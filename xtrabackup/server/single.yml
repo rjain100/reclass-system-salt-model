@@ -1,9 +1,12 @@
 classes:
 - service.xtrabackup.server.single
 parameters:
-  _param:
-    xtrabackup_qpress_source: pkg
-    xtrabackup_qpress_source_name: qpress
+  xtrabackup:
+    server:
+      backup_dir: /srv/volumes/backup/xtrabackup
+      key:
+        xtrabackup_pub_key:
+          key: ${_param:xtrabackup_public_key}
   linux:
     system:
       cron:

@@ -1,0 +1,4 @@
+parameters:
+  _param:
+    backupninja_engine: rsync
+    backupninja_public_key: no-key-provided

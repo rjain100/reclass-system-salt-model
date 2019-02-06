@@ -8,6 +8,7 @@
 classes:
 - system.defaults.linux_system_repo
 - system.defaults.linux_system_file
+- system.defaults.backupninja
 - system.defaults.git
 - system.defaults.maas
 - system.defaults.openstack
@@ -19,6 +20,7 @@ classes:
 - system.defaults.keepalived
 - system.defaults.salt
 - system.defaults.stacklight
+- system.defaults.xtrabackup
 parameters:
   _param:
     mcp_version: stable
