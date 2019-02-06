@@ -16,4 +16,5 @@ parameters:
           enabled: true
           public_keys:
           - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpnn6IyistbIGnzeV3DOWR+u/QLl1cuQspwuvcl1FxeZljkdIgLXcNVzFaFHSX+rOgrOLpcFf3X+dwnB55EoUDj85IOwKz1tVoD5Df42xZMnmjnvOaAScVTStrdcWxzpB6bWt/+GWpt1br3pLpTjqZxa1YipT7tz6bs7cNKplvQuBaoYeG/x9ycRhLIhYXFYOtHD/lxwTRqHnvpwdNKRYPtfakR/kaeZEaYQoJlVcAq0AKzws8l87InoWnjGo/NrBJTvgiLQPYw6uJ9mf17p2GVv1JGCbEpPKnRLyIitdwCFjYEwAKoSsisf2TdH9iY1DWwJEuPzsvjM2ZCPcc7baV vlad@carbon
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2yUGXlJ5Zvlyw5s4KRqnYE2GwwuoXLraBJ1MubRSRpgthNPBOvo/nGrniUE7QrtivGgGEJYz2ZmLYwfD3b03oQWMatwz2eUmJh7Oe7N7NKLem6cdtQrZ1n/4+Ji6MF/2Lblhm0I3l9ExiKDfqBP0TTfqft30tUKxkso2xxhu4YyKj59P4kqzKZEcFgS7r+HClFM20yQbEVIzw/pz7Yz6xGSAy9uUhrUeqEaSHo/JVck6A6X1vCrRqKHoLXcVXVd6r1vy1V6VRVx1mamXhnEEnc2DUIYo5Ry8qucHgdLp2oEIQkM2DVKFmPG8/HIfiKrAstUK1M5rGaKnmnS/h6CpX vlad@vlad-ThinkPad-W541
           user: ${linux:system:user:vdrok}
