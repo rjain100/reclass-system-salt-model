@@ -9,8 +9,6 @@ parameters:
     jenkins_slave_user: none
     jenkins_slave_password: none
     jenkins_master_host: ${_param:control_vip_address}
-    jenkins_master_port: 8081
-    jenkins_master_protocol: http
   java:
     environment:
       headless: true

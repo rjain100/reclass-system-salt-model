@@ -3,7 +3,6 @@ classes:
 parameters:
   _param:
     jenkins_master_host: ${_param:control_vip_address}
-    jenkins_master_port: 8081
     jenkins_master_url: http://${_param:jenkins_master_host}:${_param:jenkins_master_port}
     jenkins_slave_user: ${_param:jenkins_client_user}
     jenkins_slave_password: ${_param:jenkins_client_password}
