@@ -37,6 +37,7 @@ parameters:
           secret_key: ${_param:ironic_memcache_secret_key}
       identity:
         region: ${_param:openstack_region}
+        protocol: ${_param:cluster_internal_protocol}
       automated_clean: true
       erase_devices_priority: 0
       erase_devices_metadata_priority: 1
@@ -46,3 +47,4 @@ parameters:
         - ipmitool-shellinabox
         - ipmitool-socat
         - no-console
+      pxe_append_params: 'nofb nomodeset vga=normal ipa-insecure=1'
