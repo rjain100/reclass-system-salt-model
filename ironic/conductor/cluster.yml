@@ -3,6 +3,8 @@ classes:
 - system.salt.minion.cert.rabbitmq.clients.openstack.ironic
 - service.ironic.conductor.cluster
 parameters:
+  _param:
+    ironic_conductor_api_url_protocol: 'http'
   linux:
     system:
       package:
@@ -11,7 +13,7 @@ parameters:
           version: latest
   ironic:
     conductor:
-      api_url: 'http://${_param:cluster_baremetal_vip_address}:6385'
+      api_url: '${_param:ironic_conductor_api_url_protocol}://${_param:cluster_baremetal_vip_address}:6385'
       database:
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
@@ -36,6 +38,7 @@ parameters:
           secret_key: ${_param:ironic_memcache_secret_key}
       identity:
         region: ${_param:openstack_region}
+        protocol: ${_param:cluster_internal_protocol}
       automated_clean: true
       erase_devices_priority: 0
       erase_devices_metadata_priority: 1
@@ -45,3 +48,4 @@ parameters:
         - ipmitool-shellinabox
         - ipmitool-socat
         - no-console
+      pxe_append_params: 'nofb nomodeset vga=normal ipa-insecure=1'
