@@ -16,19 +16,25 @@ parameters:
         excludeSSLv3:
           name: '-SSLv3'
           enabled: True
+        excludeTLSv1:
+          name: '-TLSv1'
+          enabled: True
+        excludeTLSv1.1:
+          name: '-TLSv1.1'
+          enabled: True
       ciphers:
         ECDHE-ECDSA-CHACHA20-POLY1305:
           name: 'ECDHE-ECDSA-CHACHA20-POLY1305'
-          enabled: True
+          enabled: False
         ECDHE-RSA-CHACHA20-POLY1305:
           name: 'ECDHE-RSA-CHACHA20-POLY1305'
-          enabled: True
+          enabled: False
         ECDHE-ECDSA-AES128-GCM-SHA256:
           name: 'ECDHE-ECDSA-AES128-GCM-SHA256'
-          enabled: True
+          enabled: False
         ECDHE-RSA-AES128-GCM-SHA256:
           name: 'ECDHE-RSA-AES128-GCM-SHA256'
-          enabled: True
+          enabled: False
         ECDHE-ECDSA-AES256-GCM-SHA384:
           name: 'ECDHE-ECDSA-AES256-GCM-SHA384'
           enabled: True
@@ -37,76 +43,76 @@ parameters:
           enabled: True
         DHE-RSA-AES128-GCM-SHA256:
           name: 'DHE-RSA-AES128-GCM-SHA256'
-          enabled: True
+          enabled: False
         DHE-RSA-AES256-GCM-SHA384:
           name: 'DHE-RSA-AES256-GCM-SHA384'
-          enabled: True
+          enabled: False
         ECDHE-ECDSA-AES128-SHA256:
           name: 'ECDHE-ECDSA-AES128-SHA256'
-          enabled: True
+          enabled: False
         ECDHE-RSA-AES128-SHA256:
           name: 'ECDHE-RSA-AES128-SHA256'
-          enabled: True
+          enabled: False
         ECDHE-ECDSA-AES128-SHA:
           name: 'ECDHE-ECDSA-AES128-SHA'
-          enabled: True
+          enabled: False
         ECDHE-RSA-AES256-SHA384:
           name: 'ECDHE-RSA-AES256-SHA384'
           enabled: True
         ECDHE-RSA-AES128-SHA:
           name: 'ECDHE-RSA-AES128-SHA'
-          enabled: True
+          enabled: False
         ECDHE-ECDSA-AES256-SHA384:
           name: 'ECDHE-ECDSA-AES256-SHA384'
           enabled: True
         ECDHE-ECDSA-AES256-SHA:
           name: 'ECDHE-ECDSA-AES256-SHA'
-          enabled: True
+          enabled: False
         ECDHE-RSA-AES256-SHA:
           name: 'ECDHE-RSA-AES256-SHA'
-          enabled: True
+          enabled: False
         DHE-RSA-AES128-SHA256:
           name: 'DHE-RSA-AES128-SHA256'
-          enabled: True
+          enabled: False
         DHE-RSA-AES128-SHA:
           name: 'DHE-RSA-AES128-SHA'
-          enabled: True
+          enabled: False
         DHE-RSA-AES256-SHA256:
           name: 'DHE-RSA-AES256-SHA256'
-          enabled: True
+          enabled: False
         DHE-RSA-AES256-SHA:
           name: 'DHE-RSA-AES256-SHA'
-          enabled: True
+          enabled: False
         ECDHE-ECDSA-DES-CBC3-SHA:
           name: 'ECDHE-ECDSA-DES-CBC3-SHA'
-          enabled: True
+          enabled: False
         ECDHE-RSA-DES-CBC3-SHA:
           name: 'ECDHE-RSA-DES-CBC3-SHA'
-          enabled: True
+          enabled: False
         EDH-RSA-DES-CBC3-SHA:
           name: 'EDH-RSA-DES-CBC3-SHA'
-          enabled: True
+          enabled: False
         AES128-GCM-SHA256:
           name: 'AES128-GCM-SHA256'
-          enabled: True
+          enabled: False
         AES256-GCM-SHA384:
           name: 'AES256-GCM-SHA384'
-          enabled: True
+          enabled: False
         AES128-SHA256:
           name: 'AES128-SHA256'
-          enabled: True
+          enabled: False
         AES256-SHA256:
           name: 'AES256-SHA256'
-          enabled: True
+          enabled: False
         AES256-SHA:
           name: 'AES256-SHA'
-          enabled: True
+          enabled: False
         AES128-SHA:
           name: 'AES128-SHA'
-          enabled: True
+          enabled: False
         DES-CBC3-SHA:
           name: 'DES-CBC3-SHA'
-          enabled: True
+          enabled: False
         removeDSS:
           name: '!DSS'
           enabled: True
