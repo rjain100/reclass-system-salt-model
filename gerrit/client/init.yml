@@ -3,7 +3,9 @@ classes:
 parameters:
   _param:
     gerrit_try_login: true
+    gerrit_http_port: 8080
     gerrit_server_host: ${_param:cluster_vip_address}
+    gerrit_url_prefix: ''
   gerrit:
     client:
       enabled: True
@@ -17,9 +19,10 @@ parameters:
         user: admin
         email: ${_param:gerrit_admin_email}
         auth_method: basic
-        http_port: 8080
+        http_port: ${_param:gerrit_http_port}
         ssh_port: 29418
         protocol: http
+        url_prefix: ${_param:gerrit_url_prefix}
         password: ${_param:gerrit_admin_password}
         key: ${_param:gerrit_admin_private_key}
       user:
