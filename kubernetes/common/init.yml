@@ -122,8 +122,8 @@ parameters:
 
     # OpenStack cloud provider
 
-    kubernetes_openstack_provider_binary: ${_param:kubernetes_openstack_provider_repo}/openstack-cloud-controller-manager_v0.3.0-1_1543239267245
-    kubernetes_openstack_provider_binary_hash: md5=0d85b5877e9872690390f5b87e45efba
+    kubernetes_openstack_provider_binary: ${_param:kubernetes_openstack_provider_repo}/openstack-cloud-controller-manager_v0.3.0-2_1549884015986
+    kubernetes_openstack_provider_binary_hash: md5=fd19a97527009aac72de7997744885fb
     kubernetes_openstack_provider_cloud_user: admin
     kubernetes_openstack_provider_cloud_password: secret
     kubernetes_openstack_provider_cloud_auth_url: http://127.0.0.1:5000/v3
@@ -132,6 +132,8 @@ parameters:
     kubernetes_openstack_provider_cloud_region: RegionOne
     kubernetes_openstack_provider_lbaas_subnet_id: subnet_id
     kubernetes_openstack_provider_floating_net_id: floating_net_id
+    kubernetes_openstack_provider_internal_net_name: internal_net_name
+    kubernetes_openstack_provider_public_net_name: public_net_name
 
 
   linux:
@@ -171,6 +173,8 @@ parameters:
           region: ${_param:kubernetes_openstack_provider_cloud_region}
           subnet_id: ${_param:kubernetes_openstack_provider_lbaas_subnet_id}
           floating_net_id: ${_param:kubernetes_openstack_provider_floating_net_id}
+          internal_net_name: ${_param:kubernetes_openstack_provider_internal_net_name}
+          public_net_name: ${_param:kubernetes_openstack_provider_public_net_name}
       addons:
         dashboard:
           enabled: ${_param:kubernetes_dashboard_enabled}
