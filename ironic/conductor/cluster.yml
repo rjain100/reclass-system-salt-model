@@ -2,6 +2,7 @@ classes:
 - system.salt.minion.cert.mysql.clients.openstack.ironic
 - system.salt.minion.cert.rabbitmq.clients.openstack.ironic
 - service.ironic.conductor.cluster
+- system.ironic.upgrade
 parameters:
   _param:
     ironic_conductor_api_url_protocol: 'http'

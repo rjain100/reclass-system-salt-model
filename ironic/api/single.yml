@@ -2,6 +2,7 @@ classes:
 - system.salt.minion.cert.mysql.clients.openstack.ironic
 - system.salt.minion.cert.rabbitmq.clients.openstack.ironic
 - service.ironic.api.single
+- system.ironic.upgrade
 parameters:
   linux:
     system:
