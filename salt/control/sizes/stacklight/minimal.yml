@@ -1,16 +1,16 @@
 parameters:
   _param:
-    salt_control_size_cpu_stacklight_log: 4
+    salt_control_size_cpu_stacklight_log: 2
     salt_control_size_ram_stacklight_log: 4096
-    salt_control_size_disk_profile_stacklight_log: medium
+    salt_control_size_disk_profile_stacklight_log: minimal_xsmall
     salt_control_size_net_profile_stacklight_log: default
-    salt_control_size_cpu_stacklight_server: 4
-    salt_control_size_ram_stacklight_server: 6144
+    salt_control_size_cpu_stacklight_server: 2
+    salt_control_size_ram_stacklight_server: 4096
     salt_control_size_disk_profile_stacklight_server: small
     salt_control_size_net_profile_stacklight_server: default
-    salt_control_size_cpu_stacklight_telemetry: 4
-    salt_control_size_ram_stacklight_telemetry: 4096
-    salt_control_size_disk_profile_stacklight_telemetry: medium
+    salt_control_size_cpu_stacklight_telemetry: 2
+    salt_control_size_ram_stacklight_telemetry: 6144
+    salt_control_size_disk_profile_stacklight_telemetry: minimal_xsmall
     salt_control_size_net_profile_stacklight_telemetry: default
   salt:
     control:
