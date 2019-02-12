@@ -6,8 +6,6 @@ parameters:
   _param:
     java_environment_version: "8"
     java_environment_platform: openjdk
-    jenkins_slave_user: none
-    jenkins_slave_password: none
     jenkins_master_host: ${_param:control_vip_address}
   java:
     environment:
@@ -23,8 +21,8 @@ parameters:
         port: ${_param:jenkins_master_port}
         protocol: ${_param:jenkins_master_protocol}
       user:
-        name: ${_param:jenkins_slave_user}
-        password: ${_param:jenkins_slave_password}
+        name: ${_param:jenkins_client_user}
+        password: ${_param:jenkins_client_password}
   linux:
     system:
       user:
