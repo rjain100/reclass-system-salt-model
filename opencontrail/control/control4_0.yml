@@ -16,7 +16,7 @@ parameters:
     opencontrail_message_queue_password: guest
     opencontrail_controller_image: ${_param:mcp_docker_registry}/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-controller:${_param:opencontrail_docker_image_tag}
     opencontrail_controller_container_name: opencontrail_controller_1
-    opencontrail_api_workers_count: 1
+    opencontrail_api_workers_count: 6
     analytics_vip_address: ${_param:opencontrail_analytics_address}
   opencontrail:
     common:
