@@ -31,3 +31,8 @@ parameters:
               volumes:
                 - /srv/volumes/jenkins:/var/jenkins_home
                 - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
+  # This is required only for deployments in swarm
+  jenkins:
+    client:
+      location:
+        url: http://jenkins_master:8080
