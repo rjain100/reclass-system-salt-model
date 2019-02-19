@@ -1,0 +1,13 @@
+parameters:
+  salt:
+    minion:
+      cert:
+        kdt_k8s_server:
+          host: ${_param:salt_minion_ca_host}
+          authority: ${_param:salt_minion_ca_authority}
+          common_name: kubernetes-server
+          key_file: /srv/salt/env/${_param:salt_master_base_environment}/_certs/kdt/kubernetes-server.key
+          cert_file: /srv/salt/env/${_param:salt_master_base_environment}/_certs/kdt/kubernetes-server.crt
+          all_file: /srv/salt/env/${_param:salt_master_base_environment}/_certs/kdt/kubernetes-server.pem
+          signing_policy: cert_server
+          alternative_names: IP:${_param:kdt_control_address},IP:${_param:kdt_node01_address},IP:${_param:kdt_node02_address},IP:${_param:kdt_node03_address},IP:${_param:kdt_k8s_internal_api_address},DNS:kubernetes.default,DNS:kubernetes.default.svc

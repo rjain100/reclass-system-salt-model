@@ -1,0 +1,24 @@
+parameters:
+  _param:
+    kdt_backend_image: ${_param:salt_control_xenial_image_backend}
+    salt_control_cluster_node_cloud_init_kdt:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:kdt:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
+  salt:
+    control:
+      cluster:
+        internal:
+          domain: ${_param:cluster_domain}
+          engine: virt
+          node:
+            kdt01:
+              name: ${_param:kdt_node01_hostname}
+              provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:kdt_backend_image}
+              size: kdt
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_kdt}
