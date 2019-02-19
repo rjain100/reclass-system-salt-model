@@ -30,6 +30,7 @@ parameters:
         mtu: 9000
   nova:
     compute:
+      instance_build_timeout: ${_param:nova_instance_build_timeout}
       network:
         engine: keystone
         host: ${_param:control_address}
