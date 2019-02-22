@@ -51,6 +51,7 @@ parameters:
       aggregates: ${_param:nova_aggregates}
       heal_instance_info_cache_interval: 60
       vncproxy_url: ${_param:nova_vncproxy_url}
+      instance_build_timeout: ${_param:nova_instance_build_timeout}
       bind:
         vnc_address: ${_param:cluster_local_address}
         vnc_port: 6080

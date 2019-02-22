@@ -9,6 +9,7 @@ parameters:
       virtualization: 'baremetal'
       pkgs:
         - nova-compute-ironic
+      instance_build_timeout: ${_param:nova_instance_build_timeout}
       database:
         engine: mysql
         host: ${_param:openstack_database_address}

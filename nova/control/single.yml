@@ -13,6 +13,7 @@ parameters:
   nova:
     controller:
       role: ${_param:openstack_node_role}
+      instance_build_timeout: ${_param:nova_instance_build_timeout}
       database:
         host: ${_param:single_address}
         x509:

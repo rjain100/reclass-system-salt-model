@@ -50,6 +50,7 @@ parameters:
       virtualization: kvm
       availability_zone: ${_param:nova_compute_avail_zone}
       vncproxy_url: ${_param:nova_vncproxy_url}
+      instance_build_timeout: ${_param:nova_instance_build_timeout}
       bind:
         vnc_address: ${_param:control_address}
         vnc_port: 6080
