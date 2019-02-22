@@ -202,7 +202,7 @@ parameters:
               description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
-              default: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:${_param:mcp_version}"
+              default: ${_param:docker_image_cvp_sanity_checks}
               description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
@@ -472,7 +472,7 @@ parameters:
               description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
-              default: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-spt:${_param:mcp_version}"
+              default: ${_param:docker_image_cvp_sanity_checks}
               description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
