@@ -10,6 +10,8 @@ parameters:
             - ${_param:cluster_node02_address}:/srv/glusterfs/mysql
             - ${_param:cluster_node03_address}:/srv/glusterfs/mysql
           options:
+            storage.owner-gid: 999
+            storage.owner-uid: 999
             cluster.readdir-optimize: On
             nfs.disable: On
             network.remote-dio: On
