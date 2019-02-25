@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        dvirassamy:
+          enabled: true
+          name: dvirassamy
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Daniel Virassamy
+          home: /home/dvirassamy
+          email: dvirassamy@mirantis.com
+  openssh:
+    server:
+      user:
+        dvirassamy:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC867npf0Rq/u25RhwqDr7D2ctNQoRZram8iWiqoKgSdgqyoyrkcIlq5pVzdAnUVw9vvMBBlQ0fhCg97iI8qsOCca1N5kTwfWOYMP0OTeBzXYGOZtqzsiA2WnLrbe30VGetT0ovnQAXsQnPPEJX9WElmeFvgWZ2GwE8HGnmQU+XykwQzLneYTqid0gf9PnkubJzYinyvqfUbJlRIMNEFvx1IiTsfUqp+gU2i8Aoy2w+qwjVhkSZNuUG4PGoCLg89XFullMUxz+KxudNLvBBlRrY47jnFOr1fvrxVgfUMVaTxBre8BmzDx3h3nWluakDRGcHcULfRmgIu0H2DcBExvoyYnJa9VpHiq0wnFQgMfPcGaKS1wZOJ5hpiEFZRrQ/Sl60QD8dKl3s+cOLwAtjL3ishppyglNVIGOtb0Py0EO1YftnTOG+lNNoHghAM/nKP+P6RnI0wUenlLrMSFSehpQykoRCF3SqYLKd10TE7b5QNIPWXdQ0ruhpUZHNQ6x1mI00VjQefuzPuwoXlrYCJSv/Di2gGxTtsVgoz1BWlwmd36DrJfXX2gKAgF258wi4mFMD0Scg0aQrp/sabk13rVP5dbcWIucHVmuvwJDjzRP07KNsgjja0b7/HGYaAm34SOTNNobY1F4bGSgSO6qaQ+8F3b7JXyMRI5uTMP9FEgHYHQ==
+          user: ${linux:system:user:dvirassamy}
+

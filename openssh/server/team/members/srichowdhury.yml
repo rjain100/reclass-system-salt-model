@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        schowdhury:
+          enabled: true
+          name: schowdhury
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Sri Chowdhury
+          home: /home/schowdhury
+          email: schowdhury@mirantis.com
+  openssh:
+    server:
+      user:
+        schowdhury:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHWqrVDKUyEsy9ZR9Qu/4aCQuWTSJeKKaBnhvyxLl7l+KxVmAXSW5KoYjw62R14MaKsj8m8yxh/PizoSKK3a4XpeG4o+EM/rlR3VSms2G75uRnTwl2Vx6gEYZPqBYbXvZd/2UmnLQQ4j94lq79d9A8w182W9h/++4agth/GPYZGbMN75P/LyAJu5VbSYrDEzBM3RPXZF3KE+ZmVJoCBGUQCoWJbE6ztEq+LZwk3P4V1pRkE7YSRDfxq1MGM5qwNCYwbfoAc1iZ9WYDfUt/7TAYvPaDVo84ohG+g+KkQsxEpM53RFKcW7RMYOfDzXECml0uVotv7EHzfa+tGjj08Met
+          user: ${linux:system:user:schowdhury}
+
