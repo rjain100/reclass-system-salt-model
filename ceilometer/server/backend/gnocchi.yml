@@ -12,7 +12,7 @@ parameters:
       publisher:
         gnocchi:
           enabled: true
-          url: "gnocchi://?filter_project=${_param:ceilometer_gnocchi_filter_project}"
+          url: "gnocchi://?filter_project=${_param:ceilometer_gnocchi_filter_project}&${_param:ceilometer_gnocchi_archive_policy}"
           publish_metric: true
           # filter_project is deprecated since queens
           filter_project: ${_param:ceilometer_gnocchi_filter_project}
