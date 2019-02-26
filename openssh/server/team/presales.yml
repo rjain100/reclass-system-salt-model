@@ -2,9 +2,11 @@ classes:
 - system.openssh.server.team.members.deprecated.samstoelinga
 - system.openssh.server.team.members.deprecated.pmichalec
 - system.openssh.server.team.members.sachintripathi
-- system.openssh.server.team.members.ryanday
+- system.openssh.server.team.members.deprecated.ryanday
 - system.openssh.server.team.members.brucemathews
 - system.openssh.server.team.members.andreidanin
+- system.openssh.server.team.members.danielvirassamy
+- system.openssh.server.team.members.srichowdhury
 
 parameters:
   _param:
@@ -13,21 +15,21 @@ parameters:
     system:
       user:
         ivano:
-          enabled: true
+          enabled: false
           name: ivano
           sudo: true
           full_name: Ivan Ostojic
           home: /home/ivano
           email: ivan@mirantis.com
         asteer:
-          enabled: true
+          enabled: false
           name: asteer
           sudo: true
           full_name: Adrian Steer
           home: /home/asteer
           email: asteer@mirantis.com
         sbraun:
-          enabled: true
+          enabled: false
           name: sbraun
           sudo: true
           full_name: Sebastien Braun
@@ -38,17 +40,17 @@ parameters:
       enabled: true
       user:
         ivano:
-          enabled: true
+          enabled: false
           public_keys:
           - ${public_keys:ivano}
           user: ${linux:system:user:ivano}
         asteer:
-          enabled: true
+          enabled: false
           public_keys:
           - ${public_keys:asteer}
           user: ${linux:system:user:asteer}
         sbraun:
-          enabled: true
+          enabled: false
           public_keys:
           - ${public_keys:sbraun}
           user: ${linux:system:user:sbraun}
