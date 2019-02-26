@@ -1,3 +1,37 @@
 classes:
 - service.openssh.server
 - service.openssh.server.cis
+# TODO: Uncomment service.openssh.server.sshd-strong-ciphers
+# when package with https://gerrit.mcp.mirantis.com/#/c/36220/
+# will be published.
+#- service.openssh.server.sshd-strong-ciphers
+# TODO: Remove parameters:openssh:server:ciphers completely
+# when package with https://gerrit.mcp.mirantis.com/#/c/36220/
+# will be published.
+parameters:
+  openssh:
+    server:
+      ciphers:
+        "3des-cbc":
+          enabled: True
+        "aes128-cbc":
+          enabled: True
+        "aes192-cbc":
+          enabled: True
+        "aes256-cbc":
+          enabled: True
+        "aes128-ctr":
+          enabled: True
+        "aes192-ctr":
+          enabled: True
+        "aes256-ctr":
+          enabled: True
+        "aes128-gcm@openssh.com":
+          enabled: True
+        "aes256-gcm@openssh.com":
+          enabled: True
+        "chacha20-poly1305@openssh.com":
+          enabled: True
+        "rijndael-cbc@lysator.liu.se":
+          enabled: True
+
