@@ -87,6 +87,24 @@ parameters:
     keystone_old_version: ${_param:openstack_old_version}
     keystone_version: ${_param:openstack_version}
     keystone_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    # (obryndzii) Rotating keys too frequently, or with ``[fernet_tokens] max_active_keys``
+    # set too low, will cause tokens to become invalid prior to their expiration.
+    # As tokens may be fetched beyond their initial expiration period (nova live migration,
+    # cider volume backup), keys should not be fully rotated within the period of
+    # ``[token] expiration``+``[token] allow_expired_window`` seconds to prevent the tokens
+    # becoming unavailable.
+    # The max_active_keys default value was adjusted according to the following defaults:
+    # [token]/allow_expired_window = 172800 (48 hours)
+    # [token]/expiration = 3600 (1 hour)
+    # rotation_frequency = 1 hour (keystone_fernet_rotate_rsync_minute/hour 0 *)
+    # max_active_keys = (allow_expired_window + expiration)/rotation_frequency + 2
+    # In case of changing those defaults the keystone_tokens_max_active_keys value should be
+    # calculated according to the definition above.
+    keystone_tokens_expiration: 3600
+    keystone_tokens_max_active_keys: 51
+    keystone_tokens_allow_expired_window: 172800
+    keystone_fernet_rotate_rsync_minute: 0
+    keystone_fernet_rotate_rsync_hour: '*'
     # Manila
     manila_old_version: ${_param:openstack_old_version}
     manila_version: ${_param:openstack_version}
