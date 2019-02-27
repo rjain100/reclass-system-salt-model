@@ -22,7 +22,8 @@ parameters:
           command: '/var/lib/keystone/keystone_keys_rotate.sh -r -t fernet >> /var/log/keystone/keystone-rotate.log 2>> /var/log/keystone/keystone-rotate.log'
           enabled: true
           user: keystone
-          minute: 0
+          minute: ${_param:keystone_fernet_rotate_rsync_minute}
+          hour: ${_param:keystone_fernet_rotate_rsync_hour}
         keystone_credential_rotate_rsync:
           command: '/var/lib/keystone/keystone_keys_rotate.sh -r -t credential >> /var/log/keystone/keystone-rotate.log 2>> /var/log/keystone/keystone-rotate.log'
           enabled: true
