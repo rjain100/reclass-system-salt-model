@@ -20,6 +20,7 @@ parameters:
             contrail:
               password: ${_param:opencontrail_admin_password}
               email: ${_param:admin_email}
+              options: ${_param:openstack_service_user_options}
               is_admin: true
               roles:
                 admin:
