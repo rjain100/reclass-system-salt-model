@@ -11,7 +11,6 @@ classes:
 - system.keystone.client.os_client_config.admin_identity
 parameters:
   _param:
-    keystone_tokens_expiration: 3600
     openstack_node_role: primary
     keystone_service_protocol: ${_param:cluster_internal_protocol}
   linux:
@@ -58,7 +57,8 @@ parameters:
       tokens:
         engine: fernet
         expiration: ${_param:keystone_tokens_expiration}
-        max_active_keys: 3
+        max_active_keys: ${_param:keystone_tokens_max_active_keys}
+        allow_expired_window: ${_param:keystone_tokens_allow_expired_window}
         location: /var/lib/keystone/fernet-keys
       credential:
         location: /var/lib/keystone/credential-keys
