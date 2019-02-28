@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        avolkov:
+          email: avolkov@mirantis.com
+          enabled: true
+          full_name: Andrey Volkov
+          home: /home/avolkov
+          name: avolkov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        avolkov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCUd3Qs1HNKgLF1B6qFntcnv4YMvGH6l4kBRdxvUWbTBwMekSFbJ0pnILNVQ8bC7oxFyCUOY/d074BtYcGILjwAbGBNztfi+g97GJYMkwsmmKVPucOy1ojakMg0s6ketQr3AM8YA7z0sbYMP7nbioaJMPhGKai0HRM4vPMSyH/3n9vFzkH9amBZEnTB15ZiXnUzLliyBMgyDUKvEOX072soYXR9TDWvE/TwAHiZdPh6gCMl4+yCinwS7baf9JuaQXn2P9SgCyx6uigAwvfn/XEwDqKFsso+4U53vR4RyktqzdSdFcf2UBUQlRMwvISwJTnLPfBsspQTRNlGqfAP+fd amadev@quasimodo
+          user: ${linux:system:user:avolkov}
