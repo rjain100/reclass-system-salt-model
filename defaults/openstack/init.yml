@@ -114,7 +114,7 @@ parameters:
     # calculated according to the definition above.
     keystone_tokens_expiration: 3600
     keystone_tokens_max_active_keys: 51
-    keystone_tokens_allow_expired_window: ''
+    keystone_tokens_allow_expired_window: 172800
     keystone_fernet_rotate_rsync_minute: 0
     keystone_fernet_rotate_rsync_hour: '*'
     # Manila
