@@ -3,6 +3,7 @@ classes:
 parameters:
   xtrabackup:
     server:
+      cron: false
       backup_dir: /srv/volumes/backup/xtrabackup
       key:
         xtrabackup_pub_key:
