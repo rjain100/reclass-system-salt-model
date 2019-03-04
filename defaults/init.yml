@@ -22,6 +22,7 @@ classes:
 - system.defaults.salt
 - system.defaults.stacklight
 - system.defaults.xtrabackup
+- system.defaults.backup
 parameters:
   _param:
     mcp_version: stable
