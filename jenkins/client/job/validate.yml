@@ -24,6 +24,40 @@ parameters:
             credentials: "gerrit"
             script: validate-cloud.groovy
           param:
+            ACCUMULATE_RESULTS:
+              type: boolean
+              default: 'true'
+              description: If chosen then previous build results will be used in the current build
+            JOB_TIMEOUT:
+              type: string
+              default: "3"
+              description: Job timeout in hours
+            RUN_RALLY_TESTS:
+              type: boolean
+              default: 'true'
+              description: |
+                  If chosen, Rally tests will be executed. Please set K8S_RALLY='true' if you plan
+                  to test K8S cluster with Rally framework. Special K8S plugin has to be utilized
+            RUN_TEMPEST_TESTS:
+              type: boolean
+              default: 'false'
+              description: If chosen then Tempest tests will be executed
+            RUN_SPT_TESTS:
+              type: boolean
+              default: 'false'
+              description: If chosen, SPT tests will be executed
+            TEST_IMAGE:
+              type: string
+              default: 'xrally/xrally-openstack:latest'
+              description: |
+                  Docker image to use with required test set. Please use
+                  'xrally/xrally-openstack:latest' - for Rally tests
+                  "${_param:mcp_docker_registry}/mirantis/oss/qa-tools" -
+                  for SPT/Tempest environment setup
+            TARGET_NODE:
+              type: string
+              default: ""
+              description: Target node where this job will be executed from
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
@@ -32,151 +66,78 @@ parameters:
               type: string
               default: "salt"
               description: Credentials to the Salt API
-            TEST_IMAGE:
-              type: string
-              default: "${_param:mcp_docker_registry}/mirantis/oss/qa-tools"
-              description: Docker image to setup testing environment
-            TARGET_NODE:
-              type: string
-              default: ""
-              description: Target node where this job will be executed from
-            RUN_RALLY_TESTS:
-              type: boolean
-              default: 'true'
-              description: If chosen then Rally tests will be executed
-            RUN_TEMPEST_TESTS:
-              type: boolean
-              default: 'true'
-              description: If chosen then Tempest tests will be executed
-            RUN_K8S_TESTS:
-              type: boolean
-              default: 'true'
-              description: If chosen then K8S tests will be executed
-            TEMPEST_TEST_SET:
-              type: choice
-              choices:
-                - smoke
-                - full
-              description: Set of Tempest tests to run
-            TEMPEST_CONFIG_REPO:
-              type: string
-              default: ""
-              description: Git repository with configuration files for Tempest
-            TEMPEST_CONFIG_BRANCH:
-              type: string
-              default: ""
-              description: Git branch which will be used during the checkout
-            TEMPEST_REPO:
-              type: string
-              default: ""
-              description: Git repository with Tempest
-            TEMPEST_VERSION:
-              type: string
-              default: ""
-              description: Version of Tempest (tag, branch or commit)
-            TEST_K8S_NODE:
-              type: string
-              default: ""
-              description: Kubernetes node to run tests from
-            TEST_K8S_API_SERVER:
-              type: string
-              default: "http://127.0.0.1:8080"
-              description: API server parameter for K8S tests
-            TEST_K8S_CONFORMANCE_IMAGE:
-              type: string
-              default: "docker-dev-virtual.docker.mirantis.net/mirantis/kubernetes/k8s-conformance:v1.7.5-2_1504192939316"
-              description: Docker image to run K8S tests
-            RUN_SPT_TESTS:
-              type: boolean
-              default: 'true'
-              description: If chosen then SPT tests will be executed
-            SPT_SSH_USER:
-              type: string
-              default: "root"
-              description: Username that is used to ssh between cluster nodes
-            FLOATING_NETWORK:
-              type: string
-              default: ""
-              description: External(floating) network name (used in both SPT and Rally)
-            SPT_IMAGE:
-              type: string
-              default: ""
-              description: Image that is used for network-VM-to-VM-iperf-tests tests
-            SPT_IMAGE_USER:
-              type: string
-              default: ""
-              description: Username that is used to ssh to SPT_IMAGE
-            SPT_FLAVOR:
-              type: string
-              default: ""
-              description: Flavor name for SPT_IMAGE (make sure you have required flavor created)
-            RALLY_IMAGE:
-              type: string
-              default: "cirros"
-            RALLY_FLAVOR:
-              type: string
-              default: "m1.tiny"
-              description: Flavor name for Rally scenarios
-            RALLY_CONFIG_REPO:
-              type: string
-              default: ""
-              description: Git repository with configuration files for Rally
-            RALLY_CONFIG_BRANCH:
-              type: string
-              default: ""
-              description: Git branch which will be used during the checkout
-            RALLY_SCENARIOS:
-              type: string
-              default: ""
-              description: Rally scenarios directory or file with scenarios
-            RALLY_SL_SCENARIOS:
-              type: string
-              default: ""
-              description: Stacklight Rally scenarios directory or file with scenarios
-            RALLY_TASK_ARGS_FILE:
-              type: string
-              default: ""
-              description: Rally scenarios arguments file
-            AVAILABILITY_ZONE:
-              type: string
-              default: "nova"
-              description: Name of availability zone
-            GENERATE_REPORT:
-              type: boolean
-              default: 'true'
-              description: If chosen then at the end of the test run HTML report will be generated
-            ACCUMULATE_RESULTS:
-              type: boolean
-              default: 'true'
-              description: If chosen then previous build results will be used in the current build
-            RALLY_PLUGINS_REPO:
-              type: string
-              default: ""
-              description: Git repository with Rally plugins
-            RALLY_PLUGINS_BRANCH:
-              type: string
-              default: ""
-              description: Git branch which will be used during the checkout
-            K8S_RALLY:
-              type: boolean
-              default: 'false'
-              description: If chosen then K8S Rally test will be executed
-            STACKLIGHT_RALLY:
-              type: boolean
-              default: 'false'
-              description: If chosen then Stacklight Rally test will be executed
-            JOB_TIMEOUT:
-              type: string
-              default: "3"
-              description: Job timeout in hours
-            REPORT_DIR:
-              type: string
-              default: ""
-              description: Path for reports outside docker image
-            SKIP_LIST:
-              type: string
-              description: "Skip list for Rally test"
-              default: ""
+            VALIDATE_PARAMS:
+              type: text
+              default:  |
+                ---
+                  rally:
+                  # Name of availability zone
+                    AVAILABILITY_ZONE: 'nova'
+                  # External(floating) network name
+                    FLOATING_NETWORK: 'public'
+                  # Rally base image for glance
+                    RALLY_IMAGE: 'cirros'
+                  # Flavor name for Rally scenarios
+                    RALLY_FLAVOR: 'm1.tiny'
+                  # Git repository with configuration files for Rally
+                    RALLY_CONFIG_REPO: 'https://github.com/Mirantis/scale-scenarios'
+                  # Git branch which will be used during the checkout
+                    RALLY_CONFIG_BRANCH: 'master'
+                  # Git repository with Rally plugins
+                    RALLY_PLUGINS_REPO: 'https://github.com/Mirantis/rally-plugins'
+                  # Git branch which will be used during the checkout
+                    RALLY_PLUGINS_BRANCH: 'master'
+                  # Rally scenarios directory or file with scenarios
+                    RALLY_SCENARIOS: 'rally-scenarios-light'
+                  # Stacklight Rally scenarios directory or file with scenarios
+                    RALLY_SL_SCENARIOS: 'rally-stacklight'
+                  # Rally scenarios arguments file
+                    RALLY_TASK_ARGS_FILE: 'job-params-light.yaml'
+                  # Rally-compliant DB connection string for long-term results storing
+                    RALLY_DB_CONN_STRING: ''
+                  # List of tags for marking Rally tasks. Used as filter for Rally trends
+                    RALLY_TAGS:
+                    # - 'platform=openstack'
+                    # - 'env=your_env_name'
+                    # - 'cmp=2'
+                  # Generate rally trends report. Requires an external DB
+                    RALLY_TRENDS: 'false'
+                  # If chosen K8S Rally plugin will be used to test K8S cluster
+                    K8S_RALLY: 'false'
+                  # If chosen then Stacklight Rally test will be executed
+                    STACKLIGHT_RALLY: 'false'
+                  # Path for reports outside docker image
+                    REPORT_DIR: '/root/qa_results'
+                  # Scenarios names/dirs to skip
+                    SKIP_LIST: ''
+                  tempest:
+                  # Set of Tempest tests to run (smoke,full)
+                    TEMPEST_TEST_SET: 'smoke'
+                  # Git repository with configuration files for Tempest
+                    TEMPEST_CONFIG_REPO: ''
+                  # Git branch which will be used during the checkout
+                    TEMPEST_CONFIG_BRANCH: ''
+                  # description: Git repository with Tempest
+                    TEMPEST_REPO: ''
+                  #  description: Version of Tempest (tag, branch or commit)
+                    TEMPEST_VERSION: ''
+                  # If chosen, run HTML report will be generated
+                    GENERATE_REPORT: 'false'
+                  spt:
+                  # Name of availability zone
+                    AVAILABILITY_ZONE: 'nova'
+                  # External(floating) network name
+                    FLOATING_NETWORK: 'public'
+                  # Username that is used to ssh between cluster nodes
+                    SPT_SSH_USER: 'root'
+                  # Image that is used for network-VM-to-VM-iperf-tests tests
+                    SPT_IMAGE: ''
+                  # Username that is used to ssh to SPT_IMAGE
+                    SPT_IMAGE_USER: ''
+                  # Flavor name for SPT_IMAGE (make sure you have required flavor created)
+                    SPT_FLAVOR: ''
+                  # If chosen, run HTML report will be generated
+                    GENERATE_REPORT: 'false'
         cvp-sanity:
           type: workflow-scm
           name: cvp-sanity
