@@ -33,6 +33,8 @@ parameters:
       identity:
         host: ${_param:single_address}
         region: ${_param:openstack_region}
+      service_user:
+        enabled: ${_param:cinder_service_user_enabled}
       cache:
         security:
           enabled: ${_param:cinder_memcache_security_enabled}

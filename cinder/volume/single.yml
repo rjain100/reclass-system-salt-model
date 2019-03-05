@@ -44,6 +44,8 @@ parameters:
         host: ${_param:openstack_control_address}
         protocol: ${_param:cluster_internal_protocol}
         region: ${_param:openstack_region}
+      service_user:
+        enabled: ${_param:cinder_service_user_enabled}
       cache:
         security:
           enabled: ${_param:cinder_memcache_security_enabled}

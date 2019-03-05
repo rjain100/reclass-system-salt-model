@@ -52,6 +52,8 @@ parameters:
         user: cinder
         password: ${_param:keystone_cinder_password}
         protocol: ${_param:cluster_internal_protocol}
+      service_user:
+        enabled: ${_param:cinder_service_user_enabled}
       glance:
         host: ${_param:cluster_vip_address}
         port: 9292
