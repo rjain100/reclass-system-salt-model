@@ -406,8 +406,12 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
-            script: cvp-stacklight.groovy
+            script: cvp-runner.groovy
           param:
+            IMAGE:
+              type: string
+              default: ${_param:docker_image_cvp_sanity_checks}
+              description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
@@ -415,22 +419,12 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: "https://github.com/Mirantis/stacklight-pytest -b cvp_stacklight"
-              description: Url for cvp-stacklight-tests
-            TESTS_SETTINGS:
-              type: string
-              default: "SL_AUTOCONF=True"
-              description: "Additional environment variables to export"
-            TESTS_SET:
-              type: string
-              default: "stacklight-pytest/stacklight_tests/tests/prometheus/"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_dashboards.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet."
+            EXTRA_PARAMS:
+              type: text
+              default: |
+                envs:
+                  - SL_AUTOCONF=True
+              description: YAML context with additional parameters
         cvp-spt:
           type: workflow-scm
           name: cvp-spt
