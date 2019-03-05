@@ -72,6 +72,8 @@ parameters:
         password: ${_param:keystone_nova_password}
         tenant: service
         protocol: ${_param:cluster_internal_protocol}
+      service_user:
+        enabled: ${_param:nova_service_user_enabled}
       barbican:
         enabled: ${_param:barbican_integration_enabled}
       message_queue:
