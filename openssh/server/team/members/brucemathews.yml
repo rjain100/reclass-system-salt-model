@@ -15,6 +15,6 @@ parameters:
         bmathews:
           enabled: true
           public_keys:
-          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1tsh+T2JRsyblZBrF17b/Q2AelpY+gTc9BaMQMj1J/Y/aJZUjD22knG8away01DQ+Qew5/Kcx5k4AvmxWkncRX+7ye9sVJA6BQhwewkN/MiiDJ3hC8hNFfk8ki8arqPxasXZOWacT2DDXw7/gc+/DA4F35UvsMmD+JLVr4fkdzQuHre2QPbqs+6+KdHIl0nI+d3hCCd9Zsd1mYlJkDU7oLC085oIsIqToWTYKw6HFKMqocYzuN4TQKI3dySFpkjMXLz8SK8UVjXA+Lyu0ymIVmvGnVDNAImc9ZMeU+l6W4gpuLY30Zw5/8q8FkKBw5FYWgllmoixlwhNRJJ1Hf7tJ
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdAYo193PNG03Da0EuqfKu+cFM8SqPCYs8rniu+RIhJtlEiezfdYX95zO8omR675pjmw0CgZQB6Bsv9G4eMLS+qpmL0gFWI3/qwDacZGgsLr5iCo6bnIgWx92Ze56O7T4drho8ZK2cnmlUtVK5fhAgKHv/fzssmumzUkyD0+n0qJZIvA9eUm4T55X3IRFqxe321wLQDmQOxUkSv+zAClIEbsR8IUkRiTT6y0IbozrTXJaUUwrBhd+qr68NQXnAiMIP7v9S2TYcL1Ufl2M2W7RB18sGeLmz9cEXNQ+2SZv4ZVeK2O6VnLnQoJjCwkyVBJ2nIuTqZNy51Std3xpkh0ah bmathews@1205-W541
           user: ${linux:system:user:bmathews}
 
