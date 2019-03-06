@@ -435,15 +435,15 @@ parameters:
               default: "salt"
             TESTS_REPO:
               type: string
-              default: "https://github.com/Mirantis/stacklight-pytest -b cvp_stacklight"
+              default: "http://gerrit.mcp.mirantis.com/mcp/stacklight-pytest -b release/2019.2.0"
               description: Url for cvp-stacklight-tests
             TESTS_SETTINGS:
               type: string
-              default: "SL_AUTOCONF=True"
+              default: "SL_AUTOCONF=True;PYTHONPATH=./stacklight-pytest"
               description: "Additional environment variables to export"
             TESTS_SET:
               type: string
-              default: "stacklight-pytest/stacklight_tests/tests/prometheus/"
+              default: "stacklight-pytest/stacklight_tests/tests/"
               description: "Leave as is for full run or add a filename, e.g. _default_path_/test_dashboards.py"
             PROXY:
               type: string
