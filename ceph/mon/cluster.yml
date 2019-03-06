@@ -1,2 +1,8 @@
 classes:
 - service.ceph.mon.cluster
+parameters:
+  ceph:
+    common:
+      config:
+        mon:
+          mon_max_pg_per_osd: 600
