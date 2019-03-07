@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ozhurba:
+          email: ozhurba@mirantis.com
+          enabled: true
+          full_name: Oleksii Zhurba
+          home: /home/ozhurba
+          name: ozhurba
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        ozhurba:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUwubPT8GWUeuPCdPeYlIuN8OaD0umc0JuyKWf5ViVhX3VqB6CwS6/ddm9fpbAedV/8J5l/Sl/usK/WuCPVBgKEuGtidRcrABxRt49q+aum5WRd6bsYv4UxFZmaDHKgg6g8LR7Ii26GPM/HdM1CdqnxpVicz7QRj3pgLDYLippg7RAktKkp4Jw7gkBFNR7UXGHr/5qX08VoUadbgWQP7OdHdgSxysqkSiN1Rr9URWEpwZ5wfblkbEzR1JBg6kYJAP3sTJvOQguFvFCVu6++/UX2wbrrc0+0eAO31lFUAIjboYLpWDj5Sj/ER3uwTX0dJw0wpSsa9lHn/LSZrJhrA5v ozhurba@zhurba-mac
+          user: ${linux:system:user:ozhurba}
