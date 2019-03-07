@@ -1,4 +1,5 @@
 classes:
+- system.linux.network.mcp
 - system.linux.system.single.simple
 - system.linux.system.repo.mcp.apt_mirantis.mirantis_pining
 parameters:

@@ -1,0 +1,4 @@
+parameters:
+  linux:
+    network:
+      tap_custom_txqueuelen: 10000
