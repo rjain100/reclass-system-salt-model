@@ -10,6 +10,9 @@ parameters:
       pkgs:
         - nova-compute-ironic
       instance_build_timeout: ${_param:nova_instance_build_timeout}
+      reserved_host_memory_mb: 0
+      reserved_host_disk_mb: 0
+      reserved_host_cpu: 0
       database:
         engine: mysql
         host: ${_param:openstack_database_address}
