@@ -44,6 +44,9 @@ parameters:
             - type: hard
               item: nproc
               value: 307200
+      package:
+        smartmontools:
+          version: latest
       systemd:
         system:
           Manager:
