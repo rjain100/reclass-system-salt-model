@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        lmendes:
+          enabled: true
+          name: lmendes
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Leandro Mendes
+          home: /home/lmendes
+          email: lmendes@mirantis.com
+  openssh:
+    server:
+      user:
+        lmendes:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD44cCDiCstIu7i8fxM1BaHi9xbFrvKMWaExFgc+ygw+WXxqVpBRdjn+Tm41ItrfD2A5vHQ6Az/gKE2qBFIIjRqR/Qe3CuOOIES1aNGNsRQ2pBk8B7YQnrctOvikTLDbPGZWXKIOvVNL3Jd6BlRrfCc8JxJE0h5E+ssa+zIHlNP+CwCs+TYYuhzU0zrbqCN2sqjytSIAp+zkH9M653m3EKZ1XyaPuz2U5q2LWmfyjMoTjWzBadlaQdf5xROKgdewg+femcOkX/hImUtK3YPsGJAbjBLv1wtqVGUuPuGtYfG5RPHSC5s4KEGf+3VlLQk8jQvWfgIIpEhw7T8VbcLvBlJoqE2rSbCMyKQI/t61rMCFE3llBS1ZHtkPIp8efgiU7Dil8u0lIztzgVqlIvqV1tzw7yCKFYE8VRtQebtbreCkU6zrvUmJLArFMKaYWHMs28LsSz7QNce4DnqS1wehuvbnrvQCpc85d5U4w8Q1ZFDmTbmc1x+lEYHG7io0nhTt2u6H/7/JEbedNg7wrQLq7/w28jY3vY+aoa7QtE9LRxTBRm0wB0ROVXt/AC3v5ErrpkSvMl2TjGHIJqCLrmmt1xogKCTmDHbX55xhN6SkshuGYHy/y6qM+CpomTeqDBhvdbgAKHUnzT3TbJdfmuxa3ztra2pBTB7Yx5FIOQW7i/CUw== lmendes@mirantis.com
+          user: ${linux:system:user:lmendes}
