@@ -11,6 +11,7 @@ classes:
 - system.defaults.backupninja
 - system.defaults.git
 - system.defaults.jenkins
+- system.defaults.postgresql
 - system.defaults.maas
 - system.defaults.openstack
 - system.defaults.galera
