@@ -24,6 +24,8 @@ classes:
 - system.defaults.stacklight
 - system.defaults.xtrabackup
 - system.defaults.backup
+# k8s
+- system.defaults.etcd
 parameters:
   _param:
     mcp_version: stable

@@ -1,5 +1,5 @@
 classes:
-- service.etcd.server.cluster
+- service.etcd.server.single
 - service.etcd.support
 - service.etcd.linux
 parameters:
@@ -12,6 +12,6 @@ parameters:
       etcd_source: ${_param:kubernetes_etcd_source}
       etcd_source_hash: ${_param:kubernetes_etcd_source_hash}
       bind:
-        host: ${_param:cluster_local_address}
+        host: ${_param:single_address}
       ssl:
         enabled: true
