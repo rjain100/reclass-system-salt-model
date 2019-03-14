@@ -37,8 +37,7 @@ parameters:
             port: 8778
           log:
             custom:
-              format: >-
-                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+              format: ${_param:apache_site_openstack_placement_log_format}
               file: '/var/log/apache2/nova_placement_access.log'
             error:
               enabled: true
