@@ -31,7 +31,7 @@ parameters:
             port: 9311
           log:
             custom:
-              format: 'combined'
+              format: ${_param:apache_site_openstack_barbican_log_format}
               file: '/var/log/barbican/barbican-api.log'
             error:
               enabled: true
@@ -55,7 +55,7 @@ parameters:
             port: 9312
           log:
             custom:
-              format: 'combined'
+              format: ${_param:apache_site_openstack_barbican_log_format}
               file: '/var/log/barbican/barbican-api.log'
             error:
               enabled: true

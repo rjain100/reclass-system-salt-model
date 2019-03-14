@@ -22,8 +22,8 @@ parameters:
             port: ${_param:apache_aodh_api_port}
           log:
             custom:
-              format: >-
-                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+              format: ${_param:apache_site_openstack_aodh_log_format}
+              file: /var/log/apache2/aodh_access.log
           wsgi:
             daemon_process: aodh-api
             processes: ${_param:aodh_api_workers}
