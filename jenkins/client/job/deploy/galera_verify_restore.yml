@@ -25,3 +25,12 @@ parameters:
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
+            ASK_CONFIRMATION:
+              type: boolean
+              default: 'true'
+            CHECK_TIME_SYNC:
+              type: boolean
+              default: 'true'
+            VERIFICATION_RETRIES:
+              type: string
+              default: 5
