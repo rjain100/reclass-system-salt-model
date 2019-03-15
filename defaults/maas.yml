@@ -1,5 +1,6 @@
 parameters:
   _param:
+    maas_postgresql_server: ${_param:postgresql_server}
     default_local_mirrror_content:
       maas_mirror_image_sections:
         bootloaders:

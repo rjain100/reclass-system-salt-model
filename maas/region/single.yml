@@ -49,7 +49,7 @@ parameters:
         email:  email@example.com
       database:
         engine: postgresql
-        host: localhost
+        host: ${_param:maas_postgresql_server}
         name: maasdb
         password: ${_param:maas_db_password}
         username: maas
