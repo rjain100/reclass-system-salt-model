@@ -1,0 +1,19 @@
+# This is list of all default soft params, across reclass-system lvl.
+# Please always include those 'init.yml', and don't use direct sub-lvls.
+# Some rules approach:
+# - Always use uniq names, which exactly identify key
+# - Avoid any component intersection's
+# - No if\else\whatever logic allowed.
+
+classes:
+- system.defaults.linux_system_repo
+parameters:
+  _param:
+    mcp_version: stable
+    # Temporary link to mcp_version.
+    # 'apt_mk_version' will be removed in q4
+    apt_mk_version: ${_param:mcp_version}
+    linux_system_architecture: amd64
+    # Other
+    salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
+    salt_control_trusty_image_backend: /var/lib/libvirt/images/backends/trusty.qcow2
