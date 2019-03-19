@@ -1,0 +1,3 @@
+classes:
+- system.linux.system.repo.keystorage.mirantis_com.mirror_mirantis
+- system.linux.system.repo.keystorage.mirantis_com.apt_mirantis

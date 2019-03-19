@@ -1,0 +1,11 @@
+classes:
+- system.linux.system.repo.keystorage.elasticsearch
+parameters:
+  linux:
+    system:
+      repo:
+        mcp_elasticsearch_curator_hotfix:
+          source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_hotfix_elasticsearch_curator_url}/${_param:linux_system_codename} stable main"
+          architectures: ${_param:linux_system_architecture}
+          clean_file: true
+          key: ${_param:linux_system_repo_mcp_elasticsearch_key}

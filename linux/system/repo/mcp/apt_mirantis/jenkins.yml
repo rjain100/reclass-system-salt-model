@@ -1,0 +1,18 @@
+# Deprecated since 2018.11
+# Will be removed in 2019.q2
+classes:
+- system.linux.system.repo.keystorage.jenkins
+parameters:
+  linux:
+    system:
+      repo:
+        mcp_jenkins:
+          # FIXME PROD-20733
+          source: "deb [arch=amd64 trusted=yes] ${_param:linux_system_repo_mcp_jenkins_url}/${_param:linux_system_codename}/ binary main"
+          key: ${_param:linux_system_repo_mcp_jenkins_key}
+          architectures: amd64
+          clean_file: true
+          pin:
+          - pin: 'release o=jenkins.io'
+            priority: 1100
+            package: '*'

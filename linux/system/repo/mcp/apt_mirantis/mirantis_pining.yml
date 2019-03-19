@@ -1,0 +1,17 @@
+# This is global pin rule for all packages, provided by Mirantis.
+# Quoting official man of apt:
+# `Preferences are a strong power in the hands of a system administrator but they can become also their biggest nightmare if used without care!`
+# aka, don't change and don't add any new rules, w\o extra neccecity.
+parameters:
+  linux:
+    system:
+      apt:
+        preferences:
+          enabled: true
+          rules:
+            100:
+              enabled: true
+              name: 'Mirantis origin'
+              pin: 'release o=Mirantis'
+              priority: 1100
+              package: '*'

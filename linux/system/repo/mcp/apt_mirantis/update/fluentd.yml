@@ -1,0 +1,11 @@
+classes:
+- system.linux.system.repo.keystorage.fluentd
+parameters:
+  linux:
+    system:
+      repo:
+        mcp_fluentd_update:
+          source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_update_fluentd_url}/${_param:linux_system_codename} ${_param:linux_system_codename} contrib"
+          key: ${_param:linux_system_repo_mcp_fluentd_key}
+          architectures: ${_param:linux_system_architecture}
+          clean_file: true

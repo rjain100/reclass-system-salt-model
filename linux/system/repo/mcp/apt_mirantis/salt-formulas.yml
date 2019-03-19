@@ -1,0 +1,11 @@
+classes:
+- system.linux.system.repo.keystorage.mirantis_com
+parameters:
+  linux:
+    system:
+      repo:
+        mcp_salt:
+          source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_salt_url}/${_param:linux_system_codename} ${_param:linux_system_codename} main"
+          key: ${_param:linux_system_repo_mirror_mirantis_key}
+          architectures: amd64
+          clean_file: true

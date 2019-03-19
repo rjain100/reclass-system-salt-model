@@ -7,6 +7,7 @@
 
 classes:
 - system.defaults.linux_system_repo
+- system.defaults.stacklight
 parameters:
   _param:
     mcp_version: stable
@@ -17,3 +18,4 @@ parameters:
     # Other
     salt_control_xenial_image_backend: /var/lib/libvirt/images/backends/xenial.qcow2
     salt_control_trusty_image_backend: /var/lib/libvirt/images/backends/trusty.qcow2
+    linux_repo_contrail_version: 3.0
