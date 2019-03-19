@@ -18,3 +18,5 @@ classes:
   - system.jenkins.client.job.deploy.update.cloud_update
   - system.jenkins.client.job.deploy.update.kubernetes_update
   - system.jenkins.client.job.deploy.galera_verify_restore
+  - system.jenkins.client.job.deploy.galera_database_backup
+  - system.jenkins.client.job.deploy.backupninja_backup
