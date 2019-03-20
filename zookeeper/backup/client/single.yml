@@ -2,8 +2,6 @@ classes:
 - service.zookeeper.backup.client
 - system.openssh.client.root
 parameters:
-  _param:
-    zookeeper_remote_backup_server: cfg01
   zookeeper:
     backup:
       client:
