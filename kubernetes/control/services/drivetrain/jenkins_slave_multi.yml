@@ -34,6 +34,16 @@ parameters:
                   value: ${_param:kdt_http_proxy}
                 - name: no_proxy
                   value: ${_param:kdt_no_proxy}
+              volumes:
+                - name: jenkins-slave02
+                  mount: /var/lib/jenkins
+                  read_only: false
+          volume:
+            jenkins-slave02:
+              type: glusterfs
+              endpoints: glusterfs
+              path: jenkins_slave02
+              read_only: false
         jenkins_slave03:
           create: true
           service: slave03
@@ -64,3 +74,13 @@ parameters:
                 value: ${_param:kdt_http_proxy}
               - name: no_proxy
                 value: ${_param:kdt_no_proxy}
+              volumes:
+              - name: jenkins-slave03
+                mount: /var/lib/jenkins
+                read_only: false
+          volume:
+            jenkins-slave03:
+              type: glusterfs
+              endpoints: glusterfs
+              path: jenkins_slave03
+              read_only: false
