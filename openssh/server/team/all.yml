@@ -1,6 +1,5 @@
 classes:
 # avoid teams w/sudo group restrictions, or override restrictions
-- system.openssh.server.team.lab
 - system.openssh.server.team.cicd
 - system.openssh.server.team.mcp_qa
 - system.openssh.server.team.mcp_ci
