@@ -1,0 +1,32 @@
+parameters:
+  jenkins:
+    client:
+      job:
+        ceph-add-osd-upmap:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Ceph - add osd"
+          description: "This pipeline requires ceph luminous version, all clients must be upgraded to luminous version to proceed."
+          discard:
+            build:
+              keep_num: 50
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: ceph-add-osd-upmap.groovy
+          param:
+            # general parameters
+            SALT_MASTER_URL:
+              type: string
+              description: URL of Salt master
+              default: "${_param:jenkins_salt_api_url}"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              description: Credentials for login to Salt API
+              default: salt
+            HOST:
+              type: string
+              description: OSD HOST that will be added to Ceph cluster (rgw04*)
+              default: 'osd*'
