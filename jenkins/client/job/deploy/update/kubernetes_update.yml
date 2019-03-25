@@ -4,8 +4,6 @@
 parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
-    kubernetes_hyperkube_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
-    kubernetes_calico_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
   jenkins:
     client:
       job:
@@ -127,3 +125,11 @@ parameters:
               type: string
               default: ""
               description: "Versioned calico/kube-controllers image. Should be null if update rolling via reclass-system level"
+            KUBERNETES_ETCD_SOURCE:
+              type: string
+              default: ""
+              description: "Versioned binary for etcd server. Should be null if update rolling via reclass-system level"
+            KUBERNETES_ETCD_SOURCE_HASH:
+              type: string
+              default: ""
+              description: "Checksum of etcd binary. Should be null if update rolling via reclass-system level"
