@@ -29,7 +29,7 @@ parameters:
     docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:${_param:mcp_version}"
     docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/mirantis/external/braedon/prometheus-es-exporter:0.5.1"
     docker_image_prometheus: "${_param:mcp_docker_registry}/openstack-docker/prometheus:${_param:mcp_version}"
-    docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/gainsight:${_param:mcp_version}"
+    docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/gainsight:2019.2.3"
     docker_image_prometheus_gainsight_elasticsearch: "${_param:mcp_docker_registry}/openstack-docker/gainsight_elasticsearch:${_param:mcp_version}"
     docker_image_prometheus_relay: "${_param:mcp_docker_registry}/openstack-docker/prometheus_relay:${_param:mcp_version}"
     docker_image_pushgateway: "${_param:mcp_docker_registry}/openstack-docker/pushgateway:${_param:mcp_version}"
