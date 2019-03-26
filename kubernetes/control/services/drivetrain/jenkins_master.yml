@@ -15,6 +15,12 @@ parameters:
             value: false
           - name: nginx.ingress.kubernetes.io/add-base-url
             value: true
+          - name: nginx.ingress.kubernetes.io/proxy-body-size
+            value: "0"
+          - name: nginx.ingress.kubernetes.io/proxy-buffering
+            value: "off"
+          - name: nginx.ingress.kubernetes.io/proxy-request-buffering
+            value: "off"
           apiVersion: extensions/v1beta1
           cluster: drivetrain
           enabled: true
