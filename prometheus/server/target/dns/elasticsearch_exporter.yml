@@ -6,6 +6,7 @@ parameters:
           enabled: true
           endpoint:
             - name: 'elasticsearch_exporter'
+              scrape_interval: 60s
               domain:
               - 'tasks.monitoring_elasticsearch_exporter'
               type: A
