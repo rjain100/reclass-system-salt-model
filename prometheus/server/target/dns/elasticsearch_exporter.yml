@@ -1,0 +1,12 @@
+parameters:
+  prometheus:
+    server:
+      target:
+        dns:
+          enabled: true
+          endpoint:
+            - name: 'elasticsearch_exporter'
+              domain:
+              - 'tasks.monitoring_elasticsearch_exporter'
+              type: A
+              port: 9206
