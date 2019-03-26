@@ -250,6 +250,53 @@ parameters:
               type: string
               default: "https://github.com/Mirantis/cvp-configuration"
               description: URL of repo where testing tools, scenarios, configs are located.
+        cvp-tempest:
+          type: workflow-scm
+          name: cvp-tempest
+          display_name: "CVP - Functional tests (new)"
+          discard:
+            build:
+              keep_num: 20
+            artifact:
+              keep_num: 20
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: cvp-tempest.groovy
+          param:
+            PREPARE_RESOURCES:
+              type: boolean
+              default: true
+              description: Prepare resources for Tempest
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+              description: SALT_MASTER_URL
+            TEMPEST_TEST_PATTERN:
+              type: string
+              default: "set=smoke"
+              description: Use set=smoke, set=full or just test name (regex)
+            TEMPEST_ENDPOINT_TYPE:
+              type: choice
+              choices:
+                - internalURL
+                - adminURL
+                - publicURL
+              description: Openstack endpoint type to use during test run.
+            EXTRA_PARAMS:
+              type: text
+              default:  |
+                ---
+                  DEBUG_MODE: false
+                  GENERATE_CONFIG: true
+                  TARGET_NODE: "I@gerrit:client"
+                  SKIP_LIST_PATH: ""
+                  TEST_IMAGE: "docker-prod-virtual.docker.mirantis.net/mirantis/cicd/ci-tempest:${_param:openstack_version}"
+                  report_prefix: "cvp_"
+              description: YAML context with additional parameters
         cvp-perf:
           type: workflow-scm
           name: cvp-perf
