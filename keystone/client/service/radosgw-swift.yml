@@ -15,6 +15,7 @@ parameters:
                   is_admin: true
                   password: ${_param:keystone_swift_password}
                   email: ${_param:admin_email}
+                  options: ${_param:openstack_service_user_options}
           service:
             radosgw-swift:
               type: object-store

@@ -21,5 +21,6 @@ parameters:
                   is_admin: false
                   password: ${_param:keystone_image_manager_password}
                   email: ${_param:keystone_image_manager_email}
+                  options: ${_param:openstack_service_user_options}
                   roles:
                   - image_manager

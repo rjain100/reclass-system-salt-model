@@ -14,6 +14,7 @@ parameters:
                   is_admin: true
                   password: ${_param:keystone_cinder_password}
                   email: ${_param:admin_email}
+                  options: ${_param:openstack_service_user_options}
           service:
             cinderv3:
               type: volumev3

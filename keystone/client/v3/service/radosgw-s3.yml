@@ -4,12 +4,13 @@ parameters:
     radosgw_service_protocol: http
   keystone:
     client:
-      resource:
+      resources:
         v3:
           users:
             swift:
               password: ${_param:keystone_swift_password}
               email: ${_param:admin_email}
+              options: ${_param:openstack_service_user_options}
               roles:
                 service_admin:
                   name: admin
