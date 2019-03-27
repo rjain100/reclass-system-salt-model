@@ -40,17 +40,3 @@ parameters:
         db-sb-create-insecure-remote: 'yes'
         db-nb-addr: ${_param:single_address}
         db-sb-addr: ${_param:single_address}
-  mysql:
-    server:
-      database:
-        neutron:
-          encoding: utf8
-          users:
-          - name: neutron
-            password: ${_param:mysql_neutron_password}
-            host: '%'
-            rights: all
-          - name: neutron
-            password: ${_param:mysql_neutron_password}
-            host: ${_param:cluster_local_address}
-            rights: all
