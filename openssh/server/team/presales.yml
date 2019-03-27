@@ -7,6 +7,7 @@ classes:
 - system.openssh.server.team.members.andreidanin
 - system.openssh.server.team.members.danielvirassamy
 - system.openssh.server.team.members.srichowdhury
+- system.openssh.server.team.members.michaeltillman
 
 parameters:
   _param:
