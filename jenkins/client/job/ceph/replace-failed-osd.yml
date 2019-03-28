@@ -31,15 +31,6 @@ parameters:
             OSD:
               type: string
               description: These OSD IDs at HOST will be replaced (comma-separated list - 1,2,3)
-            DEVICE:
-              type: string
-              description: Comma separated list of failed devices that will be replaced at HOST (/dev/sdb,/dev/sdc)
-            DATA_PARTITION:
-              type: string
-              description: (Optional) Comma separated list of mounted partitions of failed device. These partitions will be unmounted. For ex. /dev/sdb1,/dev/sdb3
-            JOURNAL_BLOCKDB_BLOCKWAL_PARTITION:
-              type: string
-              description: Comma separated list of partitions where journal, block_db or block_wal for the failed devices on this HOST were stored (/dev/sdh2,/dev/sdh3)
             ADMIN_HOST:
               type: string
               description: Host with admin keyring and correct crushmap file in /etc/ceph/crushmap
@@ -48,10 +39,6 @@ parameters:
               type: boolean
               default: 'true'
               description: Wait for healthy during pipeline
-            DMCRYPT:
-              type: boolean
-              default: 'false'
-              description: Check if replacing osds were encrypted
             CLUSTER_FLAGS:
               type: string
               description: Flags to be aplied before pipeline and after pipeline (comma-separated list)
