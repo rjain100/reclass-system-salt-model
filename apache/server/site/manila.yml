@@ -38,8 +38,8 @@ parameters:
             port: 8786
           log:
             custom:
-              format: >-
-                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+              format: ${_param:apache_site_openstack_manila_log_format}
+              file: /var/log/apache2/manila.access.log
             error:
               enabled: true
               level: debug

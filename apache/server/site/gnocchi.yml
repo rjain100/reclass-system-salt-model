@@ -22,8 +22,7 @@ parameters:
             port: ${_param:apache_gnocchi_api_port}
           log:
             custom:
-              format: >-
-                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+              format: ${_param:apache_site_openstack_gnocchi_log_format}
           wsgi:
             daemon_process: gnocchi-api
             processes: ${_param:gnocchi_api_workers}
