@@ -38,9 +38,9 @@ parameters:
     kubernetes_calico_cni_source_hash: md5=2544bc1865c1451cac7a61264c25a2cb
     kubernetes_calico_cni_ipam_source: ${_param:kubernetes_calico_cni_repo}/calico-ipam-v3.3.2
     kubernetes_calico_cni_ipam_source_hash: md5=b22623eeea3b29ba8ec071d859ac7055
-    kubernetes_hyperkube_source: ${_param:kubernetes_hyperkube_repo}/hyperkube_v1.13.2-1_1549961718696
-    kubernetes_hyperkube_source_hash: md5=802e0ee43fd2a41e9ed84b0f867e70a2
-    kubernetes_pause_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/pause-amd64:v1.13.2-1
+    kubernetes_hyperkube_source: ${_param:kubernetes_hyperkube_repo}/hyperkube_v1.13.5-3_1553734030770
+    kubernetes_hyperkube_source_hash: md5=50e76be5db36adcffe24ede633e428d2
+    kubernetes_pause_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/pause-amd64:v1.13.5-3
     kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.5.0
     kubernetes_criproxy_version: v0.14.0
     kubernetes_criproxy_checksum: md5=f0fa669295a156a588f3480c9909e6fd
@@ -50,7 +50,7 @@ parameters:
     kubernetes_dnsmasq_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-dnsmasq-amd64:1.14.5
     kubernetes_sidecar_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-sidecar-amd64:1.14.5
     kubernetes_dns_autoscaler_image: ${_param:kubernetes_kubedns_repo}/cluster-proportional-autoscaler-amd64:1.0.0
-    kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.9-3
+    kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.11-4
     kubernetes_genie_source: ${_param:kubernetes_genie_repo}/genie_v2.0-1-g209d3c4
     kubernetes_genie_source_hash: md5=fa7a27ecbb9f800c1b705f87c64f6226
     kubernetes_flannel_image: ${_param:kubernetes_flannel_repo}/flannel:v0.10.0-amd64
@@ -58,17 +58,17 @@ parameters:
     kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.7.3-2
     kubernetes_sriov_source: ${_param:kubernetes_sriov_repo}/sriov_v0.3-9-g3b31f1a
     kubernetes_sriov_source_hash: md5=cd9ea01e80d260218260314447c23b30
-    kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/containernetworking-plugins_v0.7.2-151-g1d23302.tar.gz
-    kubernetes_cniplugins_source_hash: md5=bb42444166a89ef6832529e9e39d000d
+    kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/containernetworking-plugins_v0.7.2-173-g8db2808.tar.gz
+    kubernetes_cniplugins_source_hash: md5=1861ab0c880fff58e7e8299e3dad8a0b
     kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.10.1-2
     kubernetes_telegraf_image: ${_param:mcp_docker_registry}/openstack-docker/telegraf:2018.8.0
-    kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.2.6-4
-    kubernetes_ingressnginx_controller_image: ${_param:kubernetes_ingressnginx_repo}/nginx-ingress-controller-amd64:nginx-0.21.0-3
+    kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.4.0-96
+    kubernetes_ingressnginx_controller_image: ${_param:kubernetes_ingressnginx_repo}/nginx-ingress-controller-amd64:nginx-0.23.0-4
     kubernetes_corends_etcd_operator_image: ${_param:kubernetes_corends_etcd_operator_repo}/etcd-operator:v0.9.3
     kubernetes_containerd_source: ${_param:kubernetes_containerd_repo}/v1.12.0/crictl-v1.12.0-linux-amd64.tar.gz
     kubernetes_containerd_source_hash: md5=ff60b9ddfa5617f7ed14b3f3b6a60056
     # images for formula compatibility
-    kubernetes_hyperkube_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/hyperkube-amd64:v1.13.2-1
+    kubernetes_hyperkube_image: ${_param:mcp_docker_registry}/mirantis/kubernetes/hyperkube-amd64:v1.13.5-3
     kubernetes_calico_cni_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/cni:v3.3.2
     kubernetes_calico_calicoctl_image: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico/ctl:v3.3.2
     kubernetes_containerd_package: containerd=1.2.4-2~u16.04+mcp
