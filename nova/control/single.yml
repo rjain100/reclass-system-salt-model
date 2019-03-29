@@ -25,6 +25,8 @@ parameters:
       identity:
         protocol: ${_param:cluster_internal_protocol}
         region: ${_param:openstack_region}
+      service_user:
+        enabled: ${_param:nova_service_user_enabled}
       network:
         protocol: ${_param:cluster_internal_protocol}
         region: ${_param:openstack_region}

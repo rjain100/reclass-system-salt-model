@@ -13,6 +13,7 @@ parameters:
     openstack_share_service_host: ${_param:openstack_share_service_hostname}.${linux:system:domain}
     openstack_kmn_service_host: ${_param:openstack_kmn_service_hostname}.${linux:system:domain}
     openstack_telemetry_service_host: ${_param:openstack_telemetry_service_hostname}.${linux:system:domain}
+    openstack_service_user_enabled: True
     # SSL
     ceilometer_agent_ssl_enabled: False
     openstack_mysql_x509_enabled: False
@@ -40,12 +41,14 @@ parameters:
     cinder_old_version: ${_param:openstack_old_version}
     cinder_version: ${_param:openstack_version}
     cinder_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    cinder_service_user_enabled: ${_param:openstack_service_user_enabled}
     # Nova
     nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     nova_memcache_secret_key: ''
     nova_old_version: ${_param:openstack_old_version}
     nova_version: ${_param:openstack_version}
     nova_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    nova_service_user_enabled: ${_param:openstack_service_user_enabled}
     # Glance
     glance_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     glance_memcache_secret_key: ''
