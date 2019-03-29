@@ -23,7 +23,7 @@ parameters:
     docker_image_operations_api: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-api:${_param:mcp_version}"
     docker_image_operations_ui: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-ui:${_param:mcp_version}"
     # OpenContrail
-    opencontrail_docker_image_tag: "${_param:mcp_version}"
+    opencontrail_docker_image_tag: "2019.2.3"
     # stacklight
     # 6.5.0 version, from 11/29/2018, differ from latest upstream 6.5.0 - update next cycle
     docker_image_alerta: "${_param:mcp_docker_registry}/mirantis/external/alerta-web:${_param:mcp_version}"
