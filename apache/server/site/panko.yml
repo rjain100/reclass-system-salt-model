@@ -22,8 +22,8 @@ parameters:
             port: ${_param:apache_panko_api_port}
           log:
             custom:
-              format: >-
-                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+              format: ${_param:apache_site_openstack_panko_log_format}
+              file: /var/log/apache2/panko.access.log
           wsgi:
             daemon_process: panko-api
             processes: ${_param:panko_api_workers}

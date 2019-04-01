@@ -35,8 +35,8 @@ parameters:
             port: 8776
           log:
             custom:
-              format: >-
-                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+              format: ${_param:apache_site_openstack_cinder_log_format}
+              file: /var/log/apache2/cinder.log
             error:
               enabled: true
               format: '%M'

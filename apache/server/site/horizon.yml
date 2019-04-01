@@ -56,8 +56,7 @@ parameters:
               allow: 'from all'
           log:
             custom:
-              format: >-
-                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+              format: ${_param:apache_site_openstack_horizon_log_format}
             error:
               enabled: true
               level: debug

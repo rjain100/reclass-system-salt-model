@@ -151,6 +151,18 @@ parameters:
     apache_proxy_openstack_aodh_retry: ${_param:apache_proxy_openstack_api_retry}
     apache_proxy_openstack_placement_retry: ${_param:apache_proxy_openstack_api_retry}
     apache_proxy_openstack_octavia_retry: ${_param:apache_proxy_openstack_api_retry}
+    # Formats for logs for openstack apache sites
+    apache_site_openstack_api_log_format: >-
+      %v:%p %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+    apache_site_openstack_aodh_log_format: ${_param:apache_site_openstack_api_log_format}
+    apache_site_openstack_barbican_log_format: ${_param:apache_site_openstack_api_log_format}
+    apache_site_openstack_cinder_log_format: ${_param:apache_site_openstack_api_log_format}
+    apache_site_openstack_gnocchi_log_format: ${_param:apache_site_openstack_api_log_format}
+    apache_site_openstack_horizon_log_format: >-
+      %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+    apache_site_openstack_manila_log_format: ${_param:apache_site_openstack_api_log_format}
+    apache_site_openstack_placement_log_format: ${_param:apache_site_openstack_api_log_format}
+    apache_site_openstack_panko_log_format: ${_param:apache_site_openstack_api_log_format}
     # Horizon
     # 'direct' mode will require cors on glance side to be enabled.
     horizon_images_upload_mode: 'direct'
