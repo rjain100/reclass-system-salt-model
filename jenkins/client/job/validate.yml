@@ -437,7 +437,7 @@ parameters:
           param:
             IMAGE:
               type: string
-              default: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-shaker:${_param:mcp_version}"
+              default: "${_param:docker_image_cvp_shaker_checks}"
               description: Docker image to use for running Shaker.
             SALT_MASTER_URL:
               type: string
