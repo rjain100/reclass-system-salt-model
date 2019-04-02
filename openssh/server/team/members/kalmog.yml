@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        kalmog:
+          enabled: true
+          name: kalmog
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Karen Almog
+          home: /home/kalmog
+          email: kalmog@mirantis.com
+  openssh:
+    server:
+      user:
+        kalmog:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCbyRCfyI5STokPerwEDC1DQobZTxbg60bST87dc4Wnm3PY7qciGUgLR5CLR3olxsG+OyqbloXg/YZPh/rlDPZMuanxdpZOz1CRPUfF7s/+sISDOVkA2HOfGWOa8+f2SIHUM5PDgCim9hJ7SkKN3OGdBZS/DM8byjx7hDh6vd/KnoJR8M2plzr/xWkz1TwgL/S8mvB1HcnfWcGH+JatweMTSBNW0f/qwI5V2pRFyjKlSjZdDJzORMT4mbTveyZfbJP6nJe0cNrZDmKqa9kcjjxUGtLpEi+8HRLavBhet5DHrgBAzlXL5WR3H3ESSeee9I7rqhIW/zhcG3xmE7tJh9+z7ZZghhQq1iqvjgtmEXplC1CnhTkEDdtB39FrWDpJYOZb6/pP3bHTHxhSwxg1kCX1nYN+ugUOKB6UKYK9HP1teagd4bQ4dY5QCEs70av/cDdLWQxagGGDIgcHV9gR8T+MHazmhBFSzxk/eVkxo9ype2EbbIdQjUFclzGiImY1kpPx00k1XgwCIILuePJD84qizwLfAsb73r+UG4I5XWdhgCDa1VD3rOOgihQ7x2bciWgWyXzWG8O1kmBMZ92YjMpVQqlCpJVqhT2DJOR+eqYzuSaaYYnhRL2eb45kYaJVK/XzoJlDj4cVwdJzoNEFrrQkoxLHTkcf2vTYqTYjKZeIJw==
+          user: ${linux:system:user:kalmog}
