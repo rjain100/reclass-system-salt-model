@@ -25,6 +25,7 @@ classes:
 - system.openssh.server.team.members.isviridov
 - system.openssh.server.team.members.cdodda
 - system.openssh.server.team.members.lmendes
+- system.openssh.server.team.members.kalmog
 parameters:
   _param:
     linux_system_user_sudo: true
