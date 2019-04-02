@@ -53,6 +53,8 @@ parameters:
               image: ${_param:docker_image_jenkins}
               image_pull_policy: IfNotPresent
               variables:
+                - name: JENKINS_URL_PREFIX
+                  value: "/jenkins"
                 - name: JENKINS_HOME
                   value: ${_param:jenkins_home_dir_path}
                 - name: JAVA_OPTS
