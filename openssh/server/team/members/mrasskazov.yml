@@ -15,5 +15,5 @@ parameters:
         mrasskazov:
           enabled: true
           public_keys:
-            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCysPXCuMbUjqjtO/n0jVZK13/uMA/TI6Qsdyciih6jWJLbd6FCL/GWvkykngLHGH9lVGFYsOPRiAmlh8gXfYohCZFYuHxE88GoiycvJGRGoBDdxd/beDca6nP4Peqlg3TUUum9PefULDiv3eVHKwX4BC9mGIR6bWB41O003OxJMwEN9lLGmWqxAlAdCUwRIm9TlgTu6Fq3ZIkjSwGsZg4E+saBLnUiOjwYWSwmTiB8WTR2b19lZhXFEovdVY3/gF8Td84WT1TDXeWBAvwmAcFLRPEx/AI1Nt4AhM1toMMoq64pYbGCOYSgI7DZR/2vtxGa0IjQclLZ+M8YktyNErc9
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4Bq2NQlTLLXUZapAx1R7glnJHchDV+zo/6GPSLKYjDJduTqcd+K9K5Q4n15Nvst97vI7AJRxVIhuLgByIPhCb4M73AGrj/9kD3NBy+fSEqL4/BSAz2HSnP88Z8gJS5PaePx0ze8aduPKIoBiX/qN90VaIG4yOthfdt7L6odpm+WhbcauOI87Tdp6WIQ29hDVrdj+4XzD5WJ36il5bxTia0mJohy8BZzIkuwpbOX5UV6+E8cuPRwFmFVdezOUsCLF6uvcMHwMVgyZ243oZdH+33E0FQ60pzcMgc/drhlQg7SsYxosqOoX8BXn7uLo3YMftRNJrp6cEK3vo8dgnEx59 mrasskazov@mirantis.com
           user: ${linux:system:user:mrasskazov}
