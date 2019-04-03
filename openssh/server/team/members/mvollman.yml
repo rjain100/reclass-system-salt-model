@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        mvollman:
+          enabled: true
+          name: mvollman
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Michael Vollman
+          home: /home/mvollman
+          email: mvollman@mirantis.com
+  openssh:
+    server:
+      user:
+        mvollman:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHxIRMQtpFHzKPCMe+pXJC3JrW3RiHyqU8XEDFXrhYsKG3TyDzMUktailF03QaVFfUTifQH5fMavnfJENV7syngoo8VL7Qm3wdvKbcCRczNKxiDIhQb1uCnQcKA2VA7ywDyyvtuQHxptx3G2D7B781/zugBNrkjhiyyUuSFzDHkqjWwRYm7wCEzMgzHeKbyXz3qCblp6CsSvOFreG/7tRGJFvjmY7+FENXN8uMeK4NPVeXIUNGI068EzpZPvEeMCzpYNRF9CPdkz5rF9/EsyljSSx5Ymb2RfDZshjaEE9LOF7k1VXM0DzXYBsz7XVP7B5/JxumQRYpyqPMZoDoojN1 mvollman@1308-MBP13
+          user: ${linux:system:user:mvollman}
