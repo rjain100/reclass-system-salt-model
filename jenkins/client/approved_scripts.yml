@@ -110,6 +110,7 @@ parameters:
         - new java.util.Date
         - new java.util.HashMap
         - new java.util.LinkedHashMap java.util.Map
+        - new org.apache.commons.net.util.SubnetUtils java.lang.String
         - staticField groovy.io.FileType FILES
         - staticMethod com.cloudbees.plugins.credentials.CredentialsProvider lookupCredentials java.lang.Class hudson.model.ItemGroup
         - staticMethod hudson.model.Hudson getInstance
