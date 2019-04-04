@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        sotpuschennikov:
+          email: sotpuschennikov@mirantis.com
+          enabled: true
+          full_name: Sergey Otpuschennikov
+          home: /home/sotpuschennikov
+          name: sotpuschennikov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        sotpuschennikov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO/nNs4MF5ZOCooLxF+zrxVmuJa9URzAqIQG5eZkhWvSAnrYREN15BN6dlcixA+Ro4YsHY6iSHzsaanr8onNu89yZdCkHIqLZ8+DcBefpoVXcsLZzeXwNNqr9sUjHEJCTesI5dJcEe/222LjwzAdTW1Xv/o3mgVAwt+4XsQ2IPAlxl3LfJOlCQdC/0sL5FMFX6LwMonLBss3B/J45atXgPL1Dx9WKTP0QrJHaX+vh+Xj2PK9yXcB2hJhFP0IULmUqGkYgDw/mh2DiHSiCQUPGZDo49MIw4WqEwqpQKcJGjD0Ihy2pjzwI9ZUzCNWe+bUcqDdl/9SH4YsNbfaK4Te6H pers@sotpuschennikov
+          user: ${linux:system:user:sotpuschennikov}

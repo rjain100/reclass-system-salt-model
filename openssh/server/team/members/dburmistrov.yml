@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        dburmistrov:
+          email: dburmistrov@mirantis.com
+          enabled: true
+          full_name: Dmitrii Burmistrov
+          home: /home/dburmistrov
+          name: dburmistrov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        dburmistrov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPKldN0BL6C/pmjkKyaSUw9OTUQAumWLCgNPyLVGZIuYPyFs9GqvKgHVm0QChm1OLhnQuA1wxGW5piBtqaDCTyLbKb/ANR3nhO1rqX5LTwZS2W2I0ImP47HUpnxqsBl15/y9hY2JDHZ7qrd7zNqCD+uCkf9l9qA9BmN1aMSKm07fqaaUfhnl3AocxsPX4X4eHfzy7hPJdzrHEcHbGoLLEd8ahJLkHKieWF1lAI++fIhETPF41+ZbH7MBBG4qw/UhhYAgLP3YAEWwvm/J3DtRqGkpSvH2U21hmAlgJHwxtoCD9Q1jKpH5+BDTvqJIXu0K7Gcl00xbeNYyHrwTVsldFX dburmistrov@mirantis.com
+          user: ${linux:system:user:dburmistrov}
