@@ -16,7 +16,7 @@ parameters:
               keep_num: 50
             artifact:
               keep_num: 50
-          concurrent: false
+          concurrent: true
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
@@ -32,28 +32,10 @@ parameters:
               type: string
               default: "3"
               description: Job timeout in hours
-            RUN_RALLY_TESTS:
-              type: boolean
-              default: 'true'
-              description: |
-                  If chosen, Rally tests will be executed. Please set K8S_RALLY='true' if you plan
-                  to test K8S cluster with Rally framework. Special K8S plugin has to be utilized
-            RUN_TEMPEST_TESTS:
-              type: boolean
-              default: 'false'
-              description: If chosen then Tempest tests will be executed
-            RUN_SPT_TESTS:
-              type: boolean
-              default: 'false'
-              description: If chosen, SPT tests will be executed
             TEST_IMAGE:
               type: string
-              default: 'xrally/xrally-openstack:latest'
-              description: |
-                  Docker image to use with required test set. Please use
-                  'xrally/xrally-openstack:latest' - for Rally tests
-                  "${_param:mcp_docker_registry}/mirantis/oss/qa-tools" -
-                  for SPT/Tempest environment setup
+              default: "xrally/xrally-openstack:latest"
+              description: Rally docker image to use for running tests
             TARGET_NODE:
               type: string
               default: ""
@@ -68,7 +50,8 @@ parameters:
               description: Credentials to the Salt API
             VALIDATE_PARAMS:
               type: text
-              default:  |
+              description: YAML of parameters for Rally test
+              default: |
                 ---
                   rally:
                   # Name of availability zone
@@ -110,34 +93,6 @@ parameters:
                     REPORT_DIR: '/root/qa_results'
                   # Scenarios names/dirs to skip
                     SKIP_LIST: ''
-                  tempest:
-                  # Set of Tempest tests to run (smoke,full)
-                    TEMPEST_TEST_SET: 'smoke'
-                  # Git repository with configuration files for Tempest
-                    TEMPEST_CONFIG_REPO: ''
-                  # Git branch which will be used during the checkout
-                    TEMPEST_CONFIG_BRANCH: ''
-                  # description: Git repository with Tempest
-                    TEMPEST_REPO: ''
-                  #  description: Version of Tempest (tag, branch or commit)
-                    TEMPEST_VERSION: ''
-                  # If chosen, run HTML report will be generated
-                    GENERATE_REPORT: 'false'
-                  spt:
-                  # Name of availability zone
-                    AVAILABILITY_ZONE: 'nova'
-                  # External(floating) network name
-                    FLOATING_NETWORK: 'public'
-                  # Username that is used to ssh between cluster nodes
-                    SPT_SSH_USER: 'root'
-                  # Image that is used for network-VM-to-VM-iperf-tests tests
-                    SPT_IMAGE: ''
-                  # Username that is used to ssh to SPT_IMAGE
-                    SPT_IMAGE_USER: ''
-                  # Flavor name for SPT_IMAGE (make sure you have required flavor created)
-                    SPT_FLAVOR: ''
-                  # If chosen, run HTML report will be generated
-                    GENERATE_REPORT: 'false'
         cvp-sanity:
           type: workflow-scm
           name: cvp-sanity
