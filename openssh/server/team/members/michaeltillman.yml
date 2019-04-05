@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        mtillman:
+          enabled: true
+          name: mtillman
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Michael Tillman
+          home: /home/mtillman
+          email: mtillman@mirantis.com
+  openssh:
+    server:
+      user:
+        mtillman:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrwIE+mNdIpNET0s4xKIWWvHjLObHR5Uc8HAZpq5U+CZyvsV9BNQUXynZF4oV68K22exkUyUPWXEI4rTrSf9BdBzla4xCTOEDbVUQ6b7RKopqQiitHT9LW4HDxvHtPX+svJ6xho7QwGZjPbQ2k7O5YMB9/ZjAuTzQHsDCWiMoY7OYujWt2SpeK9mHZQG247iPQOHMA9/cnu7CgpBoDN6NRli2kkExNeDArTB418NZTFBDYvv2c/TDk5z8HD87QciOqFwoD5j27hv4UylrtHWKkam2EPGbf3opWUqDxwyVOb++2+BXrVdHzARVnKuyWOB0dyIjXXsP0LfqL6mbtk+jN
+          user: ${linux:system:user:mtillman}
