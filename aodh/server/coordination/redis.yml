@@ -7,3 +7,14 @@ parameters:
     server:
       coordination_backend:
         url: ${_param:aodh_coordination_url}
+        engine: redis
+        redis:
+          password: ${_param:openstack_telemetry_redis_password}
+          user: openstack
+          db: ${_param:aodh_redis_db}
+          sentinel:
+            host: ${_param:redis_sentinel_node01_address}
+            master_name: ${_param:aodh_redis_sentinel_mastername}
+            fallback:
+              - host: ${_param:redis_sentinel_node02_address}
+              - host: ${_param:redis_sentinel_node03_address}

@@ -72,6 +72,8 @@ parameters:
     aodh_old_version: ${_param:openstack_old_version}
     aodh_version: ${_param:openstack_version}
     aodh_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    aodh_redis_db: ${_param:openstack_telemetry_redis_db}
+    aodh_redis_sentinel_mastername: ${_param:openstack_telemetry_redis_sentinel_mastername}
     # Ceilometer
     ceilometer_old_version: ${_param:openstack_old_version}
     ceilometer_version: ${_param:openstack_version}
