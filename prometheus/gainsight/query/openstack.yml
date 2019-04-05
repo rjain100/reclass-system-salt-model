@@ -16,3 +16,6 @@ parameters:
         keystone_api: "'Keystone API','avg(avg_over_time(openstack_api_check_status{name=\"keystone\"}[24h]))'"
         glance_api: "'Glance API','avg(avg_over_time(openstack_api_check_status{name=\"glance\"}[24h]))'"
         neutron_api: "'Neutron API','avg(avg_over_time(openstack_api_check_status{name=\"neutron\"}[24h]))'"
+        compute_instance_create_start: "'VM creation start','sum(compute_instance_create_start_host_doc_count)'"
+        compute_instance_create_end: "'VM creation end','sum(compute_instance_create_end_host_doc_count)'"
+        compute_instance_create_error: "'VM creation error','sum(compute_instance_create_error_host_doc_count)'"
