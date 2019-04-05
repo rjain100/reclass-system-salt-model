@@ -79,6 +79,8 @@ parameters:
     ceilometer_version: ${_param:openstack_version}
     ceilometer_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     ceilometer_gnocchi_archive_policy: default
+    ceilometer_redis_db: ${_param:openstack_telemetry_redis_db}
+    ceilometer_redis_sentinel_mastername: ${_param:openstack_telemetry_redis_sentinel_mastername}
     # Gnocchi
     gnocchi_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     gnocchi_memcache_secret_key: ''
