@@ -14,6 +14,8 @@ parameters:
     openstack_kmn_service_host: ${_param:openstack_kmn_service_hostname}.${linux:system:domain}
     openstack_telemetry_service_host: ${_param:openstack_telemetry_service_hostname}.${linux:system:domain}
     openstack_service_user_enabled: True
+    openstack_telemetry_redis_db: '0'
+    openstack_telemetry_redis_sentinel_mastername: 'master_1'
     # SSL
     ceilometer_agent_ssl_enabled: False
     openstack_mysql_x509_enabled: False
@@ -81,6 +83,8 @@ parameters:
     gnocchi_version: 4.0
     gnocchi_old_version: ${_param:gnocchi_version}
     gnocchi_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    gnocchi_redis_db: ${_param:openstack_telemetry_redis_db}
+    gnocchi_redis_sentinel_mastername: ${_param:openstack_telemetry_redis_sentinel_mastername}
     # Panko
     panko_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     panko_memcache_secret_key: ''
