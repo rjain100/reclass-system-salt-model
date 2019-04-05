@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        pglazov:
+          email: pglazov@mirantis.com
+          enabled: true
+          full_name: Pavel Glazov
+          home: /home/pglazov
+          name: pglazov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        pglazov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDhZxqF+NSuP+Dr2nmGHf4NIpH2xWSmq+UE/HGP6j81rKSBZeRb2SuRXLtLVh3NZ+3GLa4UQGvedcnsqzgvSt05LYujloHnLxIsrsOWbLxOcdUYkorhXenGKBxKopwViRNV2PovMAnwyZ27GkXH8RQ52XISOdTIIV7r8M3kLpxCor2jHnOzJOcr7rhLeSFTK5zw6//T3S+IOQ5/HEs+8NK1sNw2lxBTuk+dAydiaCsQqm4GMl5vZSy0j7cnsy+lq69zN2/Bi4JzKLDKF2ap4zDh/ELhUBoQhh12T0djFV9Qv9fTWI4LUW8cVyqxbfreJrZqSAyMgSRrGSUBclFTmn5Z pavel@pavel-All-Series
+          user: ${linux:system:user:pglazov}
