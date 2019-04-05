@@ -15,5 +15,5 @@ parameters:
         vkhlyunev:
           enabled: true
           public_keys:
-          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1v5pWSan9H2Wl64C8bKWmbULp0QgJUi9FqPyuw1bfS5GfHLxejPxaDzec0uSx0PXWzS9afwIO7aGA1dg+dvdl1iPy9jfpkQbGGsusmSsbLvf6+WLVsPk90Bvoc4anmEsG2DWT1SGR65d/imjlwsnlbHTQIm0YucjDjV/p2MmYlbaFLm+ynfo9mt1mP954GDPKQHvyBpxvAIEHL3xAcnNXcpSXm2jhCNsNGUSpY+R7gin2q8MtrpzQNeZZ8degUMpgba7CTXN1sws2dc3UayJ8KZkyRVJNk6mpt2jey03izJzXzt3ux3hg5lToELvEIMDdHOPHT0b0U7f2H+eBCfH/ vkhlyunev@cz7317
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeGiSOs0zAwcxuc9y6BzidYFXQXLOLcBKSoW1tPYJ+bVGRwNRVh63/+/X+eOPbBp6xTNNHVyOpYHt1WUbIHsAqAx/XbzBp+j3/4+8+ucvWR3X9TTxK7Q+oB3SSy2iEeimiJmxfjiHu1hfcgN8L9YvXVquGC/EZbk/r27j7Gcxli7zesr9/kBBhigDSQeehJBJZ0ux3luVkjWSDYTeKqZhNNPFoD6eWmOfsAKNMhe/8IRD9e0zY4MsELi1tZl2zoQ69249e4M1aCuGxm+t+tHLzywX0tVZmM1yX7TDuszHbiii8HrjNwB1/K80HRwRrwVIne9P7wFSlC2exLkdfWd2D vkhlyunev@vkhlyunev
           user: ${linux:system:user:vkhlyunev}
