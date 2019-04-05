@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        vsakharov:
+          email: vsakharov@mirantis.com
+          enabled: true
+          full_name: Valeriy Sakharov
+          home: /home/vsakharov
+          name: vsakharov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        vsakharov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNTShIUEl6xJY9nM44QyVc+D948G0A8WN+1GoQTldCBpzQiZXnXiyyqgfmLGtNB0bXwkvPaBPZdpq+drDT/WkAbEwnYwZQxTNi2+uqmBb05E0E5fOpw4vTtBLZKq2shpj4Z0jcAszh7LuAczSQSdqLRPPru9A/V4SXoK+aRvehVV3YBIrsyGhao+YPQoXZln1mmK/NYtltFqNr30L2KTSpMRZolAHvE8xTyiTHcXGA1hg/3RBaGdrjWLiQUA7bkP4NTF8wcIJYgg/iw38eZVa/f1z91zad7WfV5FZ/9vZI/tkzvsWjU3mxx1iDxIIimGEXapMpIk07cUTykleWsd0/ vsakharov@vsakharov
+          user: ${linux:system:user:vsakharov}
