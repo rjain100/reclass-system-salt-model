@@ -24,22 +24,14 @@ parameters:
             credentials: "gerrit"
             script: validate-cloud.groovy
           param:
-            ACCUMULATE_RESULTS:
-              type: boolean
-              default: 'true'
-              description: If chosen then previous build results will be used in the current build
             JOB_TIMEOUT:
               type: string
               default: "3"
               description: Job timeout in hours
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:latest"
+              default: "xrally/xrally-openstack:1.4.0"
               description: Rally docker image to use for running tests
-            TARGET_NODE:
-              type: string
-              default: ""
-              description: Target node where this job will be executed from
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
@@ -63,7 +55,7 @@ parameters:
                   # Flavor name for Rally scenarios
                     RALLY_FLAVOR: 'm1.tiny'
                   # Git repository with configuration files for Rally
-                    RALLY_CONFIG_REPO: 'https://github.com/Mirantis/scale-scenarios'
+                    RALLY_CONFIG_REPO: 'https://review.gerrithub.io/Mirantis/scale-scenarios'
                   # Git branch which will be used during the checkout
                     RALLY_CONFIG_BRANCH: 'master'
                   # Git repository with Rally plugins
@@ -89,10 +81,10 @@ parameters:
                     K8S_RALLY: 'false'
                   # If chosen then Stacklight Rally test will be executed
                     STACKLIGHT_RALLY: 'false'
-                  # Path for reports outside docker image
-                    REPORT_DIR: '/root/qa_results'
                   # Scenarios names/dirs to skip
                     SKIP_LIST: ''
+                  # Run in parallel for each directory inside RALLY_SCENARIOS and RALLY_SL_SCENARIOS
+                    PARALLEL_PERFORMANCE: 'false'
         cvp-sanity:
           type: workflow-scm
           name: cvp-sanity
