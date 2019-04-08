@@ -1,6 +1,6 @@
 parameters:
   _param:
-    gnocchi_storage_redis_url: redis://${_param:single_address}:6379
+    gnocchi_storage_redis_url: redis://openstack:${_param:openstack_telemetry_redis_password}@${_param:redis_sentinel_node01_address}:26379?db=0&sentinel=master_1&sentinel_fallback=${_param:redis_sentinel_node02_address}:26379&sentinel_fallback=${_param:redis_sentinel_node03_address}:26379
     gnocchi_storage_driver: redis
   gnocchi:
     common:
