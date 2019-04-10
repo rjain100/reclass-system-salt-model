@@ -15,10 +15,8 @@ parameters:
             value: nginx
           - name: nginx.ingress.kubernetes.io/ssl-redirect
             value: false
-          - name: nginx.ingress.kubernetes.io/add-base-url
-            value: false
           - name: nginx.ingress.kubernetes.io/rewrite-target
-            value: /
+            value: /ldap
           apiVersion: extensions/v1beta1
           cluster: drivetrain
           enabled: true
@@ -91,6 +89,8 @@ parameters:
                 value: ${_param:admin_email}
               - name: PHPLDAPADMIN_THEME
                 value: mirantis
+              - name: PHPLDAPADMIN_SERVER_PATH
+                value: "/ldap"
               ports:
               - port: 80
                 name: admin
