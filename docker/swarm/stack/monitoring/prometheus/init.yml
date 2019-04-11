@@ -32,6 +32,7 @@ parameters:
               volumes:
                 - ${prometheus:server:dir:config}:${_param:prometheus_server_config_directory}
                 - ${prometheus:server:dir:data}:${_param:prometheus_server_data_directory}
+                - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
               environment:
                 PROMETHEUS_CONFIG_DIR: ${_param:prometheus_server_config_directory}
                 PROMETHEUS_DATA_DIR: ${_param:prometheus_server_data_directory}
