@@ -82,4 +82,3 @@ parameters:
       storage:
         engine: file
       images: []
-      show_multiple_locations: True
