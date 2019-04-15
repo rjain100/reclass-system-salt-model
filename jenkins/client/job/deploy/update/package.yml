@@ -36,13 +36,3 @@ parameters:
             TARGET_PACKAGES:
               type: string
               description: Space delimited list of packages to be updated, empty string means updating all packages to the latest version e.g. [package1=version package2=version] or [package1 package2].
-            TARGET_SUBSET_TEST:
-              type: string
-              description: Number of nodes to list package updates, empty string means all targetted nodes.
-            TARGET_SUBSET_LIVE:
-              type: string
-              default: '1'
-              description: Number of selected nodes to live apply selected package update.
-            TARGET_BATCH_LIVE:
-              type: string
-              description: Batch size for the complete live package update on all nodes, empty string means apply to all targetted nodes.
