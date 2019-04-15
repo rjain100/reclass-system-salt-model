@@ -31,7 +31,6 @@ parameters:
         protocol: ${_param:internal_protocol}
       registry:
         protocol: ${_param:internal_protocol}
-      show_multiple_locations: True
       barbican:
         enabled: ${_param:barbican_integration_enabled}
       message_queue:
