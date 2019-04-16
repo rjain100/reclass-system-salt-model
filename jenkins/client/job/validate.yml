@@ -115,8 +115,10 @@ parameters:
               default: "salt"
             EXTRA_PARAMS:
               type: text
-              default: "---"
-              description: YAML context with additional parameters
+              default: |
+                envs:
+                  - tests_set=''
+              description: "YAML context with additional parameters, e.g. skipped_nodes=nal01.local.com,ntw01.local.com or tests_set='tests/test_mtu.py'"
         cvp-func:
           type: workflow-scm
           name: cvp-func
@@ -152,7 +154,7 @@ parameters:
               description: Credentials to the Salt API
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.10.1"
+              default: "xrally/xrally-openstack:0.11.2"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODE:
               type: string
@@ -212,7 +214,7 @@ parameters:
               description: Node where container with tempest will be run
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.10.1"
+              default: "xrally/xrally-openstack:0.11.2"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODES:
               type: string
@@ -277,7 +279,7 @@ parameters:
               description: Path to scenario file in container
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.10.1"
+              default: "xrally/xrally-openstack:0.11.2"
               description: Docker image to use for running Rally/Tempest
             SALT_MASTER_URL:
               type: string
@@ -363,8 +365,12 @@ parameters:
               default: "salt"
             EXTRA_PARAMS:
               type: text
-              default: "---"
-              description: YAML context with additional parameters
+              default: |
+                envs:
+                  - tests_set=''
+                  - image_name='Ubuntu'
+                  - networks=10.101.0.0/24
+              description: 'YAML context with additional parameters. Additional params: HW_NODES, CMP_HOSTS, salt_timeout, skipped_nodes, nova_timeout, iperf_prep_string, IMAGE_SIZE_MB'
         cvp-shaker:
           type: workflow-scm
           name: cvp-shaker
