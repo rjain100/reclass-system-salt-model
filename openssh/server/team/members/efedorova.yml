@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        efedorova:
+          email: efedorova@mirantis.com
+          enabled: true
+          full_name: Ekaterina Chernova
+          home: /home/efedorova
+          name: efedorova
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        efedorova:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2WZDqD0R/6RNSx4KdR5QD/jmCWnl/4QHHZeu679gP6Sdy/Z2/Qzf9k7hBSwLFExjLCu4dIJGhdvB1HoG3S5qIqdhfKZTkJp2ackDPnegSAhgqem/tXcyQrMOe8jtCCK375kwsMV5dJkxadbv5Qb71TdwHeBsV5B3Kmi5q0WwSlzsq3AI8OvNn4KeSeEGGv2lK6Ddxwl1u5IcSf5G0zBGc8s0mwGPnsBIATfiztX61MkqyDPIuYacRpkaDLX5v/X7eYqxYxDop6OBLxR+mgivluDEyDaQ9DKHO5ypQIiAk359CxMSQ9T+y5WSL0MdgYSKxFsK8jzo6JquZC54ZUQKb efedorova
+          user: ${linux:system:user:efedorova}
