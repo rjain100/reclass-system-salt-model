@@ -196,10 +196,6 @@ parameters:
             credentials: "gerrit"
             script: cvp-runner.groovy
           param:
-            DEBUG_MODE:
-              type: boolean
-              default: 'false'
-              description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
               default: ${_param:docker_image_cvp_sanity_checks}
@@ -211,22 +207,12 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: ""
-              description: Url for cvp-sanity-checks
-            TESTS_SETTINGS:
-              type: string
-              default: ""
-              description: e.g. skipped_nodes=nal01.local.com,ntw01.local.com
-            TESTS_SET:
-              type: string
-              default: "cvp-sanity/cvp_checks/tests"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_mtu.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet. For offline mode, use \"offline\" value."
+            EXTRA_PARAMS:
+              type: text
+              default: |
+                envs:
+                  - tests_set=''
+              description: "YAML context with additional parameters, e.g. skipped_nodes=nal01.local.com,ntw01.local.com or tests_set='tests/test_mtu.py'"
         cvp-func:
           type: workflow-scm
           name: cvp-func
@@ -424,8 +410,12 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
-            script: cvp-stacklight.groovy
+            script: cvp-runner.groovy
           param:
+            IMAGE:
+              type: string
+              default: ${_param:docker_image_cvp_sanity_checks}
+              description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
@@ -433,22 +423,12 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: "http://gerrit.mcp.mirantis.com/mcp/stacklight-pytest -b release/2019.2.0"
-              description: Url for cvp-stacklight-tests
-            TESTS_SETTINGS:
-              type: string
-              default: "SL_AUTOCONF=True;PYTHONPATH=./stacklight-pytest"
-              description: "Additional environment variables to export"
-            TESTS_SET:
-              type: string
-              default: "stacklight-pytest/stacklight_tests/tests/"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_dashboards.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet."
+            EXTRA_PARAMS:
+              type: text
+              default: |
+                envs:
+                  - SL_AUTOCONF=True
+              description: YAML context with additional parameters
         cvp-spt:
           type: workflow-scm
           name: cvp-spt
@@ -466,10 +446,6 @@ parameters:
             credentials: "gerrit"
             script: cvp-runner.groovy
           param:
-            DEBUG_MODE:
-              type: boolean
-              default: 'false'
-              description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
               default: ${_param:docker_image_cvp_sanity_checks}
@@ -481,22 +457,14 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: ""
-              description: Url for cvp-spt repository
-            TESTS_SETTINGS:
-              type: string
-              default: ""
-              description: "Additional environment variables to export, e.g. image_name, networks, HW_NODES"
-            TESTS_SET:
-              type: string
-              default: "cvp-spt/cvp_spt/tests"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_glance.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet. For offline mode, use \"offline\" value."
+            EXTRA_PARAMS:
+              type: text
+              default: |
+                envs:
+                  - tests_set=''
+                  - image_name='Ubuntu'
+                  - networks=10.101.0.0/24
+              description: 'YAML context with additional parameters. Additional params: HW_NODES, CMP_HOSTS, salt_timeout, skipped_nodes, nova_timeout, iperf_prep_string, IMAGE_SIZE_MB'
         cvp-shaker:
           type: workflow-scm
           name: cvp-shaker
