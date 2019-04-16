@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    opencontrail_stats_password: password
   haproxy:
     proxy:
       listen:

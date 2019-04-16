@@ -4,7 +4,6 @@ parameters:
   _param:
     alertmanager_db_host: ${_param:haproxy_postgresql_bind_host}
     alertmanager_db_user: alertmanager
-    alertmanager_db_user_password: alertmanager
     webhook_login_id: 13
     webhook_application_id: 24
   postgresql:
