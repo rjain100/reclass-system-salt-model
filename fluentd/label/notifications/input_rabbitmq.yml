@@ -1,0 +1,107 @@
+parameters:
+  _param:
+    stacklight_notification_topic: stacklight_notifications
+  fluentd:
+    agent:
+      config:
+        label:
+          rabbitmq_notifications:
+            input:
+              tail_rabbitmq_info:
+                tag: raw_notifications
+                type: rabbitmq
+                host: ${_param:openstack_message_queue_address}
+                user: openstack
+                pass: ${_param:rabbitmq_openstack_password}
+                vhost: /openstack
+                queue: ${_param:stacklight_notification_topic}.info
+                routing_key: ${_param:stacklight_notification_topic}.info
+                parser:
+                  type: json
+              tail_rabbitmq_warn:
+                tag: raw_notifications
+                type: rabbitmq
+                host: ${_param:openstack_message_queue_address}
+                user: openstack
+                pass: ${_param:rabbitmq_openstack_password}
+                vhost: /openstack
+                queue: ${_param:stacklight_notification_topic}.warn
+                routing_key: ${_param:stacklight_notification_topic}.warn
+                parser:
+                  type: json
+              tail_rabbitmq_error:
+                tag: raw_notifications
+                type: rabbitmq
+                host: ${_param:openstack_message_queue_address}
+                user: openstack
+                pass: ${_param:rabbitmq_openstack_password}
+                vhost: /openstack
+                queue: ${_param:stacklight_notification_topic}.error
+                routing_key: ${_param:stacklight_notification_topic}.error
+                parser:
+                  type: json
+            filter:
+              parse_json:
+                tag: raw_notifications
+                type: parser
+                key_name: oslo.message
+                reserve_data: false
+                hash_value_field: parsed
+                parser:
+                  type: json
+              remove_context:
+                tag: raw_notifications
+                require:
+                  - parse_json
+                type: record_transformer
+                enable_ruby: true
+                remove_keys: _dummy_1
+                record:
+                  - name: _dummy_1
+                    value: ${fluentd:dollar}{record['parsed'].delete_if { |k,_| k.include?('_context_') }; nil}
+              pack_parsed_to_json:
+                tag: raw_notifications
+                require:
+                  - remove_context
+                type: record_transformer
+                enable_ruby: true
+                record:
+                  - name: parsed
+                    value: ${fluentd:dollar}{record["parsed"].to_json}
+              unpack_on_top_level:
+                tag: raw_notifications
+                require:
+                  - pack_parsed_to_json
+                type: parser
+                key_name: parsed
+                reserve_data: false
+                parser:
+                  type: json
+              detect_audit_notification:
+                tag: raw_notifications
+                require:
+                  - unpack_on_top_level
+                type: record_transformer
+                enable_ruby: true
+                record:
+                  - name: notification_type
+                    value: '${fluentd:dollar}{ record["payload"]["eventType"] && record["payload"]["eventTime"] ? "audit" : "notification" }'
+            match:
+              rewrite_message_tag:
+                tag: raw_notifications
+                type: rewrite_tag_filter
+                rule:
+                  - name: notification_type
+                    regexp: 'audit'
+                    result: audit
+                  - name: notification_type
+                    regexp: '/.+/'
+                    result: notification
+              forward_notification:
+                tag: notification
+                type: relabel
+                label: notification_messages
+              forward_audit:
+                tag: audit
+                type: relabel
+                label: audit_messages
