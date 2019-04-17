@@ -7,4 +7,6 @@ parameters:
       recon_default: 1000
       recon_max: 60000
       recon_randomize: True
-      auth_timeout: 60
+      auth_timeout: 180
+      master_tries: -1
+      auth_tries: 10
