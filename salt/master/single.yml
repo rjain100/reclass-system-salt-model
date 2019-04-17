@@ -15,7 +15,8 @@ parameters:
       worker_threads: ${_param:salt_master_worker_threads}
       max_open_files: 15000
       command_timeout: 10
-      gather_job_timeout: 40
+      opts:
+        gather_job_timeout: 40
       peer:
         '.*':
           - x509.sign_remote_certificate
