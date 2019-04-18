@@ -27,7 +27,7 @@ parameters:
             MK_PIPELINES_REFSPEC:
               type: string
               default: ""
-              description: "Version of mk-pipelines git repo to be used. Must be same as TARGET_MCP_VERSION"
+              description: "Version of mk-pipelines git repo to be used. Should be release/TARGET_MCP_VERSION"
             TARGET_MCP_VERSION:
               type: string
               default: ""
