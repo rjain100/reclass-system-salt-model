@@ -1,30 +1,30 @@
 parameters:
   _param:
-    mirror_mirantis-openstack-9.0-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
+    mirror_mirantis-openstack-9.0-trusty_source: https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
     mirror_mirantis-openstack-9.0-trusty_distribution: mos9.0
     mirror_mirantis-openstack-9.0-trusty_components: main restricted
-    mirror_mirantis-openstack-9.0-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+    mirror_mirantis-openstack-9.0-trusty_key_url: "https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
     mirror_mirantis-openstack-9.0-trusty_gpgkeys:
       - 1FA22B08
 
-    mirror_mirantis-openstack-9.0-proposed-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
+    mirror_mirantis-openstack-9.0-proposed-trusty_source: https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
     mirror_mirantis-openstack-9.0-proposed-trusty_distribution: mos9.0-proposed
     mirror_mirantis-openstack-9.0-proposed-trusty_components: main restricted
-    mirror_mirantis-openstack-9.0-proposed-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+    mirror_mirantis-openstack-9.0-proposed-trusty_key_url: "https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
     mirror_mirantis-openstack-9.0-proposed-trusty_gpgkeys:
       - 1FA22B08
 
-    mirror_mirantis-openstack-9.0-updates-trusty_source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
+    mirror_mirantis-openstack-9.0-updates-trusty_source: https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
     mirror_mirantis-openstack-9.0-updates-trusty_distribution: mos9.0-updates
     mirror_mirantis-openstack-9.0-updates-trusty_components: main restricted
-    mirror_mirantis-openstack-9.0-updates-trusty_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+    mirror_mirantis-openstack-9.0-updates-trusty_key_url: "https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
     mirror_mirantis-openstack-9.0-updates-trusty_gpgkeys:
       - 1FA22B08
 
-    mirror_mirantis-openstack-9.0-extras-murano_source: http://mirror.fuel-infra.org/extras/murano-plugin-repos/release/1.2.0/ubuntu/9.0/
+    mirror_mirantis-openstack-9.0-extras-murano_source: https://mirror.fuel-infra.org/extras/murano-plugin-repos/release/1.2.0/ubuntu/9.0/
     mirror_mirantis-openstack-9.0-extras-murano_distribution: mos9.0
     mirror_mirantis-openstack-9.0-extras-murano_components: main restricted
-    mirror_mirantis-openstack-9.0-extras-murano_key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+    mirror_mirantis-openstack-9.0-extras-murano_key_url: "https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
     mirror_mirantis-openstack-9.0-extras-murano_gpgkeys:
       - 1FA22B08
   aptly:
@@ -41,11 +41,11 @@ parameters:
             distributions:
               - mos9/mos9.0
         #mirantis-openstack-9.0-hotfix-trusty:
-        #  source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
+        #  source: https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
         #  distribution: mos9.0-hotfix
         #  components: main restricted
         #  architectures: amd64
-        #  key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+        #  key_url: "https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
         #  gpgkeys:
         #    - 1FA22B08
         #  publisher:
@@ -65,11 +65,11 @@ parameters:
               - mos9/mos9.0-proposed
         # FIXME, enable security once contain packages, otherwise broke aptly publish
         #mirantis-openstack-9.0-security-trusty:
-        #  source: http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
+        #  source: https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/
         #  distribution: mos9.0-security
         #  components: main restricted
         #  architectures: amd64
-        #  key_url: "http://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
+        #  key_url: "https://mirror.fuel-infra.org/mos-repos/ubuntu/9.0/archive-mos9.0.key"
         #  gpgkeys:
         #    - 1FA22B08
         #  publisher:

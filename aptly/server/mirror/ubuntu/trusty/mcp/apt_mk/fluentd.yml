@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_trusty_fluentd_source: http://mirror.mirantis.com/${_param:mcp_version}/td-agent/trusty
+    mirror_mirantis_openstack_trusty_fluentd_source: https://mirror.mirantis.com/${_param:mcp_version}/td-agent/trusty
     mirror_mirantis_openstack_trusty_fluentd_distribution: trusty
     mirror_mirantis_openstack_trusty_fluentd_components: contrib
     mirror_mirantis_openstack_trusty_fluentd_gpgkeys:

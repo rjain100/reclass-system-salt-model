@@ -1,37 +1,37 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_ocata_xenial_source: http://mirror.fuel-infra.org/mcp-repos/ocata/xenial
+    mirror_mirantis_openstack_ocata_xenial_source: https://mirror.fuel-infra.org/mcp-repos/ocata/xenial
     mirror_mirantis_openstack_ocata_xenial_distribution: ocata
     mirror_mirantis_openstack_ocata_xenial_components: main restricted
-    mirror_mirantis_openstack_ocata_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
+    mirror_mirantis_openstack_ocata_xenial_key_url: "https://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
     mirror_mirantis_openstack_ocata_xenial_gpgkeys:
       - 1FA22B08
 
-    mirror_mirantis_openstack_ocata_hotfix_xenial_source: http://mirror.fuel-infra.org/mcp-repos/ocata/xenial
+    mirror_mirantis_openstack_ocata_hotfix_xenial_source: https://mirror.fuel-infra.org/mcp-repos/ocata/xenial
     mirror_mirantis_openstack_ocata_hotfix_xenial_distribution: ocata-hotfix
     mirror_mirantis_openstack_ocata_hotfix_xenial_components: main restricted
-    mirror_mirantis_openstack_ocata_hotfix_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
+    mirror_mirantis_openstack_ocata_hotfix_xenial_key_url: "https://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
     mirror_mirantis_openstack_ocata_hotfix_xenial_gpgkeys:
       - 1FA22B08
 
-    mirror_mirantis_openstack_ocata_security_xenial_source: http://mirror.fuel-infra.org/mcp-repos/ocata/xenial
+    mirror_mirantis_openstack_ocata_security_xenial_source: https://mirror.fuel-infra.org/mcp-repos/ocata/xenial
     mirror_mirantis_openstack_ocata_security_xenial_distribution: ocata-security
     mirror_mirantis_openstack_ocata_security_xenial_components: main restricted
-    mirror_mirantis_openstack_ocata_security_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
+    mirror_mirantis_openstack_ocata_security_xenial_key_url: "https://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
     mirror_mirantis_openstack_ocata_security_xenial_gpgkeys:
       - 1FA22B08
 
-    mirror_mirantis_openstack_ocata_updates_xenial_source: http://mirror.fuel-infra.org/mcp-repos/ocata/xenial
+    mirror_mirantis_openstack_ocata_updates_xenial_source: https://mirror.fuel-infra.org/mcp-repos/ocata/xenial
     mirror_mirantis_openstack_ocata_updates_xenial_distribution: ocata-updates
     mirror_mirantis_openstack_ocata_updates_xenial_components: main restricted
-    mirror_mirantis_openstack_ocata_updates_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
+    mirror_mirantis_openstack_ocata_updates_xenial_key_url: "https://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
     mirror_mirantis_openstack_ocata_updates_xenial_gpgkeys:
       - 1FA22B08
 
-    mirror_mirantis_openstack_ocata_holdback_xenial_source: http://mirror.fuel-infra.org/mcp-repos/ocata/xenial
+    mirror_mirantis_openstack_ocata_holdback_xenial_source: https://mirror.fuel-infra.org/mcp-repos/ocata/xenial
     mirror_mirantis_openstack_ocata_holdback_xenial_distribution: ocata-holdback
     mirror_mirantis_openstack_ocata_holdback_xenial_components: main restricted
-    mirror_mirantis_openstack_ocata_holdback_xenial_key_url: "http://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
+    mirror_mirantis_openstack_ocata_holdback_xenial_key_url: "https://mirror.fuel-infra.org/mcp-repos/ocata/xenial/archive-mcpocata.key"
     mirror_mirantis_openstack_ocata_holdback_xenial_gpgkeys:
       - 1FA22B08
   aptly:

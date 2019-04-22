@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_cassandra_source: http://mirror.mirantis.com/${_param:mcp_version}/cassandra/xenial/
+    mirror_mirantis_openstack_xenial_cassandra_source: https://mirror.mirantis.com/${_param:mcp_version}/cassandra/xenial/
     mirror_mirantis_openstack_xenial_cassandra_distribution: 21x
     mirror_mirantis_openstack_xenial_cassandra_components: main
     mirror_mirantis_openstack_xenial_cassandra_gpgkeys:

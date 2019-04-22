@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_glusterfs_source: http://mirror.mirantis.com/${_param:mcp_version}/glusterfs-3.8/xenial/
+    mirror_mirantis_openstack_xenial_glusterfs_source: https://mirror.mirantis.com/${_param:mcp_version}/glusterfs-3.8/xenial/
     mirror_mirantis_openstack_xenial_glusterfs_distribution: xenial
     mirror_mirantis_openstack_xenial_glusterfs_components: main
     mirror_mirantis_openstack_xenial_glusterfs_gpgkeys:

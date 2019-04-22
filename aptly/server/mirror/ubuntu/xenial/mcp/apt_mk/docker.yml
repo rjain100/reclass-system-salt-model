@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_docker_source: http://mirror.mirantis.com/${_param:mcp_version}/docker/xenial/
+    mirror_mirantis_openstack_xenial_docker_source: https://mirror.mirantis.com/${_param:mcp_version}/docker/xenial/
     mirror_mirantis_openstack_xenial_docker_distribution: xenial
     mirror_mirantis_openstack_xenial_docker_components: stable
     mirror_mirantis_openstack_xenial_docker_gpgkeys:

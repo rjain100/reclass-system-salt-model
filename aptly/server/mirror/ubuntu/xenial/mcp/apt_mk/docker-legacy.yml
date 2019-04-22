@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_docker_legacy_source: http://mirror.mirantis.com/${_param:mcp_version}/docker-1.x/xenial/
+    mirror_mirantis_openstack_xenial_docker_legacy_source: https://mirror.mirantis.com/${_param:mcp_version}/docker-1.x/xenial/
     mirror_mirantis_openstack_xenial_docker_legacy_distribution: ubuntu-xenial
     mirror_mirantis_openstack_xenial_docker_legacy_components: main
     mirror_mirantis_openstack_xenial_docker_legacy_gpgkeys:

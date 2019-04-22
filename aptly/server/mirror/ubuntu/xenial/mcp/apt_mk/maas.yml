@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_maas_source: http://mirror.mirantis.com/${_param:mcp_version}/maas/xenial/
+    mirror_mirantis_openstack_xenial_maas_source: https://mirror.mirantis.com/${_param:mcp_version}/maas/xenial/
     mirror_mirantis_openstack_xenial_maas_distribution: xenial
     mirror_mirantis_openstack_xenial_maas_components: main
     mirror_mirantis_openstack_xenial_maas_gpgkeys:

@@ -124,7 +124,7 @@ parameters:
           centos-remote:
             rclass: remote
             packageType: yum
-            url: http://mirror.centos.org/centos/
+            url: https://mirror.centos.org/centos/
             unusedArtifactsCleanupEnabled: true
             unusedArtifactsCleanupPeriodHours: 720
 
@@ -278,7 +278,7 @@ parameters:
           jenkins-plugins:
             rclass: remote
             packageType: generic
-            url: http://mirrors.jenkins-ci.org/plugins
+            url: https://mirrors.jenkins-ci.org/plugins
             unusedArtifactsCleanupEnabled: true
             unusedArtifactsCleanupPeriodHours: 720
 

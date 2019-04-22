@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_sensu_source: http://mirror.mirantis.com/${_param:mcp_version}/sensu/xenial/
+    mirror_mirantis_openstack_xenial_sensu_source: https://mirror.mirantis.com/${_param:mcp_version}/sensu/xenial/
     mirror_mirantis_openstack_xenial_sensu_distribution: sensu
     mirror_mirantis_openstack_xenial_sensu_components: main
     mirror_mirantis_openstack_xenial_sensu_key_url: "http://apt.mirantis.com/public.gpg"
