@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_influxdb_source: http://mirror.mirantis.com/${_param:mcp_version}/influxdb/xenial/
+    mirror_mirantis_openstack_xenial_influxdb_source: https://mirror.mirantis.com/${_param:mcp_version}/influxdb/xenial/
     mirror_mirantis_openstack_xenial_influxdb_distribution: xenial
     mirror_mirantis_openstack_xenial_influxdb_components: stable
     mirror_mirantis_openstack_xenial_influxdb_gpgkeys:

@@ -7,7 +7,7 @@
 #    system:
 #      repo:
 #        mcp_grafana:
-#          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_grafana_version}/grafana/${_param:linux_system_codename}/ jessie main"
+#          source: "deb [arch=amd64] https://mirror.mirantis.com/${_param:linux_system_repo_mcp_grafana_version}/grafana/${_param:linux_system_codename}/ jessie main"
 #          architectures: amd64
 #          key_id: C2E73424D59097AB
 #          key_server: keyserver.ubuntu.com

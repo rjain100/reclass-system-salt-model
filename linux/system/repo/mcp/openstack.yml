@@ -5,9 +5,9 @@ parameters:
     system:
       repo:
         mirantis_openstack:
-          source: "deb http://mirror.fuel-infra.org/mcp-repos/${_param:openstack_version}/${_param:linux_system_codename} ${_param:openstack_version} main"
+          source: "deb https://mirror.fuel-infra.org/mcp-repos/${_param:openstack_version}/${_param:linux_system_codename} ${_param:openstack_version} main"
           architectures: amd64
-          key_url: "http://mirror.fuel-infra.org/mcp-repos/${_param:openstack_version}/${_param:linux_system_codename}/archive-mcp${_param:openstack_version}.key"
+          key_url: "https://mirror.fuel-infra.org/mcp-repos/${_param:openstack_version}/${_param:linux_system_codename}/archive-mcp${_param:openstack_version}.key"
           pin:
           - pin: 'release l=${_param:openstack_version}'
             priority: 1100

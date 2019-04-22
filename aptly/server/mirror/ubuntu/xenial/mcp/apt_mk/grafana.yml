@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_grafana_source: http://mirror.mirantis.com/${_param:mcp_version}/grafana/xenial/
+    mirror_mirantis_openstack_xenial_grafana_source: https://mirror.mirantis.com/${_param:mcp_version}/grafana/xenial/
     mirror_mirantis_openstack_xenial_grafana_distribution: jessie
     mirror_mirantis_openstack_xenial_grafana_components: main
     mirror_mirantis_openstack_xenial_grafana_gpgkeys:

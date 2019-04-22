@@ -1,6 +1,6 @@
 parameters:
   _param:
-    mirror_mirantis_openstack_xenial_saltstack_2017_7_source: http://mirror.mirantis.com/${_param:mcp_version}/saltstack-2017.7/xenial/
+    mirror_mirantis_openstack_xenial_saltstack_2017_7_source: https://mirror.mirantis.com/${_param:mcp_version}/saltstack-2017.7/xenial/
     mirror_mirantis_openstack_xenial_saltstack_2017_7_distribution: xenial
     mirror_mirantis_openstack_xenial_saltstack_2017_7_components: main
     mirror_mirantis_openstack_xenial_saltstack_2017_7_gpgkeys:
