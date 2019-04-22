@@ -2,11 +2,11 @@ parameters:
   _param:
     # Global
     linux_repo_refresh_db: true
-    linux_system_repo_url: http://mirror.mirantis.com/${_param:mcp_version}/
+    linux_system_repo_url: https://mirror.mirantis.com/${_param:mcp_version}/
     # Global-updates
-    linux_system_repo_update_url: http://mirror.mirantis.com/update/${_param:mcp_version}/
+    linux_system_repo_update_url: https://mirror.mirantis.com/update/${_param:mcp_version}/
     # Global-hotfix
-    linux_system_repo_hotfix_url: http://mirror.mirantis.com/hotfix/${_param:mcp_version}/
+    linux_system_repo_hotfix_url: https://mirror.mirantis.com/hotfix/${_param:mcp_version}/
     # Per repos
     linux_system_repo_mcp_cassandra_url: ${_param:linux_system_repo_url}/cassandra/
     linux_system_repo_mcp_glusterfs_url: ${_param:linux_system_repo_url}/glusterfs-${_param:linux_system_repo_mcp_glusterfs_version_number}/
