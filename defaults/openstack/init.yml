@@ -17,6 +17,7 @@ parameters:
     openstack_upgrade_enabled: False
     openstack_telemetry_redis_db: '0'
     openstack_telemetry_redis_sentinel_mastername: 'master_1'
+    openstack_region: RegionOne
     # SSL
     ceilometer_agent_ssl_enabled: False
     openstack_mysql_x509_enabled: False

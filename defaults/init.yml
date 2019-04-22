@@ -13,6 +13,7 @@ classes:
 - system.defaults.glusterfs
 - system.defaults.jenkins
 - system.defaults.maas
+- system.defaults.opencontrail
 - system.defaults.openstack
 - system.defaults.galera
 - system.defaults.rabbitmq
