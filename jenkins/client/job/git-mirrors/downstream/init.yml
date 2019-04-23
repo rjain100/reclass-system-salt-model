@@ -1,7 +1,6 @@
 parameters:
   _param:
     jenkins_git_mirror_downstream_jobs: []
-    jenkins_pollscm_spec: "H/60 * * * *"
   jenkins:
     client:
       job_template:
@@ -22,9 +21,6 @@ parameters:
               branch: "${_param:jenkins_pipelines_branch}"
               credentials: "gerrit"
               script: git-mirror-pipeline.groovy
-            trigger:
-              pollscm:
-                spec: ${_param:jenkins_pollscm_spec}
             param:
               SOURCE_URL:
                 type: string
