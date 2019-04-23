@@ -79,9 +79,15 @@ parameters:
                 - name: jenkins-home
                   mount: ${_param:jenkins_home_dir_path}
                   read_only: false
+                - name: docker-sock-volume
+                  mount: /var/run/docker.sock
+                  read_only: false
           volume:
             jenkins-home:
               type: glusterfs
               endpoints: glusterfs
               path: jenkins
               read_only: false
+            docker-sock-volume:
+              type: hostPath
+              path: /var/run/docker.sock

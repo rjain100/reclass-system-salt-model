@@ -36,7 +36,10 @@ parameters:
                   value: ${_param:kdt_no_proxy}
               volumes:
                 - name: jenkins-slave02
-                  mount: /var/lib/jenkins
+                  mount: /srv/volumes/jenkins_slaves/slave02
+                  read_only: false
+                - name: docker-sock-volume02
+                  mount: /var/run/docker.sock
                   read_only: false
           volume:
             jenkins-slave02:
@@ -44,6 +47,9 @@ parameters:
               endpoints: glusterfs
               path: jenkins_slave02
               read_only: false
+            docker-sock-volume02:
+              type: hostPath
+              path: /var/run/docker.sock
         jenkins_slave03:
           create: true
           service: slave03
@@ -76,7 +82,10 @@ parameters:
                 value: ${_param:kdt_no_proxy}
               volumes:
               - name: jenkins-slave03
-                mount: /var/lib/jenkins
+                mount: /srv/volumes/jenkins_slaves/slave03
+                read_only: false
+              - name: docker-sock-volume03
+                mount: /var/run/docker.sock
                 read_only: false
           volume:
             jenkins-slave03:
@@ -84,3 +93,6 @@ parameters:
               endpoints: glusterfs
               path: jenkins_slave03
               read_only: false
+            docker-sock-volume03:
+              type: hostPath
+              path: /var/run/docker.sock

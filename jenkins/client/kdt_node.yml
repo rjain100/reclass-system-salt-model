@@ -1,0 +1,10 @@
+parameters:
+  jenkins:
+    client:
+      node:
+        slave01:
+          remote_home: /srv/volumes/jenkins_slaves/slave01
+        slave02:
+          remote_home: /srv/volumes/jenkins_slaves/slave02
+        slave03:
+          remote_home: /srv/volumes/jenkins_slaves/slave03

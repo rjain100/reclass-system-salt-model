@@ -37,7 +37,10 @@ parameters:
                   value: ${_param:kdt_no_proxy}
               volumes:
                 - name: jenkins-slave01
-                  mount: /var/lib/jenkins
+                  mount: /srv/volumes/jenkins_slaves/slave01
+                  read_only: false
+                - name: docker-sock-volume
+                  mount: /var/run/docker.sock
                   read_only: false
           volume:
             jenkins-slave01:
@@ -45,3 +48,6 @@ parameters:
               endpoints: glusterfs
               path: jenkins_slave01
               read_only: false
+            docker-sock-volume:
+              type: hostPath
+              path: /var/run/docker.sock
