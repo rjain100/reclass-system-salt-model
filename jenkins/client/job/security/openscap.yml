@@ -50,7 +50,7 @@ parameters:
               description: "Upload results to the WORP or not"
             XCCDF_BENCHMARKS:
               type: string
-              default: "cis_ubuntu_1604_server_l2/cis_ubuntu_1604_server_l2-xccdf.xml,default"
+              default: "cis_ubuntu_1604_server_l2/1.0.0/cis_ubuntu_1604_server_l2-xccdf.xml,default"
               description: "List of pairs XCCDF benchmark filename and corresponding profile, format xccdf_benchmark 1, profile; xccdf_benchmark 2, profile"
             XCCDF_BENCHMARKS_DIR:
               type: string
