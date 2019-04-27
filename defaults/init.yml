@@ -53,7 +53,7 @@ parameters:
     salt_control_trusty_image_backend: /var/lib/libvirt/images/backends/trusty.qcow2
     salt_master_api_port: 6969
     salt_master_worker_threads: 40
-    salt_minion_ca_host: cfg01.${_param:cluster_domain}
+    salt_minion_ca_host: ${_param:infra_config_hostname}.${_param:cluster_domain}
     # Make sure this global variable is defined everywhere, where used it is already set on cluster level
     cluster_public_host: '127.0.0.1'
     single_address: '127.0.0.1'
