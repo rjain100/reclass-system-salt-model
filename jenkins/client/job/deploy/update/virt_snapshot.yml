@@ -55,7 +55,7 @@ parameters:
               type: string
               default: "snapshot1"
               description: "Snapshot name"
-            PATH:
+            LIBVIRT_IMAGES_PATH:
               type: string
               default: "/var/lib/libvirt/images"
               description: "Path where snapshot image and dumpxml are being put"
