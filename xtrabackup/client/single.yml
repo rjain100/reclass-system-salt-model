@@ -8,3 +8,8 @@ parameters:
     client:
       cron: false
       throttle: ${_param:xtrabackup_client_throttle}
+  linux:
+    system:
+      package:
+        sysstat:
+          version: latest
