@@ -13,3 +13,6 @@ parameters:
         user:
           xtrabackup:
             enabled: true
+      package:
+        sysstat:
+          version: latest
