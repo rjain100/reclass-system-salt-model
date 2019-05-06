@@ -27,6 +27,8 @@ parameters:
       backend: {}
       version: ${_param:cinder_version}
       role: ${_param:openstack_node_role}
+      # set 'image_conversion_dir' option in case of ceph deployment volume and controller running on the same node
+      image_conversion_dir: ${_param:cinder_image_conversion_dir_path}
       osapi:
         host: ${_param:cluster_local_address}
       database:
