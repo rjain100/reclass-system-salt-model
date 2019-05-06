@@ -8,3 +8,9 @@ parameters:
       - ${_param:docker_image_openldap}
       - ${_param:docker_image_phpldapadmin}
       - ${_param:docker_image_mysql}
+      - ${_param:kubernetes_calico_kube_controllers_image}
+      - ${_param:kubernetes_coredns_image}
+      - ${_param:kubernetes_helm_tiller_image}
+      - ${_param:kubernetes_ingressnginx_controller_image}
+      - ${_param:kubernetes_metallb_controller_image}
+      - ${_param:kubernetes_metallb_speaker_image}
