@@ -3,6 +3,7 @@ classes:
 parameters:
   glance:
     client:
+      cloud_name: admin_identity
       identity:
         admin_identity:
           endpoint_type: internalURL
