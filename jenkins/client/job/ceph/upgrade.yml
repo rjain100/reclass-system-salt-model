@@ -73,3 +73,7 @@ parameters:
               type: boolean
               default: 'true'
               description: Select to copy the disks of Ceph VMs before upgrade and backup Ceph directories on OSD nodes.
+            BACKUP_DIR:
+              type: string
+              default: '/root'
+              description: Select the target dir to backup to when BACKUP_ENABLED
