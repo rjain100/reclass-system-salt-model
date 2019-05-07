@@ -12,6 +12,8 @@ parameters:
             - ${_param:cluster_node02_address}:/srv/glusterfs/jenkins_slaves/slave02
             - ${_param:cluster_node03_address}:/srv/glusterfs/jenkins_slaves/slave02
           options:
+            auth.allow: ${_param:glusterfs_allow_ips}
+            auth.reject: ${_param:glusterfs_reject_ips}
             storage.owner-gid: 10000
             storage.owner-uid: 10000
             cluster.readdir-optimize: On
@@ -28,6 +30,8 @@ parameters:
             - ${_param:cluster_node02_address}:/srv/glusterfs/jenkins_slaves/slave03
             - ${_param:cluster_node03_address}:/srv/glusterfs/jenkins_slaves/slave03
           options:
+            auth.allow: ${_param:glusterfs_allow_ips}
+            auth.reject: ${_param:glusterfs_reject_ips}
             storage.owner-gid: 10000
             storage.owner-uid: 10000
             cluster.readdir-optimize: On
