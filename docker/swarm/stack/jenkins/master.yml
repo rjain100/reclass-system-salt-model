@@ -4,7 +4,7 @@ classes:
 parameters:
   _param:
     jenkins_master_extra_opts: ""
-    jenkins_master_executors_num: 4
+    jenkins_master_executors_num: 0
     jenkins_master_max_concurent_requests: 40
     jenkins_home_dir_path: /var/jenkins_home
   docker:
