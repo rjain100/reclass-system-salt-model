@@ -8,4 +8,4 @@ classes:
 - system.haproxy.proxy.listen.openstack.keystone.large
 - system.haproxy.proxy.listen.openstack.neutron_large
 - system.haproxy.proxy.listen.openstack.nova_large
-- system.haproxy.proxy.listen.openstack.novanc_large
+- system.haproxy.proxy.listen.openstack.novnc_large
