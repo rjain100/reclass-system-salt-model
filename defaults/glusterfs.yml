@@ -1,0 +1,4 @@
+parameters:
+  _param:
+    glusterfs_allow_ips: '*'
+    glusterfs_reject_ips: none

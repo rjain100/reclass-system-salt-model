@@ -2,16 +2,18 @@ parameters:
   glusterfs:
     server:
       volumes:
-        kqueen:
-          storage: /srv/glusterfs/kqueen
+        postgresql-data:
+          storage: /srv/glusterfs/postgresql
           replica: 3
           bricks:
-            - ${_param:cluster_node01_address}:/srv/glusterfs/kqueen
-            - ${_param:cluster_node02_address}:/srv/glusterfs/kqueen
-            - ${_param:cluster_node03_address}:/srv/glusterfs/kqueen
+            - ${_param:cluster_node01_address}:/srv/glusterfs/postgresql
+            - ${_param:cluster_node02_address}:/srv/glusterfs/postgresql
+            - ${_param:cluster_node03_address}:/srv/glusterfs/postgresql
           options:
             auth.allow: ${_param:glusterfs_allow_ips}
             auth.reject: ${_param:glusterfs_reject_ips}
+            storage.owner-gid: 999
+            storage.owner-uid: 999
             cluster.readdir-optimize: On
             nfs.disable: On
             network.remote-dio: On
