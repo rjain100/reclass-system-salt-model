@@ -1,0 +1,46 @@
+#
+# Jobs to upgrade RabbitMQ packages on given Salt master environment
+#
+parameters:
+  jenkins:
+    client:
+      job:
+        deploy-upgrade-rabbitmq:
+          type: workflow-scm
+          concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
+          display_name: "Deploy - upgrade RabbitMQ server"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: openstack-rabbitmq-upgrade.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            OS_DIST_UPGRADE:
+              type: boolean
+              default: 'false'
+              description: "Upgrade system packages including kernel (apt-get dist-upgrade)"
+            OS_UPGRADE:
+              type: boolean
+              default: 'false'
+              description: "Upgrade all installed applications (apt-get upgrade)"
+            INTERACTIVE:
+              type: boolean
+              default: 'true'
+              description: "Ask interactive questions during pipeline run (bool)"
+            TARGET_SERVERS:
+              type: string
+              default: 'msg*'
+              description: "Salt compound expression to get messaging servers to upgrade."
+
