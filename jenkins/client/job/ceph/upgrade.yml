@@ -6,6 +6,7 @@ parameters:
           type: workflow-scm
           concurrent: true
           display_name: "Ceph - upgrade"
+          description: "Jewel-Luminous upgrade job"
           discard:
             build:
               keep_num: 50
