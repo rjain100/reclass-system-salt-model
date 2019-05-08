@@ -13,6 +13,7 @@ parameters:
   cinder:
     volume:
       enabled: True
+      image_conversion_dir: ${_param:cinder_image_conversion_dir_path}
       database:
         host: ${_param:openstack_database_address}
         x509:
