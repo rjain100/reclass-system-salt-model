@@ -1,0 +1,6 @@
+parameters:
+  _param:
+    haproxy_elasticsearch_http_bind_port: 9200
+    haproxy_elasticsearch_http_exposed_port: 9200
+    haproxy_elasticsearch_binary_bind_port: 9300
+    haproxy_elasticsearch_binary_exposed_port: 9300

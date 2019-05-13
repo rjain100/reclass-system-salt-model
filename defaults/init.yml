@@ -26,6 +26,7 @@ classes:
 - system.defaults.stacklight
 - system.defaults.xtrabackup
 - system.defaults.backup
+- system.defaults.haproxy
 # k8s
 - system.defaults.etcd
 parameters:
