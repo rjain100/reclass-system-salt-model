@@ -1,0 +1,9 @@
+parameters:
+  fluentd:
+    agent:
+      config:
+        label:
+          default_output:
+            match:
+              elasticsearch_output:
+                scheme: https

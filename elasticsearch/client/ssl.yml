@@ -1,0 +1,5 @@
+parameters:
+  elasticsearch:
+    client:
+      server:
+        scheme: https

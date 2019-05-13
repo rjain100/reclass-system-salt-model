@@ -13,4 +13,5 @@ parameters:
         engine: elasticsearch
         host: ${_param:kibana_elasticsearch_host}
         port: 9200
+        scheme: http
 

@@ -1,0 +1,5 @@
+parameters:
+  kibana:
+    server:
+      database:
+        scheme: https
