@@ -37,7 +37,7 @@ parameters:
       region: ${_param:openstack_region}
       bind:
         address: ${_param:cluster_local_address}
-        private_address: ${_param:cluster_vip_address}
+        private_address: ${_param:openstack_service_host}
         private_port: 35357
         public_address: ${_param:cluster_vip_address}
         public_port: 5000
