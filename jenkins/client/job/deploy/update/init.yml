@@ -5,7 +5,6 @@ classes:
   - system.jenkins.client.job.deploy.update.update_mirror_image
   - system.jenkins.client.job.deploy.update.update_ceph
   - system.jenkins.client.job.deploy.update.upgrade
-  - system.jenkins.client.job.deploy.update.upgrade_rabbitmq
   - system.jenkins.client.job.deploy.update.upgrade_compute
   - system.jenkins.client.job.deploy.update.upgrade_mcp_release
   - system.jenkins.client.job.deploy.update.upgrade_ovs_gateway
@@ -22,3 +21,7 @@ classes:
   - system.jenkins.client.job.deploy.galera_database_backup
   - system.jenkins.client.job.deploy.backupninja_backup
   - system.jenkins.client.job.deploy.backupninja_restore
+  - system.jenkins.client.job.deploy.update.update_glusterfs
+  - system.jenkins.client.job.deploy.update.update_glusterfs_servers
+  - system.jenkins.client.job.deploy.update.update_glusterfs_clients
+  - system.jenkins.client.job.deploy.update.update_glusterfs_cluster_op_version
