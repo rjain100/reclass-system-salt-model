@@ -42,6 +42,9 @@ parameters:
                 - name: docker-sock-volume
                   mount: /var/run/docker.sock
                   read_only: false
+                - name: entropy-volume
+                  mount: /dev/random
+                  read_only: true
           volume:
             jenkins-slave01:
               type: glusterfs
@@ -51,3 +54,6 @@ parameters:
             docker-sock-volume:
               type: hostPath
               path: /var/run/docker.sock
+            entropy-volume:
+              type: hostPath
+              path: /dev/urandom
