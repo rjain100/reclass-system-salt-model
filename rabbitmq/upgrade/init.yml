@@ -1,0 +1,4 @@
+parameters:
+  rabbitmq:
+    upgrade:
+      enabled: ${_param:rabbitmq_upgrade_enabled}
