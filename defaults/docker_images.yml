@@ -27,7 +27,7 @@ parameters:
     # stacklight
     # 6.5.0 version, from 11/29/2018, differ from latest upstream 6.5.0 - update next cycle
     docker_image_alerta: "${_param:mcp_docker_registry}/mirantis/external/alerta-web:${_param:mcp_version}"
-    docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:${_param:mcp_version}"
+    docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:2019.2.4"
     docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:${_param:mcp_version}"
     docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/mirantis/external/braedon/prometheus-es-exporter:0.5.1"
     docker_image_prometheus: "${_param:mcp_docker_registry}/openstack-docker/prometheus:${_param:mcp_version}"
