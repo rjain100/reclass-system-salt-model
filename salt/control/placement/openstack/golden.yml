@@ -74,6 +74,13 @@ parameters:
             ${salt:control:size:openstack.dns:image_layout}
           owner: root:root
           path: /usr/share/growlvm/image-layout.yml
+    salt_control_cluster_node_cloud_init_openstack_telemetry:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:openstack.telemetry:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
   salt:
     control:
       cluster:
