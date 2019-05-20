@@ -41,6 +41,8 @@ parameters:
       ignore_lockout_failure_attempts: True
       lock_password: False
     # Cinder
+    mysql_cinder_username: cinder
+    keystone_cinder_username: cinder
     cinder_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     cinder_memcache_secret_key: ''
     cinder_old_version: ${_param:openstack_old_version}
@@ -49,6 +51,8 @@ parameters:
     cinder_service_user_enabled: ${_param:openstack_service_user_enabled}
     cinder_image_conversion_dir_path: /var/tmp/cinder/conversion
     # Nova
+    mysql_nova_username: nova
+    keystone_nova_username: nova
     nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     nova_memcache_secret_key: ''
     nova_old_version: ${_param:openstack_old_version}
@@ -57,6 +61,8 @@ parameters:
     nova_instance_build_timeout: 3600
     nova_service_user_enabled: ${_param:openstack_service_user_enabled}
     # Glance
+    mysql_glance_username: glance
+    keystone_glance_username: glance
     glance_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     glance_memcache_secret_key: ''
     glance_old_version: ${_param:openstack_old_version}
@@ -65,12 +71,16 @@ parameters:
     # Allow CORS from horizon, needed for direct upload
     glance_cors_allowed_origin: '${_param:horizon_public_protocol}://${_param:horizon_public_host}'
     # Heat
+    mysql_heat_username: heat
+    keystone_heat_username: heat
     heat_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     heat_memcache_secret_key: ''
     heat_old_version: ${_param:openstack_old_version}
     heat_version: ${_param:openstack_version}
     heat_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Aodh
+    mysql_aodh_username: aodh
+    keystone_aodh_username: aodh
     aodh_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     aodh_memcache_secret_key: ''
     aodh_old_version: ${_param:openstack_old_version}
@@ -79,13 +89,23 @@ parameters:
     aodh_redis_db: ${_param:openstack_telemetry_redis_db}
     aodh_redis_sentinel_mastername: ${_param:openstack_telemetry_redis_sentinel_mastername}
     # Ceilometer
+    mysql_ceilometer_username: ceilometer
+    keystone_ceilometer_username: ceilometer
     ceilometer_old_version: ${_param:openstack_old_version}
     ceilometer_version: ${_param:openstack_version}
     ceilometer_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     ceilometer_gnocchi_archive_policy: default
     ceilometer_redis_db: ${_param:openstack_telemetry_redis_db}
     ceilometer_redis_sentinel_mastername: ${_param:openstack_telemetry_redis_sentinel_mastername}
+    # Congress
+    keystone_congress_username: congress
+    # Grafana
+    mysql_grafana_username: grafana
+    # Graphite
+    mysql_graphite_username: graphite
     # Gnocchi
+    mysql_gnocchi_username: gnocchi
+    keystone_gnocchi_username: gnocchi
     gnocchi_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     gnocchi_memcache_secret_key: ''
     gnocchi_version: 4.0
@@ -94,22 +114,32 @@ parameters:
     gnocchi_redis_db: ${_param:openstack_telemetry_redis_db}
     gnocchi_redis_sentinel_mastername: ${_param:openstack_telemetry_redis_sentinel_mastername}
     # Panko
+    mysql_panko_username: panko
+    keystone_panko_username: panko
     panko_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     panko_memcache_secret_key: ''
     panko_old_version: ${_param:openstack_old_version}
     panko_version: ${_param:openstack_version}
     panko_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Barbican
+    mysql_barbican_username: barbican
+    keystone_barbican_username: barbican
     barbican_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     barbican_memcache_secret_key: ''
     barbican_old_version: ${_param:openstack_old_version}
     barbican_version: ${_param:openstack_version}
     barbican_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    # Billometer
+    keystone_billometer_username: billometer
     # Designate
+    mysql_designate_username: designate
+    keystone_designate_username: designate
     designate_old_version: ${_param:openstack_old_version}
     designate_version: ${_param:openstack_version}
     designate_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Ironic
+    mysql_ironic_username: ironic
+    keystone_ironic_username: ironic
     ironic_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     ironic_memcache_secret_key: ''
     ironic_console_enabled: true
@@ -117,6 +147,7 @@ parameters:
     ironic_version: ${_param:openstack_version}
     ironic_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Keystone
+    mysql_keystone_username: keystone
     keystone_old_version: ${_param:openstack_old_version}
     keystone_version: ${_param:openstack_version}
     keystone_upgrade_enabled: ${_param:openstack_upgrade_enabled}
@@ -139,10 +170,17 @@ parameters:
     keystone_fernet_rotate_rsync_minute: 0
     keystone_fernet_rotate_rsync_hour: '*'
     # Manila
+    mysql_manila_username: manila
+    keystone_manila_username: manila
     manila_old_version: ${_param:openstack_old_version}
     manila_version: ${_param:openstack_version}
     manila_upgrade_enabled: ${_param:openstack_upgrade_enabled}
+    # Murano
+    mysql_murano_username: murano
+    keystone_murano_username: murano
     # Neutron
+    mysql_neutron_username: neutron
+    keystone_neutron_username: neutron
     neutron_old_version: ${_param:openstack_old_version}
     neutron_version: ${_param:openstack_version}
     neutron_upgrade_enabled: ${_param:openstack_upgrade_enabled}
@@ -193,12 +231,22 @@ parameters:
     horizon_version: ${_param:openstack_version}
     horizon_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Octavia
+    mysql_octavia_username: octavia
+    keystone_octavia_username: octavia
     octavia_health_manager_node01_address: 192.168.10.10
     octavia_health_manager_node02_address: 192.168.10.11
     octavia_health_manager_node03_address: 192.168.10.12
     #
     amphora_image_name: amphora-x64-haproxy
     amphora_image_url: ${_param:mcp_static_images_url}/octavia/amphora-x64-haproxy-${_param:openstack_version}-${_param:mcp_version}.qcow2
+    # Sahara
+    mysql_sahara_username: sahara
+    keystone_sahara_username: sahara
+    # Swift
+    keystone_swift_username: swift
+    # Tacker
+    mysql_tacker_username: tacker
+    keystone_tacker_username: tacker
     # HAproxy
     haproxy_openstack_web_bind_port: ${_param:horizon_public_port}
     #

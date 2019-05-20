@@ -14,6 +14,7 @@ parameters:
               enabled: true
           users:
             heat:
+              name: ${_param:keystone_heat_username}
               password: ${_param:keystone_heat_password}
               email: ${_param:admin_email}
               options: ${_param:openstack_service_user_options}

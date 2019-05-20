@@ -7,22 +7,22 @@ parameters:
             nova_api:
               encoding: utf8
               users:
-              - name: nova
+              - name: ${_param:mysql_nova_username}
                 password: ${_param:mysql_nova_password}
                 host: '%'
                 rights: all
-              - name: nova
+              - name: ${_param:mysql_nova_username}
                 password: ${_param:mysql_nova_password}
                 host: ${_param:single_address}
                 rights: all
             nova_cell0:
               encoding: utf8
               users:
-              - name: nova
+              - name: ${_param:mysql_nova_username}
                 password: ${_param:mysql_nova_password}
                 host: '%'
                 rights: all
-              - name: nova
+              - name: ${_param:mysql_nova_username}
                 password: ${_param:mysql_nova_password}
                 host: ${_param:single_address}
                 rights: all

@@ -7,11 +7,11 @@ parameters:
             panko:
               encoding: utf8
               users:
-              - name: panko
+              - name: ${_param:mysql_panko_username}
                 password: ${_param:mysql_panko_password}
                 host: '%'
                 rights: all
-              - name: panko
+              - name: ${_param:mysql_panko_username}
                 password: ${_param:mysql_panko_password}
                 host: ${_param:single_address}
                 rights: all

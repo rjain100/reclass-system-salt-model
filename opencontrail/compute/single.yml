@@ -28,7 +28,7 @@ parameters:
       network:
         engine: keystone
         host: ${_param:control_address}
-        user: neutron
+        user: ${_param:keystone_neutron_username}
         password: ${_param:keystone_neutron_password}
         tenant: service
   neutron:
@@ -38,7 +38,7 @@ parameters:
         engine: keystone
         host: ${_param:control_address}
         port: 35357
-        user: neutron
+        user: ${_param:keystone_neutron_username}
         password: ${_param:keystone_neutron_password}
         tenant: service
 

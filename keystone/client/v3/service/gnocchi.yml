@@ -8,6 +8,7 @@ parameters:
         v3:
           users:
             gnocchi:
+              name: ${_param:keystone_gnocchi_username}
               password: ${_param:keystone_gnocchi_password}
               email: ${_param:admin_email}
               options: ${_param:openstack_service_user_options}

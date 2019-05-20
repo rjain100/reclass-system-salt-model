@@ -7,12 +7,12 @@ parameters:
         designate:
           encoding: utf8
           users:
-          - name: designate
+          - name: ${_param:mysql_designate_username}
             password: ${_param:mysql_designate_password}
             host: '%'
             rights: all
             ssl_option: ${_param:mysql_designate_ssl_option}
-          - name: designate
+          - name: ${_param:mysql_designate_username}
             password: ${_param:mysql_designate_password}
             host: ${_param:cluster_vip_address}
             rights: all
@@ -20,12 +20,12 @@ parameters:
         designate_pool_manager:
           encoding: utf8
           users:
-          - name: designate
+          - name: ${_param:mysql_designate_username}
             password: ${_param:mysql_designate_password}
             host: '%'
             rights: all
             ssl_option: ${_param:mysql_designate_ssl_option}
-          - name: designate
+          - name: ${_param:mysql_designate_username}
             password: ${_param:mysql_designate_password}
             host: ${_param:cluster_vip_address}
             rights: all

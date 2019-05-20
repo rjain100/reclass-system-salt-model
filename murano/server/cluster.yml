@@ -19,14 +19,14 @@ parameters:
         host: ${_param:openstack_database_address}
         port: 3306
         name: murano
-        user: murano
+        user: ${_param:mysql_murano_username}
         password: ${_param:mysql_murano_password}
       identity:
         engine: keystone
         host: ${_param:openstack_control_address}
         port: 35357
         tenant: service
-        user: murano
+        user: ${_param:keystone_murano_username}
         password: ${_param:keystone_murano_password}
       message_queue:
         engine: rabbitmq

@@ -8,6 +8,7 @@ parameters:
         v3:
           users:
             swift:
+              name: ${_param:keystone_swift_username}
               password: ${_param:keystone_swift_password}
               email: ${_param:admin_email}
               options: ${_param:openstack_service_user_options}

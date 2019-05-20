@@ -15,7 +15,7 @@ parameters:
         host: ${_param:openstack_database_address}
         port: 3306
         name: grafana
-        user: grafana
+        user: ${_param:mysql_grafana_username}
         password: ${_param:mysql_grafana_password}
       auth:
         basic:
