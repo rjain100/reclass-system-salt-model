@@ -23,6 +23,6 @@ parameters:
           address: ${_param:keepalived_kdt_k8s_apiserver_vip_address}
           password: ${_param:keepalived_kdt_k8s_apiserver_vip_password}
           interface: ${_param:keepalived_kdt_k8s_apiserver_vip_interface}
-          virtual_router_id: 70
+          virtual_router_id: 71
           priority: ${_param:keepalived_vip_priority}
           track_script: kdt_vip
