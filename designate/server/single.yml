@@ -34,7 +34,7 @@ parameters:
         name:
           main_database: designate
           pool_manager: designate_pool_manager
-        user: designate
+        user: ${_param:mysql_designate_username}
         password: ${_param:mysql_designate_password}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
@@ -48,7 +48,7 @@ parameters:
         host: ${_param:single_address}
         port: 35357
         tenant: service
-        user: designate
+        user: ${_param:keystone_designate_username}
         password: ${_param:keystone_designate_password}
         protocol: ${_param:internal_protocol}
       message_queue:

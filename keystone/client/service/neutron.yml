@@ -11,6 +11,7 @@ parameters:
             service:
               user:
                 neutron:
+                  name: ${_param:keystone_neutron_username}
                   is_admin: true
                   password: ${_param:keystone_neutron_password}
                   email: ${_param:admin_email}

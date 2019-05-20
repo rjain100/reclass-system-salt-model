@@ -7,6 +7,7 @@ parameters:
         v3:
           users:
             neutron:
+              name: ${_param:keystone_neutron_username}
               password: ${_param:keystone_neutron_password}
               email: ${_param:admin_email}
               options: ${_param:openstack_service_user_options}

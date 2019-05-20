@@ -7,12 +7,12 @@ parameters:
         heat:
           encoding: utf8
           users:
-          - name: heat
+          - name: ${_param:mysql_heat_username}
             password: ${_param:mysql_heat_password}
             host: '%'
             rights: all
             ssl_option: ${_param:mysql_heat_ssl_option}
-          - name: heat
+          - name: ${_param:mysql_heat_username}
             password: ${_param:mysql_heat_password}
             host: ${_param:cluster_local_address}
             rights: all

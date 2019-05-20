@@ -7,12 +7,12 @@ parameters:
         nova:
           encoding: utf8
           users:
-          - name: nova
+          - name: ${_param:mysql_nova_username}
             password: ${_param:mysql_nova_password}
             host: '%'
             rights: all
             ssl_option: ${_param:mysql_nova_ssl_option}
-          - name: nova
+          - name: ${_param:mysql_nova_username}
             password: ${_param:mysql_nova_password}
             host: ${_param:cluster_local_address}
             rights: all
@@ -20,12 +20,12 @@ parameters:
         nova_api:
           encoding: utf8
           users:
-          - name: nova
+          - name: ${_param:mysql_nova_username}
             password: ${_param:mysql_nova_password}
             host: '%'
             rights: all
             ssl_option: ${_param:mysql_nova_ssl_option}
-          - name: nova
+          - name: ${_param:mysql_nova_username}
             password: ${_param:mysql_nova_password}
             host: ${_param:cluster_local_address}
             rights: all
@@ -33,12 +33,12 @@ parameters:
         nova_cell0:
           encoding: utf8
           users:
-          - name: nova
+          - name: ${_param:mysql_nova_username}
             password: ${_param:mysql_nova_password}
             host: '%'
             rights: all
             ssl_option: ${_param:mysql_nova_ssl_option}
-          - name: nova
+          - name: ${_param:mysql_nova_username}
             password: ${_param:mysql_nova_password}
             host: ${_param:cluster_local_address}
             rights: all

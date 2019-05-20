@@ -36,7 +36,7 @@ parameters:
         host: ${_param:openstack_database_address}
         port: 3306
         name: cinder
-        user: cinder
+        user: ${_param:mysql_cinder_username}
         password: ${_param:mysql_cinder_password}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
@@ -51,7 +51,7 @@ parameters:
         host: ${_param:cluster_vip_address}
         port: 35357
         tenant: service
-        user: cinder
+        user: ${_param:keystone_cinder_username}
         password: ${_param:keystone_cinder_password}
         protocol: ${_param:cluster_internal_protocol}
       glance:

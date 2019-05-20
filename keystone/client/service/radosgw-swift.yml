@@ -14,6 +14,7 @@ parameters:
             service:
               user:
                 swift:
+                  name: ${_param:keystone_swift_username}
                   is_admin: true
                   password: ${_param:keystone_swift_password}
                   email: ${_param:admin_email}

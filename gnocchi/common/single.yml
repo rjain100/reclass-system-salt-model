@@ -6,6 +6,8 @@ parameters:
   gnocchi:
     common:
       database:
+        user: ${_param:mysql_gnocchi_username}
+        password: ${_param:mysql_gnocchi_password}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
           ca_file: ${_param:mysql_gnocchi_ssl_ca_file}

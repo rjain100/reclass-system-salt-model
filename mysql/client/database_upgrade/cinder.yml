@@ -7,11 +7,11 @@ parameters:
             cinder_upgrade:
               encoding: utf8
               users:
-              - name: cinder
+              - name: ${_param:mysql_cinder_username}
                 password: ${_param:mysql_cinder_password}
                 host: '%'
                 rights: all
-              - name: cinder
+              - name: ${_param:mysql_cinder_username}
                 password: ${_param:mysql_cinder_password}
                 host: ${_param:single_address}
                 rights: all

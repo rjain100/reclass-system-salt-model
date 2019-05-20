@@ -9,6 +9,7 @@ parameters:
             service:
               user:
                 murano:
+                  name: ${_param:keystone_murano_username}
                   is_admin: true
                   password: ${_param:keystone_murano_password}
                   email: ${_param:admin_email}

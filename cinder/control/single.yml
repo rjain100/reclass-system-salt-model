@@ -22,6 +22,8 @@ parameters:
       # set 'image_conversion_dir' option in case of ceph deployment volume and controller running on the same node
       image_conversion_dir: ${_param:cinder_image_conversion_dir_path}
       database:
+        user: ${_param:mysql_cinder_username}
+        password: ${_param:mysql_cinder_password}
         host: ${_param:single_address}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
@@ -31,6 +33,8 @@ parameters:
         ssl:
           enabled: ${_param:galera_ssl_enabled}
       identity:
+        user: ${_param:keystone_cinder_username}
+        password: ${_param:keystone_cinder_password}
         protocol: ${_param:internal_protocol}
         region: ${_param:openstack_region}
       barbican:

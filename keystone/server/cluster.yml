@@ -48,7 +48,7 @@ parameters:
         host: ${_param:openstack_database_address}
         name: keystone
         password: ${_param:mysql_keystone_password}
-        user: keystone
+        user: ${_param:mysql_keystone_username}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
           ca_file: ${_param:mysql_keystone_ssl_ca_file}

@@ -7,12 +7,12 @@ parameters:
         gnocchi:
           encoding: utf8
           users:
-          - name: gnocchi
+          - name: ${_param:mysql_gnocchi_username}
             password: ${_param:mysql_gnocchi_password}
             host: '%'
             rights: all
             ssl_option: ${_param:mysql_gnocchi_ssl_option}
-          - name: gnocchi
+          - name: ${_param:mysql_gnocchi_username}
             password: ${_param:mysql_gnocchi_password}
             host: ${_param:cluster_local_address}
             rights: all

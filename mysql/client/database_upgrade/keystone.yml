@@ -7,11 +7,11 @@ parameters:
             keystone_upgrade:
               encoding: utf8
               users:
-              - name: keystone
+              - name: ${_param:mysql_keystone_username}
                 password: ${_param:mysql_keystone_password}
                 host: '%'
                 rights: all
-              - name: keystone
+              - name: ${_param:mysql_keystone_username}
                 password: ${_param:mysql_keystone_password}
                 host: ${_param:single_address}
                 rights: all

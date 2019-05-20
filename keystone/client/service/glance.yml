@@ -11,6 +11,7 @@ parameters:
             service:
               user:
                 glance:
+                  name: ${_param:keystone_glance_username}
                   is_admin: true
                   password: ${_param:keystone_glance_password}
                   email: ${_param:admin_email}

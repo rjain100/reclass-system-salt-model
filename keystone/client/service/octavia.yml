@@ -15,6 +15,7 @@ parameters:
             service:
               user:
                 octavia:
+                  name: ${_param:keystone_octavia_username}
                   is_admin: true
                   password: ${_param:keystone_octavia_password}
                   email: ${_param:admin_email}
@@ -39,7 +40,7 @@ parameters:
                 admin_path: '/'
         octavia_identity:
           admin:
-            user: octavia
+            user: ${_param:keystone_octavia_username}
             password: ${_param:keystone_octavia_password}
             project: service
             host: ${_param:keystone_service_host}
