@@ -5,7 +5,7 @@ parameters:
   _param:
     java_environment_version: "8"
     java_environment_platform: openjdk
-    elasticsearch_cluster_name: elasticsearch
+    elasticsearch_cluster_name: ${_param:cluster_name}
   linux:
     system:
       sysctl:
@@ -17,7 +17,6 @@ parameters:
   elasticsearch:
     server:
       version: ${_param:elasticsearch_version}
-      name: ${_param:elasticsearch_cluster_name}
       enabled: true
       master: true
       data: true
@@ -35,6 +34,7 @@ parameters:
         recover_after_nodes: 2
         recover_after_time: 5m
       cluster:
+        name: ${_param:elasticsearch_cluster_name}
         multicast: false
         minimum_master_nodes: 2
         members:
