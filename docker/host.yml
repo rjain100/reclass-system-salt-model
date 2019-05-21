@@ -14,6 +14,7 @@ parameters:
         - ${_param:cluster_vip_address}:5000
         - ${_param:cluster_public_host}:5000
       options:
+        bridge: none
         ipv6: true
         fixed-cidr-v6: fc00::/7
         storage-driver: overlay2
