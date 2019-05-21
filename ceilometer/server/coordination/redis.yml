@@ -1,7 +1,9 @@
 classes:
 - service.redis.server.single
 parameters:
+  _param:
+    ceilometer_coordination_url: redis://openstack:${_param:openstack_telemetry_redis_password}@${_param:redis_sentinel_node01_address}:26379?db=0&sentinel=master_1&sentinel_fallback=${_param:redis_sentinel_node02_address}:26379&sentinel_fallback=${_param:redis_sentinel_node03_address}:26379
   ceilometer:
     server:
       coordination_backend:
-        url:  redis://${_param:single_address}:6379/${_param:cluster_node01_address}
+        url: ${_param:ceilometer_coordination_url}
