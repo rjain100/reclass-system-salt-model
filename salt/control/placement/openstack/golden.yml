@@ -31,7 +31,7 @@ parameters:
     openstack_proxy_backend_image: ${_param:salt_control_xenial_image_backend}
     openstack_barbican_backend_image: ${_param:salt_control_xenial_image_backend}
     openstack_dns_backend_image: ${_param:salt_control_xenial_image_backend}
-    openstack_telemetry_backend_image: ${_param:salt_control_trusty_image_backend}
+    openstack_telemetry_backend_image: ${_param:salt_control_xenial_image_backend}
     salt_control_cluster_node_cloud_init_openstack_control:
       user_data:
         write_files:
@@ -201,21 +201,21 @@ parameters:
             mdb01:
               name: ${_param:openstack_telemetry_node01_hostname}
               provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
-              image: ${_param:salt_control_trusty_image}
+              image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_telemetry_backend_image}
               size: openstack.telemetry
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_telemetry}
             mdb02:
               name: ${_param:openstack_telemetry_node02_hostname}
               provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
-              image: ${_param:salt_control_trusty_image}
+              image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_telemetry_backend_image}
               size: openstack.telemetry
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_telemetry}
             mdb03:
               name: ${_param:openstack_telemetry_node03_hostname}
               provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
-              image: ${_param:salt_control_trusty_image}
+              image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_telemetry_backend_image}
               size: openstack.telemetry
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_telemetry}
