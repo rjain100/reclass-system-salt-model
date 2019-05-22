@@ -1,0 +1,14 @@
+parameters:
+  salt:
+    minion:
+      cert:
+        fluentd_prometheus:
+          host: ${_param:salt_minion_ca_host}
+          authority: ${_param:salt_minion_ca_authority}
+          common_name: fluentd_prometheus
+          signing_policy: cert_server
+          alternative_names: IP:127.0.0.1,IP:${_param:single_address},DNS:${linux:system:name},DNS:${linux:network:fqdn}
+          key_file: ${fluentd:agent:dir:config}/fluentd-prometheus.key
+          cert_file: ${fluentd:agent:dir:config}/fluentd-prometheus.crt
+          mode: '0444'
+          enabled: true
