@@ -1,9 +1,10 @@
 parameters:
   _param:
     # ELK settings
-    stacklight_elasticsearch_port: 9200
     stacklight_notification_topic: stacklight_notifications
-
+    fluentd_elasticsearch_host: 127.0.0.1
+    fluentd_elasticsearch_port: 9200
+    fluentd_elasticsearch_scheme: http
     # ELK stack versions
     elasticsearch_version: 5
     kibana_version: 5
