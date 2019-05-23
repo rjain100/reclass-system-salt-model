@@ -45,7 +45,8 @@ parameters:
               audit_output:
                 tag: audit
                 type: elasticsearch
-                host: ${_param:stacklight_log_address}
-                port: ${_param:elasticsearch_port}
+                host: ${_param:fluentd_elasticsearch_host}
+                port: ${_param:fluentd_elasticsearch_port}
+                scheme: ${_param:fluentd_elasticsearch_scheme}
                 es_index_name: audit
                 tag_key: Type
