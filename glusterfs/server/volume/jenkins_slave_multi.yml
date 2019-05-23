@@ -1,33 +1,39 @@
+classes:
+- system.glusterfs.server.volume.jenkins_slave_single
 parameters:
   glusterfs:
     server:
       volumes:
-        keystone-keys:
-          storage: /srv/glusterfs/keystone-keys
+        jenkins_slave02:
+          storage: /srv/glusterfs/jenkins_slaves/slave02
           replica: 3
           bricks:
-            - ${_param:cluster_node01_address}:/srv/glusterfs/keystone-keys
-            - ${_param:cluster_node02_address}:/srv/glusterfs/keystone-keys
-            - ${_param:cluster_node03_address}:/srv/glusterfs/keystone-keys
+            - ${_param:cluster_node01_address}:/srv/glusterfs/jenkins_slaves/slave02
+            - ${_param:cluster_node02_address}:/srv/glusterfs/jenkins_slaves/slave02
+            - ${_param:cluster_node03_address}:/srv/glusterfs/jenkins_slaves/slave02
           options:
             auth.allow: ${_param:glusterfs_allow_ips}
             auth.reject: ${_param:glusterfs_reject_ips}
+            storage.owner-gid: 10000
+            storage.owner-uid: 10000
             cluster.readdir-optimize: On
             nfs.disable: On
             network.remote-dio: On
             diagnostics.client-log-level: WARNING
             diagnostics.brick-log-level: WARNING
             cluster.favorite-child-policy: mtime
-        keystone-credential-keys:
-          storage: /srv/glusterfs/keystone-credential-keys
+        jenkins_slave03:
+          storage: /srv/glusterfs/jenkins_slaves/slave03
           replica: 3
           bricks:
-            - ${_param:cluster_node01_address}:/srv/glusterfs/keystone-credential-keys
-            - ${_param:cluster_node02_address}:/srv/glusterfs/keystone-credential-keys
-            - ${_param:cluster_node03_address}:/srv/glusterfs/keystone-credential-keys
+            - ${_param:cluster_node01_address}:/srv/glusterfs/jenkins_slaves/slave03
+            - ${_param:cluster_node02_address}:/srv/glusterfs/jenkins_slaves/slave03
+            - ${_param:cluster_node03_address}:/srv/glusterfs/jenkins_slaves/slave03
           options:
             auth.allow: ${_param:glusterfs_allow_ips}
             auth.reject: ${_param:glusterfs_reject_ips}
+            storage.owner-gid: 10000
+            storage.owner-uid: 10000
             cluster.readdir-optimize: On
             nfs.disable: On
             network.remote-dio: On
