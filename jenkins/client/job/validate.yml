@@ -273,7 +273,7 @@ parameters:
               description: URL to Tempest repo (local or remote) or path to tempest folder in container
             TOOLS_REPO:
               type: string
-              default: "https://github.com/Mirantis/cvp-configuration"
+              default: "https://github.com/Mirantis/cvp-configuration -b 2019.2.0"
               description: URL of repo where testing tools, scenarios, configs are located.
         cvp-ha:
           type: workflow-scm
@@ -342,7 +342,7 @@ parameters:
               description: Can be repo url (local or remote) or path to folder (inside container) with Tempest
             TOOLS_REPO:
               type: string
-              default: "https://github.com/Mirantis/cvp-configuration"
+              default: "https://github.com/Mirantis/cvp-configuration -b 2019.2.0"
               description: URL of repo where testing tools, scenarios, configs are located.
         cvp-tempest:
           type: workflow-scm
@@ -434,7 +434,7 @@ parameters:
               description: Node where docker container with Rally will be run
             TOOLS_REPO:
               type: string
-              default: "https://github.com/Mirantis/cvp-configuration"
+              default: "https://github.com/Mirantis/cvp-configuration -b 2019.2.0"
               description: URL of repo where testing tools, scenarios, configs are located.
             PROXY:
               type: string
