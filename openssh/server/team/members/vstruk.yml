@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        vstruk:
+          email: vstruk@mirantis.com
+          enabled: true
+          full_name: Vyacheslav Struk
+          home: /home/vstruk
+          name: vstruk
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        vstruk:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7deDL9nHfwLsFImanDqwTyD2R1gBtZKVX19rmxvEr51imZMgGtK8dzW9IARflnVjCnuSjT3+p/A1pqg5hU6/vEA5SparCHoJ7RipDkoGjpMtHvSdGOcVTtVvCShmJkPLa8+7cInX3xmuoZ5RBUYfRP2rOZ/2AhIMgQJCw1vA5QLyZr1Tm88r1sGjmv9z/ddOxnof8G9c4Ja+E7+VARawNaBsWMniPF9JN2p0ufY/1wiymdyK796rmvxXXbfgBRt5ZS3PKTsb6W/FBEu2UVovtGUUo/m0xFEiVsI/1Ps1umLvLeRwrouiisuxiQf/9NIraDKIpz3j9Rd/XaiLZ3/rh
+          user: ${linux:system:user:vstruk}
