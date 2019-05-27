@@ -1,7 +1,7 @@
 parameters:
   _param:
     docker_operations_api_replicas: 1
-    operations_api_sqlalchemy_database_uri: "cockroachdb://oapi@cockroach-ui:26257/oapi"
+    operations_api_sqlalchemy_database_uri: "cockroachdb://oapi@cockroach-db-1:26257/oapi"
     operations_api_sqlalchemy_echo: "false"
     operations_api_flask_debug: "false"
     operations_api_bind_host: 0.0.0.0
@@ -52,18 +52,18 @@ parameters:
                 - ${_param:haproxy_operations_api_exposed_port}:${_param:haproxy_operations_api_bind_port}
               volumes:
                 - /srv/volumes/operations_api/logs/:/var/log/operations_api
-            cockroach-ui:
-              image: ${_param:docker_image_cockroachdb}
-              ports:
-                - ${_param:haproxy_cockroachdb_ui_exposed_port}:${_param:haproxy_cockroachdb_ui_bind_port}
-              command: start --insecure
             cockroach-db-1:
-              image: cockroachdb/cockroach
-              command: start --insecure --join=cockroach-ui
-              depends_on:
-                - cockroach-ui
+              image: ${_param:docker_image_cockroachdb}
+              command: start --insecure
               volumes:
-                - /srv/volumes/cockroachdb/cockroach-db-1:/cockroach/cockroach-data
+              - /srv/volumes/cockroachdb/cockroach-db-1:/cockroach/cockroach-data
+            cockroach-db-2:
+              image: ${_param:docker_image_cockroachdb}
+              command: start --insecure --join=cockroach-db-1
+              depends_on:
+                - cockroach-db-1
+              volumes:
+                - /srv/volumes/cockroachdb/cockroach-db-2:/cockroach/cockroach-data
             operations-ui:
               environment:
                 REACT_APP_OPERATIONS_API_URL: 'http://${_param:cluster_public_host}:${_param:haproxy_operations_api_bind_port}'
@@ -75,10 +75,10 @@ parameters:
                 - ${_param:haproxy_operations_ui_exposed_port}:${_param:haproxy_operations_ui_bind_port}
             cockroach-init:
               environment:
-                COCKROACH_HOST: cockroach-ui
+                COCKROACH_HOST: cockroach-db-1
                 DB_NAME: oapi
                 DB_USER: oapi
-              image: atengler/cockroach-init
+              image: ${_param:docker_image_cockroachdb_init}
               deploy:
                 restart_policy:
                   condition: on-failure
