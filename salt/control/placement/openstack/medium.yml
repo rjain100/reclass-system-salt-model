@@ -17,10 +17,17 @@ parameters:
     openstack_message_queue_node03_hostname: msg03
     openstack_proxy_node01_hostname: prx01
     openstack_proxy_node02_hostname: prx02
+    openstack_dns_node01_hostname: dns01
+    openstack_dns_node02_hostname: dns02
+    openstack_barbican_node01_hostname: kmn01
+    openstack_barbican_node02_hostname: kmn02
+    openstack_barbican_node03_hostname: kmn03
     openstack_control_backend_image: ${_param:salt_control_xenial_image_backend}
     openstack_database_backend_image: ${_param:salt_control_xenial_image_backend}
     openstack_message_queue_backend_image: ${_param:salt_control_xenial_image_backend}
     openstack_proxy_backend_image: ${_param:salt_control_xenial_image_backend}
+    openstack_barbican_backend_image: ${_param:salt_control_xenial_image_backend}
+    openstack_dns_backend_image: ${_param:salt_control_xenial_image_backend}
     salt_control_cluster_node_cloud_init_openstack_control:
       user_data:
         write_files:
@@ -47,6 +54,20 @@ parameters:
         write_files:
         - content: |
             ${salt:control:size:openstack.proxy:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
+    salt_control_cluster_node_cloud_init_openstack_dns:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:openstack.dns:image_layout}
+          owner: root:root
+          path: /usr/share/growlvm/image-layout.yml
+    salt_control_cluster_node_cloud_init_openstack_barbican:
+      user_data:
+        write_files:
+        - content: |
+            ${salt:control:size:openstack.barbican:image_layout}
           owner: root:root
           path: /usr/share/growlvm/image-layout.yml
   salt:
@@ -100,34 +121,69 @@ parameters:
               name: ${_param:openstack_message_queue_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_message_queue_backend_image}
-              provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
               size: openstack.message_queue
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_message_queue}
             msg02:
               name: ${_param:openstack_message_queue_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_message_queue_backend_image}
-              provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               size: openstack.message_queue
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_message_queue}
             msg03:
               name: ${_param:openstack_message_queue_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_message_queue_backend_image}
-              provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               size: openstack.message_queue
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_message_queue}
             prx01:
               name: ${_param:openstack_proxy_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_proxy_backend_image}
-              provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               size: openstack.proxy
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_proxy}
             prx02:
               name: ${_param:openstack_proxy_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_proxy_backend_image}
-              provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               size: openstack.proxy
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_proxy}
+            dns01:
+              name: ${_param:openstack_dns_node01_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:openstack_dns_backend_image}
+              provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
+              size: openstack.dns
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_dns}
+            dns02:
+              name: ${_param:openstack_dns_node02_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:openstack_dns_backend_image}
+              provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
+              size: openstack.dns
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_dns}
+            kmn01:
+              name: ${_param:openstack_barbican_node01_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:openstack_barbican_backend_image}
+              provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
+              size: openstack.barbican
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_barbican}
+            kmn02:
+              name: ${_param:openstack_barbican_node02_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:openstack_barbican_backend_image}
+              provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
+              size: openstack.barbican
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_barbican}
+            kmn03:
+              name: ${_param:openstack_barbican_node03_hostname}
+              image: ${_param:salt_control_xenial_image}
+              backend: ${_param:openstack_barbican_backend_image}
+              provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
+              size: openstack.barbican
+              cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_barbican}
