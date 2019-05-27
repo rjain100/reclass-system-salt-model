@@ -85,6 +85,10 @@ parameters:
                     SKIP_LIST: ''
                   # Run in parallel for each directory inside RALLY_SCENARIOS and RALLY_SL_SCENARIOS
                     PARALLEL_PERFORMANCE: 'false'
+                  # If you are running longevity scenarios with parallel performance enabled on a cicd node
+                  # with less than 21GB, you may consider disabling generation of html reports. Each Rally
+                  # process consumes ~ 4GB of memory when generating reports on top of week amount of data
+                    GENERATE_REPORT: 'true'
         cvp-sanity:
           type: workflow-scm
           name: cvp-sanity
