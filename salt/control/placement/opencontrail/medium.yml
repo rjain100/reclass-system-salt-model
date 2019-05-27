@@ -1,8 +1,8 @@
 parameters:
   _param:
-    infra_kvm07_hostname: kvm07
-    infra_kvm08_hostname: kvm08
-    infra_kvm09_hostname: kvm09
+    infra_kvm04_hostname: kvm04
+    infra_kvm05_hostname: kvm05
+    infra_kvm06_hostname: kvm06
     opencontrail_control_node01_hostname: ntw01
     opencontrail_control_node02_hostname: ntw02
     opencontrail_control_node03_hostname: ntw03
@@ -34,41 +34,41 @@ parameters:
               name: ${_param:opencontrail_control_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:opencontrail_control_backend_image}
-              provider: ${_param:infra_kvm_node07_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
               size: opencontrail.control
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_opencontrail_control}
             ntw02:
               name: ${_param:opencontrail_control_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:opencontrail_control_backend_image}
-              provider: ${_param:infra_kvm_node08_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
               size: opencontrail.control
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_opencontrail_control}
             ntw03:
               name: ${_param:opencontrail_control_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:opencontrail_control_backend_image}
-              provider: ${_param:infra_kvm_node09_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
               size: opencontrail.control
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_opencontrail_control}
             nal01:
               name: ${_param:opencontrail_analytics_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:opencontrail_analytics_backend_image}
-              provider: ${_param:infra_kvm_node07_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
               size: opencontrail.analytics
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_opencontrail_analytics}
             nal02:
               name: ${_param:opencontrail_analytics_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:opencontrail_analytics_backend_image}
-              provider: ${_param:infra_kvm_node08_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
               size: opencontrail.analytics
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_opencontrail_analytics}
             nal03:
               name: ${_param:opencontrail_analytics_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               backend: ${_param:opencontrail_analytics_backend_image}
-              provider: ${_param:infra_kvm_node09_hostname}.${_param:cluster_domain}
+              provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
               size: opencontrail.analytics
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_opencontrail_analytics}
