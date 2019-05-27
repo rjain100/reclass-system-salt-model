@@ -92,6 +92,7 @@ parameters:
               volumes:
                 - /etc/contrail:/etc/contrail
                 - /etc/redis/redis.conf:/etc/redis/redis.conf
+                - /var/crashes:/var/crashes
                 - /var/log/contrail:/var/log/contrail
                 - /var/log/journal/contrail-analytics:/var/log/journal
               env_file:
