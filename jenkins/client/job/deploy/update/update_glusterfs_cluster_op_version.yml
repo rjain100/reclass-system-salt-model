@@ -29,11 +29,9 @@ parameters:
                 ---
                 SALT_MASTER_URL: "${_param:jenkins_salt_api_url}"
                 SALT_MASTER_CREDENTIALS: "salt"
-                # Salt compound target to match nodes to be updated [*, G@osfamily:debian].
-                TARGET_SERVERS: "I@glusterfs:server:role:primary"
                 # GlusterFS cluster.op-verion option to set. Leave it empty to get proper version from cluster.max-op-version if available.
                 CLUSTER_OP_VERSION: ''
-                # Does not validate that all clients have been updated
-                IGNORE_CLIENT_VERSION: false
                 # Does not validate that all servers have been updated
                 IGNORE_SERVER_VERSION: false
+                # Does not validate that all clients have been updated
+                IGNORE_CLIENT_VERSION: false
