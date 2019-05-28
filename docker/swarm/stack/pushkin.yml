@@ -13,13 +13,11 @@ parameters:
     pushkin_smtp_port: 587
     pushkin_smtp_use_tls: true
     webhook_from: your_sender@mail.com
-    pushkin_email_sender_password: your_sender_password
     webhook_recipients: "recepient1@mail.com,recepient2@mail.com"
     webhook_login_id: 13
     webhook_application_id: 24
     sfdc_auth_url: https://login.salesforce.com/services/oauth2/token
     sfdc_username: user@example.net
-    sfdc_password: secret
     sfdc_consumer_key: example_consumer_key
     sfdc_consumer_secret: example_consumer_secret
     sfdc_organization_id: example_organization_id

@@ -131,7 +131,6 @@ parameters:
     kubernetes_openstack_provider_binary: ${_param:kubernetes_openstack_provider_repo}/openstack-cloud-controller-manager_v0.3.0-2_1549884015986
     kubernetes_openstack_provider_binary_hash: md5=fd19a97527009aac72de7997744885fb
     kubernetes_openstack_provider_cloud_user: admin
-    kubernetes_openstack_provider_cloud_password: secret
     kubernetes_openstack_provider_cloud_auth_url: http://127.0.0.1:5000/v3
     kubernetes_openstack_provider_cloud_tenant_id: tenant_id
     kubernetes_openstack_provider_cloud_domain_id: default

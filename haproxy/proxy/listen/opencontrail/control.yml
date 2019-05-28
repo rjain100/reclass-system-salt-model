@@ -1,6 +1,5 @@
 parameters:
   _param:
-    opencontrail_stats_password: password
     opencontrail_api_start_offset: 0
     opencontrail_api_workers_count: 1
   haproxy:

@@ -6,6 +6,7 @@ parameters:
   _param:
     java_environment_version: "8"
     java_environment_platform: openjdk
+    jenkins_slave_user: none
     jenkins_master_host: ${_param:control_vip_address}
   java:
     environment:
