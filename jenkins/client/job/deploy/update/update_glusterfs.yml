@@ -1,0 +1,31 @@
+#
+# Jobs to run given states on given Salt master environment's
+#
+parameters:
+  jenkins:
+    client:
+      job:
+        update-glusterfs:
+          type: workflow-scm
+          description: This is a general job which runs "Update glusterfs servers", "Update glusterfs clients" and "Update glusterfs cluster.op-version" jobs with default parameters. If you need/want better control of update process use those jobs.
+          concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
+          display_name: "Update GlusterFS"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: update-glusterfs.groovy
+          param:
+            DRIVE_TRAIN_PARAMS:
+              type: text
+              description: "Yaml based DriveTrain releated params"
+              default: |
+                ---
+                SALT_MASTER_URL: "${_param:jenkins_salt_api_url}"
+                SALT_MASTER_CREDENTIALS: "salt"

@@ -19,3 +19,7 @@ classes:
   - system.jenkins.client.job.deploy.update.cloud_update
   - system.jenkins.client.job.deploy.update.kubernetes_update
   - system.jenkins.client.job.deploy.galera_verify_restore
+  - system.jenkins.client.job.deploy.update.update_glusterfs
+  - system.jenkins.client.job.deploy.update.update_glusterfs_servers
+  - system.jenkins.client.job.deploy.update.update_glusterfs_clients
+  - system.jenkins.client.job.deploy.update.update_glusterfs_cluster_op_version
