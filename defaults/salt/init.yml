@@ -56,3 +56,4 @@ parameters:
     - '@jobs'    # to allow access to the jobs runner and/or wheel mo
 
     salt_minion_ca_authority: salt_master_ca
+    salt_master_api_bind_address: 0.0.0.0

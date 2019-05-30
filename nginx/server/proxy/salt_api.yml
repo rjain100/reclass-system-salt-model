@@ -1,0 +1,28 @@
+parameters:
+  _param:
+    nginx_proxy_salt_api_proxy_port: ${_param:salt_master_api_port}
+    nginx_proxy_ssl:
+      enabled: true
+      authority: ${_param:salt_minion_ca_authority}
+      engine: salt
+      key_file:   /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:salt_api:common_name}.key
+      cert_file:  /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:salt_api:common_name}.crt
+      all_file:   /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:salt_api:common_name}-chain-with-key.pem
+      ca_file: /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:salt_api:common_name}-ca.pem
+  nginx:
+    server:
+      enabled: true
+      site:
+        nginx_proxy_salt_api:
+          enabled: true
+          type: nginx_proxy
+          name: salt_api
+          proxy:
+            host: ${_param:infra_config_hostname}.${_param:cluster_domain}
+            port: ${_param:nginx_proxy_salt_api_proxy_port}
+            protocol: ${_param:nginx_proxy_salt_api_proxy_protocol}
+          host:
+            name: ${_param:infra_config_hostname}.${_param:cluster_domain}
+            port: ${_param:nginx_proxy_salt_api_site_port}
+            protocol: ${_param:nginx_proxy_salt_api_site_protocol}
+          ssl: ${_param:nginx_proxy_ssl}
