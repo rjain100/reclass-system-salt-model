@@ -386,8 +386,6 @@ parameters:
                 ---
                   DEBUG_MODE: false
                   GENERATE_CONFIG: true
-                  TARGET_NODE: "I@gerrit:client"
-                  SKIP_LIST_PATH: ""
                   TEST_IMAGE: "docker-prod-virtual.docker.mirantis.net/mirantis/cicd/ci-tempest:${_param:openstack_version}"
                   report_prefix: "cvp_"
               description: YAML context with additional parameters
