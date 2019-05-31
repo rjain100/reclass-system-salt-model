@@ -1,0 +1,17 @@
+parameters:
+  _param:
+    ceph_rgw_cert_key_file: "/etc/ssl/private/ceph_rgw_key.key"
+    ceph_rgw_cert_cert_file: "/etc/ssl/certs/ceph_rgw.crt"
+    ceph_rgw_cert_all_file: "/etc/ssl/certs/ceph_rgw_all.crt"
+  salt:
+    minion:
+      cert:
+        ceph:
+          host: ${_param:salt_minion_ca_host}
+          signing_policy: cert_server
+          authority: ${_param:salt_minion_ca_authority}
+          common_name: ceph_rgw
+          alternative_names: DNS:${_param:ceph_rgw_hostname}.${_param:cluster_domain},IP:${_param:cluster_vip_address}
+          key_file: ${_param:ceph_rgw_cert_key_file}
+          cert_file: ${_param:ceph_rgw_cert_cert_file}
+          all_file: ${_param:ceph_rgw_cert_all_file}
