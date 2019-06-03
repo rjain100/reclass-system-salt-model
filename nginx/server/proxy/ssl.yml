@@ -8,10 +8,6 @@ parameters:
       dhparam:
         enabled: True
         numbits: 2048
-      ecdh_curve:
-        secp521r1:
-          name: 'secp521r1'
-          enabled: True
       prefer_server_ciphers: "on"
       protocols:
         TLSv1:
