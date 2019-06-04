@@ -12,7 +12,7 @@ parameters:
                 encrypted: 1
           service:
             elasticsearch_exporter:
-              command: --es-cluster ${_param:stacklight_log_address}:9200 --nodes-stats-disable --cluster-health-disable --indices-stats-disable
+              command: --es-cluster ${_param:fluentd_elasticsearch_scheme}://${_param:stacklight_log_address}:9200 --nodes-stats-disable --cluster-health-disable --indices-stats-disable
               networks:
                 - monitoring
               deploy:
@@ -26,3 +26,4 @@ parameters:
               image: ${_param:docker_image_prometheus_es_exporter}
               volumes:
                 - "${prometheus:elasticsearch_exporter:dir:config}/elasticsearch_exporter.cfg:/usr/src/app/exporter.cfg"
+                - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
