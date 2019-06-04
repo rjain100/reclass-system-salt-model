@@ -11,6 +11,7 @@ classes:
 - system.defaults.backupninja
 - system.defaults.git
 - system.defaults.glusterfs
+- system.defaults.nginx
 - system.defaults.jenkins
 - system.defaults.postgresql
 - system.defaults.maas
@@ -58,3 +59,7 @@ parameters:
     single_address: '127.0.0.1'
     # Cloudwatch api removed from Queens
     openstack_heat_cloudwatch_api_enabled: True
+
+    salt_master_host: '127.0.0.1'
+    infra_config_address: '127.0.0.1'
+    reclass_config_master: '127.0.0.1'

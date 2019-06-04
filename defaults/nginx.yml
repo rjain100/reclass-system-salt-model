@@ -1,0 +1,5 @@
+parameters:
+  _param:
+    nginx_proxy_salt_api_proxy_protocol: 'http'
+    nginx_proxy_salt_api_site_port: 8969
+    nginx_proxy_salt_api_site_protocol: 'https'
