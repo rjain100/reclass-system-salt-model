@@ -23,3 +23,4 @@ parameters:
               volumes:
                 - ${telegraf:remote_agent:dir:config}:/etc/telegraf
                 - ${telegraf:remote_agent:dir:config_d}:/etc/telegraf/telegraf.d
+                - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
