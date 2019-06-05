@@ -19,7 +19,7 @@ parameters:
         auth_method: basic
         http_port: 8080
         ssh_port: 29418
-        protocol: http
+        protocol: https
         password: ${_param:gerrit_admin_password}
         key: ${_param:gerrit_admin_private_key}
       user:
