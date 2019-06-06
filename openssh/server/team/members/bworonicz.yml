@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        bworonicz:
+          email: bworonicz@mirantis.com
+          enabled: true
+          full_name: Bartosz Woronicz
+          home: /home/bworonicz
+          name: bworonicz
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        bworonicz:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOP4Yc94ZpEHY9DtYddYvWm7vEGRkYFDgSm/EWh/5SHt5BFo00oQY5IYwY3DZnDZ2Wl+tqdR+PjNNQAO6GCj9fc+/k3keD/lhbNyaqpfdlX35fvu6wOIJiDuENOyCYz4YG5mBQPsDnMREBzO7sf6/T5hElGo3eXIvHkWgXJ2Iap+c/K2hsq5RP/XqiG1MpJVKn7rt2jvMsD1cYLBf8MIQS5mbkrAFb+27h8dW5RAmSOQHDhO6Tu7Wppgrf8rDgf1EvSsXHTRMHTqpm0O0GUY8rhOkNoZgdOaQGMQWURdTEkjtj5MWKT9R2Pk8/acpdfZK/EyD6rzJ5dl/pz9D+VxCB
+          user: ${linux:system:user:bworonicz}
