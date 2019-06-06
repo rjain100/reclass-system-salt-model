@@ -5,6 +5,7 @@ parameters:
     ceilometer_service_protocol: http
     ceilometer_public_host: ${_param:cluster_public_host}
     ceilometer_endpoint_status: present
+    ceilometer_service_status: ${_param:ceilometer_endpoint_status}
   keystone:
     client:
       server:
@@ -19,6 +20,7 @@ parameters:
                   options: ${_param:openstack_service_user_options}
           service:
             ceilometer:
+              status: ${_param:ceilometer_service_status}
               type: metering
               description: OpenStack Telemetry Service
               endpoints:
