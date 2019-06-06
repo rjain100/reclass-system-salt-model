@@ -29,8 +29,12 @@ parameters:
       compute:
         region: ${_param:openstack_region}
       database:
+        user: ${_param:mysql_neutron_username}
+        password: ${_param:mysql_neutron_password}
         host: ${_param:openstack_database_address}
       identity:
+        user: ${_param:keystone_neutron_username}
+        password: ${_param:keystone_neutron_password}
         region: ${_param:openstack_region}
       message_queue:
         members:

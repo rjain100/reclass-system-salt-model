@@ -17,6 +17,8 @@ parameters:
         metric_processing_delay: 15
         metric_reporting_delay: 30
       identity:
+        user: ${_param:keystone_gnocchi_username}
+        password: ${_param:keystone_gnocchi_password}
         host: ${_param:openstack_control_address}
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}

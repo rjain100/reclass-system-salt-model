@@ -34,7 +34,7 @@ parameters:
         host: ${_param:openstack_database_address}
         port: 3306
         name: heat
-        user: heat
+        user: ${_param:mysql_heat_username}
         password: ${_param:mysql_heat_password}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
@@ -60,7 +60,7 @@ parameters:
         host: ${_param:cluster_vip_address}
         port: 35357
         tenant: service
-        user: heat
+        user: ${_param:keystone_heat_username}
         password: ${_param:keystone_heat_password}
         protocol: ${_param:cluster_internal_protocol}
       message_queue:

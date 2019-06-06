@@ -11,5 +11,5 @@ parameters:
         project_domain_id: default
         project_name: service
         user_domain_name: Default
-        username: cinder
+        username: ${_param:keystone_cinder_username}
         region: ${_param:openstack_region}

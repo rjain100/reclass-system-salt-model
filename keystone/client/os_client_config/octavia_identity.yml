@@ -12,7 +12,7 @@ parameters:
                   identity_api_version: '3'
                   interface: 'internal'
                   auth:
-                    username: 'octavia'
+                    username: '${_param:keystone_octavia_username}'
                     password: ${_param:keystone_octavia_password}
                     user_domain_name: 'Default'
                     project_name: 'service'

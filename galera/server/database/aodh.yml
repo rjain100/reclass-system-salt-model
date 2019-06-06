@@ -7,12 +7,12 @@ parameters:
         aodh:
           encoding: utf8
           users:
-          - name: aodh
+          - name: ${_param:mysql_aodh_username}
             password: ${_param:mysql_aodh_password}
             host: '%'
             rights: all
             ssl_option: ${_param:mysql_aodh_ssl_option}
-          - name: aodh
+          - name: ${_param:mysql_aodh_username}
             password: ${_param:mysql_aodh_password}
             host: ${_param:cluster_vip_address}
             rights: all

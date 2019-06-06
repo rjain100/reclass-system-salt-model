@@ -8,8 +8,12 @@ parameters:
     server:
       role: ${_param:openstack_node_role}
       identity:
+        user: ${_param:keystone_barbican_username}
+        password: ${_param:keystone_barbican_password}
         protocol: ${_param:cluster_internal_protocol}
       database:
+        user: ${_param:mysql_barbican_username}
+        password: ${_param:mysql_barbican_password}
         host: ${_param:openstack_database_address}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}

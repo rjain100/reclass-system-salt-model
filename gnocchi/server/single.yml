@@ -5,6 +5,8 @@ parameters:
     server:
       role: ${_param:openstack_node_role}
       identity:
+        user: ${_param:keystone_gnocchi_username}
+        password: ${_param:keystone_gnocchi_password}
         region: ${_param:openstack_region}
         protocol: ${_param:internal_protocol}
       metricd:

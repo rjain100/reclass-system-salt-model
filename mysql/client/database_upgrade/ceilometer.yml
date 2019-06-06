@@ -7,11 +7,11 @@ parameters:
             ceilometer_upgrade:
               encoding: utf8
               users:
-              - name: ceilometer
+              - name: ${_param:mysql_ceilometer_username}
                 password: ${_param:mysql_ceilometer_password}
                 host: '%'
                 rights: all
-              - name: ceilometer
+              - name: ${_param:mysql_ceilometer_username}
                 password: ${_param:mysql_ceilometer_password}
                 host: ${_param:single_address}
                 rights: all

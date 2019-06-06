@@ -7,11 +7,11 @@ parameters:
             glance:
               encoding: utf8
               users:
-              - name: glance
+              - name: ${_param:mysql_glance_username}
                 password: ${_param:mysql_glance_password}
                 host: '%'
                 rights: all
-              - name: glance
+              - name: ${_param:mysql_glance_username}
                 password: ${_param:mysql_glance_password}
                 host: ${_param:single_address}
                 rights: all

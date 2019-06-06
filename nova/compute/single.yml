@@ -31,13 +31,13 @@ parameters:
         host: ${_param:control_address}
         port: 3306
         name: nova
-        user: nova
+        user: ${_param:mysql_nova_username}
         password: ${_param:mysql_nova_password}
       identity:
         engine: keystone
         host: ${_param:control_address}
         port: 35357
-        user: nova
+        user: ${_param:keystone_nova_username}
         password: ${_param:keystone_nova_password}
         tenant: service
         protocol: ${_param:cluster_internal_protocol}

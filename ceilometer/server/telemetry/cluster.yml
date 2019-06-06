@@ -25,7 +25,7 @@ parameters:
         host: ${_param:openstack_control_address}
         port: 35357
         tenant: service
-        user: ceilometer
+        user: ${_param:keystone_ceilometer_username}
         password: ${_param:keystone_ceilometer_password}
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}
