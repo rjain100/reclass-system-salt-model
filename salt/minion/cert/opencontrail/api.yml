@@ -1,0 +1,17 @@
+parameters:
+  salt:
+    minion:
+      cert:
+        opencontrail_api:
+          host: ${_param:salt_minion_ca_host}
+          authority: ${_param:salt_minion_ca_authority}
+          common_name: opencontrail_api
+          signing_policy: cert_server
+          alternative_names: IP:127.0.0.1,IP:${_param:cluster_local_address},IP:${_param:cluster_vip_address},DNS:${linux:system:name},DNS:${linux:network:fqdn},DNS:${_param:cluster_vip_address}
+          key_file: ${_param:opencontrail_api_keyfile}
+          cert_file: ${_param:opencontrail_api_certfile}
+          ca_file: ${_param:opencontrail_api_cafile}
+          all_file: ${_param:opencontrail_api_all_pemfile}
+          user: contrail
+          enabled: true
+          engine: salt
