@@ -1,10 +1,15 @@
 classes:
-- system.docker.swarm.stack.jenkins.slave_base
+- system.docker
 parameters:
   _param:
+    jenkins_master_url: http://jenkins_master:8080
+    jenkins_slave_extra_opts: ""
     jenkins_slave01_node_name: ${_param:cluster_node01_name}
   docker:
     client:
+      enabled: true
+      images:
+        - ${_param:docker_image_jenkins_jnlp_slave}
       stack:
         jenkins:
           service:
@@ -25,7 +30,7 @@ parameters:
                 placement:
                   constraints:
                     - "node.hostname == ${_param:jenkins_slave01_node_name}"
-              image: ${_param:docker_image_jenkins_slave}
+              image: ${_param:docker_image_jenkins_jnlp_slave}
               volumes:
                 - /etc/ssl/certs/:/etc/ssl/certs/:ro
                 - /dev/urandom:/dev/random:ro
