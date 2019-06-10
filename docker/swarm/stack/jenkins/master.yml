@@ -1,6 +1,5 @@
 classes:
 - system.docker
-- system.docker.client.images.jenkins_master
 parameters:
   _param:
     jenkins_master_extra_opts: ""
@@ -9,6 +8,9 @@ parameters:
     jenkins_home_dir_path: /var/jenkins_home
   docker:
     client:
+      enabled: true
+      images:
+        - ${_param:docker_image_jenkins}
       stack:
         jenkins:
           service:

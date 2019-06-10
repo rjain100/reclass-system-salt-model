@@ -1,0 +1,63 @@
+parameters:
+  _param:
+  kubernetes:
+    pool:
+      images:
+        - ${_param:docker_image_jenkins_ssh_slave}
+    control:
+      service:
+        jenkins_slave01:
+          create: true
+          service: slave01
+          namespace: drivetrain
+          apiVersion: extensions/v1beta1
+          kind: Deployment
+          replicas: 1
+          container:
+            jenkins-slave:
+              image: ${_param:docker_image_jenkins_ssh_slave}
+              image_pull_policy: IfNotPresent
+              variables:
+                - name: JENKINS_SLAVE_SSH_PUBKEY
+                  value: ${_param:jenkins_admin_public_key}
+                - name: https_proxy
+                  value: ${_param:kdt_https_proxy}
+                - name: http_proxy
+                  value: ${_param:kdt_http_proxy}
+                - name: no_proxy
+                  value: ${_param:kdt_no_proxy}
+              volumes:
+                - name: jenkins-slave01
+                  mount: /srv/volumes/jenkins_slaves/slave01
+                  read_only: false
+                - name: docker-sock-volume
+                  mount: /var/run/docker.sock
+                  read_only: false
+                - name: entropy-volume
+                  mount: /dev/random
+                  read_only: true
+          volume:
+            jenkins-slave01:
+              type: glusterfs
+              endpoints: glusterfs
+              path: jenkins_slave01
+              read_only: false
+            docker-sock-volume:
+              type: hostPath
+              path: /var/run/docker.sock
+            entropy-volume:
+              type: hostPath
+              path: /dev/urandom
+  jenkins:
+    client:
+      node:
+        slave01:
+          launcher:
+            type: ssh
+            host: jenkins_slave01
+            port: 22
+            credentials: ssh_slave
+      credential:
+        ssh_slave:
+          username: jenkins
+          key: ${_param:jenkins_admin_private_key}

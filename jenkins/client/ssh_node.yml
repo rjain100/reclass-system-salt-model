@@ -1,0 +1,13 @@
+parameters:
+  jenkins:
+    client:
+      node:
+        slave01:
+          launcher:
+            type: ssh
+        slave02:
+          launcher:
+            type: ssh
+        slave03:
+          launcher:
+            type: ssh
