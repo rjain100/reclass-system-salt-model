@@ -1,6 +1,6 @@
 parameters:
   _param:
-    openstack_billing_backend_image: ${_param:salt_control_trusty_image_backend}
+    openstack_billing_backend_image: ${_param:salt_control_xenial_image_backend}
     salt_control_cluster_node_cloud_init_openstack_billing:
       user_data:
         write_files:
@@ -24,7 +24,7 @@ parameters:
           node:
             bil01:
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
-              image: ${_param:salt_control_trusty_image}
+              image: ${_param:salt_control_xenial_image}
               backend: ${_param:openstack_billing_backend_image}
               size: openstack.billing
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_billing}

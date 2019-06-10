@@ -1,6 +1,6 @@
 parameters:
   _param:
-    infra_proxy_backend_image: ${_param:salt_control_trusty_image_backend}
+    infra_proxy_backend_image: ${_param:salt_control_xenial_image_backend}
     salt_control_cluster_node_cloud_init_infra_proxy:
       user_data:
         write_files:
@@ -25,14 +25,14 @@ parameters:
             prx01:
               name: ${_param:openstack_proxy_node01_hostname}
               provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
-              image: ${_param:salt_control_trusty_image}
+              image: ${_param:salt_control_xenial_image}
               backend: ${_param:infra_proxy_backend_image}
               size: infra.proxy
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_proxy}
             prx02:
               name: ${_param:openstack_proxy_node01_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
-              image: ${_param:salt_control_trusty_image}
+              image: ${_param:salt_control_xenial_image}
               backend: ${_param:infra_proxy_backend_image}
               size: infra.proxy
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_proxy}
