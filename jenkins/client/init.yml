@@ -18,6 +18,7 @@ parameters:
       master:
         host: ${_param:jenkins_master_host}
         port: ${_param:jenkins_master_port}
+        proto: https
         username: ${_param:jenkins_client_user}
         password: ${_param:jenkins_client_password}
       lib:

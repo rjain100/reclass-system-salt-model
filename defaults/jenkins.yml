@@ -1,6 +1,6 @@
 parameters:
   _param:
     jenkins_master_port: 8081
-    jenkins_master_protocol: http
+    jenkins_master_protocol: https
     jenkins_pipelines_branch: "master"
     jenkins_salt_api_url: "https://${_param:salt_master_host}:${_param:nginx_proxy_salt_api_site_port}"
