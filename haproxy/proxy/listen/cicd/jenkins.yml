@@ -1,3 +1,5 @@
+classes:
+  - system.salt.minion.cert.proxy.drivetrain_ssl
 parameters:
   _param:
     haproxy_jenkins_bind_host: ${_param:haproxy_bind_address}
@@ -5,7 +7,8 @@ parameters:
     haproxy_jenkins_jnlp_bind_host: ${_param:haproxy_jenkins_bind_host}
     haproxy_jenkins_jnlp_bind_port: 50000
     haproxy_jenkins_ssl:
-      enabled: false
+      enabled: true
+      pem_file: /etc/haproxy/ssl/drivetrain.pem
   haproxy:
     proxy:
       listen:

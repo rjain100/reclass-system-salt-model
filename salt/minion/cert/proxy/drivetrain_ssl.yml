@@ -7,7 +7,7 @@ parameters:
           authority: ${_param:salt_minion_ca_authority}
           common_name: drivetrain
           signing_policy: cert_server
-          alternative_names: "DNS:${_param:cluster_public_host}, DNS:*.${_param:cluster_public_host}, DNS:${_param:cicd_control_address}, IP:${_param:control_vip_address}"
+          alternative_names: "DNS:${_param:cluster_public_host}, DNS:*.${_param:cluster_public_host}, DNS:${_param:cicd_control_address}, IP:${_param:cicd_control_address}"
           key_file: /etc/haproxy/ssl/drivetrain.key
           cert_file: /etc/haproxy/ssl/drivetrain.crt
           ca_file: /etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem
