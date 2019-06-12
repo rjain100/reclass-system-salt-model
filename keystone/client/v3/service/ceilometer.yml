@@ -18,6 +18,7 @@ parameters:
                   project_id: service
           services:
             ceilometer:
+              status: ${_param:ceilometer_service_status}
               type: metering
               description: OpenStack Telemetry Service
               endpoints:
