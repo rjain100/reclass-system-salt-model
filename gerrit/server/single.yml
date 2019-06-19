@@ -54,6 +54,9 @@ parameters:
         pool_max_idle: 16
       change_cleanup:
         abandon_after: 3months
+      download:
+        command: ${_param:gerrit_config_download_command}
+        scheme: ${_param:gerrit_config_download_scheme}
   postgresql:
     server:
       version: "9.5"
