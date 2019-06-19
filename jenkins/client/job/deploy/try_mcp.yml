@@ -14,7 +14,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: deploy-try-mcp.groovy
           param:
             COOKIECUTTER_TEMPLATE_CONTEXT:

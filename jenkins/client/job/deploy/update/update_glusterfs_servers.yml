@@ -19,7 +19,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: update-glusterfs-servers.groovy
           param:
             DRIVE_TRAIN_PARAMS:
