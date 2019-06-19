@@ -10,6 +10,7 @@ parameters:
     jenkins_master_host: ${_param:control_vip_address}
     jenkins_aptly_storages: "local"
     jenkins_offline_deployment: "false"
+    jenkins_gerrit_credentials: "gerrit"
   jenkins:
     client:
       globalenvprop:
@@ -25,7 +26,7 @@ parameters:
         pipeline-library:
           enabled: true
           url: ${_param:jenkins_gerrit_url}/mcp-ci/pipeline-library
-          credential_id: gerrit
+          credential_id: ${_param:jenkins_gerrit_credentials}
           branch: ${_param:jenkins_pipelines_branch}
       theme:
         css_url: '/userContent/theme/mirantis.css'
