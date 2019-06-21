@@ -19,6 +19,8 @@ parameters:
       backend: {}
       default_volume_type: ''
       role: ${_param:openstack_node_role}
+      # set 'image_conversion_dir' option in case of ceph deployment volume and controller running on the same node
+      image_conversion_dir: ${_param:cinder_image_conversion_dir_path}
       database:
         host: ${_param:single_address}
         x509:

@@ -1,0 +1,123 @@
+parameters:
+  fluentd:
+    agent:
+      config:
+        label:
+          notification_messages:
+            filter:
+              parse_publuisher_host:
+                tag: notification
+                type: parser
+                key_name: publisher_id
+                reserve_data: true
+                parser:
+                  type: regexp
+                  format: (?<publisher>\w+).(?<hostname>\w+)
+              save_hostname:
+                tag: notification
+                require:
+                  - parse_publuisher_host
+                type: record_transformer
+                enable_ruby: true
+                record:
+                  - name: Hostname
+                    value: ${fluentd:dollar}{ record["hostname"] }
+              parse_source:
+                tag: notification
+                require:
+                  - save_hostname
+                type: parser
+                key_name: event_type
+                reserve_data: true
+                parser:
+                  type: regexp
+                  format: (?<event_type_logger>\w+).+
+              map_logger:
+                tag: notification
+                require:
+                  - parse_source
+                type: record_transformer
+                enable_ruby: true
+                remove_keys: event_type_logger
+                record:
+                  - name: Logger
+                    value: ${fluentd:dollar}{ {'volume'=>'cinder', 'snapshot'=>'cinder', 'image'=>'glance', 'orchestration'=>'heat', 'identity'=>'keystone', 'compute'=>'nova', 'compute_task'=>'nova', 'scheduler'=>'nova', 'keypair'=>'nova', 'floatingip' =>'neutron', 'security_group' =>'neutron', 'security_group_rule' =>'neutron', 'network' =>'neutron', 'port' =>'neutron', 'router' =>'neutron', 'subnet' =>'neutron', 'sahara' =>'sahara'}[record["event_type_logger"]] }
+              get_payload_values:
+                tag: notification
+                require:
+                  - map_logger
+                type: record_transformer
+                enable_ruby: true
+                record:
+                  - name: Timestamp
+                    value: ${fluentd:dollar}{ DateTime.strptime(record['timestamp'], '%Y-%m-%d %H:%M:%S.%N').strftime('%Y-%m-%dT%H:%M:%S.%3NZ') }
+                  - name: severity_label
+                    value: ${fluentd:dollar}{ record["priority"] }
+                  - name: Severity
+                    value: ${fluentd:dollar}{ {'TRACE'=>7,'DEBUG'=>7,'INFO'=>6,'AUDIT'=>6,'WARNING'=>4,'ERROR'=>3,'CRITICAL'=>2}[record['priority']].to_i }
+                  - name: Hostname
+                    value: '${fluentd:dollar}{ record["payload"].has_key?("host") ? record["payload"]["host"] : record["Hostname"] }'
+                  - name: environment_label
+                    value: ${_param:cluster_domain}
+
+                  - name: tenant_id
+                    value: ${fluentd:dollar}{ record.dig("payload", "tenant_id") }
+                  - name: user_id
+                    value: ${fluentd:dollar}{ record.dig("payload", "user_id") }
+                  - name: display_name
+                    value: ${fluentd:dollar}{ record.dig("payload", "display_name") }
+                  - name: vcpus
+                    value: ${fluentd:dollar}{ record.dig("payload", "vcpus") }
+                  - name: availability_zone
+                    value: ${fluentd:dollar}{ record.dig("payload", "availability_zone") }
+                  - name: instance_id
+                    value: ${fluentd:dollar}{ record.dig("payload", "instance_id") }
+                  - name: instance_type
+                    value: ${fluentd:dollar}{ record.dig("payload", "instance_type") }
+                  - name: image_name
+                    value: ${fluentd:dollar}{ record.dig("payload", "image_name") }
+                  - name: memory_mb
+                    value: ${fluentd:dollar}{ record.dig("payload", "memory_mb") }
+                  - name: disk_gb
+                    value: ${fluentd:dollar}{ record.dig("payload", "disk_gb") }
+                  - name: state
+                    value: ${fluentd:dollar}{ record.dig("payload", "state") }
+                  - name: old_state
+                    value: ${fluentd:dollar}{ record.dig("payload", "old_state") }
+                  - name: old_task_state
+                    value: ${fluentd:dollar}{ record.dig("payload", "old_task_state") }
+                  - name: new_task_state
+                    value: ${fluentd:dollar}{ record.dig("payload", "new_task_state") }
+                  - name: network_id
+                    value: ${fluentd:dollar}{ record.dig("payload", "network_id") }
+                  - name: subnet_id
+                    value: ${fluentd:dollar}{ record.dig("payload", "subnet_id") }
+                  - name: port_id
+                    value: ${fluentd:dollar}{ record.dig("payload", "port_id") }
+                  - name: volume_id
+                    value: ${fluentd:dollar}{ record.dig("payload", "volume_id") }
+                  - name: size
+                    value: ${fluentd:dollar}{ record.dig("payload", "size") }
+                  - name: status
+                    value: ${fluentd:dollar}{ record.dig("payload", "status") }
+                  - name: replication_status
+                    value: ${fluentd:dollar}{ record.dig("payload", "replication_status") }
+              pack_payload_to_json:
+                tag: notification
+                require:
+                  - get_payload_values
+                type: record_transformer
+                enable_ruby: true
+                remove_keys: '["timestamp", "publisher_id", "priority", "notification_type", "payload"]'
+                record:
+                  - name: Payload
+                    value: ${fluentd:dollar}{ record["payload"].to_json }
+            match:
+              notifications_output:
+                tag: notification
+                type: elasticsearch
+                host: ${_param:fluentd_elasticsearch_host}
+                port: ${_param:fluentd_elasticsearch_port}
+                scheme: ${_param:fluentd_elasticsearch_scheme}
+                es_index_name: notification
+                tag_key: Type

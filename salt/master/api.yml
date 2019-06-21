@@ -1,3 +1,9 @@
+classes:
+# Enabled ssl api by default
+- system.salt.minion.cert.salt_api
+- system.nginx.server.single
+- system.nginx.server.proxy.ssl
+- system.nginx.server.proxy.salt_api
 parameters:
   _param:
     salt_master_api_port: 6969
@@ -11,7 +17,7 @@ parameters:
     api:
       enabled: true
       bind:
-        address: 0.0.0.0
+        address: ${_param:salt_master_api_bind_address}
         port: ${_param:salt_master_api_port}
     master:
       command_timeout: 600

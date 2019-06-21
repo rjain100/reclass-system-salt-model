@@ -1,0 +1,50 @@
+parameters:
+  fluentd:
+    agent:
+      config:
+        label:
+          audit_messages:
+            filter:
+              get_payload_values:
+                tag: audit
+                type: record_transformer
+                enable_ruby: true
+                record:
+                  - name: Logger
+                    value: ${fluentd:dollar}{ record.dig("publisher_id") }
+                  - name: Severity
+                    value: ${fluentd:dollar}{ {'TRACE'=>7,'DEBUG'=>7,'INFO'=>6,'AUDIT'=>6,'WARNING'=>4,'ERROR'=>3,'CRITICAL'=>2}[record['priority']].to_i }
+                  - name: Timestamp
+                    value: ${fluentd:dollar}{ DateTime.strptime(record.dig("payload", "eventTime"), "%Y-%m-%dT%H:%M:%S.%N%z").strftime("%Y-%m-%dT%H:%M:%S.%3NZ") }
+                  - name: notification_type
+                    value: ${fluentd:dollar}{ record.dig("event_type") }
+                  - name: severity_label
+                    value: ${fluentd:dollar}{ record.dig("priority") }
+                  - name: environment_label
+                    value: ${_param:cluster_domain}
+
+                  - name: action
+                    value: ${fluentd:dollar}{ record.dig("payload", "action") }
+                  - name: event_type
+                    value: ${fluentd:dollar}{ record.dig("payload", "eventType") }
+                  - name: outcome
+                    value: ${fluentd:dollar}{ record.dig("payload", "outcome") }
+              pack_payload_to_json:
+                tag: audit
+                require:
+                  - get_payload_values
+                type: record_transformer
+                enable_ruby: true
+                remove_keys: '["payload", "timestamp", "publisher_id", "priority"]'
+                record:
+                  - name: Payload
+                    value: ${fluentd:dollar}{ record["payload"].to_json }
+            match:
+              audit_output:
+                tag: audit
+                type: elasticsearch
+                host: ${_param:fluentd_elasticsearch_host}
+                port: ${_param:fluentd_elasticsearch_port}
+                scheme: ${_param:fluentd_elasticsearch_scheme}
+                es_index_name: audit
+                tag_key: Type

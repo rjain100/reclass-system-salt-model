@@ -1,0 +1,6 @@
+parameters:
+  jenkins:
+    client:
+      security:
+        csrf:
+          enabled: True

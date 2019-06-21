@@ -1,7 +1,6 @@
 parameters:
   _param:
     postgresql_client_user: none
-    postgresql_client_password: none
     postgresql_client_host: ${_param:control_vip_address}
     postgresql_client_port: 5432
   postgresql:

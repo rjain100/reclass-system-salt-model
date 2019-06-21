@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
   jenkins:
     client:
       view:
@@ -196,10 +194,6 @@ parameters:
             credentials: "gerrit"
             script: cvp-runner.groovy
           param:
-            DEBUG_MODE:
-              type: boolean
-              default: 'false'
-              description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
               default: ${_param:docker_image_cvp_sanity_checks}
@@ -211,22 +205,12 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: ""
-              description: Url for cvp-sanity-checks
-            TESTS_SETTINGS:
-              type: string
-              default: ""
-              description: e.g. skipped_nodes=nal01.local.com,ntw01.local.com
-            TESTS_SET:
-              type: string
-              default: "cvp-sanity/cvp_checks/tests"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_mtu.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet. For offline mode, use \"offline\" value."
+            EXTRA_PARAMS:
+              type: text
+              default: |
+                envs:
+                  - tests_set=''
+              description: "YAML context with additional parameters, e.g. skipped_nodes=nal01.local.com,ntw01.local.com or tests_set='tests/test_mtu.py'"
         cvp-func:
           type: workflow-scm
           name: cvp-func
@@ -262,7 +246,7 @@ parameters:
               description: Credentials to the Salt API
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.10.1"
+              default: "xrally/xrally-openstack:0.11.2"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODE:
               type: string
@@ -289,7 +273,7 @@ parameters:
               description: URL to Tempest repo (local or remote) or path to tempest folder in container
             TOOLS_REPO:
               type: string
-              default: "https://github.com/Mirantis/cvp-configuration"
+              default: "https://github.com/Mirantis/cvp-configuration -b 2019.2.0"
               description: URL of repo where testing tools, scenarios, configs are located.
         cvp-ha:
           type: workflow-scm
@@ -322,7 +306,7 @@ parameters:
               description: Node where container with tempest will be run
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.10.1"
+              default: "xrally/xrally-openstack:0.11.2"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODES:
               type: string
@@ -358,8 +342,53 @@ parameters:
               description: Can be repo url (local or remote) or path to folder (inside container) with Tempest
             TOOLS_REPO:
               type: string
-              default: "https://github.com/Mirantis/cvp-configuration"
+              default: "https://github.com/Mirantis/cvp-configuration -b 2019.2.0"
               description: URL of repo where testing tools, scenarios, configs are located.
+        cvp-tempest:
+          type: workflow-scm
+          name: cvp-tempest
+          display_name: "CVP-Tempest (technical preview)"
+          discard:
+            build:
+              keep_num: 20
+            artifact:
+              keep_num: 20
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: cvp-tempest.groovy
+          param:
+            PREPARE_RESOURCES:
+              type: boolean
+              default: true
+              description: Prepare resources for Tempest
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+              description: SALT_MASTER_URL
+            TEMPEST_TEST_PATTERN:
+              type: string
+              default: "set=smoke"
+              description: Use set=smoke, set=full or just test name (regex)
+            TEMPEST_ENDPOINT_TYPE:
+              type: choice
+              choices:
+                - internalURL
+                - adminURL
+                - publicURL
+              description: Openstack endpoint type to use during test run.
+            EXTRA_PARAMS:
+              type: text
+              default:  |
+                ---
+                  DEBUG_MODE: false
+                  GENERATE_CONFIG: true
+                  TEST_IMAGE: "docker-prod-virtual.docker.mirantis.net/mirantis/cicd/ci-tempest:${_param:openstack_version}"
+                  report_prefix: "cvp_"
+              description: YAML context with additional parameters
         cvp-perf:
           type: workflow-scm
           name: cvp-perf
@@ -387,7 +416,7 @@ parameters:
               description: Path to scenario file in container
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.10.1"
+              default: "xrally/xrally-openstack:0.11.2"
               description: Docker image to use for running Rally/Tempest
             SALT_MASTER_URL:
               type: string
@@ -403,7 +432,7 @@ parameters:
               description: Node where docker container with Rally will be run
             TOOLS_REPO:
               type: string
-              default: "https://github.com/Mirantis/cvp-configuration"
+              default: "https://github.com/Mirantis/cvp-configuration -b 2019.2.0"
               description: URL of repo where testing tools, scenarios, configs are located.
             PROXY:
               type: string
@@ -424,8 +453,12 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
-            script: cvp-stacklight.groovy
+            script: cvp-runner.groovy
           param:
+            IMAGE:
+              type: string
+              default: ${_param:docker_image_cvp_sanity_checks}
+              description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
@@ -433,22 +466,12 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: "http://gerrit.mcp.mirantis.com/mcp/stacklight-pytest -b release/2019.2.0"
-              description: Url for cvp-stacklight-tests
-            TESTS_SETTINGS:
-              type: string
-              default: "SL_AUTOCONF=True;PYTHONPATH=./stacklight-pytest"
-              description: "Additional environment variables to export"
-            TESTS_SET:
-              type: string
-              default: "stacklight-pytest/stacklight_tests/tests/"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_dashboards.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet."
+            EXTRA_PARAMS:
+              type: text
+              default: |
+                envs:
+                  - SL_AUTOCONF=True
+              description: YAML context with additional parameters
         cvp-spt:
           type: workflow-scm
           name: cvp-spt
@@ -466,10 +489,6 @@ parameters:
             credentials: "gerrit"
             script: cvp-runner.groovy
           param:
-            DEBUG_MODE:
-              type: boolean
-              default: 'false'
-              description: Enable if you need to keep container after the test and debug
             IMAGE:
               type: string
               default: ${_param:docker_image_cvp_sanity_checks}
@@ -481,22 +500,14 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            TESTS_REPO:
-              type: string
-              default: ""
-              description: Url for cvp-spt repository
-            TESTS_SETTINGS:
-              type: string
-              default: ""
-              description: "Additional environment variables to export, e.g. image_name, networks, HW_NODES"
-            TESTS_SET:
-              type: string
-              default: "cvp-spt/cvp_spt/tests"
-              description: "Leave as is for full run or add a filename, e.g. _default_path_/test_glance.py"
-            PROXY:
-              type: string
-              default: ""
-              description: "Proxy address to use to access the Internet. For offline mode, use \"offline\" value."
+            EXTRA_PARAMS:
+              type: text
+              default: |
+                envs:
+                  - tests_set=''
+                  - image_name='Ubuntu'
+                  - networks=10.101.0.0/24
+              description: 'YAML context with additional parameters. Additional params: HW_NODES, CMP_HOSTS, salt_timeout, skipped_nodes, nova_timeout, iperf_prep_string, IMAGE_SIZE_MB'
         cvp-shaker:
           type: workflow-scm
           name: cvp-shaker

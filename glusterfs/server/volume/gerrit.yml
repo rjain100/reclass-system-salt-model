@@ -10,6 +10,10 @@ parameters:
             - ${_param:cluster_node02_address}:/srv/glusterfs/gerrit
             - ${_param:cluster_node03_address}:/srv/glusterfs/gerrit
           options:
+            auth.allow: ${_param:glusterfs_allow_ips}
+            auth.reject: ${_param:glusterfs_reject_ips}
+            storage.owner-gid: 1000
+            storage.owner-uid: 1000
             cluster.readdir-optimize: On
             nfs.disable: On
             network.remote-dio: On

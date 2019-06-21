@@ -7,7 +7,6 @@ parameters:
     postgresql_ssl:
       enabled: false
     postgresql_admin_user: postgres
-    postgresql_admin_user_password: postgrespassword
   docker:
     client:
       stack:

@@ -23,29 +23,29 @@ parameters:
     docker_image_operations_api: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-api:${_param:mcp_version}"
     docker_image_operations_ui: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-ui:${_param:mcp_version}"
     # OpenContrail
-    opencontrail_docker_image_tag: "2019.2.3"
+    opencontrail_docker_image_tag: "2019.2.4"
     # stacklight
     # 6.5.0 version, from 11/29/2018, differ from latest upstream 6.5.0 - update next cycle
     docker_image_alerta: "${_param:mcp_docker_registry}/mirantis/external/alerta-web:${_param:mcp_version}"
-    docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:${_param:mcp_version}"
+    docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:2019.2.4"
     docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:${_param:mcp_version}"
-    docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/mirantis/external/braedon/prometheus-es-exporter:0.5.1"
+    docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/openstack-docker/prometheus-es-exporter:2019.2.4"
     docker_image_prometheus: "${_param:mcp_docker_registry}/openstack-docker/prometheus:${_param:mcp_version}"
-    docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/gainsight:2019.2.3"
+    docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/gainsight:2019.2.4"
     docker_image_prometheus_gainsight_elasticsearch: "${_param:mcp_docker_registry}/openstack-docker/gainsight_elasticsearch:${_param:mcp_version}"
     docker_image_prometheus_relay: "${_param:mcp_docker_registry}/openstack-docker/prometheus_relay:${_param:mcp_version}"
     docker_image_pushgateway: "${_param:mcp_docker_registry}/openstack-docker/pushgateway:${_param:mcp_version}"
-    docker_image_remote_agent: "${_param:mcp_docker_registry}/openstack-docker/telegraf:${_param:mcp_version}"
+    docker_image_remote_agent: "${_param:mcp_docker_registry}/openstack-docker/telegraf:2019.2.4"
     docker_image_remote_collector: "${_param:mcp_docker_registry}/openstack-docker/heka:${_param:mcp_version}"
     docker_image_remote_storage_adapter: "${_param:mcp_docker_registry}/openstack-docker/remote_storage_adapter:${_param:mcp_version}"
-    docker_image_sf_notifier: "${_param:mcp_docker_registry}/openstack-docker/sf_notifier:2019.2.3"
+    docker_image_sf_notifier: "${_param:mcp_docker_registry}/openstack-docker/sf_notifier:2019.2.4"
     ##
     docker_image_cockroachdb: "${_param:mcp_docker_registry}/mirantis/external/cockroach/cockroach:v2.1.1"
     # keycloak
     docker_image_keycloak_server: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:4.5.0.Final"
     docker_image_keycloak_proxy: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:3.4.2.Final"
     # CVP
-    docker_image_cvp_sanity_checks: ${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:2019.2.3
+    docker_image_cvp_sanity_checks: ${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:2019.2.4
     docker_image_cvp_shaker_checks: ${_param:mcp_docker_registry}/mirantis/cvp/cvp-shaker:2019.2.3
     # aptly
     docker_image_aptly:
@@ -134,13 +134,13 @@ parameters:
           name: elasticsearch:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: sf_notifier:${_param:mcp_version}
+          name: sf_notifier:2019.2.4
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
           name: gainsight_elasticsearch:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/external/braedon
-          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external/braedon
-          name: prometheus-es-exporter:0.5.1
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
+          name: prometheus-es-exporter:2019.2.4
 
         # QA\CVP tool-set's
         - registry: ${_param:mcp_docker_registry}/mirantis/oss

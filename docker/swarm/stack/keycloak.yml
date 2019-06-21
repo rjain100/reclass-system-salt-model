@@ -6,7 +6,6 @@ parameters:
     keycloak_proxy_bind_port: ${_param:haproxy_keycloak_proxy_bind_port}
     # Initial admin support
     keycloak_admin_username: admin
-    keycloak_admin_password: password
   docker:
     client:
       stack:

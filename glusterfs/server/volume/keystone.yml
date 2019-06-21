@@ -10,6 +10,8 @@ parameters:
             - ${_param:cluster_node02_address}:/srv/glusterfs/keystone-keys
             - ${_param:cluster_node03_address}:/srv/glusterfs/keystone-keys
           options:
+            auth.allow: ${_param:glusterfs_allow_ips}
+            auth.reject: ${_param:glusterfs_reject_ips}
             cluster.readdir-optimize: On
             nfs.disable: On
             network.remote-dio: On
@@ -24,6 +26,8 @@ parameters:
             - ${_param:cluster_node02_address}:/srv/glusterfs/keystone-credential-keys
             - ${_param:cluster_node03_address}:/srv/glusterfs/keystone-credential-keys
           options:
+            auth.allow: ${_param:glusterfs_allow_ips}
+            auth.reject: ${_param:glusterfs_reject_ips}
             cluster.readdir-optimize: On
             nfs.disable: On
             network.remote-dio: On

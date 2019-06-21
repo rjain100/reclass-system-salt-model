@@ -12,7 +12,6 @@ parameters:
     heka_router_prefetch_count: 20
     rabbitmq_secret_key: secret_key
     rabbitmq_admin_name: admin
-    rabbitmq_admin_password: workshoplearning42
     kibana_elasticsearch_host: localhost
   heka:
     shipper:

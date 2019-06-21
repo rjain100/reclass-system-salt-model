@@ -1,0 +1,9 @@
+parameters:
+  fluentd:
+    agent:
+      config:
+        input:
+          prometheus:
+            metric:
+              ssl:
+                enabled: True

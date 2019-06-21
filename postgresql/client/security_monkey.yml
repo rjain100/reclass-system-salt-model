@@ -4,7 +4,6 @@ parameters:
   _param:
     secmonkey_db_host: ${_param:haproxy_postgresql_bind_host}
     secmonkey_db_user: secmonkey
-    secmonkey_db_user_password: secmonkey
   postgresql:
     client:
       server:

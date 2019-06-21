@@ -1,0 +1,37 @@
+#
+# Jobs to run given states on given Salt master environment's
+#
+parameters:
+  jenkins:
+    client:
+      job:
+        update-glusterfs-cluster-op-version:
+          type: workflow-scm
+          description: Update cluster.op-version global option
+          concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
+          display_name: "Update glusterfs cluster.op-version"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: update-glusterfs-cluster-op-version.groovy
+          param:
+            DRIVE_TRAIN_PARAMS:
+              type: text
+              description: "Yaml based DriveTrain releated params"
+              default: |
+                ---
+                SALT_MASTER_URL: "${_param:jenkins_salt_api_url}"
+                SALT_MASTER_CREDENTIALS: "salt"
+                # GlusterFS cluster.op-verion option to set. Leave it empty to get proper version from cluster.max-op-version if available.
+                CLUSTER_OP_VERSION: ''
+                # Does not validate that all servers have been updated
+                IGNORE_SERVER_VERSION: false
+                # Does not validate that all clients have been updated
+                IGNORE_CLIENT_VERSION: false

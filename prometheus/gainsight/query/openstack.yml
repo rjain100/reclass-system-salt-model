@@ -16,3 +16,10 @@ parameters:
         keystone_api: "'Keystone API','avg(avg_over_time(openstack_api_check_status{name=\"keystone\"}[24h]))'"
         glance_api: "'Glance API','avg(avg_over_time(openstack_api_check_status{name=\"glance\"}[24h]))'"
         neutron_api: "'Neutron API','avg(avg_over_time(openstack_api_check_status{name=\"neutron\"}[24h]))'"
+        nova_vm_all: "'Total VM number','avg_over_time(total:openstack_nova_instance_all[1d])'"
+        nova_vm_failed: "'Failed VM number','avg_over_time(total:openstack_nova_instance_failed[1d])'"
+        kpi_downtime: "'KPI Downtime','1 - avg_over_time(total:openstack_nova_instance_failed[1d]) / avg_over_time(total:openstack_nova_instance_all[1d])'"
+        compute_instance_create_start: "'VM creation start','sum(compute_instance_create_start_event_doc_count)'"
+        compute_instance_create_end: "'VM creation end','sum(compute_instance_create_end_event_doc_count)'"
+        compute_instance_create_error: "'VM creation error','sum(compute_instance_create_error_event_doc_count)'"
+

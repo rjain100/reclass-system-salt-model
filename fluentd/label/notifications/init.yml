@@ -1,0 +1,4 @@
+classes:
+- system.fluentd.label.notifications.input_rabbitmq
+- system.fluentd.label.notifications.notifications
+- system.fluentd.label.notifications.audit

@@ -1,12 +1,12 @@
 classes:
-  - service.jenkins.support
-  - service.jenkins.client
-  - system.jenkins.client.approved_scripts
-  - system.jenkins.client.plugins
+- service.jenkins.support
+- service.jenkins.client
+- system.jenkins.client.approved_scripts
+- system.jenkins.client.plugins
+- system.jenkins.client.security.csrf
 parameters:
   _param:
     jenkins_client_user: none
-    jenkins_client_password: none
     jenkins_master_host: ${_param:control_vip_address}
     jenkins_aptly_storages: "local"
     jenkins_offline_deployment: "false"
