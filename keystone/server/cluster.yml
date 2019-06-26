@@ -5,6 +5,8 @@ classes:
 - system.haproxy.proxy.listen.openstack.keystone
 - system.haproxy.proxy.listen.openstack.keystone.standalone
 - system.linux.system.users.keystone
+# Add os-ctl-vip address to ctl nodes PROD-31397
+- system.linux.network.hosts.openstack
 - system.keystone.server.fernet_rotation.cluster
 - system.salt.minion.cert.mysql.clients.openstack.keystone
 - system.salt.minion.cert.rabbitmq.clients.openstack.keystone
