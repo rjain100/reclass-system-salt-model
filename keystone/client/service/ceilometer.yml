@@ -14,6 +14,7 @@ parameters:
             service:
               user:
                 ceilometer:
+                  name: ${_param:keystone_ceilometer_username}
                   is_admin: true
                   password: ${_param:keystone_ceilometer_password}
                   email: ${_param:admin_email}

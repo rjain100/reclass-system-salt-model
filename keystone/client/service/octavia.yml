@@ -15,6 +15,7 @@ parameters:
             service:
               user:
                 octavia:
+                  name: ${_param:keystone_octavia_username}
                   is_admin: true
                   password: ${_param:keystone_octavia_password}
                   email: ${_param:admin_email}

@@ -9,6 +9,7 @@ parameters:
             service:
               user:
                 sahara:
+                  name: ${_param:keystone_sahara_username}
                   is_admin: true
                   password: ${_param:keystone_sahara_password}
                   email: ${_param:admin_email}

@@ -14,6 +14,7 @@ parameters:
             service:
               user:
                 gnocchi:
+                  name: ${_param:keystone_gnocchi_username}
                   is_admin: true
                   password: ${_param:keystone_gnocchi_password}
                   email: ${_param:admin_email}

@@ -11,6 +11,7 @@ parameters:
             service:
               user:
                 congress:
+                  name: ${_param:keystone_congress_username}
                   is_admin: true
                   password: ${_param:keystone_congress_password}
                   email: ${_param:admin_email}

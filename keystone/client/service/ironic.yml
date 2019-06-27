@@ -12,6 +12,7 @@ parameters:
             service:
               user:
                 ironic:
+                  name: ${_param:keystone_ironic_username}
                   is_admin: true
                   password: ${_param:keystone_ironic_password}
                   email: ${_param:admin_email}
