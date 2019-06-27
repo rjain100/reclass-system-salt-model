@@ -9,6 +9,8 @@ parameters:
     postgresql_admin_user: postgres
   docker:
     client:
+      images:
+        - ${_param:docker_image_postgresql}
       stack:
         postgresql:
           environment:
