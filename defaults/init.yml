@@ -26,6 +26,7 @@ classes:
 - system.defaults.secrets
 - system.defaults.stacklight
 - system.defaults.xtrabackup
+- system.defaults.backup
 - system.defaults.haproxy
 parameters:
   _param:
