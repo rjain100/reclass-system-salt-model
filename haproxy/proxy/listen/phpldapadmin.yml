@@ -2,6 +2,9 @@ parameters:
   _param:
     haproxy_phpldapadmin_bind_host: ${_param:haproxy_bind_address}
     haproxy_phpldapadmin_bind_port: 8089
+    haproxy_phpldapadmin_ssl:
+      enabled: true
+      pem_file: /etc/haproxy/ssl/drivetrain.pem
   haproxy:
     proxy:
       listen:
@@ -12,9 +15,13 @@ parameters:
             - httpclose
             - httplog
           balance: source
+          http_request:
+            - action: "add-header X-Forwarded-Proto https"
+              condition: "if { ssl_fc }"
           binds:
             - address: ${_param:haproxy_phpldapadmin_bind_host}
               port: ${_param:haproxy_phpldapadmin_bind_port}
+              ssl: ${_param:haproxy_phpldapadmin_ssl}
           servers:
             - name: ${_param:cluster_node01_name}
               host: ${_param:cluster_node01_address}
