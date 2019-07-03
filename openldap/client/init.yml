@@ -3,7 +3,10 @@ classes:
 parameters:
   _param:
     openldap_server: ${_param:cluster_vip_address}
-    openldap_tls: false
+    openldap_tls:
+      starttls: true
+      keyfile: /etc/haproxy/ssl/drivetrain.key
+      certfile: /etc/haproxy/ssl/drivetrain.crt
   openldap:
     client:
       server:
