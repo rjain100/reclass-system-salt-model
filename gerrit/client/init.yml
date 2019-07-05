@@ -39,6 +39,9 @@ parameters:
           actions:
           - name: read
             group: Non-Interactive Users
+          - name: read
+            group: Anonymous Users
+            deny: true
         "refs/heads/*":
           actions:
           - name: abandon
