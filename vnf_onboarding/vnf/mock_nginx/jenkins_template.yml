@@ -18,7 +18,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/vnf-onboarding/pipelines"
-              credentials: "${_param:vnf_gerrit_credentials}"
+              credentials: "${_param:jenkins_gerrit_credentials}"
               script: test_vnf_onboarding.groovy
             trigger:
               gerrit:
@@ -60,7 +60,7 @@ parameters:
                 default: "test-nginx"
               GERRIT_CREDENTIALS:
                 type: string
-                default: "${_param:vnf_gerrit_credentials}"
+                default: "${_param:jenkins_gerrit_credentials}"
               ELASTIC_URL:
                 type: string
                 default: "${_param:vnf_elastic_url}"
@@ -77,7 +77,7 @@ parameters:
                 default: "master"
               NFV_PLATFORM_REPO_CREDENTIALS:
                 type: string
-                default: "${_param:vnf_gerrit_credentials}"
+                default: "${_param:jenkins_gerrit_credentials}"
               CONTRAIL_ENABLED:
                 type: boolean
                 default: false

@@ -12,7 +12,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/vnf-onboarding/pipelines"
-            credentials: "${_param:vnf_gerrit_credentials}"
+            credentials: "${_param:jenkins_gerrit_credentials}"
             script: deploy_cloudify.groovy
           param:
             OPENSTACK_API_URL:
@@ -33,7 +33,7 @@ parameters:
               default: "master"
             NFV_PLATFORM_REPO_CREDENTIALS:
               type: string
-              default: "${_param:vnf_gerrit_credentials}"
+              default: "${_param:jenkins_gerrit_credentials}"
             CFM_IMAGE:
               type: string
               default: "cloudify-manager-4.3.1ga"

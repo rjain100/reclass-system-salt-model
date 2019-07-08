@@ -100,7 +100,7 @@ parameters:
               default: "master"
             STACK_TEMPLATE_CREDENTIALS:
               type: string
-              default: "gerrit"
+              default: "${_param:jenkins_gerrit_credentials}"
             STACK_TEMPLATE_URL:
               type: string
               default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
