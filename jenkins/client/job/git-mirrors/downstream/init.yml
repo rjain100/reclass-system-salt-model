@@ -19,7 +19,7 @@ parameters:
               type: git
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               branch: "${_param:jenkins_pipelines_branch}"
-              credentials: ${_param:jenkins_gerrit_credentials}
+              credentials: "${_param:jenkins_gerrit_credentials}"
               script: git-mirror-pipeline.groovy
             param:
               SOURCE_URL:
@@ -30,7 +30,7 @@ parameters:
                 default: "${_param:jenkins_gerrit_url}/{{downstream}}"
               CREDENTIALS_ID:
                 type: string
-                default: "gerrit"
+                default: ${_param:jenkins_gerrit_credentials}
               BRANCHES:
                 type: string
                 default: "{{branches}}"

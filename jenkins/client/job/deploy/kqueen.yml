@@ -33,7 +33,7 @@ parameters:
               default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
             STACK_TEMPLATE_CREDENTIALS:
               type: string
-              default: "gerrit"
+              default: ${_param:jenkins_gerrit_credentials}
             STACK_TEMPLATE_BRANCH:
               type: string
               default: "master"
@@ -93,7 +93,7 @@ parameters:
               default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
             STACK_TEMPLATE_CREDENTIALS:
               type: string
-              default: "gerrit"
+              default: ${_param:jenkins_gerrit_credentials}
             STACK_TEMPLATE_BRANCH:
               type: string
               default: "master"
