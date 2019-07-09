@@ -25,6 +25,9 @@ parameters:
               SOURCE_URL:
                 type: string
                 default: "{{upstream}}"
+              SOURCE_CREDENTIALS:
+                type: string
+                default: "{{source_credentials}}"
               TARGET_URL:
                 type: string
                 default: "${_param:jenkins_gerrit_url}/{{downstream}}"
