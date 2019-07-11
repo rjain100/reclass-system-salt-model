@@ -162,6 +162,7 @@ parameters:
                 - /var/log/journal/contrail-controller:/var/log/journal
                 - ${_param:opencontrail_host_configdb_log_dir}/cassandra:${_param:opencontrail_cassandra_log_dir}
                 - ${_param:opencontrail_host_configdb_log_dir}/zookeeper:${_param:opencontrail_zookeeper_log_dir}
+                - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
               network_mode: "host"
               privileged: true
               restart: always
@@ -178,6 +179,7 @@ parameters:
                 - /etc/redis/redis.conf:/etc/redis/redis.conf
                 - /var/log/contrail:/var/log/contrail
                 - /var/log/journal/contrail-analytics:/var/log/journal
+                - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
               env_file:
                 - contrail.env
             analyticsdb:
@@ -201,6 +203,7 @@ parameters:
                 - /var/log/journal/contrail-analyticsdb:/var/log/journal
                 - ${_param:opencontrail_host_analyticsdb_log_dir}/cassandra:${_param:opencontrail_cassandra_log_dir}
                 - ${_param:opencontrail_host_analyticsdb_log_dir}/zookeeper:${_param:opencontrail_zookeeper_log_dir}
+                - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
               network_mode: "host"
               privileged: true
               restart: always
