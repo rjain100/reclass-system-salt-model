@@ -51,7 +51,7 @@ parameters:
                 GERRIT_ADMIN_PWD: ${_param:gerrit_admin_password}
                 GERRIT_ADMIN_EMAIL: ${_param:gerrit_admin_email}
                 CANLOADINIFRAME: "true"
-                JAVA_OPTIONS: ${_param:gerrit_extra_opts}
+                JAVA_OPTIONS: "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts ${_param:gerrit_extra_opts}"
                 https_proxy: ${_param:docker_https_proxy}
                 http_proxy: ${_param:docker_http_proxy}
                 no_proxy: ${_param:docker_no_proxy}
