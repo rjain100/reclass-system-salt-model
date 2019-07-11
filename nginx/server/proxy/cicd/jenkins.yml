@@ -15,7 +15,7 @@ parameters:
           proxy:
             host: ${_param:nginx_proxy_jenkins_server_proxy_host}
             port: ${_param:nginx_proxy_jenkins_server_proxy_port}
-            protocol: http
+            protocol: https
           host:
             name: ${_param:nginx_proxy_jenkins_server_site_host}
             port: ${_param:nginx_proxy_jenkins_server_site_port}
