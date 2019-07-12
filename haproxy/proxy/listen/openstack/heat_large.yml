@@ -37,6 +37,9 @@ parameters:
         heat_api:
           type: openstack-service
           service_name: heat
+          timeout:
+            client: '2m'
+            server: '2m'
           binds:
           - address: ${_param:cluster_vip_address}
             port: 8004
