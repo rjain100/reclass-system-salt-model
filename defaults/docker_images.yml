@@ -11,7 +11,7 @@ parameters:
     docker_image_mongodb: "${_param:mcp_docker_registry}/mirantis/external/library/mongo:${_param:mcp_version}"
     ###
     # phpldapadmin:0.6.12
-    docker_image_phpldapadmin: "${_param:mcp_docker_registry}/mirantis/cicd/phpldapadmin:${_param:mcp_version}"
+    docker_image_phpldapadmin: "${_param:mcp_docker_registry}/mirantis/cicd/phpldapadmin:2019.2.5"
     # gerrit:2.13.6
     docker_image_gerrit: "${_param:mcp_docker_registry}/mirantis/cicd/gerrit:2019.2.5"
     # mysql:5.6

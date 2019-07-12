@@ -49,9 +49,19 @@ parameters:
               depends_on:
                 - server
               hostname: ldap
+              command: --copy-service
+              volumes:
+                - ${_param:openldap_tls:keyfile}:/container/service/ldap-client/assets/certs/drivetrain_ldap.key:ro
+                - ${_param:openldap_tls:certfile}:/container/service/ldap-client/assets/certs/drivetrain_ldap.crt:ro
+                - /etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem:/container/service/ldap-client/assets/certs/ca.crt:ro
               environment:
                 PHPLDAPADMIN_LDAP_ADMIN_PASSWORD: ${_param:openldap_admin_password}
-                PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH:[{'server': [{'server': [{'tls': False}]},{'login': [{'bind_id': 'cn=admin,${_param:openldap_dn}'},{'bind_pass': '$PHPLDAPADMIN_LDAP_ADMIN_PASSWORD'}]}]}]"
+                PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH:[{'server': [{'server': [{'host': 'ldaps://${_param:cicd_control_address}', 'tls': False}]},{'login': [{'bind_id': 'cn=admin,${_param:openldap_dn}'},{'bind_pass': '$PHPLDAPADMIN_LDAP_ADMIN_PASSWORD'}]}]}]"
+                PHPLDAPADMIN_LDAP_CLIENT_TLS: "true"
+                PHPLDAPADMIN_LDAP_CLIENT_TLS_CA_CRT_FILENAME: drivetrain_ldap.crt
+                PHPLDAPADMIN_LDAP_CLIENT_TLS_CRT_FILENAME: drivetrain_ldap.key
+                PHPLDAPADMIN_LDAP_CLIENT_TLS_KEY_FILENAME: ca.crt
+                PHPLDAPADMIN_LDAP_CLIENT_TLS_REQCERT: 'try'
                 PHPLDAPADMIN_HTTPS: "false"
                 PHPLDAPADMIN_TRUST_PROXY_SSL: "true"
                 PHPLDAPADMIN_SERVER_ADMIN: ${_param:admin_email}
