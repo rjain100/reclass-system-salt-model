@@ -1,0 +1,4 @@
+parameters:
+  galera:
+    upgrade:
+      enabled: ${_param:galera_upgrade_enabled}
