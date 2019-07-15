@@ -15,7 +15,7 @@ parameters:
               networks:
                 - monitoring
               deploy:
-                replicas: 2
+                replicas: 1
                 labels:
                   com.mirantis.monitoring: "pushgateway"
                 restart_policy:
