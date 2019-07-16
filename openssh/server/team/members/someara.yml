@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        someara:
+          enabled: true
+          name: someara
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Shaun OMeara
+          home: /home/someara
+          email: someara@mirantis.com
+  openssh:
+    server:
+      user:
+        someara:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwH33yz82vYBUYFlJ5LJT+4NFJNUTzeBobJVlEtv6Hwd1t+xGrze5F3RZ/M1U24YOjnXoN4SutC7nciPfvUUYhLEBKA6/0n4v+yRf+pnovmH2RA6FJ4D9lKAbmdr7O0BRrzE++iUwzCnZIsDdfc+pQPfis2IYpN878x/F8jfvkMCvQRSN8Oyn3IeB2Yc/RMBWObNYD9Cm0KjtmZxwpyP+J6tzxj34e5kJRDCIAAYnS3Gmr9SJpJBx/Z80meeT44HdGz5RnKT2ouxAZUf7hxGKH6h0fYjwdwcs89QsyCBTvrXXuWPADFuBjvJcqTf5PmcqOZTIgM9lyI7rlzw6ynkxn shauno@Shauns-MacBook-Pro.local 
+          user: ${linux:system:user:someara}
+
