@@ -419,7 +419,7 @@ parameters:
               default: |
                 envs:
                   - tests_set=''
-                  - image_name='Ubuntu'
+                  - image_name=Ubuntu
                   - networks=10.101.0.0/24
               description: 'YAML context with additional parameters. Additional params: HW_NODES, CMP_HOSTS, salt_timeout, skipped_nodes, nova_timeout, iperf_prep_string, IMAGE_SIZE_MB'
         cvp-shaker:
