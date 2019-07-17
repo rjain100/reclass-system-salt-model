@@ -13,6 +13,7 @@ classes:
 - system.defaults.glusterfs
 - system.defaults.nginx
 - system.defaults.jenkins
+- system.defaults.postgresql
 - system.defaults.maas
 - system.defaults.opencontrail
 - system.defaults.openstack

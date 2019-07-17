@@ -1,0 +1,4 @@
+parameters:
+  _param:
+    postgresql_major_version: '9.6'
+
