@@ -298,7 +298,7 @@ parameters:
                 ---
                   DEBUG_MODE: false
                   GENERATE_CONFIG: true
-                  TEST_IMAGE: "docker-prod-virtual.docker.mirantis.net/mirantis/cicd/ci-tempest:${_param:openstack_version}"
+                  TEST_IMAGE: "${_param:docker_image_cvp_tempest}"
                   report_prefix: "cvp_"
               description: YAML context with additional parameters
         cvp-perf:
