@@ -259,7 +259,7 @@ parameters:
         cvp-tempest:
           type: workflow-scm
           name: cvp-tempest
-          display_name: "CVP - Functional tests (new)"
+          display_name: "CVP - Tempest (new)"
           discard:
             build:
               keep_num: 20
@@ -298,8 +298,6 @@ parameters:
                 ---
                   DEBUG_MODE: false
                   GENERATE_CONFIG: true
-                  TARGET_NODE: "I@gerrit:client"
-                  SKIP_LIST_PATH: ""
                   TEST_IMAGE: "docker-prod-virtual.docker.mirantis.net/mirantis/cicd/ci-tempest:${_param:openstack_version}"
                   report_prefix: "cvp_"
               description: YAML context with additional parameters
