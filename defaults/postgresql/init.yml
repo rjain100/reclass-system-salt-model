@@ -6,4 +6,5 @@ parameters:
     postgresql_glusterfs_volume_name: postgresql-data
     postgresql_data_mountpoint: /var/lib/postgresql/data
     postgresql_data_directory: ${_param:postgresql_data_mountpoint}/pgdata
+    postgresql_major_version: '9.6'
 
