@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        gmani:
+          enabled: true
+          name: gmani
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Gautam Mani
+          home: /home/gmani
+          email: gmani@mirantis.com
+  openssh:
+    server:
+      user:
+        gmani:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+k2aPVLU8M9AfAGoJU7m48yjBIB/AxNzqiyMi2yPy9BaH3q4zPCTY0e8CLX6W0vU/uATBOoLjtWgLUmBqW6eOTD09zb60CKJy+vQUYVLZEEV1Aa2hxJ6zl0ruwCinmKDnLFkLe5HQmcLPWHccO3IvxaKAYCKeI9LFpiV/NwzYpjqrSP35jw36cMvxK8pvkw0YEZNz/+ApSB5JQWpFPM3563b6W0oH1/sX97MdxUuggRGNmS5Xd5TrxOPiQAipIXGGBNlafT7/IfWnJGhlIWYe2yQrbefOQ9RjaUA3VlU+YGAlcTLu5VWg3rKfMgdvNsA56doxYquRc6w+Sv/C8Eip gmani@1153-MBP15.local 
+          user: ${linux:system:user:gmani}
+

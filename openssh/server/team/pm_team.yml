@@ -1,0 +1,7 @@
+classes:
+- system.openssh.server.team.members.someara
+- system.openssh.server.team.members.gmani
+
+parameters:
+  _param:
+    linux_system_user_sudo: true
