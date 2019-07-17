@@ -11,23 +11,26 @@ parameters:
           binds:
           - address: ${_param:cluster_vip_address}
             port: 8082
+            ssl:
+              enabled: ${_param:opencontrail_api_ssl_enabled}
+              pem_file: ${_param:opencontrail_api_all_pemfile}
           servers:
           - name: ntw01
             host: ${_param:cluster_node01_address}
             port: 9100
-            params: check inter 2000 rise 2 fall 3
+            params: ${_param:haproxy_opencontrail_api_check_params}
             port_range_length: ${_param:opencontrail_api_workers_count}
             port_range_start_offset: ${_param:opencontrail_api_start_offset}
           - name: ntw02
             host: ${_param:cluster_node02_address}
             port: 9100
-            params: check inter 2000 rise 2 fall 3
+            params: ${_param:haproxy_opencontrail_api_check_params}
             port_range_length: ${_param:opencontrail_api_workers_count}
             port_range_start_offset: ${_param:opencontrail_api_start_offset}
           - name: ntw03
             host: ${_param:cluster_node03_address}
             port: 9100
-            params: check inter 2000 rise 2 fall 3
+            params: ${_param:haproxy_opencontrail_api_check_params}
             port_range_length: ${_param:opencontrail_api_workers_count}
             port_range_start_offset: ${_param:opencontrail_api_start_offset}
         contrail_config_stats:

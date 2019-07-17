@@ -4,3 +4,9 @@ parameters:
     opencontrail_identity_port: 35357
     opencontrail_identity_version: '2.0'
     opencontrail_admin_user: 'contrail'
+    opencontrail_api_protocol: http
+    opencontrail_api_ssl_enabled: False
+    opencontrail_api_certfile: /etc/contrail/ssl/opencontrail_api.crt
+    opencontrail_api_keyfile: /etc/contrail/ssl/opencontrail_api.key
+    opencontrail_api_cafile: /etc/contrail/ssl/ca-opencontrail_api.pem
+    opencontrail_api_all_pemfile: /etc/ssl/certs/opencontrail_api_with_chain.pem
