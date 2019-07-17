@@ -27,10 +27,6 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            BACKUP_GALERA:
-              type: boolean
-              default: 'true'
-              description: "Backup galera cluster"
             SHUTDOWN_CLUSTER:
               type: boolean
               default: 'false'
