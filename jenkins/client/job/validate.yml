@@ -6,6 +6,11 @@ parameters:
           enabled: true
           type: ListView
           include_regex: "validate.*"
+      CVP:
+        cvp:
+          enabled: true
+          type: ListView
+          include_regex: "cvp.*"
       job:
         validate_openstack:
           type: workflow-scm
@@ -108,12 +113,12 @@ parameters:
           param:
             IMAGE:
               type: string
-              default: ${_param:docker_image_cvp_sanity_checks}
+              default: "${_param:docker_image_cvp_sanity_checks}"
               description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
-              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+              description: Full Salt API address [e.g. https://10.10.10.2:8969]
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
@@ -150,15 +155,15 @@ parameters:
               description: Path to skip list in container
             SALT_MASTER_URL:
               type: string
-              default: "${_param:jenkins_salt_api_url}"
-              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+              default: "http://${_param:salt_master_host}:${_param:salt_master_api_port}"
+              description: Full Salt API address [e.g. http://10.10.10.2:6969]
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
               description: Credentials to the Salt API
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.11.2"
+              default: "${_param:docker_image_cvp_xrally}"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODE:
               type: string
@@ -206,8 +211,8 @@ parameters:
           param:
             SALT_MASTER_URL:
               type: string
-              default: "${_param:jenkins_salt_api_url}"
-              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+              default: "http://${_param:salt_master_host}:${_param:salt_master_api_port}"
+              description: Full Salt API address [e.g. http://10.10.10.2:6969]
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
@@ -218,7 +223,7 @@ parameters:
               description: Node where container with tempest will be run
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.11.2"
+              default: "${_param:docker_image_cvp_xrally}"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODES:
               type: string
@@ -279,8 +284,8 @@ parameters:
               description: Prepare resources for Tempest
             SALT_MASTER_URL:
               type: string
-              default: "${_param:jenkins_salt_api_url}"
-              description: SALT_MASTER_URL
+              default: "http://${_param:salt_master_host}:${_param:salt_master_api_port}"
+              description: Full Salt API address [e.g. http://10.10.10.2:6969]
             TEMPEST_TEST_PATTERN:
               type: string
               default: "set=smoke"
@@ -328,12 +333,12 @@ parameters:
               description: Path to scenario file in container
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.11.2"
+              default: "${_param:docker_image_cvp_xrally}"
               description: Docker image to use for running Rally/Tempest
             SALT_MASTER_URL:
               type: string
-              default: "${_param:jenkins_salt_api_url}"
-              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+              default: "http://${_param:salt_master_host}:${_param:salt_master_api_port}"
+              description: Full Salt API address [e.g. http://10.10.10.2:6969]
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
@@ -369,12 +374,12 @@ parameters:
           param:
             IMAGE:
               type: string
-              default: ${_param:docker_image_cvp_sanity_checks}
+              default: "${_param:docker_image_cvp_sanity_checks}"
               description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
-              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+              description: Full Salt API address [e.g. https://10.10.10.2:8969]
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
@@ -403,12 +408,12 @@ parameters:
           param:
             IMAGE:
               type: string
-              default: ${_param:docker_image_cvp_sanity_checks}
+              default: "${_param:docker_image_cvp_sanity_checks}"
               description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
-              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+              description: Full Salt API address [e.g. https://10.10.10.2:8969]
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
