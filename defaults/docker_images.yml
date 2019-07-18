@@ -48,6 +48,7 @@ parameters:
     docker_image_keycloak_proxy: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:3.4.2.Final"
     # CVP
     docker_image_cvp_sanity_checks: ${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:2019.2.5
+    docker_image_cvp_tempest: "${_param:mcp_docker_registry}/mirantis/cicd/ci-tempest:${_param:openstack_version}"
     docker_image_cvp_shaker_checks: ${_param:mcp_docker_registry}/mirantis/cvp/cvp-shaker:2019.2.3
     # aptly
     docker_image_aptly:
