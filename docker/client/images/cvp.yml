@@ -1,0 +1,12 @@
+parameters:
+  docker:
+    client:
+      enabled: true
+      images:
+      - ${_param:docker_image_cvp_sanity_checks}
+      - ${_param:docker_image_cvp_tempest}
+      - ${_param:docker_image_cvp_shaker_checks}
+      - ${_param:docker_image_cvp_rally}
+      # xrally is not required for offline,
+      # use cvp_rally instead
+      # - ${_param:docker_image_cvp_xrally}
