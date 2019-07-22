@@ -168,3 +168,4 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods toSorted java.lang.Iterable
         - staticMethod org.codehaus.groovy.runtime.EncodingGroovyMethods encodeBase64 byte[]
         - staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods max java.util.Collection
