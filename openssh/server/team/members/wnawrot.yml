@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        wnawrot:
+          email: wnawrot@mirantis.com
+          enabled: true
+          full_name: Wojciech Nawrot
+          home: /home/wnawrot
+          name: wnawrot
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        wnawrot:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZCKyblo+QrhAFFum+ZLQHq+gnY7Cmo/OgdYC/+RgApo5aImj2c5Ttkme0zJ6kw22SDrBeOfR4/RVZpY60PZ0KRXvWKNhuvuK+EeUGDaXlezSh98m3GHrtCMzLS3V81WUp2YXK4xGEB3JsAXVDKYkCLPMtgwfBAS7bHuBQkWojf+jfmRxGS1dvwUdUi96i//+0QGLkltO6tfsruJwztsSa4Xx+EhhwPuIGnJIXoJZXU6bw/xEg13C5NiI+EXDLmnR6yQt+vHHZzZWLnBM46JplZ+zUuAnqvihp/ovePSt7jKBumh1cbadOjgP18UZX3GhTBekF4aXUrUqVlzHYlr/X
+          user: ${linux:system:user:wnawrot}

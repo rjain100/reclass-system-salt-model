@@ -28,6 +28,7 @@ classes:
 - system.openssh.server.team.members.kalmog
 - system.openssh.server.team.members.vstruk
 - system.openssh.server.team.members.bworonicz
+- system.openssh.server.team.members.wnawrot
 parameters:
   _param:
     linux_system_user_sudo: true
