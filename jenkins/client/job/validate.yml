@@ -6,8 +6,7 @@ parameters:
           enabled: true
           type: ListView
           include_regex: "validate.*"
-      CVP:
-        cvp:
+        CVP:
           enabled: true
           type: ListView
           include_regex: "cvp.*"
