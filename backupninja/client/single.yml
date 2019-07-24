@@ -6,3 +6,5 @@ parameters:
       scheduling:
         when:
           - manual
+      log:
+        color: ${_param:backupninja_color_log}
