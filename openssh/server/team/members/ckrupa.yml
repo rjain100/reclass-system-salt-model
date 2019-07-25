@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ckrupa:
+          enabled: true
+          name: ckrupa
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Chad Krupa
+          home: /home/ckrupa
+          email: ckrupa@mirantis.com
+  openssh:
+    server:
+      user:
+        ckrupa:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkURVXGxUKkPvtSRW9Z4h94tdzE9zmxfJxrGixlmXFd+MwZIphAWYlfI0KdEkL8LZSjzdGCGnPgVBJ+fIpTrlYJUowgCciVxnvlP9t6Gz5eyCuvezGyqU7STiuUmAcxW50586DzNpXBS2BbwaG1Yk1+PNmwMUH4BBIdVPOfV6+bUg8jkO+mZTW+A53Sm5PRQmH/qfAZXPhdz4uqq5vNeLgB0rXZzD69MiAQiLqrZGbJ7nMsAG5oHgFlHboz8cyng6MASW1TiWdg7CkIAN4pwvTa6FxVWDYtaayeEapFS2kMrJrmftHDL8+rdyRnR7k3rqS2kdmuvltPFrtRP5okgcH ckrupa@Chads-MacBook-Pro.local
+          user: ${linux:system:user:ckrupa}
