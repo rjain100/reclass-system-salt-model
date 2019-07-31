@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        aabashkin:
+          enabled: true
+          name: aabashkin
+          full_name: Alexey V. Abashkin
+          home: /home/aabashkin
+          email: aabashkin@mirantis.com
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      enabled: true
+      user:
+        aabashkin:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDcr93dwQyDMXD0KvqzfejZnaGPKJjtN90sM3EpvDizJxGX1LrrjOcv9Z99epMlt5sFR3qkN04RKA8GHAf3yEdTAn6eFA+xQTWBPerLMTk39u3QBHYuguKDBjzQbW4kr2FqCXtBK5gvEUiGq1DghIH2Sz8XdOUt5N9U7VMpa1ywQHwTyramdECXCBtUgakc7NPNP5gChF+JekKkV33xnajH+lWo/WxUsFnWpZFO6Hh0Sca8qcsoOxJz22D7Als6cDAkp6tPXB2kFgp/f95FkmF/45YaTO6UTJtKgb9q9+OdXKDh0wUuQ8dTcYEUOvTY6UzxrBaIPPjtS+p7WM48dYLt
+          user: ${linux:system:user:aabashkin}
