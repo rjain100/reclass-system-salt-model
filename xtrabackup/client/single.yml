@@ -8,6 +8,7 @@ parameters:
     client:
       cron: false
       throttle: ${_param:xtrabackup_client_throttle}
+      incr_before_full: ${_param:xtrabackup_client_incr_before_full}
   linux:
     system:
       package:
