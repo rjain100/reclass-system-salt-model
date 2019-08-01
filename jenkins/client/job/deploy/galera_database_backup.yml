@@ -29,5 +29,7 @@ parameters:
             ASK_CONFIRMATION:
               type: boolean
               default: 'true'
-          triggers:
-            - timed: "${_param:backup_min} ${_param:backup_hour} ${_param:backup_day_of_month} ${_param:backup_month} ${_param:backup_day_of_week}"
+          trigger:
+            timer:
+              enabled: true
+              spec: "${_param:backup_min} ${_param:backup_hour} ${_param:backup_day_of_month} ${_param:backup_month} ${_param:backup_day_of_week}"
