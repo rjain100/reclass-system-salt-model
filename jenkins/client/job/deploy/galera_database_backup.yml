@@ -26,5 +26,7 @@ parameters:
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
-          triggers:
-            - timed: "${_param:backup_min} ${_param:backup_hour} ${_param:backup_day_of_month} ${_param:backup_month} ${_param:backup_day_of_week}"
+          trigger:
+            timer:
+              enabled: true
+              spec: "${_param:backup_min} ${_param:backup_hour} ${_param:backup_day_of_month} ${_param:backup_month} ${_param:backup_day_of_week}"
