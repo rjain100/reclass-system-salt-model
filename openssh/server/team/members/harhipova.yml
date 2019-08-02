@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        harhipova:
+          email: harhipova@mirantis.com
+          enabled: true
+          full_name: Hanna Arhipova
+          home: /home/harhipova
+          name: harhipova
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        harhipova:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc4JJNFhhH//0eBEW83nvxKu2YAkt5KXMyylRpwvoOmgd2PfbWETGE3FbhHvIvEPE/Dl00rOJFRh9/y1HghyZf9PyxcMTL84tWXFvj9Nq9lzEMDVaUrQ3HJ3MSOil/atfXZmT34f3zHTI2sEO2hrAxbLn/5QnSpruwFWmHPSJw8SFmgoLHExsukBbZfM5BomEJk0sF5Mni/S2IdOlBCrP+syN2PgypedVC6uFv07kxubUmySzFtLx4DdOAYXo55529XbRQff7ejwj91ZmlynUimhQuTYGFVpEyrBU6NZYloDY/lrf8+FRYfeCMxki+Aqgvo0iY3qZNpAx0thGDtM4N harhipova@mirantis.com
+          user: ${linux:system:user:harhipova}
