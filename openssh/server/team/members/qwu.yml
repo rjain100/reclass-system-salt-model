@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        qwu:
+          email: qwu@mirantis.com
+          enabled: true
+          full_name: Qihuan Wu
+          home: /home/qwu
+          name: qwu
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        qwu:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7d/s8D6FR/eymzT+5NETkIjmA/oFsUsV8z/ITycmRg5yXzXhD/Y+yr85B5qE/Xr0c+FUBuWoKnwjWWX4ocdXb9lSoWvAnqYH/hn4bT5Fy6+30gFmb68Ab2cvKnJ9NW6maR62llikTcwnxFfX1fH5N9B+hcGUqEJOmGXY6zYCfGDRq7jcmfowE/xdQhGnTzdDtI0CvH3yJNhdu8S5N6badL3v+vLW0LnrbQQDeqzioWuJV27CMZC/jp/DL8Naf43VdfzPT8gPUWEfeLeShoxtFx2IzB2AE3xgypYXxOvsNWomqrH/8fwnQGT3L7aU/chAOHoF6W/1ELlLeI4/MXX/r ${linux:system:user:qwu:email}
+          user: ${linux:system:user:qwu}

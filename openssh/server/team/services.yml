@@ -1,28 +1,29 @@
 classes:
 - system.linux.system.sudo
-- system.openssh.server.team.members.mniedbala
-- system.openssh.server.team.members.pmichalec
-- system.openssh.server.team.members.pcizinsky
-- system.openssh.server.team.members.lmercl
-- system.openssh.server.team.members.pruzicka
-- system.openssh.server.team.members.korlowska
-- system.openssh.server.team.members.miwinski
-- system.openssh.server.team.members.mlos
+- system.openssh.server.team.members.alis
+- system.openssh.server.team.members.alugovoi
+- system.openssh.server.team.members.bworonicz
+- system.openssh.server.team.members.cdodda
+- system.openssh.server.team.members.ckrupa
 - system.openssh.server.team.members.dbogaczyk
 - system.openssh.server.team.members.dkruglov
-- system.openssh.server.team.members.sflorczak
-- system.openssh.server.team.members.alugovoi
-- system.openssh.server.team.members.tjaroszyk
-- system.openssh.server.team.members.sburns
-- system.openssh.server.team.members.yisakov
-- system.openssh.server.team.members.vblokhin
 - system.openssh.server.team.members.dstremkouski
-- system.openssh.server.team.members.osavatieiev
-- system.openssh.server.team.members.mchernik
 - system.openssh.server.team.members.hkraemer
-- system.openssh.server.team.members.pbasov
-- system.openssh.server.team.members.alis
 - system.openssh.server.team.members.isviridov
+- system.openssh.server.team.members.kalmog
+- system.openssh.server.team.members.korlowska
+- system.openssh.server.team.members.lmercl
+- system.openssh.server.team.members.mchernik
+- system.openssh.server.team.members.mlos
+- system.openssh.server.team.members.osavatieiev
+- system.openssh.server.team.members.pbasov
+- system.openssh.server.team.members.pruzicka
+- system.openssh.server.team.members.qwu
+- system.openssh.server.team.members.sburns
+- system.openssh.server.team.members.tjaroszyk
+- system.openssh.server.team.members.vstruk
+- system.openssh.server.team.members.wnawrot
+- system.openssh.server.team.members.yisakov
 parameters:
   _param:
     linux_system_user_sudo: true
