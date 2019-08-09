@@ -30,6 +30,7 @@ classes:
 - system.openssh.server.team.members.bworonicz
 - system.openssh.server.team.members.wnawrot
 - system.openssh.server.team.members.ckrupa
+- system.openssh.server.team.members.qwu
 parameters:
   _param:
     linux_system_user_sudo: true
