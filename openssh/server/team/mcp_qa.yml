@@ -1,25 +1,7 @@
 classes:
 - system.linux.system.sudo
-- system.openssh.server.team.members.mshalamov
-- system.openssh.server.team.members.sandriichenko
-- system.openssh.server.team.members.abaraniuk
-- system.openssh.server.team.members.aminasyan
-- system.openssh.server.team.members.imenkov
-- system.openssh.server.team.members.aheczko
-- system.openssh.server.team.members.ddmitriev
-- system.openssh.server.team.members.dkalashnik
-- system.openssh.server.team.members.dtyzhnenko
-- system.openssh.server.team.members.obutenko
-- system.openssh.server.team.members.sgudz
-- system.openssh.server.team.members.snovikov
-- system.openssh.server.team.members.tleontovich
-- system.openssh.server.team.members.vgusev
-- system.openssh.server.team.members.vryzhenkin
-- system.openssh.server.team.members.sturivnyi
-- system.openssh.server.team.members.ylobankov
-- system.openssh.server.team.members.ozhurba
-# Deprecated users
 - system.openssh.server.team.members.deprecated.ababich
+- system.openssh.server.team.members.deprecated.aheczko
 - system.openssh.server.team.members.deprecated.akalach
 - system.openssh.server.team.members.deprecated.dderyabin
 - system.openssh.server.team.members.deprecated.esikachev
@@ -29,7 +11,24 @@ classes:
 - system.openssh.server.team.members.deprecated.schipiga
 - system.openssh.server.team.members.deprecated.ssokolov
 - system.openssh.server.team.members.deprecated.yshapovalov
-
+- system.openssh.server.team.members.mshalamov
+- system.openssh.server.team.members.sandriichenko
+- system.openssh.server.team.members.abaraniuk
+- system.openssh.server.team.members.aminasyan
+- system.openssh.server.team.members.imenkov
+- system.openssh.server.team.members.ddmitriev
+- system.openssh.server.team.members.dkalashnik
+- system.openssh.server.team.members.dtyzhnenko
+- system.openssh.server.team.members.ekhomyakova
+- system.openssh.server.team.members.obutenko
+- system.openssh.server.team.members.sgudz
+- system.openssh.server.team.members.snovikov
+- system.openssh.server.team.members.tleontovich
+- system.openssh.server.team.members.vgusev
+- system.openssh.server.team.members.vnaumov
+- system.openssh.server.team.members.vryzhenkin
+- system.openssh.server.team.members.sturivnyi
+- system.openssh.server.team.members.ylobankov
 parameters:
   _param:
     linux_system_user_sudo: true

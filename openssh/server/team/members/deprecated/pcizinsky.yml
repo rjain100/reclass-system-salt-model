@@ -2,15 +2,15 @@ parameters:
   linux:
     system:
       user:
-        pmichalec:
+        pcizinsky:
           email: disabled
           enabled: false
           full_name: disabled
-          home: /home/pmichalec
-          name: pmichalec
+          home: /home/pcizinsky
+          name: pcizinsky
   openssh:
     server:
       user:
-        pmichalec:
+        pcizinsky:
           enabled: false
-          user: ${linux:system:user:pmichalec}
+          user: ${linux:system:user:pcizinsky}

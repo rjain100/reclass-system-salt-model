@@ -3,12 +3,11 @@ parameters:
     system:
       user:
         aheczko:
-          email: aheczko@mirantis.com
+          email: disabled
           enabled: true
-          full_name: Adam Heczko
+          full_name: disabled
           home: /home/aheczko
           name: aheczko
-          sudo: ${_param:linux_system_user_sudo}
   openssh:
     server:
       user:

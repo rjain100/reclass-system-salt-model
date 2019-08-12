@@ -1,9 +1,8 @@
 classes:
-- system.openssh.server.team.members.npliashechnikov
-- system.openssh.server.team.members.mchernik
-- system.openssh.server.team.members.osavatieiev
 - system.openssh.server.team.members.dkruglov
-
+- system.openssh.server.team.members.mchernik
+- system.openssh.server.team.members.npliashechnikov
+- system.openssh.server.team.members.osavatieiev
 parameters:
   _param:
     linux_system_user_sudo: true

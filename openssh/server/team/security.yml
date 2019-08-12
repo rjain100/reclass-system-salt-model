@@ -1,6 +1,6 @@
 classes:
 - system.linux.system.sudo
-- system.openssh.server.team.members.ahecko
+- system.openssh.server.team.members.deprecated.ahecko
 - system.openssh.server.team.members.deprecated.pmichalec
 parameters:
   _param:
