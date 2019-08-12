@@ -1,26 +1,25 @@
 classes:
-- system.openssh.server.team.members.skreys
-- system.openssh.server.team.members.smatov
-- system.openssh.server.team.members.ivasilevskaya
-- system.openssh.server.team.members.jcach
-- system.openssh.server.team.members.psvimbersky
-- system.openssh.server.team.members.gzimin
-- system.openssh.server.team.members.dpyzhov
-- system.openssh.server.team.members.asamoylov
-- system.openssh.server.team.members.mrasskazov
-- system.openssh.server.team.members.ibumarskov
-- system.openssh.server.team.members.obondarev
-- system.openssh.server.team.members.ichukhnakov
-- system.openssh.server.team.members.aignatov
-- system.openssh.server.team.members.ataraday
-- system.openssh.server.team.members.svasilenko
-- system.openssh.server.team.members.akasatkin
-- system.openssh.server.team.members.akurenyshev
-# Deprecated users
-- system.openssh.server.team.members.deprecated.pjediny
+- system.openssh.server.team.members.deprecated.akurenyshev
 - system.openssh.server.team.members.deprecated.akuznetsova
 - system.openssh.server.team.members.deprecated.eezhova
+- system.openssh.server.team.members.deprecated.ivasilevskaya
 - system.openssh.server.team.members.deprecated.mceloud
+- system.openssh.server.team.members.deprecated.pjediny
+- system.openssh.server.team.members.aignatov
+- system.openssh.server.team.members.akasatkin
+- system.openssh.server.team.members.asamoylov
+- system.openssh.server.team.members.ataraday
+- system.openssh.server.team.members.dpyzhov
+- system.openssh.server.team.members.gzimin
+- system.openssh.server.team.members.ibumarskov
+- system.openssh.server.team.members.ichukhnakov
+- system.openssh.server.team.members.jcach
+- system.openssh.server.team.members.mrasskazov
+- system.openssh.server.team.members.obondarev
+- system.openssh.server.team.members.psvimbersky
+- system.openssh.server.team.members.skreys
+- system.openssh.server.team.members.smatov
+- system.openssh.server.team.members.svasilenko
 parameters:
   _param:
     linux_system_user_sudo: true

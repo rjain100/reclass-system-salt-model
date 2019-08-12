@@ -1,12 +1,12 @@
 classes:
 - system.linux.system.sudo
+- system.openssh.server.team.members.deprecated.msamoylov
 - system.openssh.server.team.members.dmeltsaykin
-- system.openssh.server.team.members.omolchanov
-- system.openssh.server.team.members.vkhlyunev
 - system.openssh.server.team.members.dtsapikov
-- system.openssh.server.team.members.rlubianyi
-- system.openssh.server.team.members.msamoylov
+- system.openssh.server.team.members.omolchanov
 - system.openssh.server.team.members.pglazov
+- system.openssh.server.team.members.rlubianyi
+- system.openssh.server.team.members.vkhlyunev
 - system.openssh.server.team.members.vsakharov
 parameters:
   _param:
