@@ -1,2 +1,3 @@
 classes:
 - system.defaults.haproxy.elasticsearch
+- system.defaults.haproxy.opencontrail

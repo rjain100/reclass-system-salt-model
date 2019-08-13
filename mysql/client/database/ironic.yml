@@ -7,11 +7,11 @@ parameters:
             ironic:
               encoding: utf8
               users:
-              - name: ironic
+              - name: ${_param:mysql_ironic_username}
                 password: ${_param:mysql_ironic_password}
                 host: '%'
                 rights: all
-              - name: ironic
+              - name: ${_param:mysql_ironic_username}
                 password: ${_param:mysql_ironic_password}
                 host: ${_param:cluster_local_address}
                 rights: all

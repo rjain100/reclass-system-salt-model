@@ -15,7 +15,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: update-reclass-metadata.groovy
           param:
             SALT_MASTER_URL:
@@ -43,7 +43,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: update-salt-master-formulas.groovy
           param:
             SALT_MASTER_URL:
@@ -71,7 +71,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: update-jenkins-master-jobs.groovy
           param:
             SALT_MASTER_URL:

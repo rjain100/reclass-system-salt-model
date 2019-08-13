@@ -7,12 +7,12 @@ parameters:
         octavia:
           encoding: 'utf8'
           users:
-          - name: 'octavia'
+          - name: '${_param:mysql_octavia_username}'
             password: '${_param:mysql_octavia_password}'
             host: '%'
             rights: 'all'
             ssl_option: ${_param:mysql_octavia_ssl_option}
-          - name: 'octavia'
+          - name: '${_param:mysql_octavia_username}'
             password: '${_param:mysql_octavia_password}'
             host: '${_param:cluster_local_address}'
             rights: 'all'

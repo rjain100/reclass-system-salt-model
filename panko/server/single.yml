@@ -16,8 +16,12 @@ parameters:
   panko:
     server:
       identity:
+        user: ${_param:keystone_panko_username}
+        password: ${_param:keystone_panko_password}
         protocol: ${_param:internal_protocol}
       database:
+        user: ${_param:mysql_panko_username}
+        password: ${_param:mysql_panko_password}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
           ca_file: ${_param:mysql_panko_ssl_ca_file}

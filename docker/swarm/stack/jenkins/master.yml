@@ -1,6 +1,5 @@
 classes:
 - system.docker
-- system.docker.client.images.jenkins_master
 parameters:
   _param:
     jenkins_master_extra_opts: ""
@@ -9,18 +8,22 @@ parameters:
     jenkins_home_dir_path: /var/jenkins_home
   docker:
     client:
+      enabled: true
+      images:
+        - ${_param:docker_image_jenkins}
       stack:
         jenkins:
           service:
             master:
               environment:
                 JENKINS_HOME: ${_param:jenkins_home_dir_path}
-                JAVA_OPTS: " -server -XX:+AlwaysPreTouch -Xloggc:${_param:jenkins_home_dir_path}/gc-%t.log -XX:NumberOfGCLogFiles=5 -XX:+UseGCLogFileRotation -XX:GCLogFileSize=20m -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintHeapAtGC -XX:+PrintGCCause -XX:+PrintTenuringDistribution -XX:+PrintReferenceGC -XX:+PrintAdaptiveSizePolicy -XX:+UseG1GC -XX:+ExplicitGCInvokesConcurrent -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UseCGroupMemoryLimitForHeap -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1 -Djenkins.install.runSetupWizard=false -Dhudson.DNSMultiCast.disabled=true -Dhudson.udp=-1 -Dhudson.footerURL=https://www.mirantis.com ${_param:jenkins_master_extra_opts}"
+                JAVA_OPTS: " -server -XX:+AlwaysPreTouch -Xloggc:${_param:jenkins_home_dir_path}/gc-%t.log -XX:NumberOfGCLogFiles=5 -XX:+UseGCLogFileRotation -XX:GCLogFileSize=20m -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintHeapAtGC -XX:+PrintGCCause -XX:+PrintTenuringDistribution -XX:+PrintReferenceGC -XX:+PrintAdaptiveSizePolicy -XX:+UseG1GC -XX:+ExplicitGCInvokesConcurrent -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UseCGroupMemoryLimitForHeap -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1 -Djenkins.install.runSetupWizard=false -Dhudson.DNSMultiCast.disabled=true -Dhudson.udp=-1 -Dhudson.footerURL=https://www.mirantis.com -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts ${_param:jenkins_master_extra_opts}"
                 JENKINS_NUM_EXECUTORS: ${_param:jenkins_master_executors_num}
                 JENKINS_OPTS: " --handlerCountMax=${_param:jenkins_master_max_concurent_requests}"
                 https_proxy: ${_param:docker_https_proxy}
                 http_proxy: ${_param:docker_http_proxy}
                 no_proxy: ${_param:docker_no_proxy}
+                GIT_SSL_CAINFO: /etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem
               deploy:
                 restart_policy:
                   condition: any
@@ -31,3 +34,4 @@ parameters:
               volumes:
                 - /srv/volumes/jenkins:/var/jenkins_home
                 - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
+                - /etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem:/etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem:ro

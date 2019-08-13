@@ -120,6 +120,7 @@ parameters:
                 - /var/log/journal/contrail-controller:/var/log/journal
                 - ${_param:opencontrail_host_configdb_log_dir}/cassandra:${_param:opencontrail_cassandra_log_dir}
                 - ${_param:opencontrail_host_configdb_log_dir}/zookeeper:${_param:opencontrail_zookeeper_log_dir}
+                - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
               network_mode: "host"
               privileged: true
               restart: always

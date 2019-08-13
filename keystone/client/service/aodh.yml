@@ -12,6 +12,7 @@ parameters:
             service:
               user:
                 aodh:
+                  name: ${_param:keystone_aodh_username}
                   is_admin: true
                   password: ${_param:keystone_aodh_password}
                   email: ${_param:admin_email}

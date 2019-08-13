@@ -9,6 +9,8 @@ parameters:
         ssl:
           enabled: ${_param:ceilometer_agent_ssl_enabled}
       identity:
+        user: ${_param:keystone_ceilometer_username}
+        password: ${_param:keystone_ceilometer_password}
         protocol: ${_param:internal_protocol}
       message_queue:
         port: ${_param:openstack_rabbitmq_port}

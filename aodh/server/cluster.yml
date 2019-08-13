@@ -33,7 +33,7 @@ parameters:
         host: ${_param:openstack_database_address}
         port: 3306
         name: aodh
-        user: aodh
+        user: ${_param:mysql_aodh_username}
         password: ${_param:mysql_aodh_password}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
@@ -50,7 +50,7 @@ parameters:
         host: ${_param:keystone_service_host}
         port: 35357
         tenant: service
-        user: aodh
+        user: ${_param:keystone_aodh_username}
         password: ${_param:keystone_aodh_password}
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}

@@ -11,6 +11,7 @@ parameters:
             service:
               user:
                 manila:
+                  name: ${_param:keystone_manila_username}
                   is_admin: true
                   password: ${_param:keystone_manila_password}
                   email: ${_param:admin_email}

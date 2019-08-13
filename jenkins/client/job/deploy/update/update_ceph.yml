@@ -18,7 +18,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: update-ceph.groovy
           param:
             SALT_MASTER_URL:
@@ -29,7 +29,3 @@ parameters:
               type: string
               default: "salt"
               description: Credentials to the Salt API.
-            TARGET_SERVERS:
-              type: string
-              default: "*"
-              description: Salt compound target to match nodes to be updated [*, G@osfamily:debian].

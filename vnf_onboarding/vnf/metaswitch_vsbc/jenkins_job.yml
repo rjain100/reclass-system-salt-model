@@ -14,7 +14,7 @@ parameters:
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/vnf-onboarding/pipelines"
-              credentials:  "${_param:vnf_gerrit_credentials}"
+              credentials: "${_param:jenkins_gerrit_credentials}"
               script: test_vnf_onboarding.groovy
             trigger:
               gerrit:
@@ -53,7 +53,7 @@ parameters:
                 default: "test-metaswitch"
               GERRIT_CREDENTIALS:
                 type: string
-                default: "${_param:vnf_gerrit_credentials}"
+                default: "${_param:jenkins_gerrit_credentials}"
               ELASTIC_URL:
                 type: string
                 default: "${_param:vnf_elastic_url}"
@@ -70,7 +70,7 @@ parameters:
                 default: "master"
               NFV_PLATFORM_REPO_CREDENTIALS:
                 type: string
-                default: "${_param:vnf_gerrit_credentials}"
+                default: "${_param:jenkins_gerrit_credentials}"
               CONTRAIL_ENABLED:
                 type: boolean
                 default: false
@@ -146,7 +146,7 @@ parameters:
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/vnf-onboarding/pipelines"
-            credentials: "${_param:vnf_gerrit_credentials}"
+            credentials: "${_param:jenkins_gerrit_credentials}"
             script: test_platform.groovy
           param:
             OPENSTACK_API_CREDENTIALS:
@@ -202,7 +202,7 @@ parameters:
               default: "master"
             VNF_PLATFORM_TESTS_REPO_CREDENTIALS:
               type: string
-              default: "${_param:vnf_gerrit_credentials}"
+              default: "${_param:jenkins_gerrit_credentials}"
             TEMPEST_IMAGE_DOCKER_REGISTRY_PATH:
               type: string
               description: "Path for docker image with testing tool.  If empty, image will be build using VNF_PLATFORM_TESTS_* parameters."
@@ -221,7 +221,7 @@ parameters:
               default: "${_param:jenkins_gerrit_url}/vnf-onboarding/nfv-platform"
             ELASTIC_TRANSFER_REPO_CREDENTIALS:
               type: string
-              default: "${_param:vnf_gerrit_credentials}"
+              default: "${_param:jenkins_gerrit_credentials}"
             ELASTIC_TRANSFER_REPO_BRANCH:
               type: string
               default: "master"

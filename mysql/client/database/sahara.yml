@@ -7,11 +7,11 @@ parameters:
             sahara:
               encoding: utf8
               users:
-              - name: sahara
+              - name: ${_param:mysql_sahara_username}
                 password: ${_param:mysql_sahara_password}
                 host: '%'
                 rights: all
-              - name: sahara
+              - name: ${_param:mysql_sahara_username}
                 password: ${_param:mysql_sahara_password}
                 host: ${_param:single_address}
                 rights: all

@@ -20,7 +20,7 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             script: upgrade-mcp-release.groovy
             type: git
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             branch: FETCH_HEAD
             wipe_workspace: True
           param:

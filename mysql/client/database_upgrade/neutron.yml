@@ -7,11 +7,11 @@ parameters:
             neutron_upgrade:
               encoding: utf8
               users:
-              - name: neutron
+              - name: ${_param:mysql_neutron_username}
                 password: ${_param:mysql_neutron_password}
                 host: '%'
                 rights: all
-              - name: neutron
+              - name: ${_param:mysql_neutron_username}
                 password: ${_param:mysql_neutron_password}
                 host: ${_param:single_address}
                 rights: all

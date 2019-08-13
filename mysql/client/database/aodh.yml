@@ -7,11 +7,11 @@ parameters:
             aodh:
               encoding: utf8
               users:
-              - name: aodh
+              - name: ${_param:mysql_aodh_username}
                 password: ${_param:mysql_aodh_password}
                 host: '%'
                 rights: all
-              - name: aodh
+              - name: ${_param:mysql_aodh_username}
                 password: ${_param:mysql_aodh_password}
                 host: ${_param:single_address}
                 rights: all

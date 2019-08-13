@@ -12,6 +12,7 @@ parameters:
             service:
               user:
                 panko:
+                  name: ${_param:keystone_panko_username}
                   is_admin: true
                   password: ${_param:keystone_panko_password}
                   email: ${_param:admin_email}

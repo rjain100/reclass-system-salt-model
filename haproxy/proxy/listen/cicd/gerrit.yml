@@ -1,3 +1,5 @@
+classes:
+  - system.salt.minion.cert.proxy.drivetrain_ssl
 parameters:
   _param:
     haproxy_gerrit_bind_host: ${_param:haproxy_bind_address}
@@ -5,7 +7,8 @@ parameters:
     haproxy_gerrit_ssh_bind_host: ${_param:haproxy_gerrit_bind_host}
     haproxy_gerrit_ssh_bind_port: 29418
     haproxy_gerrit_ssl:
-      enabled: false
+      enabled: true
+      pem_file: /etc/haproxy/ssl/drivetrain.pem
   haproxy:
     proxy:
       listen:

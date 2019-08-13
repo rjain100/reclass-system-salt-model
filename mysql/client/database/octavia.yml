@@ -7,11 +7,11 @@ parameters:
             octavia:
               encoding: utf8
               users:
-              - name: octavia
+              - name: ${_param:mysql_octavia_username}
                 password: ${_param:mysql_octavia_password}
                 host: '%'
                 rights: all
-              - name: octavia
+              - name: ${_param:mysql_octavia_username}
                 password: ${_param:mysql_octavia_password}
                 host: ${_param:single_address}
                 rights: all

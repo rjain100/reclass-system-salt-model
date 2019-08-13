@@ -14,7 +14,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: galera-cluster-verify-restore.groovy
           param:
             SALT_MASTER_CREDENTIALS:
@@ -32,3 +32,10 @@ parameters:
             VERIFICATION_RETRIES:
               type: string
               default: 5
+            RESTORE_TYPE:
+              type: choice
+              choices:
+                - 'BACKUP_AND_RESTORE'
+                - 'ONLY_RESTORE'
+                - 'RESTART_CLUSTER'
+              description: "Choose required behavior. See documentation for more information."

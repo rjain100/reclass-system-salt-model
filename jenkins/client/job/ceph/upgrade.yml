@@ -6,6 +6,7 @@ parameters:
           type: workflow-scm
           concurrent: true
           display_name: "Ceph - upgrade"
+          description: "Jewel-Luminous upgrade job"
           discard:
             build:
               keep_num: 50
@@ -13,7 +14,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: ceph-upgrade.groovy
           param:
             # general parameters

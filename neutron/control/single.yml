@@ -16,6 +16,8 @@ parameters:
     server:
       role: ${_param:openstack_node_role}
       database:
+        user: ${_param:mysql_neutron_username}
+        password: ${_param:mysql_neutron_password}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
           ca_file: ${_param:mysql_neutron_ssl_ca_file}
@@ -33,4 +35,6 @@ parameters:
         ssl:
           enabled: ${_param:rabbitmq_ssl_enabled}
       identity:
+        user: ${_param:keystone_neutron_username}
+        password: ${_param:keystone_neutron_password}
         protocol: ${_param:internal_protocol}

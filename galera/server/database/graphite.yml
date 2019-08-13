@@ -7,7 +7,7 @@ parameters:
         graphite:
           encoding: 'utf8'
           users:
-          - name: 'graphite'
+          - name: '${_param:mysql_graphite_username}'
             password: '${_param:mysql_graphite_password}'
             host: '%'
             rights: 'all'

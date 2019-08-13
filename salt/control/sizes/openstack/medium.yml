@@ -14,7 +14,7 @@ parameters:
     salt_control_size_net_profile_openstack_message_queue: default
     salt_control_size_cpu_openstack_proxy: 4
     salt_control_size_ram_openstack_proxy: 16384
-    salt_control_size_disk_profile_openstack_proxy: small
+    salt_control_size_disk_profile_openstack_proxy: xxlarge
     salt_control_size_net_profile_openstack_proxy: default
     salt_control_size_cpu_openstack_upgrade: 8
     salt_control_size_ram_openstack_upgrade: 16384
@@ -24,8 +24,8 @@ parameters:
     salt_control_size_ram_openstack_share: 4096
     salt_control_size_disk_profile_openstack_share: large
     salt_control_size_net_profile_openstack_share: default
-    salt_control_size_cpu_openstack_dns: 4
-    salt_control_size_ram_openstack_dns: 6144
+    salt_control_size_cpu_openstack_dns: 2
+    salt_control_size_ram_openstack_dns: 4096
     salt_control_size_disk_profile_openstack_dns: small
     salt_control_size_net_profile_openstack_dns: default
     salt_control_size_cpu_openstack_telemetry: 8
@@ -33,8 +33,8 @@ parameters:
     salt_control_size_disk_profile_openstack_telemetry: large
     salt_control_size_net_profile_openstack_telemetry: default
     salt_control_size_cpu_openstack_barbican: 4
-    salt_control_size_ram_openstack_barbican: 16384
-    salt_control_size_disk_profile_openstack_barbican: large
+    salt_control_size_ram_openstack_barbican: 8192
+    salt_control_size_disk_profile_openstack_barbican: small
     salt_control_size_net_profile_openstack_barbican: default
     salt_control_size_cpu_openstack_baremetal: 16
     salt_control_size_ram_openstack_baremetal: 16384
@@ -67,18 +67,6 @@ parameters:
           disk_profile: ${_param:salt_control_size_disk_profile_openstack_proxy}
           net_profile: ${_param:salt_control_size_net_profile_openstack_proxy}
           image_layout: ${_param:salt_control_size_image_layout_openstack_proxy}
-        openstack.upgrade:
-          cpu: ${_param:salt_control_size_cpu_openstack_upgrade}
-          ram: ${_param:salt_control_size_ram_openstack_upgrade}
-          disk_profile: ${_param:salt_control_size_disk_profile_openstack_upgrade}
-          net_profile: ${_param:salt_control_size_net_profile_openstack_upgrade}
-          image_layout: ${_param:salt_control_size_image_layout_openstack_upgrade}
-        openstack.share:
-          cpu: ${_param:salt_control_size_cpu_openstack_share}
-          ram: ${_param:salt_control_size_ram_openstack_share}
-          disk_profile: ${_param:salt_control_size_disk_profile_openstack_share}
-          net_profile: ${_param:salt_control_size_net_profile_openstack_share}
-          image_layout: ${_param:salt_control_size_image_layout_openstack_share}
         openstack.dns:
           cpu: ${_param:salt_control_size_cpu_openstack_dns}
           ram: ${_param:salt_control_size_ram_openstack_dns}
@@ -97,9 +85,3 @@ parameters:
           disk_profile: ${_param:salt_control_size_disk_profile_openstack_barbican}
           net_profile: ${_param:salt_control_size_net_profile_openstack_barbican}
           image_layout: ${_param:salt_control_size_image_layout_openstack_barbican}
-        openstack.baremetal:
-          cpu: ${_param:salt_control_size_cpu_openstack_baremetal}
-          ram: ${_param:salt_control_size_ram_openstack_baremetal}
-          disk_profile: ${_param:salt_control_size_disk_profile_openstack_baremetal}
-          net_profile: ${_param:salt_control_size_net_profile_openstack_baremetal}
-          image_layout: ${_param:salt_control_size_image_layout_openstack_baremetal}

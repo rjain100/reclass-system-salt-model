@@ -1,2 +1,12 @@
 classes:
 - service.backupninja.client.single
+parameters:
+  backupninja:
+    client:
+      extra_params:
+        PGSQLDUMP: /usr/lib/postgresql/${_param:postgresql_major_version}/bin/pg_dump
+      scheduling:
+        when:
+          - manual
+      log:
+        color: ${_param:backupninja_color_log}

@@ -1,0 +1,49 @@
+classes:
+- system.docker
+parameters:
+  _param:
+    jenkins_slave01_node_name: ${_param:cluster_node01_name}
+  docker:
+    client:
+      enabled: true
+      images:
+        - ${_param:docker_image_jenkins_ssh_slave}
+      stack:
+        jenkins:
+          service:
+            slave01:
+              environment:
+                JENKINS_SLAVE_SSH_PUBKEY: ${_param:jenkins_admin_public_key}
+                https_proxy: ${_param:docker_https_proxy}
+                http_proxy: ${_param:docker_http_proxy}
+                no_proxy: "jenkins_master,${_param:docker_no_proxy}"
+                GIT_SSL_CAINFO: /etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem
+              deploy:
+                restart_policy:
+                  condition: any
+                placement:
+                  constraints:
+                  - "node.hostname == ${_param:jenkins_slave01_node_name}"
+              image: ${_param:docker_image_jenkins_ssh_slave}
+              volumes:
+              - /etc/ssl/certs/:/etc/ssl/certs/:ro
+              - /etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem:/etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem:ro
+              - /dev/urandom:/dev/random:ro
+              - /var/run/docker.sock:/var/run/docker.sock
+              - /usr/bin/docker:/usr/bin/docker:ro
+              - /var/lib/jenkins:/var/lib/jenkins
+  jenkins:
+    client:
+      node:
+        slave01:
+          launcher:
+            type: ssh
+            host: jenkins_slave01
+            port: 22
+            username: jenkins
+            credentials: ssh_slave
+      credential:
+        ssh_slave:
+          username: jenkins
+          key: ${_param:jenkins_admin_private_key}
+

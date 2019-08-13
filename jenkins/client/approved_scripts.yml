@@ -138,6 +138,7 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getAt java.lang.String int
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getAt java.util.Collection java.lang.String
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getAt java.util.List groovy.lang.Range
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getAt java.util.regex.Matcher java.util.Collection
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getBytes java.io.File
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getText java.io.InputStream
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods hasProperty java.lang.Object java.lang.String
@@ -164,3 +165,4 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods toSorted java.lang.Iterable
         - staticMethod org.codehaus.groovy.runtime.EncodingGroovyMethods encodeBase64 byte[]
         - staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods max java.util.Collection

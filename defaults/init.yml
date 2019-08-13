@@ -13,6 +13,7 @@ classes:
 - system.defaults.glusterfs
 - system.defaults.nginx
 - system.defaults.jenkins
+- system.defaults.postgresql
 - system.defaults.maas
 - system.defaults.opencontrail
 - system.defaults.openstack
@@ -26,6 +27,7 @@ classes:
 - system.defaults.secrets
 - system.defaults.stacklight
 - system.defaults.xtrabackup
+- system.defaults.backup
 - system.defaults.haproxy
 parameters:
   _param:

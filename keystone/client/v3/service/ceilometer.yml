@@ -8,6 +8,7 @@ parameters:
         v3:
           users:
             ceilometer:
+              name: ${_param:keystone_ceilometer_username}
               password: ${_param:keystone_ceilometer_password}
               email: ${_param:admin_email}
               options: ${_param:openstack_service_user_options}
@@ -17,6 +18,7 @@ parameters:
                   project_id: service
           services:
             ceilometer:
+              status: ${_param:ceilometer_service_status}
               type: metering
               description: OpenStack Telemetry Service
               endpoints:

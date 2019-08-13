@@ -24,9 +24,13 @@ parameters:
       role: ${_param:openstack_node_role}
       event_time_to_live: ${_param:panko_event_time_to_live}
       identity:
+        user: ${_param:keystone_panko_username}
+        password: ${_param:keystone_panko_password}
         host: ${_param:openstack_control_address}
         protocol: ${_param:cluster_internal_protocol}
       database:
+        user: ${_param:mysql_panko_username}
+        password: ${_param:mysql_panko_password}
         host: ${_param:openstack_database_address}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}

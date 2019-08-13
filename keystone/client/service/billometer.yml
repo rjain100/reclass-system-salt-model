@@ -11,6 +11,7 @@ parameters:
             service:
               user:
                 billometer:
+                  name: ${_param:keystone_billometer_username}
                   is_admin: true
                   password: ${_param:keystone_billometer_password}
                   email: ${_param:admin_email}

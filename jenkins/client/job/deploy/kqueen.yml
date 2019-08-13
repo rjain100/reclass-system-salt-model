@@ -14,7 +14,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: deploy-aws-k8s-kqueen-pipeline.groovy
           param:
             # deployments
@@ -33,7 +33,7 @@ parameters:
               default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
             STACK_TEMPLATE_CREDENTIALS:
               type: string
-              default: "gerrit"
+              default: ${_param:jenkins_gerrit_credentials}
             STACK_TEMPLATE_BRANCH:
               type: string
               default: "master"
@@ -74,7 +74,7 @@ parameters:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
-            credentials: "gerrit"
+            credentials: ${_param:jenkins_gerrit_credentials}
             script: deploy-heat-k8s-kqueen-pipeline.groovy
           param:
             # deployments
@@ -93,7 +93,7 @@ parameters:
               default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
             STACK_TEMPLATE_CREDENTIALS:
               type: string
-              default: "gerrit"
+              default: ${_param:jenkins_gerrit_credentials}
             STACK_TEMPLATE_BRANCH:
               type: string
               default: "master"

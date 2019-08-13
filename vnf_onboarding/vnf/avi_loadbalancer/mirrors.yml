@@ -8,3 +8,4 @@ parameters:
         downstream: vnf-onboarding/avi-loadbalancer
         upstream: ${_param:gerrit_vnf_onboaring_avi_repo}
         branches: master
+        source_credentials: "${_param:vnf_onboaring_source_credentials}"

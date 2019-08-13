@@ -10,6 +10,7 @@ parameters:
             service:
               user:
                 tacker:
+                  name: ${_param:keystone_tacker_username}
                   is_admin: true
                   password: ${_param:keystone_tacker_password}
                   email: ${_param:admin_email}
