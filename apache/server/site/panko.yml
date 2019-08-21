@@ -9,6 +9,10 @@ parameters:
     apache_panko_api_port: 8977
   apache:
     server:
+      enabled: true
+      default_mpm: event
+      modules:
+        - wsgi
       site:
         panko:
           enabled: false
