@@ -17,6 +17,7 @@ parameters:
       bind:
         address: ${_param:cluster_baremetal_local_address}
       database:
+        user: ${_param:mysql_ironic_username}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
           ca_file: ${_param:mysql_ironic_ssl_ca_file}

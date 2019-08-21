@@ -15,6 +15,7 @@ parameters:
     conductor:
       api_url: '${_param:ironic_conductor_api_url_protocol}://${_param:cluster_baremetal_vip_address}:6385'
       database:
+        user: ${_param:mysql_ironic_username}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
           ca_file: ${_param:mysql_ironic_ssl_ca_file}
