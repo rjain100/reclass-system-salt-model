@@ -1,7 +1,7 @@
 parameters:
   _param:
     # CI\CD
-    docker_image_compose:    "${_param:mcp_docker_registry}/mirantis/external/docker/compose:1.17.1"
+    docker_image_compose: "${_param:mcp_docker_registry}/mirantis/external/docker/compose:1.17.1"
     # 2.6.2 version, from 12/18/2108, differ from latest 2.6.2 upstream - update next cycle
     docker_image_registry:   "${_param:mcp_docker_registry}/mirantis/external/registry:${_param:mcp_version}"
     docker_image_visualizer: "${_param:mcp_docker_registry}/mirantis/external/visualizer:${_param:mcp_version}"
@@ -47,11 +47,11 @@ parameters:
     docker_image_keycloak_server: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:4.5.0.Final"
     docker_image_keycloak_proxy: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:3.4.2.Final"
     # CVP
-    docker_image_cvp_sanity_checks: ${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:${_param:mcp_version}
-    docker_image_cvp_shaker_checks: ${_param:mcp_docker_registry}/mirantis/cvp/cvp-shaker:${_param:mcp_version}
+    docker_image_cvp_sanity_checks: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:${_param:mcp_version}"
+    docker_image_cvp_shaker_checks: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-shaker:${_param:mcp_version}"
     docker_image_cvp_tempest: "${_param:mcp_docker_registry}/mirantis/cicd/ci-tempest:${_param:openstack_version}"
-    docker_image_cvp_rally: ${_param:mcp_docker_registry}/mirantis/cvp/cvp-rally:${_param:mcp_version}
-    docker_image_cvp_xrally: xrally/xrally-openstack:0.11.2
+    docker_image_cvp_rally: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-rally:${_param:mcp_version}"
+    docker_image_cvp_xrally: "${_param:mcp_docker_registry}/mirantis/external/xrally/xrally-openstack:0.11.2"
     # aptly
     docker_image_aptly:
       base: "${_param:mcp_docker_registry}/mirantis/cicd/aptly:${_param:mcp_version}"
