@@ -43,6 +43,7 @@ parameters:
       identity:
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}
+        user: ${_param:keystone_ironic_username}
       automated_clean: true
       erase_devices_priority: 0
       erase_devices_metadata_priority: 1
