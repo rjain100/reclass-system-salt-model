@@ -8,6 +8,9 @@ parameters:
   apache:
     server:
       enabled: true
+      default_mpm: event
+      modules:
+        - wsgi
       site:
         barbican:
           enabled: false
