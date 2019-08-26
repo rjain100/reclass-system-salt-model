@@ -36,6 +36,8 @@ parameters:
           enabled: ${_param:barbican_memcache_security_enabled}
           strategy: ${_param:openstack_memcache_security_strategy}
           secret_key: ${_param:barbican_memcache_secret_key}
+      # Keystone notification topic. Should be overridden from cluster level (see PROD-32645)
+      ks_notifications_topic: notifications
   linux:
     system:
       package:
