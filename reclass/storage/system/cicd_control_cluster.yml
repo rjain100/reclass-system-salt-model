@@ -19,6 +19,7 @@ parameters:
             keepalived_vip_priority: 103
             cicd_database_id: 1
             glusterfs_node_role: primary
+            drivetrain_role: cicd
         cicd_control_node02:
           name: ${_param:cicd_control_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -31,6 +32,7 @@ parameters:
             keepalived_vip_priority: 102
             cicd_database_id: 2
             glusterfs_node_role: secondary
+            drivetrain_role: cicd
         cicd_control_node03:
           name: ${_param:cicd_control_node03_hostname}
           domain: ${_param:cluster_domain}
@@ -43,3 +45,4 @@ parameters:
             keepalived_vip_priority: 101
             cicd_database_id: 3
             glusterfs_node_role: secondary
+            drivetrain_role: cicd
