@@ -11,6 +11,7 @@ parameters:
       kernel:
         sysctl:
           fs.inotify.max_user_instances: 4096
+          fs.file-max: 400000
   neutron:
     gateway:
       dvr: ${_param:neutron_gateway_dvr}
