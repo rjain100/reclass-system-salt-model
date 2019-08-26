@@ -1,6 +1,8 @@
 parameters:
+  _param:
+    keystone_notification_topics: "${_param:openstack_notification_topics}"
   keystone:
     server:
       notification:
         driver: messagingv2
-        topics: "${_param:openstack_notification_topics}"
+        topics: "${_param:keystone_notification_topics}"
