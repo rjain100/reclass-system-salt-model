@@ -31,6 +31,10 @@ parameters:
               type: string
               default: "*"
               description: Salt compound target to match nodes to be updated [*, G@osfamily:debian].
+            BATCH_SIZE:
+              type: string
+              default: ''
+              description: 'Use batching for states, which targeted for large amount of nodes. Can be Integer or Percentage, e.g 20 or 20%'
             TARGET_PACKAGES:
               type: string
               description: Space delimited list of packages to be updated, empty string means updating all packages to the latest version e.g. [package1=version package2=version] or [package1 package2].

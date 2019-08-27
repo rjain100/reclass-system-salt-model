@@ -25,6 +25,10 @@ parameters:
               type: string
               default: "core,kvm,openstack,stacklight"
               description: "Components to be installed. Valid values are 'core,kvm,k8s,openstack,contrail,ovs,ceph,oss,cicd,stacklight,sl-legacy,finalize'. For all deployments it's recommended to run 'finalize' as a final step as Salt highstate on all nodes will be run."
+            BATCH_SIZE:
+              type: string
+              default: ''
+              description: 'Use batching for states, which targeted for large amount of nodes. Can be Integer or Percentage, e.g 20 or 20%'
             # salt master
             SALT_MASTER_CREDENTIALS:
               type: string
@@ -64,3 +68,7 @@ parameters:
               type: string
               default: ""
               description: "Salt compound target to match nodes to be updated [*, G@osfamily:debian]."
+            BATCH_SIZE:
+              type: string
+              default: ''
+              description: 'Use batching for states, which targeted for large amount of nodes. Can be Integer or Percentage, e.g 20 or 20%'
