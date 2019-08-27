@@ -26,6 +26,12 @@ parameters:
             ASK_CONFIRMATION:
               type: boolean
               default: 'true'
+            BACKUP_SALTMASTER_AND_MAAS:
+              type: boolean
+              default: 'true'
+            BACKUP_DOGTAG:
+              type: boolean
+              default: 'true'
           trigger:
             timer:
               enabled: true
