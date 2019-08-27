@@ -43,13 +43,15 @@ parameters:
                 ---
                 SALT_MASTER_URL: "${_param:jenkins_salt_api_url}"
                 SALT_MASTER_CREDENTIALS: "salt"
+                # Use batching for states, which targeted for large amount of nodes. Can be Integer or Percentage, e.g 20 or 20%
+                BATCH_SIZE: ''
                 # Replace `mcp_version` parameter to TARGET_MCP_VERSION in cluster level Reclass model?
                 UPDATE_CLUSTER_MODEL: true
                 # Upgrade SaltStack packages
                 UPGRADE_SALTSTACK: true
                 # Mirror pipelines from upstream/local mirror to Gerrit
                 UPDATE_PIPELINES: true
-                # se only when local repositories are present
+                # Use only when local repositories are present
                 UPDATE_LOCAL_REPOS: false
                 # Next parameters added only for test purposes and not enabled by default
                 # RECLASS_SYSTEM_BRANCH: ''
