@@ -54,6 +54,8 @@ parameters:
         user: ${_param:keystone_cinder_username}
         password: ${_param:keystone_cinder_password}
         protocol: ${_param:cluster_internal_protocol}
+        service_token_roles: admin
+        service_token_roles_required: true
       glance:
         host: ${_param:cluster_vip_address}
         port: 9292
