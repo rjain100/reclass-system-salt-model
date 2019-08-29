@@ -42,6 +42,8 @@ parameters:
         tenant: service
         protocol: ${_param:cluster_internal_protocol}
         region: ${_param:openstack_region}
+        service_token_roles: admin
+        service_token_roles_required: true
       barbican:
         enabled: ${_param:barbican_integration_enabled}
       service_user:

@@ -38,6 +38,8 @@ parameters:
         password: ${_param:keystone_cinder_password}
         host: ${_param:single_address}
         region: ${_param:openstack_region}
+        service_token_roles: admin
+        service_token_roles_required: true
       service_user:
         enabled: ${_param:cinder_service_user_enabled}
       cache:

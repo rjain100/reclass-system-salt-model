@@ -43,6 +43,8 @@ parameters:
         password: ${_param:keystone_nova_password}
         tenant: service
         protocol: ${_param:cluster_internal_protocol}
+        service_token_roles: admin
+        service_token_roles_required: true
       service_user:
         enabled: ${_param:nova_service_user_enabled}
       barbican:
