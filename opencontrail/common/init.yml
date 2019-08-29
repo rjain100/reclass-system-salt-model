@@ -1,0 +1,10 @@
+parameters:
+  linux:
+    system:
+      kernel:
+        sysctl:
+          net.ipv4.tcp_keepalive_intvl: 1
+          net.ipv4.tcp_keepalive_time: 5
+          net.ipv4.tcp_keepalive_probes: 5
+          net.nf_conntrack_max: 256000
+          fs.file-max: 124165
