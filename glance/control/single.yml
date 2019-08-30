@@ -29,6 +29,8 @@ parameters:
       identity:
         region: ${_param:openstack_region}
         protocol: ${_param:internal_protocol}
+        service_token_roles: admin
+        service_token_roles_required: true
       registry:
         protocol: ${_param:internal_protocol}
       barbican:
