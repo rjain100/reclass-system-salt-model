@@ -47,3 +47,5 @@ parameters:
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}
         user: ${_param:keystone_ironic_username}
+      middleware:
+        enable_proxy_headers_parsing: true
