@@ -12,7 +12,16 @@ parameters:
           enabled: true
           type: nginx_proxy
           name: ceph_radosgw
+          proxy_set_header:
+            Host:
+              enabled: true
+              value: "$host"
+            X-Forwarded-For:
+              enabled: true
+              value: "$remote_addr"
           proxy:
+            size: 10240m
+            buffer_size: 10240m
             host: ${_param:nginx_proxy_radosgw_service_host}
             port: ${_param:nginx_proxy_radosgw_service_port}
             protocol: http
