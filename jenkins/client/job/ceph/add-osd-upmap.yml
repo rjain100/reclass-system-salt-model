@@ -5,7 +5,7 @@ parameters:
         ceph-add-osd-upmap:
           type: workflow-scm
           concurrent: true
-          display_name: "Ceph - add osd"
+          display_name: "Ceph - add osd ( upmap )"
           description: "This pipeline requires ceph luminous version, all clients must be upgraded to luminous version to proceed."
           discard:
             build:
