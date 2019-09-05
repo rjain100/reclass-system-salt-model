@@ -2,15 +2,11 @@ classes:
 - system.linux.system.sudo
 - system.openssh.server.team.members.alis
 - system.openssh.server.team.members.alugovoi
-- system.openssh.server.team.members.bworonicz
-- system.openssh.server.team.members.cdodda
-- system.openssh.server.team.members.ckrupa
 - system.openssh.server.team.members.dbogaczyk
 - system.openssh.server.team.members.dkruglov
 - system.openssh.server.team.members.dstremkouski
 - system.openssh.server.team.members.hkraemer
 - system.openssh.server.team.members.isviridov
-- system.openssh.server.team.members.kalmog
 - system.openssh.server.team.members.korlowska
 - system.openssh.server.team.members.lmercl
 - system.openssh.server.team.members.mchernik
@@ -21,8 +17,6 @@ classes:
 - system.openssh.server.team.members.qwu
 - system.openssh.server.team.members.sburns
 - system.openssh.server.team.members.tjaroszyk
-- system.openssh.server.team.members.vstruk
-- system.openssh.server.team.members.wnawrot
 - system.openssh.server.team.members.yisakov
 parameters:
   _param:
