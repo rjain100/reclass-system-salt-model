@@ -12,6 +12,7 @@ parameters:
     linux_system_repo_mcp_glusterfs_url: ${_param:linux_system_repo_url}/glusterfs-${_param:linux_system_repo_mcp_glusterfs_version_number}/
     linux_system_repo_mcp_influxdb_url: ${_param:linux_system_repo_url}/influxdb/
     linux_system_repo_mcp_maas_url: ${_param:linux_system_repo_url}/maas/
+    linux_system_repo_mcp_update_maas_url: ${_param:linux_system_repo_update_url}/maas/
     #
     linux_system_repo_mcp_elasticsearch_curator_url: ${_param:linux_system_repo_url}/elasticsearch-curator-5/
     linux_system_repo_mcp_update_elasticsearch_curator_url: ${_param:linux_system_repo_update_url}/elasticsearch-curator-5/

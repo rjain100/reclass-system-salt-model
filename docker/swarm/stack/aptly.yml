@@ -22,6 +22,7 @@ parameters:
                 - 18084:8080
               volumes:
                 - /srv/volumes/aptly:/var/lib/aptly
+                - /dev/urandom:/dev/random:ro
             public:
               deploy:
                 replicas: ${_param:docker_stack_aptly_public_replicas}
