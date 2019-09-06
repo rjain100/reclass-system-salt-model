@@ -5,16 +5,16 @@ parameters:
     client:
       enabled: true
       mirrors:
-        mirror_mirantis_com_docker_xenial:
+        mirror_mirantis_com_update_docker_xenial:
           force: ${_param:mirror_mirantis_com_docker_xenial_force}
           lock_target: True
           extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
           method: "${_param:debmirror_mirrors_sync_method}"
           arch: [ 'amd64' ]
           mirror_host: "${_param:debmirror_mirrors_host}"
-          mirror_root: "${_param:debmirror_mirrors_root}/docker/xenial/"
-          target_dir: "${_param:debmirror_mirrors_base_target_dir}/docker/xenial/"
-          log_file: "/var/log/debmirror/mirror_mirantis_com_docker_xenial.log"
+          mirror_root: "${_param:debmirror_mirrors_update_root}/docker/xenial/"
+          target_dir: "${_param:debmirror_mirrors_update_target_dir}/docker/xenial/"
+          log_file: "/var/log/debmirror/mirror_mirantis_com_update_docker_xenial.log"
           dist: [ xenial ]
           section: [ stable ]
           filter:

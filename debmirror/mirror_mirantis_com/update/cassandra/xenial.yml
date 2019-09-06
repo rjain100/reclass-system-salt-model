@@ -5,15 +5,15 @@ parameters:
     client:
       enabled: true
       mirrors:
-        mirror_mirantis_com_maas_xenial:
-          force: ${_param:mirror_mirantis_com_maas_xenial_force}
+        mirror_mirantis_com_update_cassandra_xenial:
+          force: ${_param:mirror_mirantis_com_cassandra_xenial_force}
           lock_target: True
           extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
           method: "${_param:debmirror_mirrors_sync_method}"
           arch: [ 'amd64' ]
           mirror_host: "${_param:debmirror_mirrors_host}"
-          mirror_root: "${_param:debmirror_mirrors_root}/maas/xenial/"
-          target_dir: "${_param:debmirror_mirrors_base_target_dir}/maas/xenial/"
-          log_file: "/var/log/debmirror/mirror_mirantis_com_maas_xenial.log"
-          dist: [ xenial ]
+          mirror_root: "${_param:debmirror_mirrors_update_root}/cassandra/xenial/"
+          target_dir: "${_param:debmirror_mirrors_update_target_dir}/cassandra/xenial/"
+          log_file: "/var/log/debmirror/mirror_mirantis_com_update_cassandra_xenial.log"
+          dist: [ "21x" ]
           section: [ main ]

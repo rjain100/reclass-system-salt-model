@@ -1,3 +1,5 @@
+classes:
+- system.defaults.debmirror
 parameters:
   debmirror:
     client:
@@ -7,10 +9,10 @@ parameters:
           force: ${_param:mirror_mirantis_com_td_agent_xenial_force}
           lock_target: True
           extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
-          method: "rsync"
+          method: "${_param:debmirror_mirrors_sync_method}"
           arch: [ 'amd64' ]
-          mirror_host: "mirror.mirantis.com"
-          mirror_root: ":mirror/${_param:mcp_version}/td-agent/xenial/"
+          mirror_host: "${_param:debmirror_mirrors_host}"
+          mirror_root: "${_param:debmirror_mirrors_root}/td-agent/xenial/"
           target_dir: "${_param:debmirror_mirrors_base_target_dir}/td-agent/xenial/"
           log_file: "/var/log/debmirror/mirror_mirantis_com_td_agent_xenial.log"
           dist: [ xenial ]

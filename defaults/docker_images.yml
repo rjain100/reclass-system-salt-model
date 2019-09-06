@@ -8,7 +8,7 @@ parameters:
     docker_image_openldap: "${_param:mcp_docker_registry}/mirantis/external/osixia/openldap:1.2.2"
     docker_image_postgresql: "${_param:mcp_docker_registry}/mirantis/external/library/postgres:9.6.10"
     # 3.4.13, from Feb 15, differ from 3.4.13 upstream verison, from March 14 - update next cycle
-    docker_image_mongodb: "${_param:mcp_docker_registry}/mirantis/external/library/mongo:${_param:mcp_version}"
+    docker_image_mongodb: "${_param:mcp_docker_registry}/mirantis/external/mongo:${_param:mcp_version}"
     ###
     # phpldapadmin:0.6.12
     docker_image_phpldapadmin: "${_param:mcp_docker_registry}/mirantis/cicd/phpldapadmin:${_param:mcp_version}"
@@ -130,7 +130,7 @@ parameters:
           name: remote_storage_adapter:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: prometheus_relay:2019.2.5
+          name: prometheus-relay:2019.2.5
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
           name: grafana:${_param:mcp_version}
@@ -145,11 +145,22 @@ parameters:
           name: gainsight_elasticsearch:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: prometheus-es-exporter:2019.2.4
+          name: prometheus-es-exporter:2019.2.6
+
+        # OpenContrail 4.1
+        - registry: ${_param:mcp_docker_registry}/opencontrail-oc41
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/opencontrail-oc41
+          name: opencontrail-analytics:${_param:opencontrail_docker_image_tag}
+        - registry: ${_param:mcp_docker_registry}/opencontrail-oc41
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/opencontrail-oc41
+          name: opencontrail-analyticsdb:${_param:opencontrail_docker_image_tag}
+        - registry: ${_param:mcp_docker_registry}/opencontrail-oc41
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/opencontrail-oc41
+          name: opencontrail-controller:${_param:opencontrail_docker_image_tag}
 
         # QA\CVP tool-set's
-        - registry: ${_param:mcp_docker_registry}/mirantis/cvp
-          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cvp
+        - registry: ${_param:mcp_docker_registry}/mirantis/cicd
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: ci-tempest:${_param:openstack_version}
         - registry: ${_param:mcp_docker_registry}/mirantis/cvp
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cvp
@@ -167,6 +178,6 @@ parameters:
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: mysql:${_param:mcp_version}
-        - registry: ${_param:mcp_docker_registry}/mirantis/external/library
-          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external/library
+        - registry: ${_param:mcp_docker_registry}/mirantis/external
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external
           name: mongo:${_param:mcp_version}

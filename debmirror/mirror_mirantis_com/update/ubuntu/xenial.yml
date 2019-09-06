@@ -6,16 +6,16 @@ parameters:
       enabled: true
       mirrors:
         # This mirror is used to build unmodified(no meta changes) but reduced offline ubuntu-mirror.
-        mirror_mirantis_com_ubuntu_xenial:
+        mirror_mirantis_com_update_ubuntu_xenial:
           force: ${_param:mirror_mirantis_com_ubuntu_xenial_force}
           lock_target: True
           extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
           method: "${_param:debmirror_mirrors_sync_method}"
           arch: [ 'amd64' ]
           mirror_host: "${_param:debmirror_mirrors_host}"
-          mirror_root: "${_param:debmirror_mirrors_root}/ubuntu/"
-          target_dir: "${_param:debmirror_mirrors_base_target_dir}/ubuntu/"
-          log_file: "/var/log/debmirror/mirror_mirantis_com_ubuntu_xenial.log"
+          mirror_root: "${_param:debmirror_mirrors_update_root}/ubuntu/"
+          target_dir: "${_param:debmirror_mirrors_update_target_dir}/ubuntu/"
+          log_file: "/var/log/debmirror/mirror_mirantis_com_update_ubuntu_xenial.log"
           dist: [ xenial , xenial-security, xenial-updates ]
           section: [ main , restricted, universe ]
           # TODO : add later
