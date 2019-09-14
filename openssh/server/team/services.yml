@@ -10,6 +10,7 @@ classes:
 - system.openssh.server.team.members.alugovoi
 - system.openssh.server.team.members.dbogaczyk
 - system.openssh.server.team.members.dkruglov
+- system.openssh.server.team.members.dnikishov
 - system.openssh.server.team.members.dstremkouski
 - system.openssh.server.team.members.hkraemer
 - system.openssh.server.team.members.isviridov
@@ -18,6 +19,7 @@ classes:
 - system.openssh.server.team.members.mchernik
 - system.openssh.server.team.members.mlos
 - system.openssh.server.team.members.osavatieiev
+- system.openssh.server.team.members.oaleksieiev
 - system.openssh.server.team.members.pbasov
 - system.openssh.server.team.members.pruzicka
 - system.openssh.server.team.members.sburns

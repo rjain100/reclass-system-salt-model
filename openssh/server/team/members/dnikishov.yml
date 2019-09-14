@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        dnikishov:
+          email: dnikishov@mirantis.com
+          enabled: true
+          full_name: Dmitry Nikishov
+          home: /home/dnikishov
+          name: dnikishov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        dnikishov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9uBF5tys4dW8bxqYT5Jg4ThuVM2eU1+CCWforV5afRhHv17XOYUFreLED6uz+RV0bgyJx/IL9WA3X/wmW5RqozoLrFH2qlZL58lvha/ydZtNsAbzgjxQkzet2aduEvy8KgVh3Ii5oR98fFmzKvld7quZezxVHVZWdMWRkBIkxJbAsV9cB/x5RuCzUMsdhy57bjbpRr8sOTF5Rwg5yyJWScCDwqivBHmTHBCrwa+ZvwaM4jP4xR2dxpVA1s9iV2EDPkDsT0fdwyNq86YvB+bCV2dh+WsxmkIXqfJranHu2TtZNeGtna2/2xyKT/d/0rcB6OepxL45bfzvojZpwjFqd
+          user: ${linux:system:user:dnikishov}

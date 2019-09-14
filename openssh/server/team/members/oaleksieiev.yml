@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        oaleksieiev:
+          email: aalekseev@mirantis.com
+          enabled: true
+          full_name: Oleksii Aleksieiev
+          home: /home/oaleksieiev
+          name: oaleksieiev
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        oaleksieiev:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzdUeyT+VdzdP/DtNSf7y9FnH44jK/8im3emDzhTALPFtE7/+sR/IbHqcVotzgs5t5oEmP0EoWF7HdpObjWTPwzF6V9afg+Jklza/QRISfbSB2YTclGhljfLcQCnBmqa3gh5lF0L14GYGsQgJBhh6B70Qc71O2UhCRt3HnRPBMFqY9gcQUNOJDMYetLRzNNkeM8TFeqrZkUCpYTG7mUWdxLdTLgZ6TYhwfd56kfkZa+zQsbqA4jGkzOMLQMaBsANs4yANZOMHccyhbv/06fhA+XJdShTfFntObneSyJCp/tb1R1KKrr+jNRA6KAiuPEBQFMm1gDzPyE8uDA6G5Go5/
+          user: ${linux:system:user:oaleksieiev}
