@@ -14,6 +14,7 @@ parameters:
           mirror_host: "${_param:debmirror_mirrors_host}"
           mirror_root: "${_param:debmirror_mirrors_root}/openstack-pike/xenial/"
           target_dir: "${_param:debmirror_mirrors_base_target_dir}/openstack-pike/xenial/"
+          cache_dir: "${_param:debmirror_mirrors_common_cache_dir}/openstack-pike/"
           log_file: "/var/log/debmirror/mirror_mirantis_com_openstack_pike_xenial.log"
           dist: [ xenial ]
           section: [ main ]

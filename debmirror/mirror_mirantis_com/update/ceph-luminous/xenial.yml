@@ -14,6 +14,7 @@ parameters:
           mirror_host: "${_param:debmirror_mirrors_host}"
           mirror_root: "${_param:debmirror_mirrors_update_root}/ceph-luminous/xenial/"
           target_dir: "${_param:debmirror_mirrors_update_target_dir}/ceph-luminous/xenial/"
+          cache_dir: "${_param:debmirror_mirrors_common_cache_dir}/ceph-luminous/"
           log_file: "/var/log/debmirror/mirror_mirantis_com_update_ceph_luminous_xenial.log"
           dist: [ xenial ]
           section: [ main ]

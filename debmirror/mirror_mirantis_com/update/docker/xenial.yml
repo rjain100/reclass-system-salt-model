@@ -14,6 +14,7 @@ parameters:
           mirror_host: "${_param:debmirror_mirrors_host}"
           mirror_root: "${_param:debmirror_mirrors_update_root}/docker/xenial/"
           target_dir: "${_param:debmirror_mirrors_update_target_dir}/docker/xenial/"
+          cache_dir: "${_param:debmirror_mirrors_common_cache_dir}/docker/"
           log_file: "/var/log/debmirror/mirror_mirantis_com_update_docker_xenial.log"
           dist: [ xenial ]
           section: [ stable ]

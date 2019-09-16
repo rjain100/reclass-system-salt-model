@@ -241,6 +241,12 @@ parameters:
     #
     amphora_image_name: amphora-x64-haproxy
     amphora_image_url: ${_param:mcp_static_images_url}/octavia/amphora-x64-haproxy-${_param:openstack_version}-${_param:mcp_version}.qcow2
+
+    glance_image_cirros_name: 'TestCirros-0.3.5'
+    glance_image_cirros_location: "${_param:mcp_binary_registry}/mirantis/external/images/cirros/0.3.5/cirros-0.3.5-x86_64-disk.img"
+
+    glance_image_fedora_name: 'TestFedora-27-1.6'
+    glance_image_fedora_location: "${_param:mcp_binary_registry}/mirantis/external/images/cloud-fedora/27/Fedora-Cloud-Base-27-1.6.x86_64.qcow2"
     # Sahara
     mysql_sahara_username: sahara
     keystone_sahara_username: sahara
