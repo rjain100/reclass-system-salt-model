@@ -15,6 +15,7 @@ parameters:
           mirror_host: "${_param:debmirror_mirrors_host}"
           mirror_root: "${_param:debmirror_mirrors_update_root}/elasticsearch-6.x/xenial/"
           target_dir: "${_param:debmirror_mirrors_update_target_dir}/elasticsearch-6.x/xenial/"
+          cache_dir: "${_param:debmirror_mirrors_common_cache_dir}/elasticsearch-6.x/"
           log_file: "/var/log/debmirror/mirror_mirantis_com_update_elasticsearch_6_x_xenial.log"
           dist: [ stable ]
           section: [ main ]

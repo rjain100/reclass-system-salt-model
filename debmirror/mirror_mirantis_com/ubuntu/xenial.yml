@@ -18,8 +18,7 @@ parameters:
           log_file: "/var/log/debmirror/mirror_mirantis_com_ubuntu_xenial.log"
           dist: [ xenial , xenial-security, xenial-updates ]
           section: [ main , restricted, universe ]
-          # TODO : add later
-          # cache_dir: "${_param:debmirror_mirrors_common_cache_dir}/ubuntu/"
+          cache_dir: "${_param:debmirror_mirrors_common_cache_dir}/ubuntu/"
           # Don't exclude main/x11 - its required for many pkgs.
           exclude_deb_section:
           - Xfce

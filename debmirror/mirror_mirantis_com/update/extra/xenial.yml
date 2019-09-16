@@ -14,6 +14,7 @@ parameters:
           mirror_host: "${_param:debmirror_mirrors_host}"
           mirror_root: "${_param:debmirror_mirrors_update_root}/extra/xenial/"
           target_dir: "${_param:debmirror_mirrors_update_target_dir}/extra/xenial/"
+          cache_dir: "${_param:debmirror_mirrors_common_cache_dir}/extra/"
           log_file: "/var/log/debmirror/mirror_mirantis_com_update_extra_xenial.log"
           dist: [ xenial ]
           section: [ main ]

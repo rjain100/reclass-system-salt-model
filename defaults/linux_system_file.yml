@@ -26,3 +26,9 @@ parameters:
         amphora-x64-haproxy-queens.qcow2.md5:
           source: ${_param:mcp_binary_registry}/mirantis/openstack/octavia/images/${_param:mcp_version}/queens/amphora-x64-haproxy.qcow2.md5
           name: /srv/http/artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/openstack/octavia/images/${_param:mcp_version}/queens/amphora-x64-haproxy.qcow2.md5
+        cirros-0.3.5-x86_64-disk.img:
+          source: ${_param:mcp_binary_registry}/mirantis/external/images/cirros/0.3.5/cirros-0.3.5-x86_64-disk.img
+          name: /srv/http/artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/external/images/cirros/0.3.5/cirros-0.3.5-x86_64-disk.img
+        Fedora-Cloud-Base-27-1.6.x86_64.qcow2:
+          source: ${_param:mcp_binary_registry}/mirantis/external/images/cloud-fedora/27/Fedora-Cloud-Base-27-1.6.x86_64.qcow2
+          name: /srv/http/artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/external/images/cloud-fedora/27/Fedora-Cloud-Base-27-1.6.x86_64.qcow2

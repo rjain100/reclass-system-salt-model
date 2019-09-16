@@ -161,7 +161,10 @@ parameters:
         # QA\CVP tool-set's
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: ci-tempest:${_param:openstack_version}
+          name: ci-tempest:pike
+        - registry: ${_param:mcp_docker_registry}/mirantis/cicd
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
+          name: ci-tempest:queens
         - registry: ${_param:mcp_docker_registry}/mirantis/cvp
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cvp
           name: cvp-rally:2019.2.5
