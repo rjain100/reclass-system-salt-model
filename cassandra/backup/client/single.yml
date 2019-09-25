@@ -2,8 +2,6 @@ classes:
 - service.cassandra.backup.client
 - system.openssh.client.root
 parameters:
-  _param:
-    cassandra_remote_backup_server: cfg01
   cassandra:
     backup:
       client:
