@@ -5,3 +5,6 @@ parameters:
     backup_day_of_month: "*"
     backup_month: "*"
     backup_day_of_week: "*"
+    zookeeper_remote_backup_server: ${_param:infra_config_hostname}
+    cassandra_remote_backup_server: ${_param:infra_config_hostname}
+
