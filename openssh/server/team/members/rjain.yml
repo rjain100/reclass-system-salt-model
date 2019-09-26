@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        rjain:
+          enabled: true
+          name: rjain
+          full_name: Rajat Jain
+          home: /home/rjain
+          email: rjain@mirantis.com
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      enabled: true
+      user:
+        rjain:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCw2kglRIGoMv2M6PpLuHxAk2eH3d+SwkPYcY3evRinxvJ/oPz+Ks5uvU1RMIETyBvioxfAbCeXr1Yf2WoW9StEvrSNw01FqqdaXUdG04MLrZ7xrfhp3kuHi94gHLxBgsDBV98YLT4L2dMtMaBAM4NekingwX09WKeqnT3NO06Z0w== rjain@Rajat-MacBook.local
+          user: ${linux:system:user:rjain}
