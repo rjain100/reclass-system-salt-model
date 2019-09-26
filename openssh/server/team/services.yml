@@ -24,6 +24,7 @@ classes:
 - system.openssh.server.team.members.pruzicka
 - system.openssh.server.team.members.sburns
 - system.openssh.server.team.members.tjaroszyk
+- system.openssh.server.team.members.vkuspits
 - system.openssh.server.team.members.yisakov
 - system.openssh.server.team.members.qwu
 parameters:
