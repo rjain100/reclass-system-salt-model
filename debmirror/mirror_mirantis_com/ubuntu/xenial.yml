@@ -80,7 +80,6 @@ parameters:
           - 'main/tex$'
           - 'restricted/tex$'
           - 'universe/tex$'
-          - 'text$'
           - 'universe/text$'
           # Updating filter, please always start from section, aka main|universe|multiverse
           filter:
@@ -156,7 +155,6 @@ parameters:
             508: "--exclude='/universe/s/salt'"
             509: "--exclude='/universe/z/zabbix'"
             510: "--exclude='(universe|main)/(o|d|n)/(openvswitch|dpdk|networking-ovs-dpdk)'"
-            511: "--exclude='/main/libv/.*(libvirt)'"
             512: "--exclude='/main/s/.*(seabios)'"
             513: "--exclude='/universe/.*libvirt'"
             514: "--exclude='/(universe|main)/c/(cinder|ceilometer)'"
@@ -190,3 +188,5 @@ parameters:
             808: --include='main/.*(linux-libc(-|_|)|libgcc1_).*amd64.deb'
             809: --include='main/(x/xml-core|s/sgml-base|libxml|.*xmlsec1|.*python(3|)-zope.interface)'
             810: --include='universe/p/plexus-(container-default|interactivity-api)/' # PROD-26807 Req.for DogTag
+            811: --include='/main/u/update-notifier/' #   PROD-30102 Req for ceph
+            812: --include='/main/k/krb5/' # Req for curl
