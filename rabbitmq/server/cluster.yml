@@ -3,3 +3,7 @@ classes:
 - service.keepalived.cluster.single
 - service.haproxy.proxy.single
 - system.rabbitmq.upgrade
+parameters:
+  rabbitmq:
+    server:
+      ulimit: 24576

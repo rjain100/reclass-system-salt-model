@@ -1,3 +1,7 @@
 classes:
 - service.rabbitmq.server.single
 - system.rabbitmq.upgrade
+parameters:
+  rabbitmq:
+    server:
+      ulimit: 24576
