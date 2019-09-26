@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        vkuspits:
+          email: vkuspits@mirantis.com
+          enabled: true
+          full_name: "Vladislav Kuspits"
+          home: /home/vkuspits
+          name: vkuspits
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        vkuspits:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPI/sOPVQSFnuaZEmXI/H/FJr543ClBpS55MQojMJxTmPTpdrjXfaX1NOEuHSM5bF7aXbiCCTdz2ZomtCWlm300asF/4vT+vsta57+6MdaiOVR5Fyj1LqHAFs0zcJROyhbNWm0sZjljJ95u7J+KwbmMWefq3ngqihgi6/yX3zqVuc7f8edG/X8MXq6c49sZYNZvvlgXrtBdRB5B/Pxhpa/N2xf1hJ0yR2WGhybgXLXLFz4fxINGacHbxx3c+0nPG90b8FSXmiNUDZtTWsV6VvO7K6TB6QM6Y/S+kghlnUA4yZkydUn9ZDP6/WUg9PuzzG3vTUltrMESr3+H80BBTIT
+          user: ${linux:system:user:vkuspits}
